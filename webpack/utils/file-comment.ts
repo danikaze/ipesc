@@ -1,5 +1,5 @@
 import { Chunk } from 'webpack';
-import { version } from '../package.json';
+import { version } from '../../package.json';
 import { getDateString } from './get-date-string';
 
 interface BannerOptions {
