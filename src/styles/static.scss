@@ -2,10 +2,19 @@
 
 $boxSkew: -15deg;
 $boxSize: 75px;
+$boxBorderSize: 1px;
 $boxMarginY: 5px;
 $boxMarginX: 1px;
 $yellow: #ffb700;
 $bgColor: #474747;
+$hideTransitionDuration: 500ms;
+
+html,
+body,
+#root {
+  height: 100%;
+  max-height: 100%;
+}
 
 body {
   background-color: $bgColor;
@@ -37,7 +46,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 500ms;
+  transition: opacity $hideTransitionDuration;
 
   &.hide {
     opacity: 0;
@@ -58,11 +67,11 @@ body {
     height: $boxSize;
     font-size: 64px;
     font-weight: bold;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
-      Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: white;
     background: black;
-    border: 1px solid rgb(104, 104, 104);
+    border: $boxBorderSize solid rgb(104, 104, 104);
     margin: $boxMarginY $boxMarginX;
     transform: skewX($boxSkew) rotateY(90deg);
     animation: showIpescLetter;
@@ -97,12 +106,16 @@ body {
     opacity: 0;
     background-color: white;
     transform: skewX($boxSkew);
-    width: calc(100% - 6px);
+    width: calc(100% - 22px);
     animation: showIpescLine;
     animation-duration: 2s;
     animation-direction: normal;
     animation-fill-mode: forwards;
-    background: linear-gradient(90deg, $yellow calc($boxSize - 2px), white calc($boxSize - 2px));
+    background: linear-gradient(
+      90deg,
+      $yellow calc($boxSize - $boxBorderSize * 2),
+      white calc($boxSize - $boxBorderSize * 2)
+    );
 
     &.top {
       left: 14px;
