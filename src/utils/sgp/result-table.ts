@@ -1,5 +1,3 @@
-import { timeToMs } from './time-to-ms';
-
 export const enum SgpCategory {
   PRO = 'PRO',
   SILVER = 'SIL',
@@ -13,9 +11,9 @@ export interface SgpRaceResult {
   category?: SgpCategory;
   laps?: number;
   totalTime?: string;
-  totalTimeMs?: number;
+
   bestLap?: string;
-  bestLapMs?: number;
+
   points?: number;
   penalty?: number;
   pointsAdjustment?: number;
@@ -129,8 +127,6 @@ export class SgpResultTable {
   }
 
   private static scrapRaceRow(tr: HTMLTableRowElement): SgpRaceResult {
-    const totalTime = SgpResultTable.getString(tr, SgpRaceResultColIndex.TOTAL_TIME);
-    const bestLap = SgpResultTable.getString(tr, SgpRaceResultColIndex.BESTLAP);
     const driverText = SgpResultTable.getString(tr, SgpRaceResultColIndex.DRIVER);
 
     return {
@@ -139,10 +135,8 @@ export class SgpResultTable {
       car: driverText?.split('\n')[1],
       category: SgpResultTable.getCategory(tr, SgpRaceResultColIndex.CATEGORY),
       laps: SgpResultTable.getNumber(tr, SgpRaceResultColIndex.LAPS),
-      totalTime,
-      totalTimeMs: timeToMs(totalTime),
-      bestLap,
-      bestLapMs: timeToMs(bestLap),
+      totalTime: SgpResultTable.getString(tr, SgpRaceResultColIndex.TOTAL_TIME),
+      bestLap: SgpResultTable.getString(tr, SgpRaceResultColIndex.BESTLAP),
       points: SgpResultTable.getNumber(tr, SgpRaceResultColIndex.POINTS),
       penalty: SgpResultTable.getNumber(tr, SgpRaceResultColIndex.PENALTY),
       totalPoints: SgpResultTable.getNumber(tr, SgpRaceResultColIndex.TOTAL_POINTS),
@@ -151,21 +145,13 @@ export class SgpResultTable {
   }
 
   private static scrapQualiRow(tr: HTMLTableRowElement): SgpQualiPracticeResult {
-    const totalTime = SgpResultTable.getString(
-      tr,
-      SgpQualiPracticeResultColIndex.TOTAL_TIME
-    );
-    const bestLap = SgpResultTable.getString(tr, SgpQualiPracticeResultColIndex.BESTLAP);
-
     return {
       pos: SgpResultTable.getNumber(tr, SgpQualiPracticeResultColIndex.POS),
       driver: SgpResultTable.getString(tr, SgpQualiPracticeResultColIndex.DRIVER),
       car: SgpResultTable.getString(tr, SgpQualiPracticeResultColIndex.CAR),
       category: SgpResultTable.getCategory(tr, SgpQualiPracticeResultColIndex.CATEGORY),
-      totalTime,
-      totalTimeMs: timeToMs(totalTime),
-      bestLap,
-      bestLapMs: timeToMs(bestLap),
+      totalTime: SgpResultTable.getString(tr, SgpQualiPracticeResultColIndex.TOTAL_TIME),
+      bestLap: SgpResultTable.getString(tr, SgpQualiPracticeResultColIndex.BESTLAP),
       laps: SgpResultTable.getNumber(tr, SgpQualiPracticeResultColIndex.LAPS),
       incidents: SgpResultTable.getNumber(tr, SgpQualiPracticeResultColIndex.INCIDENTS),
     };
