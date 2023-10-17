@@ -1,6 +1,7 @@
 import { Configuration } from 'webpack';
-import 'webpack-dev-server';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import 'webpack-dev-server';
 
 import { absPath } from './utils/abs-path';
 import { getPagesEntries } from './utils/get-pages-entries';
@@ -40,6 +41,12 @@ export const pagesConfig = webpackConfig((config, isProduction) => {
     })
   );
   config.plugins!.push(getFnsDefine(absPath('dist-fns')));
+  config.plugins!.push(
+    new BundleAnalyzerPlugin({
+      analyzerMode: isProduction ? 'static' : 'disabled',
+      reportFilename: '../webpack/report.html',
+    })
+  );
 
   return config as Configuration;
 });

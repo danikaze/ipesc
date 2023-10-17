@@ -3,6 +3,7 @@ node_modules
 coverage
 dist
 dist-fns
+webpack/report.html
 *.tgz
 
 # IDE

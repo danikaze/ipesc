@@ -1,8 +1,9 @@
-import { BannerPlugin, Configuration, DefinePlugin, version } from 'webpack';
+import { BannerPlugin, Configuration, DefinePlugin } from 'webpack';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 import * as TerserPlugin from 'terser-webpack-plugin';
 import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
+import { version } from '../package.json';
 import { getFileComment } from './utils/file-comment';
 import { getCssLocalIdent } from './utils/get-css-local-ident';
 import { getDateString } from './utils/get-date-string';
