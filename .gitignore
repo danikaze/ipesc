@@ -1,0 +1,11 @@
+# Project
+node_modules
+coverage
+dist
+*.tgz
+
+# IDE
+.vscode
+
+# OS
+.DS_Store
