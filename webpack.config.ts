@@ -1,3 +1,9 @@
-import { config } from './webpack';
+import { fnsConfig } from './webpack/fns';
+import { pagesConfig } from './webpack/pages';
 
-module.exports = config;
+const configs = {
+  fns: fnsConfig,
+  pages: pagesConfig,
+  default: [fnsConfig, pagesConfig],
+};
+module.exports = configs[(process.env.WEBPACK_ONLY || 'default') as keyof typeof configs];

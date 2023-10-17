@@ -1,8 +1,10 @@
 import { readdirSync, statSync } from 'fs';
-import { basename, extname, join } from 'path';
+import { basename, join } from 'path';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import { EntryObject, WebpackPluginInstance } from 'webpack';
 import { getTemplateContents } from './get-template-contents';
+import { getFiles } from './get-files';
+import { getBasenameWithoutExtension } from './get-basename-without-extension';
 
 interface EntryData {
   entry: EntryObject;
@@ -13,10 +15,10 @@ interface EntryData {
  * Detect `.ts` or `.tsx` files in src/entries/FOLDER.
  * If that folder also has a `.html` file, it will add a plugin for it
  */
-export function getEntries(absPath: string, isProduction: boolean): EntryData {
+export function getPagesEntries(absPath: string, isProduction: boolean): EntryData {
   return getFolders(absPath).reduce(
     (res, entryFolderPath) => {
-      const chunk = basenameWithoutExtension(entryFolderPath);
+      const chunk = getBasenameWithoutExtension(entryFolderPath);
       if (chunk === 'vendor') {
         throw new Error(`"vendor" is a special name and can't be used as entry folder`);
       }
@@ -31,12 +33,6 @@ export function getEntries(absPath: string, isProduction: boolean): EntryData {
     },
     { entry: {}, plugins: [] } as EntryData
   );
-}
-
-function basenameWithoutExtension(file: string): string {
-  const base = basename(file);
-  const i = base.lastIndexOf('.');
-  return i === -1 ? base : base.substring(0, i);
 }
 
 function getEntry(chunk: string, folderPath: string) {
@@ -79,14 +75,4 @@ function getFolders(path: string): string[] {
   return readdirSync(path)
     .map((filename) => join(path, filename))
     .filter((filePath) => statSync(filePath).isDirectory());
-}
-
-function getFiles(path: string, extensions?: string[]): string[] {
-  return readdirSync(path)
-    .map((filename) => join(path, filename))
-    .filter(
-      (filePath) =>
-        statSync(filePath).isFile() &&
-        (!extensions || extensions.includes(extname(filePath)))
-    );
 }
