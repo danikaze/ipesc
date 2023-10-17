@@ -1,0 +1,114 @@
+@use 'styles/utils.scss' as utils;
+
+$boxSkew: -15deg;
+$boxSize: 75px;
+$boxMarginY: 5px;
+$boxMarginX: 1px;
+$yellow: #ffb700;
+$bgColor: #474747;
+
+body {
+  background-color: $bgColor;
+}
+
+@keyframes showIpescLetter {
+  from {
+    transform: skewX($boxSkew) rotateY(90deg);
+  }
+  to {
+    transform: skewX($boxSkew) rotateY(0);
+  }
+}
+@keyframes showIpescLine {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: 10px;
+    opacity: 1;
+  }
+}
+
+#pre-loading {
+  @include utils.fullScreen;
+  background-color: $bgColor;
+  z-index: 99999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 500ms;
+
+  &.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .ipesc-logo {
+    max-width: 90%;
+  }
+
+  .letter {
+    max-width: calc(19% - $boxMarginX * 2);
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: $boxSize;
+    height: $boxSize;
+    font-size: 64px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
+      Geneva, Verdana, sans-serif;
+    color: white;
+    background: black;
+    border: 1px solid rgb(104, 104, 104);
+    margin: $boxMarginY $boxMarginX;
+    transform: skewX($boxSkew) rotateY(90deg);
+    animation: showIpescLetter;
+    animation-duration: 2s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+
+    span {
+      transform: skewX(-$boxSkew);
+    }
+
+    &.I {
+      color: $yellow;
+    }
+    &.P {
+      animation-delay: 200ms;
+    }
+    &.E {
+      animation-delay: 400ms;
+    }
+    &.S {
+      animation-delay: 600ms;
+    }
+    &.C {
+      animation-delay: 800ms;
+    }
+  }
+
+  .line {
+    position: relative;
+    height: 0;
+    opacity: 0;
+    background-color: white;
+    transform: skewX($boxSkew);
+    width: calc(100% - 6px);
+    animation: showIpescLine;
+    animation-duration: 2s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    background: linear-gradient(90deg, $yellow calc($boxSize - 2px), white calc($boxSize - 2px));
+
+    &.top {
+      left: 14px;
+    }
+    &.bottom {
+      left: -12px;
+    }
+  }
+}
