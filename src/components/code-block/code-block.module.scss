@@ -1,0 +1,36 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  width: 100%;
+  max-height: 200px;
+  overflow: hidden;
+  border: 1px solid #bdbdbd;
+  border-radius: 10px;
+  background-color: #2f2f2f;
+}
+
+.wrapper {
+  position: relative;
+  overflow: auto;
+  flex-grow: 1;
+  display: flex;
+}
+
+.caret {
+  padding: 10px;
+  padding-right: 0;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  color: #67cdcc;
+}
+
+.code {
+  padding: 10px;
+}
+
+.button {
+  position: absolute !important;
+  top: 10px;
+  right: 10px;
+  text-transform: uppercase;
+}
