@@ -1,10 +1,11 @@
 import { FC } from 'react';
 import { Box, Container, Kbd, Link, ListItem, OrderedList, Text } from '@chakra-ui/react';
 import { Code, Grid, GridItem, Heading } from '@chakra-ui/layout';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 import { CodeBlock } from 'components/code-block';
-import { getFnSource } from 'utils/get-fn-source';
 import { useAdminApp } from './hooks';
+import { HelpersInstallation } from './helpers-installation';
 
 export const AdminApp: FC = () => {
   const {} = useAdminApp();
@@ -22,31 +23,44 @@ export const AdminApp: FC = () => {
           <Heading margin={4}>IPESC Admin & Tools page</Heading>
         </GridItem>
         <GridItem area='main'>
-          <Box padding={4}>
+          <Box scrollMarginY={4}>
             <Heading size='md'>SGP Result Page Utilities</Heading>
-            <Text>To enable the utilities follow the next steps:</Text>
-            <OrderedList>
-              <ListItem>Go to the results page of a simracing.gp race.</ListItem>
+            <HelpersInstallation />
+          </Box>
+          <Box my={4}>
+            <Text>
+              After following the steps, the <Code>ipesc</Code> namespace will be
+              available with the utility functions in your browser console.
+            </Text>
+            <Heading size='sm' marginTop={4}>
+              Example: Retrieve the text to show the results of a finished race on
+              discord.
+            </Heading>
+            <OrderedList my={2}>
+              <ListItem>
+                Navigate to the event page for a finished race,{' '}
+                <Link
+                  href='https://app.simracing.gp/events/z28x2BVIl6ptHfzuza4a1'
+                  color='teal.500'
+                  isExternal
+                >
+                  like this one <ExternalLinkIcon mx={2} />
+                </Link>
+                .
+              </ListItem>
               <ListItem>
                 Open the DevTools in your browser (i.e. <Kbd>F12</Kbd>).
               </ListItem>
               <ListItem>
-                Copy the following code and execute it in the DevTools Console.
-                <CodeBlock>{getFnSource('ipesc-helpers.user')}</CodeBlock>
+                Enter the following command:
+                <CodeBlock withCaret>ipesc.getResultsForDiscord();</CodeBlock>
               </ListItem>
             </OrderedList>
             <Text>
-              After following the steps, the <Code>ipesc</Code> namespace will be
-              available with utility tools in your window.
+              After a few seconds fetching the race information, the generated text to
+              copy/paste into Discord will appear (extra flavor text might be needed as
+              well as replacing driver names with discord tags).
             </Text>
-          </Box>
-          <Box padding={4}>
-            <Heading size='sm'>Example</Heading>
-            <Text>
-              Retrieve the text to show the results of a race on discord (while having
-              selected the <Code>RACE</Code> tab on simracing.gp)
-            </Text>
-            <CodeBlock withCaret>ipesc.getResultsForDiscord();</CodeBlock>
           </Box>
         </GridItem>
         <GridItem area='footer' borderTop='1px solid #bdbdbd'>
