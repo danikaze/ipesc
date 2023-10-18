@@ -1,3 +1,18 @@
+// ==UserScript==
+// @name         Simracing GP for IPESC
+// @namespace    ipesc.danikaze
+// @version      0.1.0
+// @description  Set of utilities available on DevTools for IPESC racing community
+// @author       danikaze
+// @source       https://github.com/danikaze/ipesc
+// @updateURL    https://gist.github.com/danikaze/9154b3b79eb2c605687c78f4991841fd/raw/ipesc-helpers.user.js
+// @match        https://app.simracing.gp/*
+// @icon         https://app.simracing.gp/favicon.ico
+// @run-at       document-end
+// @noframes
+// @grant        unsafeWindow
+// ==/UserScript==
+
 import { fetchChampionshipData } from 'utils/sgp/fetch-championship-data';
 import { version } from '../../package.json';
 import { formatResultsMessageForDiscord } from 'utils/format-results-message-for-discord';

@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy static contents
 
 on:
   # Runs on pushes targeting the default branch
@@ -40,7 +40,14 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: './dist'
+          path: 'dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+      - name: Deploy ipesc-helpers.user.js to gist
+        uses: exuanbo/actions-deploy-gist@v1
+        with:
+          token: ${{ secrets.TOKEN }}
+          gist_id: 9154b3b79eb2c605687c78f4991841fd
+          file_path: dist-fns/ipesc-helpers.user.js
+          file_type: text
