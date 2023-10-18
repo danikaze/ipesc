@@ -61,6 +61,10 @@ export class SgpEventApiData {
     return this.results.results.filter((obj) => obj.type === SgpEventType.RACE).length;
   }
 
+  public getCategoryList(): undefined | SgpCategory[] {
+    return this.session.session.carClasses?.map(({ id }) => id);
+  }
+
   public getResults(type: SgpEventType, index: number = 0) {
     const session = this.results.results.filter((obj) => obj.type === type)[index];
     return {

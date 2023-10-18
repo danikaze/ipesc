@@ -37,7 +37,7 @@ export interface SgpCarModel {
 }
 
 export interface SgpCarClass {
-  id: 'PRO' | 'SIL' | 'AM';
+  id: SgpCategory;
   name: string;
   driverCategory: SgpDriverCategory;
 }
