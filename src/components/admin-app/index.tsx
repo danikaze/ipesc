@@ -32,7 +32,7 @@ export const AdminApp: FC = () => {
               </ListItem>
               <ListItem>
                 Copy the following code and execute it in the DevTools Console.
-                <CodeBlock>{getFnSource('results-page')}</CodeBlock>
+                <CodeBlock>{getFnSource('ipesc-helpers')}</CodeBlock>
               </ListItem>
             </OrderedList>
             <Text>
