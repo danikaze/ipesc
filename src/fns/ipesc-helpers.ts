@@ -1,32 +1,41 @@
+import { fetchChampionshipData } from 'utils/sgp/fetch-championship-data';
 import { version } from '../../package.json';
 import { formatResultsMessageForDiscord } from 'utils/format-results-message-for-discord';
-import { getVisibleTables } from 'utils/sgp/get-visible-table';
-import { SgpResultTable } from 'utils/sgp/result-table';
+import { fetchEventData } from 'utils/sgp/fetch-event-data';
+import { clearApiCache } from 'utils/sgp/call-api';
 
-(window as any).ipesc = {
-  ...(window as any).ipesc,
+const helpers = {
   version,
-  scrapResults,
+  clearApiCache,
+  fetchEventData,
+  fetchChampionshipData,
   getResultsForDiscord,
 };
 
-printEnabledMsg();
+// register the `ipesc` helpers as a global namespace in `window`
+(window as any).ipesc = {
+  ...(window as any).ipesc,
+  ...helpers,
+};
 
-function scrapResults() {
-  const tables = getVisibleTables();
-  if (!tables || tables.length > 1) {
-    throw new Error(
-      `Unknown HTML. Make sure you have selected one of the following tabs: RACE | RACE 1 | RACE 2 | QUALIFY | PRACTICE.`
-    );
-  }
-
-  const table = new SgpResultTable(tables[0]);
-  return table.scrapResults();
+// register them also in `unsafeWindow` in case this is a Tampermonkey script
+declare const unsafeWindow: any;
+if (typeof unsafeWindow !== 'undefined') {
+  unsafeWindow.ipesc = {
+    ...unsafeWindow.ipesc,
+    ...helpers,
+  };
 }
 
-function getResultsForDiscord() {
-  const results = scrapResults();
-  const msg = formatResultsMessageForDiscord(results);
+printEnabledMsg();
+
+async function getResultsForDiscord(eventId?: string) {
+  const eventData = await fetchEventData(eventId);
+  if (!eventData) {
+    console.warn(`Couldn't retrieve the results for the event`);
+    return;
+  }
+  const msg = formatResultsMessageForDiscord(eventData);
   console.log(msg);
 }
 
