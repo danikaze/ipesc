@@ -1,0 +1,5376 @@
+{
+  "_type": "SgpChampionshipApiData",
+  "championshipData": {
+    "id": "8uPv3wO1_cpTnus0wLtxw",
+    "version": 6,
+    "state": {
+      "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+      "name": "Indo-Pacific Endurance Simulation Challenge Rookies season 2 #48",
+      "type": "CHAMPIONSHIP",
+      "status": "FINISHED",
+      "startDate": "2022-12-01T08:33:15.492Z",
+      "description": "",
+      "participationRules": { "allowTeams": false },
+      "pointSystem": {
+        "name": "Oval",
+        "entries": {
+          "1": 43,
+          "2": 42,
+          "3": 41,
+          "4": 40,
+          "5": 39,
+          "6": 38,
+          "7": 37,
+          "8": 36,
+          "9": 35,
+          "10": 34,
+          "11": 33,
+          "12": 32,
+          "13": 31,
+          "14": 30,
+          "15": 29,
+          "16": 28,
+          "17": 27,
+          "18": 26,
+          "19": 25,
+          "20": 24,
+          "21": 23,
+          "22": 22,
+          "23": 21,
+          "24": 20,
+          "25": 19,
+          "26": 18,
+          "27": 17,
+          "28": 16,
+          "29": 15,
+          "30": 14,
+          "31": 13,
+          "32": 12,
+          "33": 11,
+          "34": 10,
+          "35": 9,
+          "36": 8,
+          "37": 7,
+          "38": 6,
+          "39": 5,
+          "40": 4,
+          "41": 3,
+          "42": 2,
+          "43": 1,
+          "44": 0
+        },
+        "bestRaceCount": "all"
+      },
+      "deleted": false,
+      "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+      "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+      "rulesDescription": "",
+      "entryRules": {
+        "maxEntries": 50,
+        "closedEntry": false,
+        "joinAfterStart": true
+      },
+      "generalData": {
+        "bgImage": "01e0nb52fwhspbm62pvz3w42y0",
+        "defaultLanguageCode": "en",
+        "aboutTranslations": [
+          {
+            "languageCode": "en",
+            "contentUrl": "championship/home-content/8uPv3wO1_cpTnus0wLtxw/en?v=4"
+          }
+        ]
+      },
+      "gameSettings": {
+        "cars": [
+          { "id": "12", "name": "AMR Vantage V12 GT3" },
+          { "id": "3", "name": "Audi R8 LMS" },
+          { "id": "7", "name": "BMW M6 GT3" },
+          { "id": "2", "name": "Ferrari 488 GT3" },
+          { "id": "5", "name": "Mclaren 650s GT3" },
+          { "id": "1", "name": "Mercedes AMG GT3" }
+        ],
+        "game": "acc",
+        "driverSwap": false,
+        "gameVersion": "1.13.2",
+        "driverCategory": 3
+      },
+      "endDate": null,
+      "firstRaceTime": "2022-12-01T08:30:00.000Z",
+      "nextRaceTime": null,
+      "lastRaceTime": null,
+      "eventsLeft": 0,
+      "totalEvents": 6
+    },
+    "joinConditions": null
+  },
+  "points": {
+    "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+    "lines": [
+      {
+        "participantId": "VUmvrxL3SvyOu5BlsDvQ5",
+        "averageFinish": 2,
+        "points": 84,
+        "wins": 1,
+        "racePoints": [
+          {
+            "sessionId": "z4OuN1-AYwdmBxexvpXbG",
+            "raceIndex": 0,
+            "points": 43,
+            "position": 1,
+            "included": true
+          },
+          {
+            "sessionId": "ALXi19ddV88TWSLgumnfP",
+            "raceIndex": 0,
+            "points": 41,
+            "position": 3,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+          "name": "Mark Felton ",
+          "country": "AU",
+          "badgeId": "DRIVE"
+        }
+      },
+      {
+        "participantId": "Z2NV-FfyIZaZ6XTlSKis_",
+        "averageFinish": 2.5,
+        "points": 83,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "z4OuN1-AYwdmBxexvpXbG",
+            "raceIndex": 0,
+            "points": 41,
+            "position": 3,
+            "included": true
+          },
+          {
+            "sessionId": "ALXi19ddV88TWSLgumnfP",
+            "raceIndex": 0,
+            "points": 42,
+            "position": 2,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "Z2NV-FfyIZaZ6XTlSKis_",
+          "name": "D Williams",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "PEV53emXeBEuUQOxcrzFa",
+        "averageFinish": 1,
+        "points": 43,
+        "wins": 1,
+        "racePoints": [
+          {
+            "sessionId": "ALXi19ddV88TWSLgumnfP",
+            "raceIndex": 0,
+            "points": 43,
+            "position": 1,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "PEV53emXeBEuUQOxcrzFa",
+          "name": "Nico Cappa",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "kKCTE2CumjvGo9d8jJTIP",
+        "averageFinish": 6,
+        "points": 42,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "z4OuN1-AYwdmBxexvpXbG",
+            "raceIndex": 0,
+            "points": 42,
+            "position": 2,
+            "included": true
+          },
+          {
+            "sessionId": "ALXi19ddV88TWSLgumnfP",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 10,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "kKCTE2CumjvGo9d8jJTIP",
+          "name": "Andrew Gallagher",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "SC4ZUoc1WqfhinTCPcGB1",
+        "averageFinish": 6,
+        "points": 40,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "z4OuN1-AYwdmBxexvpXbG",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 8,
+            "included": true
+          },
+          {
+            "sessionId": "ALXi19ddV88TWSLgumnfP",
+            "raceIndex": 0,
+            "points": 40,
+            "position": 4,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "SC4ZUoc1WqfhinTCPcGB1",
+          "name": "Melissa Trenter",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "YAVPW-sq823qB98bxSgFA",
+        "averageFinish": 5,
+        "points": 39,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "ALXi19ddV88TWSLgumnfP",
+            "raceIndex": 0,
+            "points": 39,
+            "position": 5,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "YAVPW-sq823qB98bxSgFA",
+          "name": "Jed Tootell",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "lt2uoPmTtTe4wYjP28q8A",
+        "averageFinish": 5,
+        "points": 0,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "z4OuN1-AYwdmBxexvpXbG",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 4,
+            "included": true
+          },
+          {
+            "sessionId": "ALXi19ddV88TWSLgumnfP",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 6,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "lt2uoPmTtTe4wYjP28q8A",
+          "name": "Tristen Digby",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "K_Fk86dOXX2waJu_S5-ke",
+        "averageFinish": 6,
+        "points": 0,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "z4OuN1-AYwdmBxexvpXbG",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 5,
+            "included": true
+          },
+          {
+            "sessionId": "ALXi19ddV88TWSLgumnfP",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 7,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "K_Fk86dOXX2waJu_S5-ke",
+          "name": "pakorn panasoponkul",
+          "country": "TH"
+        }
+      },
+      {
+        "participantId": "_75LXPmsTaRJitddRnVPv",
+        "averageFinish": 7,
+        "points": 0,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "z4OuN1-AYwdmBxexvpXbG",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 6,
+            "included": true
+          },
+          {
+            "sessionId": "ALXi19ddV88TWSLgumnfP",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 8,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "_75LXPmsTaRJitddRnVPv",
+          "name": "Kevan Torrance",
+          "country": "NZ"
+        }
+      },
+      {
+        "participantId": "ods18Q19750_oyhja165S",
+        "averageFinish": 8,
+        "points": 0,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "z4OuN1-AYwdmBxexvpXbG",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 7,
+            "included": true
+          },
+          {
+            "sessionId": "ALXi19ddV88TWSLgumnfP",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 9,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "ods18Q19750_oyhja165S",
+          "name": "Matthew Jayasuria",
+          "country": "SG"
+        }
+      }
+    ],
+    "raceOrder": null
+  },
+  "sessions": [
+    {
+      "id": "O5xETgmc32IJvqt13V51z",
+      "v": 8,
+      "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+      "sessionName": "Misano",
+      "startsAt": "2022-12-01T08:30:00.000Z",
+      "game": "acc",
+      "gameVersion": "1.13.2",
+      "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+      "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+      "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+      "tournamentName": "Indo-Pacific Endurance Simulation Challenge Rookies season 2 #48",
+      "tournamentType": "CHAMPIONSHIP",
+      "duration": 144,
+      "maxEntries": 50,
+      "activeEntryCount": {
+        "ADMIN": 0,
+        "REGULAR": 8,
+        "WAITING": 0,
+        "RESERVED": 0,
+        "SPECTATOR": 0
+      },
+      "isParticipant": false,
+      "status": "ENDED",
+      "trackId": "misano",
+      "trackName": "Misano",
+      "cars": [
+        { "id": "12", "name": "AMR Vantage V12 GT3" },
+        { "id": "3", "name": "Audi R8 LMS" },
+        { "id": "7", "name": "BMW M6 GT3" },
+        { "id": "2", "name": "Ferrari 488 GT3" },
+        { "id": "5", "name": "Mclaren 650s GT3" },
+        { "id": "1", "name": "Mercedes AMG GT3" }
+      ],
+      "isMultiClass": false,
+      "driverSwap": false,
+      "closedEntry": false,
+      "segmentCounts": { "practice": 1, "qualify": 1, "race": 1 },
+      "isRanked": false,
+      "joinConditions": null,
+      "isMultiSplit": false,
+      "fromRecurringSession": false,
+      "leaguePermissionsMatch": true,
+      "isManual": false
+    },
+    {
+      "id": "juz7wHOaAp08rbfshVkmm",
+      "v": 8,
+      "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+      "sessionName": "Nurburgring dusk to night",
+      "startsAt": "2022-12-08T01:00:00.000Z",
+      "game": "acc",
+      "gameVersion": "1.13.2",
+      "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+      "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+      "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+      "tournamentName": "Indo-Pacific Endurance Simulation Challenge Rookies season 2 #48",
+      "tournamentType": "CHAMPIONSHIP",
+      "duration": 142,
+      "maxEntries": 50,
+      "activeEntryCount": {
+        "ADMIN": 0,
+        "REGULAR": 8,
+        "WAITING": 0,
+        "RESERVED": 0,
+        "SPECTATOR": 0
+      },
+      "isParticipant": false,
+      "status": "ENDED",
+      "trackId": "nurburgring",
+      "trackName": "Nurburgring",
+      "cars": [
+        { "id": "12", "name": "AMR Vantage V12 GT3" },
+        { "id": "3", "name": "Audi R8 LMS" },
+        { "id": "7", "name": "BMW M6 GT3" },
+        { "id": "2", "name": "Ferrari 488 GT3" },
+        { "id": "5", "name": "Mclaren 650s GT3" },
+        { "id": "1", "name": "Mercedes AMG GT3" }
+      ],
+      "isMultiClass": false,
+      "driverSwap": false,
+      "closedEntry": false,
+      "segmentCounts": { "practice": 1, "qualify": 1, "race": 1 },
+      "isRanked": false,
+      "joinConditions": null,
+      "isMultiSplit": false,
+      "fromRecurringSession": false,
+      "leaguePermissionsMatch": true,
+      "isManual": false
+    },
+    {
+      "id": "dlxQkJeoo6J0Q_9XEtjhk",
+      "v": 6,
+      "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+      "sessionName": "Barcelona",
+      "startsAt": "2022-12-08T09:04:00.000Z",
+      "game": "acc",
+      "gameVersion": "1.13.2",
+      "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+      "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+      "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+      "tournamentName": "Indo-Pacific Endurance Simulation Challenge Rookies season 2 #48",
+      "tournamentType": "CHAMPIONSHIP",
+      "duration": 122,
+      "maxEntries": 50,
+      "activeEntryCount": {
+        "ADMIN": 0,
+        "REGULAR": 8,
+        "WAITING": 0,
+        "RESERVED": 0,
+        "SPECTATOR": 0
+      },
+      "isParticipant": false,
+      "status": "ENDED",
+      "trackId": "barcelona",
+      "trackName": "Barcelona",
+      "cars": [
+        { "id": "12", "name": "AMR Vantage V12 GT3" },
+        { "id": "3", "name": "Audi R8 LMS" },
+        { "id": "7", "name": "BMW M6 GT3" },
+        { "id": "2", "name": "Ferrari 488 GT3" },
+        { "id": "5", "name": "Mclaren 650s GT3" },
+        { "id": "1", "name": "Mercedes AMG GT3" }
+      ],
+      "isMultiClass": false,
+      "driverSwap": false,
+      "closedEntry": false,
+      "segmentCounts": { "practice": 1, "qualify": 1, "race": 1 },
+      "isRanked": true,
+      "joinConditions": null,
+      "isMultiSplit": false,
+      "fromRecurringSession": false,
+      "leaguePermissionsMatch": true,
+      "isManual": false
+    },
+    {
+      "id": "z4OuN1-AYwdmBxexvpXbG",
+      "v": 11,
+      "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+      "sessionName": "Nurburgring sunrise race",
+      "startsAt": "2022-12-15T08:30:00.000Z",
+      "game": "acc",
+      "gameVersion": "1.13.2",
+      "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+      "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+      "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+      "tournamentName": "Indo-Pacific Endurance Simulation Challenge Rookies season 2 #48",
+      "tournamentType": "CHAMPIONSHIP",
+      "duration": 147,
+      "maxEntries": 50,
+      "activeEntryCount": {
+        "ADMIN": 0,
+        "REGULAR": 8,
+        "WAITING": 0,
+        "RESERVED": 0,
+        "SPECTATOR": 0
+      },
+      "isParticipant": false,
+      "status": "ENDED",
+      "trackId": "nurburgring",
+      "trackName": "Nurburgring",
+      "cars": [
+        { "id": "12", "name": "AMR Vantage V12 GT3" },
+        { "id": "3", "name": "Audi R8 LMS" },
+        { "id": "7", "name": "BMW M6 GT3" },
+        { "id": "2", "name": "Ferrari 488 GT3" },
+        { "id": "5", "name": "Mclaren 650s GT3" },
+        { "id": "1", "name": "Mercedes AMG GT3" }
+      ],
+      "isMultiClass": false,
+      "driverSwap": false,
+      "closedEntry": false,
+      "segmentCounts": { "practice": 1, "qualify": 1, "race": 1 },
+      "isRanked": true,
+      "joinConditions": null,
+      "isMultiSplit": false,
+      "fromRecurringSession": false,
+      "leaguePermissionsMatch": true,
+      "isManual": false
+    },
+    {
+      "id": "MQhLZvqUNb1-k8dO9O0IV",
+      "v": 12,
+      "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+      "sessionName": "Watkins Glen",
+      "startsAt": "2022-12-22T01:13:00.000Z",
+      "game": "acc",
+      "gameVersion": "1.13.2",
+      "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+      "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+      "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+      "tournamentName": "Indo-Pacific Endurance Simulation Challenge Rookies season 2 #48",
+      "tournamentType": "CHAMPIONSHIP",
+      "duration": 143,
+      "maxEntries": 50,
+      "activeEntryCount": {
+        "ADMIN": 0,
+        "REGULAR": 8,
+        "WAITING": 0,
+        "RESERVED": 0,
+        "SPECTATOR": 0
+      },
+      "isParticipant": false,
+      "status": "ENDED",
+      "trackId": "watkins_glen",
+      "trackName": "Watkins Glen",
+      "cars": [
+        { "id": "12", "name": "AMR Vantage V12 GT3" },
+        { "id": "3", "name": "Audi R8 LMS" },
+        { "id": "7", "name": "BMW M6 GT3" },
+        { "id": "2", "name": "Ferrari 488 GT3" },
+        { "id": "5", "name": "Mclaren 650s GT3" },
+        { "id": "1", "name": "Mercedes AMG GT3" }
+      ],
+      "isMultiClass": false,
+      "driverSwap": false,
+      "closedEntry": false,
+      "segmentCounts": { "practice": 1, "qualify": 1, "race": 1 },
+      "isRanked": true,
+      "joinConditions": null,
+      "isMultiSplit": false,
+      "fromRecurringSession": false,
+      "leaguePermissionsMatch": true,
+      "isManual": false
+    },
+    {
+      "id": "ALXi19ddV88TWSLgumnfP",
+      "v": 6,
+      "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+      "sessionName": "Watkins Glen ",
+      "startsAt": "2022-12-22T08:30:00.000Z",
+      "game": "acc",
+      "gameVersion": "1.13.2",
+      "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+      "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+      "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+      "tournamentName": "Indo-Pacific Endurance Simulation Challenge Rookies season 2 #48",
+      "tournamentType": "CHAMPIONSHIP",
+      "duration": 147,
+      "maxEntries": 50,
+      "activeEntryCount": {
+        "ADMIN": 0,
+        "REGULAR": 8,
+        "WAITING": 0,
+        "RESERVED": 0,
+        "SPECTATOR": 0
+      },
+      "isParticipant": false,
+      "status": "ENDED",
+      "trackId": "watkins_glen",
+      "trackName": "Watkins Glen",
+      "cars": [
+        { "id": "12", "name": "AMR Vantage V12 GT3" },
+        { "id": "3", "name": "Audi R8 LMS" },
+        { "id": "7", "name": "BMW M6 GT3" },
+        { "id": "2", "name": "Ferrari 488 GT3" },
+        { "id": "5", "name": "Mclaren 650s GT3" },
+        { "id": "1", "name": "Mercedes AMG GT3" }
+      ],
+      "isMultiClass": false,
+      "driverSwap": false,
+      "closedEntry": false,
+      "segmentCounts": { "practice": 1, "qualify": 1, "race": 1 },
+      "isRanked": true,
+      "joinConditions": null,
+      "isMultiSplit": false,
+      "fromRecurringSession": false,
+      "leaguePermissionsMatch": true,
+      "isManual": false
+    }
+  ],
+  "penalties": [],
+  "entryList": {
+    "entries": [
+      {
+        "car": { "skin": "default", "model": "12" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "_75LXPmsTaRJitddRnVPv",
+        "joinDate": "2022-11-25T02:21:24.849Z",
+        "raceNumber": 86,
+        "participant": {
+          "id": "_75LXPmsTaRJitddRnVPv",
+          "rank": 0.811449,
+          "driverName": "Kevan Torrance",
+          "country": "NZ",
+          "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "default", "model": "1" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "lt2uoPmTtTe4wYjP28q8A",
+        "joinDate": "2022-11-20T01:04:20.369Z",
+        "raceNumber": 18,
+        "participant": {
+          "id": "lt2uoPmTtTe4wYjP28q8A",
+          "rank": 0.690123,
+          "driverName": "Tristen Digby",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/c2a42f49aae757ccc22d7559b5b2e8423af46231_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "default", "model": "2" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+        "joinDate": "2022-11-20T00:47:42.891Z",
+        "raceNumber": 34,
+        "participant": {
+          "id": "VUmvrxL3SvyOu5BlsDvQ5",
+          "rank": 0.499269,
+          "driverName": "Mark Felton ",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/3c64713dc4917e05cd983db5da9e9baa4acdea2f_medium.jpg",
+          "badgeId": "DRIVE"
+        }
+      },
+      {
+        "car": { "skin": "default", "model": "5" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "PEV53emXeBEuUQOxcrzFa",
+        "joinDate": "2022-12-22T06:21:48.322Z",
+        "raceNumber": 31,
+        "participant": {
+          "id": "PEV53emXeBEuUQOxcrzFa",
+          "rank": 0.495884,
+          "driverName": "Nico Cappa",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/c7c051daec1b48bfe55b531f6dba3a456de32c96_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "default", "model": "7" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "kKCTE2CumjvGo9d8jJTIP",
+        "joinDate": "2022-12-15T08:02:09.393Z",
+        "raceNumber": 87,
+        "participant": {
+          "id": "kKCTE2CumjvGo9d8jJTIP",
+          "rank": 0.425579,
+          "driverName": "Andrew Gallagher",
+          "country": "AU",
+          "avatarUrl": "https://avatars.akamai.steamstatic.com/d854992e5a2b0d5ccddfedefd422143146eb0b11_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "default", "model": "3" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "K_Fk86dOXX2waJu_S5-ke",
+        "joinDate": "2022-11-23T03:56:20.014Z",
+        "raceNumber": 69,
+        "participant": {
+          "id": "K_Fk86dOXX2waJu_S5-ke",
+          "rank": 0,
+          "driverName": "pakorn panasoponkul",
+          "country": "TH",
+          "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "default", "model": "2" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "SC4ZUoc1WqfhinTCPcGB1",
+        "joinDate": "2022-12-11T08:20:57.472Z",
+        "raceNumber": 27,
+        "participant": {
+          "id": "SC4ZUoc1WqfhinTCPcGB1",
+          "driverName": "Melissa Trenter",
+          "country": "AU",
+          "avatarUrl": "https://avatars.akamai.steamstatic.com/23638f32516858f9a7629f65d09a4c9833589466_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "default", "model": "2" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "YAVPW-sq823qB98bxSgFA",
+        "joinDate": "2022-12-22T05:52:27.557Z",
+        "raceNumber": 144,
+        "participant": {
+          "id": "YAVPW-sq823qB98bxSgFA",
+          "driverName": "Jed Tootell",
+          "country": "AU",
+          "avatarUrl": "https://avatars.akamai.steamstatic.com/8dfe278c7493b6984540e57ecd57b791df13841e_medium.jpg"
+        }
+      }
+    ],
+    "splitCount": 1,
+    "splitNo": 1,
+    "v": 19,
+    "spectators": [],
+    "inactiveEntries": [
+      {
+        "car": { "skin": "default", "model": "3" },
+        "type": "REGULAR",
+        "status": "LEFT",
+        "driverId": "ods18Q19750_oyhja165S",
+        "joinDate": "2022-11-25T13:32:45.492Z",
+        "raceNumber": 52,
+        "participant": {
+          "id": "ods18Q19750_oyhja165S",
+          "rank": 0.167727,
+          "driverName": "Matthew Jayasuria",
+          "country": "SG",
+          "avatarUrl": "https://avatars.steamstatic.com/5e0ddabeec41e0934f64911277c527a1fc847fbe_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "default", "model": "2" },
+        "type": "REGULAR",
+        "status": "LEFT",
+        "driverId": "Wx4qSn_PuB8r5q3HLi8bW",
+        "joinDate": "2022-12-01T08:25:45.924Z",
+        "raceNumber": 33,
+        "participant": {
+          "id": "Wx4qSn_PuB8r5q3HLi8bW",
+          "rank": 0.827665,
+          "driverName": "Will Hammond",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "default", "model": "3" },
+        "type": "REGULAR",
+        "status": "LEFT",
+        "driverId": "Z2NV-FfyIZaZ6XTlSKis_",
+        "joinDate": "2022-12-15T02:00:07.106Z",
+        "raceNumber": 187,
+        "participant": {
+          "id": "Z2NV-FfyIZaZ6XTlSKis_",
+          "rank": 0.330897,
+          "driverName": "D Williams",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/28e57c246a97ccc4b9b3a7c7eb359c4ad2d3b7e4_medium.jpg"
+        }
+      }
+    ],
+    "counts": {
+      "participants": {
+        "total": 8,
+        "byCar": { "1": 1, "2": 3, "3": 1, "5": 1, "7": 1, "12": 1 }
+      },
+      "spectators": 0,
+      "inactive": 3
+    }
+  },
+  "events": [
+    {
+      "_type": "SgpEventApiData",
+      "session": {
+        "session": {
+          "id": "O5xETgmc32IJvqt13V51z",
+          "startsAt": "2022-12-01T08:30:00.000Z",
+          "game": "acc",
+          "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+          "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+          "duration": 144,
+          "config": {
+            "parts": [
+              {
+                "hourOfDay": 10,
+                "sessionType": "P",
+                "dayOfWeekend": 1,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 50
+              },
+              {
+                "hourOfDay": 12,
+                "sessionType": "Q",
+                "dayOfWeekend": 2,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 20
+              },
+              {
+                "hourOfDay": 13,
+                "sessionType": "R",
+                "dayOfWeekend": 3,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 50
+              }
+            ],
+            "rules": {
+              "eventRules": {
+                "tyreSetCount": 50,
+                "superpoleMaxCar": -1,
+                "pitWindowLengthSec": 0,
+                "qualifyStandingType": 1,
+                "isRefuellingTimeFixed": false,
+                "mandatoryPitstopCount": 1,
+                "isRefuellingAllowedInRace": true,
+                "isMandatoryPitstopRefuellingRequired": true,
+                "isMandatoryPitstopTyreChangeRequired": true
+              },
+              "eventConfig": {
+                "metaData": "",
+                "postRaceSeconds": 140,
+                "postQualySeconds": 120,
+                "sessionOverTimeSeconds": 200,
+                "preRaceWaitingTimeSeconds": 180
+              }
+            },
+            "isRanked": false,
+            "location": "AU-Sydney",
+            "settings": {
+              "allowAutoDQ": 0,
+              "formationLapType": 3,
+              "shortFormationLap": 0
+            },
+            "passwords": { "admin": null, "server": null, "spectator": null },
+            "difficulty": {
+              "assists": {
+                "disableAutoGear": 1,
+                "disableAutoWiper": 0,
+                "disableAutosteer": 1,
+                "disableIdealLine": 1,
+                "disableAutoClutch": 0,
+                "disableAutoLights": 0,
+                "disableAutoPitLimiter": 0,
+                "disableAutoEngineStart": 0,
+                "stabilityControlLevelMax": 25
+              }
+            },
+            "maxEntries": 50,
+            "closedEntry": false,
+            "driverCategory": 3,
+            "tournamentType": "CHAMPIONSHIP",
+            "trackCondition": {
+              "weather": {
+                "rain": 0,
+                "cloudLevel": 0.3,
+                "ambientTemp": 20,
+                "weatherRandomness": 3,
+                "simracerWeatherConditions": null,
+                "isFixedConditionQualification": null
+              }
+            },
+            "hasGridPositions": false,
+            "practicePassword": null,
+            "practiceServerName": null,
+            "enableServerProtection": false,
+            "entryPassword": null
+          },
+          "status": "ENDED",
+          "statusTime": "2022-12-01T11:07:43.254Z",
+          "sessionName": "Misano",
+          "gameVersion": "1.13.2",
+          "trackId": "misano",
+          "trackName": "Misano",
+          "cars": [
+            { "id": "12", "name": "AMR Vantage V12 GT3" },
+            { "id": "3", "name": "Audi R8 LMS" },
+            { "id": "7", "name": "BMW M6 GT3" },
+            { "id": "2", "name": "Ferrari 488 GT3" },
+            { "id": "5", "name": "Mclaren 650s GT3" },
+            { "id": "1", "name": "Mercedes AMG GT3" }
+          ],
+          "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+          "v": 8,
+          "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+          "tournamentName": "Indo-Pacific Endurance Simulation Challenge Rookies season 2 #48",
+          "serverName": "| simracing.gp | Indo-Pacific Endurance Simulation Challenge | Misano #QL6BY",
+          "aliveTime": null,
+          "carClasses": null,
+          "entryListId": "8uPv3wO1_cpTnus0wLtxw",
+          "driverSwap": false,
+          "serverStartTime": "2022-12-01T08:30:00.000Z",
+          "statusHistory": [
+            {
+              "status": "DRAFT",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2022-11-20T00:30:14.215Z"
+            },
+            {
+              "status": "DRAFT",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2022-11-20T00:39:45.956Z"
+            },
+            {
+              "status": "WAITING",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2022-11-20T00:47:04.201Z"
+            },
+            {
+              "status": "SCHEDULING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-01T08:29:58.946Z"
+            },
+            {
+              "status": "SCHEDULING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-01T08:30:05.302Z"
+            },
+            {
+              "status": "STARTING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-01T08:33:03.486Z"
+            },
+            {
+              "status": "STARTED",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-01T08:33:15.239Z"
+            },
+            {
+              "status": "ENDED",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-01T11:07:46.552Z"
+            }
+          ],
+          "instanceInfo": [
+            {
+              "host": "3.27.12.6",
+              "ports": {
+                "lobby": { "port": "9232", "protocol": "tcp" },
+                "gameUdp": { "port": "9231", "protocol": "udp" }
+              },
+              "instanceId": "i-0303b08795d1aab13",
+              "serverStartTime": "2022-12-01T08:30:00.000Z"
+            }
+          ],
+          "data": {},
+          "statusInfo": "DEFAULT_FLOW",
+          "manualSession": false
+        },
+        "joinConditions": null,
+        "missingLeaguePermissions": []
+      },
+      "results": {
+        "sessionId": "O5xETgmc32IJvqt13V51z",
+        "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+        "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+        "tournamentType": "CHAMPIONSHIP",
+        "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+        "sessionName": "Misano",
+        "date": "2022-12-01T08:30:00.000Z",
+        "game": "acc",
+        "gameVersion": "1.13.2",
+        "trackId": "misano",
+        "trackName": "Misano",
+        "driverSwap": false,
+        "averageFieldStrength": null,
+        "rankingStatus": "UNRANKED",
+        "v": 1,
+        "results": [
+          {
+            "type": "PRACTICE",
+            "results": [
+              {
+                "carId": "1003",
+                "bestLap": 7,
+                "driverId": "lt2uoPmTtTe4wYjP28q8A",
+                "lapCount": 16,
+                "position": 1,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 7,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 2546421,
+                "carModelId": "1",
+                "bestLapTime": 98280,
+                "teamDrivers": null,
+                "bestCleanLap": 7,
+                "cleanLapCount": 9,
+                "averageLapTime": 139647,
+                "totalCleanTime": 890884,
+                "bestCleanLapTime": 98280,
+                "averageCleanLapTime": 98987,
+                "participant": {
+                  "id": "lt2uoPmTtTe4wYjP28q8A",
+                  "name": "Tristen Digby",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c2a42f49aae757ccc22d7559b5b2e8423af46231_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1001",
+                "bestLap": 8,
+                "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+                "lapCount": 17,
+                "position": 2,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 13,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 7
+                },
+                "totalTime": 2685444,
+                "carModelId": "2",
+                "bestLapTime": 100552,
+                "teamDrivers": null,
+                "bestCleanLap": 8,
+                "cleanLapCount": 4,
+                "averageLapTime": 157758,
+                "totalCleanTime": 405722,
+                "bestCleanLapTime": 100552,
+                "averageCleanLapTime": 101431,
+                "participant": {
+                  "id": "VUmvrxL3SvyOu5BlsDvQ5",
+                  "name": "Mark Felton ",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3c64713dc4917e05cd983db5da9e9baa4acdea2f_medium.jpg",
+                  "badgeId": "DRIVE",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1002",
+                "bestLap": 12,
+                "driverId": "ods18Q19750_oyhja165S",
+                "lapCount": 17,
+                "position": 3,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 12,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 2
+                },
+                "totalTime": 2982259,
+                "carModelId": "3",
+                "bestLapTime": 101875,
+                "teamDrivers": null,
+                "bestCleanLap": 7,
+                "cleanLapCount": 5,
+                "averageLapTime": 169258,
+                "totalCleanTime": 517404,
+                "bestCleanLapTime": 102110,
+                "averageCleanLapTime": 103481,
+                "participant": {
+                  "id": "ods18Q19750_oyhja165S",
+                  "name": "Matthew Jayasuria",
+                  "country": "SG",
+                  "avatarUrl": "https://avatars.steamstatic.com/5e0ddabeec41e0934f64911277c527a1fc847fbe_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "K_Fk86dOXX2waJu_S5-ke",
+                "lapCount": 0,
+                "position": 4,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "K_Fk86dOXX2waJu_S5-ke",
+                  "name": "pakorn panasoponkul",
+                  "country": "TH",
+                  "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "_75LXPmsTaRJitddRnVPv",
+                "lapCount": 0,
+                "position": 5,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "12",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "_75LXPmsTaRJitddRnVPv",
+                  "name": "Kevan Torrance",
+                  "country": "NZ",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "Wx4qSn_PuB8r5q3HLi8bW",
+                "lapCount": 0,
+                "position": 6,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "2",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "Wx4qSn_PuB8r5q3HLi8bW",
+                  "name": "Will Hammond",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "type": "DRIVER"
+                }
+              }
+            ],
+            "wetTrack": false,
+            "segmentIndex": 0,
+            "bestStats": {
+              "bestCleanLapTimeMs": 98280,
+              "bestUncleanLapTimeMs": 98542,
+              "consistencyPercentage": 99.29,
+              "averageLapMs": 139647,
+              "optimalLapTimeMs": 97892,
+              "bestSectorTimesMs": [24585, 38825, 34482]
+            }
+          },
+          {
+            "type": "QUALIFY",
+            "results": [
+              {
+                "carId": "1003",
+                "bestLap": 8,
+                "driverId": "lt2uoPmTtTe4wYjP28q8A",
+                "lapCount": 9,
+                "position": 1,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 7,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 6
+                },
+                "qualified": true,
+                "totalTime": 1296024,
+                "carModelId": "1",
+                "bestLapTime": 96655,
+                "teamDrivers": null,
+                "bestCleanLap": 8,
+                "cleanLapCount": 2,
+                "averageLapTime": 197488,
+                "totalCleanTime": 194670,
+                "bestCleanLapTime": 96655,
+                "averageCleanLapTime": 97335,
+                "participant": {
+                  "id": "lt2uoPmTtTe4wYjP28q8A",
+                  "name": "Tristen Digby",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c2a42f49aae757ccc22d7559b5b2e8423af46231_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1001",
+                "bestLap": 3,
+                "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+                "lapCount": 6,
+                "position": 2,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 3,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 677596,
+                "carModelId": "2",
+                "bestLapTime": 100117,
+                "teamDrivers": null,
+                "bestCleanLap": 3,
+                "cleanLapCount": 3,
+                "averageLapTime": 165871,
+                "totalCleanTime": 304349,
+                "bestCleanLapTime": 100117,
+                "averageCleanLapTime": 101450,
+                "participant": {
+                  "id": "VUmvrxL3SvyOu5BlsDvQ5",
+                  "name": "Mark Felton ",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3c64713dc4917e05cd983db5da9e9baa4acdea2f_medium.jpg",
+                  "badgeId": "DRIVE",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1002",
+                "bestLap": 3,
+                "driverId": "ods18Q19750_oyhja165S",
+                "lapCount": 5,
+                "position": 3,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 5,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 588419,
+                "carModelId": "3",
+                "bestLapTime": 101367,
+                "teamDrivers": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": 130146,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "ods18Q19750_oyhja165S",
+                  "name": "Matthew Jayasuria",
+                  "country": "SG",
+                  "avatarUrl": "https://avatars.steamstatic.com/5e0ddabeec41e0934f64911277c527a1fc847fbe_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "K_Fk86dOXX2waJu_S5-ke",
+                "lapCount": 0,
+                "position": 4,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "K_Fk86dOXX2waJu_S5-ke",
+                  "name": "pakorn panasoponkul",
+                  "country": "TH",
+                  "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "_75LXPmsTaRJitddRnVPv",
+                "lapCount": 0,
+                "position": 5,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "12",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "_75LXPmsTaRJitddRnVPv",
+                  "name": "Kevan Torrance",
+                  "country": "NZ",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "Wx4qSn_PuB8r5q3HLi8bW",
+                "lapCount": 0,
+                "position": 6,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "2",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "Wx4qSn_PuB8r5q3HLi8bW",
+                  "name": "Will Hammond",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "type": "DRIVER"
+                }
+              }
+            ],
+            "wetTrack": false,
+            "segmentIndex": 1,
+            "bestStats": {
+              "bestCleanLapTimeMs": 96655,
+              "bestUncleanLapTimeMs": 96985,
+              "consistencyPercentage": 99.3,
+              "averageLapMs": 130146,
+              "optimalLapTimeMs": 96654,
+              "bestSectorTimesMs": [24282, 38227, 34145]
+            }
+          }
+        ],
+        "manualSession": false
+      },
+      "points": {
+        "sessionId": "O5xETgmc32IJvqt13V51z",
+        "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+        "racePoints": []
+      },
+      "pointsAdjustments": [],
+      "penalties": []
+    },
+    {
+      "_type": "SgpEventApiData",
+      "session": {
+        "session": {
+          "id": "juz7wHOaAp08rbfshVkmm",
+          "startsAt": "2022-12-08T01:00:00.000Z",
+          "game": "acc",
+          "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+          "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+          "duration": 142,
+          "config": {
+            "parts": [
+              {
+                "hourOfDay": 18,
+                "sessionType": "P",
+                "dayOfWeekend": 1,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 50
+              },
+              {
+                "hourOfDay": 19,
+                "sessionType": "Q",
+                "dayOfWeekend": 2,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 20
+              },
+              {
+                "hourOfDay": 20,
+                "sessionType": "R",
+                "dayOfWeekend": 3,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 50
+              }
+            ],
+            "rules": {
+              "eventRules": {
+                "tyreSetCount": 50,
+                "superpoleMaxCar": -1,
+                "pitWindowLengthSec": 0,
+                "qualifyStandingType": 1,
+                "isRefuellingTimeFixed": false,
+                "mandatoryPitstopCount": 1,
+                "isRefuellingAllowedInRace": true,
+                "isMandatoryPitstopRefuellingRequired": true,
+                "isMandatoryPitstopTyreChangeRequired": true
+              },
+              "eventConfig": {
+                "metaData": "",
+                "postRaceSeconds": 180,
+                "postQualySeconds": 180,
+                "sessionOverTimeSeconds": 120,
+                "preRaceWaitingTimeSeconds": 180
+              }
+            },
+            "isRanked": false,
+            "location": "AU-Sydney",
+            "settings": {
+              "allowAutoDQ": 0,
+              "formationLapType": 3,
+              "shortFormationLap": 0
+            },
+            "passwords": { "admin": null, "server": null, "spectator": null },
+            "difficulty": {
+              "assists": {
+                "disableAutoGear": 1,
+                "disableAutoWiper": 0,
+                "disableAutosteer": 1,
+                "disableIdealLine": 1,
+                "disableAutoClutch": 0,
+                "disableAutoLights": 0,
+                "disableAutoPitLimiter": 0,
+                "disableAutoEngineStart": 0,
+                "stabilityControlLevelMax": 25
+              }
+            },
+            "maxEntries": 50,
+            "closedEntry": false,
+            "driverCategory": 3,
+            "tournamentType": "CHAMPIONSHIP",
+            "trackCondition": {
+              "weather": {
+                "rain": 0,
+                "cloudLevel": 0.3,
+                "ambientTemp": 22,
+                "weatherRandomness": 3,
+                "simracerWeatherConditions": null,
+                "isFixedConditionQualification": null
+              }
+            },
+            "hasGridPositions": false,
+            "practicePassword": null,
+            "practiceServerName": null,
+            "enableServerProtection": false,
+            "entryPassword": null
+          },
+          "status": "ENDED",
+          "statusTime": "2022-12-08T03:36:30.528Z",
+          "sessionName": "Nurburgring dusk to night",
+          "gameVersion": "1.13.2",
+          "trackId": "nurburgring",
+          "trackName": "Nurburgring",
+          "cars": [
+            { "id": "12", "name": "AMR Vantage V12 GT3" },
+            { "id": "3", "name": "Audi R8 LMS" },
+            { "id": "7", "name": "BMW M6 GT3" },
+            { "id": "2", "name": "Ferrari 488 GT3" },
+            { "id": "5", "name": "Mclaren 650s GT3" },
+            { "id": "1", "name": "Mercedes AMG GT3" }
+          ],
+          "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+          "v": 8,
+          "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+          "tournamentName": "Indo-Pacific Endurance Simulation Challenge Rookies season 2 #48",
+          "serverName": "| simracing.gp | Indo-Pacific Endurance Simulation Challenge | Nurburgring dusk to night #21CNT",
+          "aliveTime": null,
+          "carClasses": null,
+          "entryListId": "8uPv3wO1_cpTnus0wLtxw",
+          "driverSwap": false,
+          "serverStartTime": "2022-12-08T01:00:00.000Z",
+          "statusHistory": [
+            {
+              "status": "DRAFT",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2022-11-20T00:34:36.229Z"
+            },
+            {
+              "status": "DRAFT",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2022-11-20T00:42:04.507Z"
+            },
+            {
+              "status": "WAITING",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2022-11-20T00:47:04.242Z"
+            },
+            {
+              "status": "SCHEDULING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-08T01:00:07.412Z"
+            },
+            {
+              "status": "SCHEDULING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-08T01:00:11.058Z"
+            },
+            {
+              "status": "STARTING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-08T01:03:48.346Z"
+            },
+            {
+              "status": "STARTED",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-08T01:04:00.275Z"
+            },
+            {
+              "status": "ENDED",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-08T03:36:31.488Z"
+            }
+          ],
+          "instanceInfo": [
+            {
+              "host": "52.62.243.156",
+              "ports": {
+                "lobby": { "port": "9232", "protocol": "tcp" },
+                "gameUdp": { "port": "9231", "protocol": "udp" }
+              },
+              "instanceId": "i-0569a7d34d2138bc3",
+              "serverStartTime": "2022-12-08T01:00:00.000Z"
+            }
+          ],
+          "data": {},
+          "statusInfo": "DEFAULT_FLOW",
+          "manualSession": false
+        },
+        "joinConditions": null,
+        "missingLeaguePermissions": []
+      },
+      "results": {
+        "sessionId": "juz7wHOaAp08rbfshVkmm",
+        "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+        "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+        "tournamentType": "CHAMPIONSHIP",
+        "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+        "sessionName": "Nurburgring dusk to night",
+        "date": "2022-12-08T01:00:00.000Z",
+        "game": "acc",
+        "gameVersion": "1.13.2",
+        "trackId": "nurburgring",
+        "trackName": "Nurburgring",
+        "driverSwap": false,
+        "averageFieldStrength": null,
+        "rankingStatus": "UNRANKED",
+        "v": 1,
+        "results": [
+          {
+            "type": "PRACTICE",
+            "results": [
+              {
+                "carId": "1001",
+                "bestLap": 1,
+                "driverId": "ods18Q19750_oyhja165S",
+                "lapCount": 2,
+                "position": 1,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 2,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 1631497,
+                "carModelId": "3",
+                "bestLapTime": 128157,
+                "teamDrivers": null,
+                "bestCleanLap": 1,
+                "cleanLapCount": 1,
+                "averageLapTime": 807843,
+                "totalCleanTime": 128157,
+                "bestCleanLapTime": 128157,
+                "averageCleanLapTime": 128157,
+                "participant": {
+                  "id": "ods18Q19750_oyhja165S",
+                  "name": "Matthew Jayasuria",
+                  "country": "SG",
+                  "avatarUrl": "https://avatars.steamstatic.com/5e0ddabeec41e0934f64911277c527a1fc847fbe_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+                "lapCount": 0,
+                "position": 2,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "2",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "VUmvrxL3SvyOu5BlsDvQ5",
+                  "name": "Mark Felton ",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3c64713dc4917e05cd983db5da9e9baa4acdea2f_medium.jpg",
+                  "badgeId": "DRIVE",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "lt2uoPmTtTe4wYjP28q8A",
+                "lapCount": 0,
+                "position": 3,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "1",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "lt2uoPmTtTe4wYjP28q8A",
+                  "name": "Tristen Digby",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c2a42f49aae757ccc22d7559b5b2e8423af46231_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "K_Fk86dOXX2waJu_S5-ke",
+                "lapCount": 0,
+                "position": 4,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "K_Fk86dOXX2waJu_S5-ke",
+                  "name": "pakorn panasoponkul",
+                  "country": "TH",
+                  "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "_75LXPmsTaRJitddRnVPv",
+                "lapCount": 0,
+                "position": 5,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "12",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "_75LXPmsTaRJitddRnVPv",
+                  "name": "Kevan Torrance",
+                  "country": "NZ",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "type": "DRIVER"
+                }
+              }
+            ],
+            "wetTrack": false,
+            "segmentIndex": 0,
+            "bestStats": {
+              "bestCleanLapTimeMs": 128157,
+              "bestUncleanLapTimeMs": 1487528,
+              "consistencyPercentage": -1,
+              "averageLapMs": 807843,
+              "optimalLapTimeMs": 128157,
+              "bestSectorTimesMs": [61340, 45892, 20925]
+            }
+          },
+          {
+            "type": "QUALIFY",
+            "results": [
+              {
+                "carId": "1001",
+                "bestLap": 1,
+                "driverId": "ods18Q19750_oyhja165S",
+                "lapCount": 2,
+                "position": 1,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 2,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 394417,
+                "carModelId": "3",
+                "bestLapTime": 125357,
+                "teamDrivers": null,
+                "bestCleanLap": 1,
+                "cleanLapCount": 1,
+                "averageLapTime": 882967,
+                "totalCleanTime": 125357,
+                "bestCleanLapTime": 125357,
+                "averageCleanLapTime": 125357,
+                "participant": {
+                  "id": "ods18Q19750_oyhja165S",
+                  "name": "Matthew Jayasuria",
+                  "country": "SG",
+                  "avatarUrl": "https://avatars.steamstatic.com/5e0ddabeec41e0934f64911277c527a1fc847fbe_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+                "lapCount": 0,
+                "position": 2,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "2",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "VUmvrxL3SvyOu5BlsDvQ5",
+                  "name": "Mark Felton ",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3c64713dc4917e05cd983db5da9e9baa4acdea2f_medium.jpg",
+                  "badgeId": "DRIVE",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "lt2uoPmTtTe4wYjP28q8A",
+                "lapCount": 0,
+                "position": 3,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "1",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "lt2uoPmTtTe4wYjP28q8A",
+                  "name": "Tristen Digby",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c2a42f49aae757ccc22d7559b5b2e8423af46231_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "K_Fk86dOXX2waJu_S5-ke",
+                "lapCount": 0,
+                "position": 4,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "K_Fk86dOXX2waJu_S5-ke",
+                  "name": "pakorn panasoponkul",
+                  "country": "TH",
+                  "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "_75LXPmsTaRJitddRnVPv",
+                "lapCount": 0,
+                "position": 5,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "12",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "_75LXPmsTaRJitddRnVPv",
+                  "name": "Kevan Torrance",
+                  "country": "NZ",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "type": "DRIVER"
+                }
+              }
+            ],
+            "wetTrack": false,
+            "segmentIndex": 1,
+            "bestStats": {
+              "bestCleanLapTimeMs": 125357,
+              "bestUncleanLapTimeMs": 1640577,
+              "consistencyPercentage": -1,
+              "averageLapMs": 882967,
+              "optimalLapTimeMs": 125357,
+              "bestSectorTimesMs": [60870, 46007, 18480]
+            }
+          },
+          {
+            "type": "PRACTICE",
+            "results": [
+              {
+                "carId": "1001",
+                "bestLap": 1,
+                "driverId": "ods18Q19750_oyhja165S",
+                "lapCount": 2,
+                "position": 1,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 1,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 3473016,
+                "carModelId": "3",
+                "bestLapTime": 125357,
+                "teamDrivers": null,
+                "bestCleanLap": 1,
+                "cleanLapCount": 1,
+                "averageLapTime": 882967,
+                "totalCleanTime": 125357,
+                "bestCleanLapTime": 125357,
+                "averageCleanLapTime": 125357,
+                "participant": {
+                  "id": "ods18Q19750_oyhja165S",
+                  "name": "Matthew Jayasuria",
+                  "country": "SG",
+                  "avatarUrl": "https://avatars.steamstatic.com/5e0ddabeec41e0934f64911277c527a1fc847fbe_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+                "lapCount": 0,
+                "position": 2,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "2",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "VUmvrxL3SvyOu5BlsDvQ5",
+                  "name": "Mark Felton ",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3c64713dc4917e05cd983db5da9e9baa4acdea2f_medium.jpg",
+                  "badgeId": "DRIVE",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "lt2uoPmTtTe4wYjP28q8A",
+                "lapCount": 0,
+                "position": 3,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "1",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "lt2uoPmTtTe4wYjP28q8A",
+                  "name": "Tristen Digby",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c2a42f49aae757ccc22d7559b5b2e8423af46231_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "K_Fk86dOXX2waJu_S5-ke",
+                "lapCount": 0,
+                "position": 4,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "K_Fk86dOXX2waJu_S5-ke",
+                  "name": "pakorn panasoponkul",
+                  "country": "TH",
+                  "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "_75LXPmsTaRJitddRnVPv",
+                "lapCount": 0,
+                "position": 5,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "12",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "_75LXPmsTaRJitddRnVPv",
+                  "name": "Kevan Torrance",
+                  "country": "NZ",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "type": "DRIVER"
+                }
+              }
+            ],
+            "wetTrack": false,
+            "segmentIndex": 2,
+            "bestStats": {
+              "bestCleanLapTimeMs": 125357,
+              "bestUncleanLapTimeMs": 1640577,
+              "consistencyPercentage": -1,
+              "averageLapMs": 882967,
+              "optimalLapTimeMs": 125357,
+              "bestSectorTimesMs": [60870, 46007, 18480]
+            }
+          }
+        ],
+        "manualSession": false
+      },
+      "points": {
+        "sessionId": "juz7wHOaAp08rbfshVkmm",
+        "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+        "racePoints": []
+      },
+      "pointsAdjustments": [],
+      "penalties": []
+    },
+    {
+      "_type": "SgpEventApiData",
+      "session": {
+        "session": {
+          "id": "dlxQkJeoo6J0Q_9XEtjhk",
+          "startsAt": "2022-12-08T09:04:00.000Z",
+          "game": "acc",
+          "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+          "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+          "duration": 122,
+          "config": {
+            "parts": [
+              {
+                "hourOfDay": 17,
+                "sessionType": "P",
+                "dayOfWeekend": 1,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 30
+              },
+              {
+                "hourOfDay": 18,
+                "sessionType": "Q",
+                "dayOfWeekend": 2,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 25
+              },
+              {
+                "hourOfDay": 20,
+                "sessionType": "R",
+                "dayOfWeekend": 3,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 50
+              }
+            ],
+            "rules": {
+              "eventRules": {
+                "tyreSetCount": 50,
+                "superpoleMaxCar": -1,
+                "pitWindowLengthSec": 1500,
+                "qualifyStandingType": 1,
+                "isRefuellingTimeFixed": false,
+                "mandatoryPitstopCount": 1,
+                "isRefuellingAllowedInRace": true,
+                "isMandatoryPitstopRefuellingRequired": true,
+                "isMandatoryPitstopTyreChangeRequired": true
+              },
+              "eventConfig": {
+                "metaData": "",
+                "postRaceSeconds": 140,
+                "postQualySeconds": 0,
+                "sessionOverTimeSeconds": 120,
+                "preRaceWaitingTimeSeconds": 120
+              }
+            },
+            "isRanked": true,
+            "location": "AU-Sydney",
+            "settings": {
+              "allowAutoDQ": 0,
+              "formationLapType": 3,
+              "shortFormationLap": 0
+            },
+            "passwords": { "admin": null, "server": null, "spectator": null },
+            "difficulty": {
+              "assists": {
+                "disableAutoGear": 1,
+                "disableAutoWiper": 0,
+                "disableAutosteer": 1,
+                "disableIdealLine": 1,
+                "disableAutoClutch": 0,
+                "disableAutoLights": 0,
+                "disableAutoPitLimiter": 0,
+                "disableAutoEngineStart": 0,
+                "stabilityControlLevelMax": 25
+              }
+            },
+            "maxEntries": 50,
+            "closedEntry": false,
+            "driverCategory": 3,
+            "tournamentType": "CHAMPIONSHIP",
+            "trackCondition": {
+              "weather": {
+                "rain": 0,
+                "cloudLevel": 0.25,
+                "ambientTemp": 18,
+                "weatherRandomness": 2,
+                "simracerWeatherConditions": null,
+                "isFixedConditionQualification": null
+              }
+            },
+            "hasGridPositions": false,
+            "practicePassword": null,
+            "practiceServerName": null,
+            "enableServerProtection": false,
+            "entryPassword": null
+          },
+          "status": "ENDED",
+          "statusTime": "2022-12-08T11:18:57.952Z",
+          "sessionName": "Barcelona",
+          "gameVersion": "1.13.2",
+          "trackId": "barcelona",
+          "trackName": "Barcelona",
+          "cars": [
+            { "id": "12", "name": "AMR Vantage V12 GT3" },
+            { "id": "3", "name": "Audi R8 LMS" },
+            { "id": "7", "name": "BMW M6 GT3" },
+            { "id": "2", "name": "Ferrari 488 GT3" },
+            { "id": "5", "name": "Mclaren 650s GT3" },
+            { "id": "1", "name": "Mercedes AMG GT3" }
+          ],
+          "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+          "v": 6,
+          "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+          "tournamentName": "Indo-Pacific Endurance Simulation Challenge Rookies season 2 #48",
+          "serverName": "| simracing.gp | Indo-Pacific Endurance Simulation Challenge | Barcelona #QFLGH",
+          "aliveTime": null,
+          "carClasses": null,
+          "entryListId": "8uPv3wO1_cpTnus0wLtxw",
+          "driverSwap": false,
+          "serverStartTime": "2022-12-08T09:04:00.000Z",
+          "statusHistory": [
+            {
+              "status": "WAITING",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2022-12-08T08:35:48.810Z"
+            },
+            {
+              "status": "SCHEDULING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-08T09:03:56.740Z"
+            },
+            {
+              "status": "SCHEDULING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-08T09:04:02.252Z"
+            },
+            {
+              "status": "STARTING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-08T09:06:18.835Z"
+            },
+            {
+              "status": "STARTED",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-08T09:06:29.998Z"
+            },
+            {
+              "status": "ENDED",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-08T11:19:01.078Z"
+            }
+          ],
+          "instanceInfo": [
+            {
+              "host": "13.211.108.80",
+              "ports": {
+                "lobby": { "port": "9232", "protocol": "tcp" },
+                "gameUdp": { "port": "9231", "protocol": "udp" }
+              },
+              "instanceId": "i-0865547d85b9ae822",
+              "serverStartTime": "2022-12-08T09:04:00.000Z"
+            }
+          ],
+          "data": {},
+          "statusInfo": "DEFAULT_FLOW",
+          "manualSession": false
+        },
+        "joinConditions": null,
+        "missingLeaguePermissions": []
+      },
+      "results": {
+        "sessionId": "dlxQkJeoo6J0Q_9XEtjhk",
+        "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+        "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+        "tournamentType": "CHAMPIONSHIP",
+        "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+        "sessionName": "Barcelona",
+        "date": "2022-12-08T09:04:00.000Z",
+        "game": "acc",
+        "gameVersion": "1.13.2",
+        "trackId": "barcelona",
+        "trackName": "Barcelona",
+        "driverSwap": false,
+        "averageFieldStrength": null,
+        "rankingStatus": "UNRANKED",
+        "v": 1,
+        "results": [
+          {
+            "type": "PRACTICE",
+            "results": [
+              {
+                "carId": "1002",
+                "bestLap": 8,
+                "driverId": "lt2uoPmTtTe4wYjP28q8A",
+                "lapCount": 9,
+                "position": 1,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 10,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 1448852,
+                "carModelId": "1",
+                "bestLapTime": 107977,
+                "teamDrivers": null,
+                "bestCleanLap": 8,
+                "cleanLapCount": 4,
+                "averageLapTime": 143143,
+                "totalCleanTime": 437809,
+                "bestCleanLapTime": 107977,
+                "averageCleanLapTime": 109452,
+                "participant": {
+                  "id": "lt2uoPmTtTe4wYjP28q8A",
+                  "name": "Tristen Digby",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c2a42f49aae757ccc22d7559b5b2e8423af46231_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1001",
+                "bestLap": 5,
+                "driverId": "ods18Q19750_oyhja165S",
+                "lapCount": 8,
+                "position": 2,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 16,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 3
+                },
+                "totalTime": 1776598,
+                "carModelId": "3",
+                "bestLapTime": 114490,
+                "teamDrivers": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": 192471,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "ods18Q19750_oyhja165S",
+                  "name": "Matthew Jayasuria",
+                  "country": "SG",
+                  "avatarUrl": "https://avatars.steamstatic.com/5e0ddabeec41e0934f64911277c527a1fc847fbe_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "K_Fk86dOXX2waJu_S5-ke",
+                "lapCount": 0,
+                "position": 3,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "K_Fk86dOXX2waJu_S5-ke",
+                  "name": "pakorn panasoponkul",
+                  "country": "TH",
+                  "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "_75LXPmsTaRJitddRnVPv",
+                "lapCount": 0,
+                "position": 4,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "12",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "_75LXPmsTaRJitddRnVPv",
+                  "name": "Kevan Torrance",
+                  "country": "NZ",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "type": "DRIVER"
+                }
+              }
+            ],
+            "wetTrack": false,
+            "segmentIndex": 0,
+            "bestStats": {
+              "bestCleanLapTimeMs": 107977,
+              "bestUncleanLapTimeMs": 109185,
+              "consistencyPercentage": 98.65,
+              "averageLapMs": 143143,
+              "optimalLapTimeMs": 107959,
+              "bestSectorTimesMs": [30327, 41535, 36097]
+            }
+          },
+          {
+            "type": "QUALIFY",
+            "results": [
+              {
+                "carId": "1002",
+                "bestLap": 5,
+                "driverId": "lt2uoPmTtTe4wYjP28q8A",
+                "lapCount": 9,
+                "position": 1,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 11,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 1090029,
+                "carModelId": "1",
+                "bestLapTime": 107820,
+                "teamDrivers": null,
+                "bestCleanLap": 5,
+                "cleanLapCount": 3,
+                "averageLapTime": 155849,
+                "totalCleanTime": 325494,
+                "bestCleanLapTime": 107820,
+                "averageCleanLapTime": 108498,
+                "participant": {
+                  "id": "lt2uoPmTtTe4wYjP28q8A",
+                  "name": "Tristen Digby",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c2a42f49aae757ccc22d7559b5b2e8423af46231_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1003",
+                "bestLap": 6,
+                "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+                "lapCount": 8,
+                "position": 2,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 10,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 1485847,
+                "carModelId": "2",
+                "bestLapTime": 113515,
+                "teamDrivers": null,
+                "bestCleanLap": 7,
+                "cleanLapCount": 3,
+                "averageLapTime": 169559,
+                "totalCleanTime": 351599,
+                "bestCleanLapTime": 115957,
+                "averageCleanLapTime": 117200,
+                "participant": {
+                  "id": "VUmvrxL3SvyOu5BlsDvQ5",
+                  "name": "Mark Felton ",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3c64713dc4917e05cd983db5da9e9baa4acdea2f_medium.jpg",
+                  "badgeId": "DRIVE",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1001",
+                "bestLap": 1,
+                "driverId": "ods18Q19750_oyhja165S",
+                "lapCount": 2,
+                "position": 3,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 4,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 3
+                },
+                "qualified": true,
+                "totalTime": 699221,
+                "carModelId": "3",
+                "bestLapTime": 123015,
+                "teamDrivers": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": 336186,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "ods18Q19750_oyhja165S",
+                  "name": "Matthew Jayasuria",
+                  "country": "SG",
+                  "avatarUrl": "https://avatars.steamstatic.com/5e0ddabeec41e0934f64911277c527a1fc847fbe_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "K_Fk86dOXX2waJu_S5-ke",
+                "lapCount": 0,
+                "position": 4,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "K_Fk86dOXX2waJu_S5-ke",
+                  "name": "pakorn panasoponkul",
+                  "country": "TH",
+                  "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "_75LXPmsTaRJitddRnVPv",
+                "lapCount": 0,
+                "position": 5,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "12",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "_75LXPmsTaRJitddRnVPv",
+                  "name": "Kevan Torrance",
+                  "country": "NZ",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "type": "DRIVER"
+                }
+              }
+            ],
+            "wetTrack": false,
+            "segmentIndex": 1,
+            "bestStats": {
+              "bestCleanLapTimeMs": 107820,
+              "bestUncleanLapTimeMs": 108327,
+              "consistencyPercentage": 99.38,
+              "averageLapMs": 155849,
+              "optimalLapTimeMs": 107762,
+              "bestSectorTimesMs": [30415, 41285, 36062]
+            }
+          }
+        ],
+        "manualSession": false
+      },
+      "points": {
+        "sessionId": "dlxQkJeoo6J0Q_9XEtjhk",
+        "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+        "racePoints": []
+      },
+      "pointsAdjustments": [],
+      "penalties": []
+    },
+    {
+      "_type": "SgpEventApiData",
+      "session": {
+        "session": {
+          "id": "z4OuN1-AYwdmBxexvpXbG",
+          "startsAt": "2022-12-15T08:30:00.000Z",
+          "game": "acc",
+          "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+          "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+          "duration": 147,
+          "config": {
+            "parts": [
+              {
+                "hourOfDay": 6,
+                "sessionType": "P",
+                "dayOfWeekend": 1,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 50
+              },
+              {
+                "hourOfDay": 7,
+                "sessionType": "Q",
+                "dayOfWeekend": 2,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 20
+              },
+              {
+                "hourOfDay": 8,
+                "sessionType": "R",
+                "dayOfWeekend": 3,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 50
+              }
+            ],
+            "rules": {
+              "eventRules": {
+                "tyreSetCount": 50,
+                "superpoleMaxCar": -1,
+                "pitWindowLengthSec": -1,
+                "qualifyStandingType": 1,
+                "isRefuellingTimeFixed": false,
+                "mandatoryPitstopCount": 0,
+                "isRefuellingAllowedInRace": true,
+                "isMandatoryPitstopRefuellingRequired": false,
+                "isMandatoryPitstopTyreChangeRequired": false
+              },
+              "eventConfig": {
+                "metaData": "",
+                "postRaceSeconds": 200,
+                "postQualySeconds": 200,
+                "sessionOverTimeSeconds": 200,
+                "preRaceWaitingTimeSeconds": 180
+              }
+            },
+            "isRanked": true,
+            "location": "AU-Sydney",
+            "settings": {
+              "allowAutoDQ": 0,
+              "formationLapType": 3,
+              "shortFormationLap": 0
+            },
+            "passwords": { "admin": null, "server": null, "spectator": null },
+            "difficulty": {
+              "assists": {
+                "disableAutoGear": 1,
+                "disableAutoWiper": 0,
+                "disableAutosteer": 1,
+                "disableIdealLine": 1,
+                "disableAutoClutch": 0,
+                "disableAutoLights": 0,
+                "disableAutoPitLimiter": 0,
+                "disableAutoEngineStart": 0,
+                "stabilityControlLevelMax": 25
+              }
+            },
+            "maxEntries": 50,
+            "closedEntry": false,
+            "driverCategory": 3,
+            "tournamentType": "CHAMPIONSHIP",
+            "trackCondition": {
+              "weather": {
+                "rain": 0,
+                "cloudLevel": 0.3,
+                "ambientTemp": 18,
+                "weatherRandomness": 3,
+                "simracerWeatherConditions": null,
+                "isFixedConditionQualification": null
+              }
+            },
+            "hasGridPositions": false,
+            "practicePassword": null,
+            "practiceServerName": null,
+            "enableServerProtection": false,
+            "entryPassword": null
+          },
+          "status": "ENDED",
+          "statusTime": "2022-12-15T11:11:24.239Z",
+          "sessionName": "Nurburgring sunrise race",
+          "gameVersion": "1.13.2",
+          "trackId": "nurburgring",
+          "trackName": "Nurburgring",
+          "cars": [
+            { "id": "12", "name": "AMR Vantage V12 GT3" },
+            { "id": "3", "name": "Audi R8 LMS" },
+            { "id": "7", "name": "BMW M6 GT3" },
+            { "id": "2", "name": "Ferrari 488 GT3" },
+            { "id": "5", "name": "Mclaren 650s GT3" },
+            { "id": "1", "name": "Mercedes AMG GT3" }
+          ],
+          "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+          "v": 11,
+          "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+          "tournamentName": "Indo-Pacific Endurance Simulation Challenge Rookies season 2 #48",
+          "serverName": "| simracing.gp | Indo-Pacific Endurance Simulation Challenge | Nurburgring sunrise race #KCGQW",
+          "aliveTime": null,
+          "carClasses": null,
+          "entryListId": "8uPv3wO1_cpTnus0wLtxw",
+          "driverSwap": false,
+          "serverStartTime": "2022-12-15T08:30:00.000Z",
+          "statusHistory": [
+            {
+              "status": "DRAFT",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2022-11-20T00:38:58.666Z"
+            },
+            {
+              "status": "DRAFT",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2022-11-20T00:40:51.560Z"
+            },
+            {
+              "status": "DRAFT",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2022-11-20T00:42:50.054Z"
+            },
+            {
+              "status": "WAITING",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2022-11-20T00:47:04.274Z"
+            },
+            {
+              "status": "WAITING",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2022-12-08T10:11:35.314Z"
+            },
+            {
+              "status": "WAITING",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2022-12-08T10:14:29.382Z"
+            },
+            {
+              "status": "SCHEDULING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-15T08:29:58.615Z"
+            },
+            {
+              "status": "SCHEDULING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-15T08:30:04.632Z"
+            },
+            {
+              "status": "STARTING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-15T08:33:40.202Z"
+            },
+            {
+              "status": "STARTED",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-15T08:33:52.084Z"
+            },
+            {
+              "status": "ENDED",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-15T11:11:27.159Z"
+            }
+          ],
+          "instanceInfo": [
+            {
+              "host": "54.206.35.165",
+              "ports": {
+                "lobby": { "port": "9232", "protocol": "tcp" },
+                "gameUdp": { "port": "9231", "protocol": "udp" }
+              },
+              "instanceId": "i-0d435dd406a32106b",
+              "serverStartTime": "2022-12-15T08:30:00.000Z"
+            }
+          ],
+          "data": {},
+          "statusInfo": "DEFAULT_FLOW",
+          "manualSession": false
+        },
+        "joinConditions": null,
+        "missingLeaguePermissions": []
+      },
+      "results": {
+        "sessionId": "z4OuN1-AYwdmBxexvpXbG",
+        "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+        "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+        "tournamentType": "CHAMPIONSHIP",
+        "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+        "sessionName": "Nurburgring sunrise race",
+        "date": "2022-12-15T08:30:00.000Z",
+        "game": "acc",
+        "gameVersion": "1.13.2",
+        "trackId": "nurburgring",
+        "trackName": "Nurburgring",
+        "driverSwap": false,
+        "averageFieldStrength": 0.317583,
+        "rankingStatus": "COMPLETED",
+        "v": 2,
+        "results": [
+          {
+            "type": "PRACTICE",
+            "results": [
+              {
+                "carId": "1001",
+                "bestLap": 9,
+                "driverId": "kKCTE2CumjvGo9d8jJTIP",
+                "lapCount": 16,
+                "position": 1,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 14,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 3
+                },
+                "totalTime": 2966430,
+                "carModelId": "7",
+                "bestLapTime": 118222,
+                "teamDrivers": null,
+                "bestCleanLap": 9,
+                "cleanLapCount": 8,
+                "averageLapTime": 181678,
+                "totalCleanTime": 956935,
+                "bestCleanLapTime": 118222,
+                "averageCleanLapTime": 119617,
+                "participant": {
+                  "id": "kKCTE2CumjvGo9d8jJTIP",
+                  "name": "Andrew Gallagher",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.akamai.steamstatic.com/d854992e5a2b0d5ccddfedefd422143146eb0b11_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1002",
+                "bestLap": 11,
+                "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+                "lapCount": 12,
+                "position": 2,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 17,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 12
+                },
+                "totalTime": 2496074,
+                "carModelId": "2",
+                "bestLapTime": 122727,
+                "teamDrivers": null,
+                "bestCleanLap": 11,
+                "cleanLapCount": 3,
+                "averageLapTime": 189663,
+                "totalCleanTime": 371724,
+                "bestCleanLapTime": 122727,
+                "averageCleanLapTime": 123908,
+                "participant": {
+                  "id": "VUmvrxL3SvyOu5BlsDvQ5",
+                  "name": "Mark Felton ",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3c64713dc4917e05cd983db5da9e9baa4acdea2f_medium.jpg",
+                  "badgeId": "DRIVE",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1003",
+                "bestLap": 1,
+                "driverId": "Z2NV-FfyIZaZ6XTlSKis_",
+                "lapCount": 2,
+                "position": 3,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 2,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 3090525,
+                "carModelId": "3",
+                "bestLapTime": 123987,
+                "teamDrivers": null,
+                "bestCleanLap": 1,
+                "cleanLapCount": 1,
+                "averageLapTime": 186468,
+                "totalCleanTime": 123987,
+                "bestCleanLapTime": 123987,
+                "averageCleanLapTime": 123987,
+                "participant": {
+                  "id": "Z2NV-FfyIZaZ6XTlSKis_",
+                  "name": "D Williams",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/28e57c246a97ccc4b9b3a7c7eb359c4ad2d3b7e4_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "lt2uoPmTtTe4wYjP28q8A",
+                "lapCount": 0,
+                "position": 4,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "1",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "lt2uoPmTtTe4wYjP28q8A",
+                  "name": "Tristen Digby",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c2a42f49aae757ccc22d7559b5b2e8423af46231_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "K_Fk86dOXX2waJu_S5-ke",
+                "lapCount": 0,
+                "position": 5,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "K_Fk86dOXX2waJu_S5-ke",
+                  "name": "pakorn panasoponkul",
+                  "country": "TH",
+                  "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "_75LXPmsTaRJitddRnVPv",
+                "lapCount": 0,
+                "position": 6,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "12",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "_75LXPmsTaRJitddRnVPv",
+                  "name": "Kevan Torrance",
+                  "country": "NZ",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "ods18Q19750_oyhja165S",
+                "lapCount": 0,
+                "position": 7,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "ods18Q19750_oyhja165S",
+                  "name": "Matthew Jayasuria",
+                  "country": "SG",
+                  "avatarUrl": "https://avatars.steamstatic.com/5e0ddabeec41e0934f64911277c527a1fc847fbe_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "SC4ZUoc1WqfhinTCPcGB1",
+                "lapCount": 0,
+                "position": 8,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "2",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "SC4ZUoc1WqfhinTCPcGB1",
+                  "name": "Melissa Trenter",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.akamai.steamstatic.com/23638f32516858f9a7629f65d09a4c9833589466_medium.jpg",
+                  "type": "DRIVER"
+                }
+              }
+            ],
+            "wetTrack": false,
+            "segmentIndex": 0,
+            "bestStats": {
+              "bestCleanLapTimeMs": 118222,
+              "bestUncleanLapTimeMs": 118800,
+              "consistencyPercentage": 99.05,
+              "averageLapMs": 181678,
+              "optimalLapTimeMs": 118140,
+              "bestSectorTimesMs": [56545, 43895, 17700]
+            }
+          },
+          {
+            "type": "QUALIFY",
+            "results": [
+              {
+                "carId": "1001",
+                "bestLap": 6,
+                "driverId": "kKCTE2CumjvGo9d8jJTIP",
+                "lapCount": 7,
+                "position": 1,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 5,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 1271209,
+                "carModelId": "7",
+                "bestLapTime": 118745,
+                "teamDrivers": null,
+                "bestCleanLap": 6,
+                "cleanLapCount": 4,
+                "averageLapTime": 142954,
+                "totalCleanTime": 486089,
+                "bestCleanLapTime": 118745,
+                "averageCleanLapTime": 121522,
+                "participant": {
+                  "id": "kKCTE2CumjvGo9d8jJTIP",
+                  "name": "Andrew Gallagher",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.akamai.steamstatic.com/d854992e5a2b0d5ccddfedefd422143146eb0b11_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1003",
+                "bestLap": 6,
+                "driverId": "Z2NV-FfyIZaZ6XTlSKis_",
+                "lapCount": 9,
+                "position": 2,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 12,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 4
+                },
+                "qualified": true,
+                "totalTime": 1172867,
+                "carModelId": "3",
+                "bestLapTime": 121282,
+                "teamDrivers": null,
+                "bestCleanLap": 6,
+                "cleanLapCount": 3,
+                "averageLapTime": 130657,
+                "totalCleanTime": 365479,
+                "bestCleanLapTime": 121282,
+                "averageCleanLapTime": 121826,
+                "participant": {
+                  "id": "Z2NV-FfyIZaZ6XTlSKis_",
+                  "name": "D Williams",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/28e57c246a97ccc4b9b3a7c7eb359c4ad2d3b7e4_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1002",
+                "bestLap": 2,
+                "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+                "lapCount": 8,
+                "position": 3,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 9,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 13
+                },
+                "qualified": true,
+                "totalTime": 1216501,
+                "carModelId": "2",
+                "bestLapTime": 122802,
+                "teamDrivers": null,
+                "bestCleanLap": 2,
+                "cleanLapCount": 3,
+                "averageLapTime": 239810,
+                "totalCleanTime": 369719,
+                "bestCleanLapTime": 122802,
+                "averageCleanLapTime": 123240,
+                "participant": {
+                  "id": "VUmvrxL3SvyOu5BlsDvQ5",
+                  "name": "Mark Felton ",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3c64713dc4917e05cd983db5da9e9baa4acdea2f_medium.jpg",
+                  "badgeId": "DRIVE",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "lt2uoPmTtTe4wYjP28q8A",
+                "lapCount": 0,
+                "position": 4,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "1",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "lt2uoPmTtTe4wYjP28q8A",
+                  "name": "Tristen Digby",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c2a42f49aae757ccc22d7559b5b2e8423af46231_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "K_Fk86dOXX2waJu_S5-ke",
+                "lapCount": 0,
+                "position": 5,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "K_Fk86dOXX2waJu_S5-ke",
+                  "name": "pakorn panasoponkul",
+                  "country": "TH",
+                  "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "_75LXPmsTaRJitddRnVPv",
+                "lapCount": 0,
+                "position": 6,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "12",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "_75LXPmsTaRJitddRnVPv",
+                  "name": "Kevan Torrance",
+                  "country": "NZ",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "ods18Q19750_oyhja165S",
+                "lapCount": 0,
+                "position": 7,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "ods18Q19750_oyhja165S",
+                  "name": "Matthew Jayasuria",
+                  "country": "SG",
+                  "avatarUrl": "https://avatars.steamstatic.com/5e0ddabeec41e0934f64911277c527a1fc847fbe_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "SC4ZUoc1WqfhinTCPcGB1",
+                "lapCount": 0,
+                "position": 8,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "2",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "SC4ZUoc1WqfhinTCPcGB1",
+                  "name": "Melissa Trenter",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.akamai.steamstatic.com/23638f32516858f9a7629f65d09a4c9833589466_medium.jpg",
+                  "type": "DRIVER"
+                }
+              }
+            ],
+            "wetTrack": false,
+            "segmentIndex": 1,
+            "bestStats": {
+              "bestCleanLapTimeMs": 118745,
+              "bestUncleanLapTimeMs": 121035,
+              "consistencyPercentage": 99.64,
+              "averageLapMs": 130657,
+              "optimalLapTimeMs": 118569,
+              "bestSectorTimesMs": [56600, 44007, 17962]
+            }
+          },
+          {
+            "type": "RACE",
+            "results": [
+              {
+                "carId": "1002",
+                "bestLap": 1,
+                "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+                "lapCount": 25,
+                "position": 1,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 24,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 6
+                },
+                "totalTime": 3100628,
+                "carModelId": "2",
+                "bestLapTime": 122292,
+                "teamDrivers": null,
+                "timeRetired": { "type": "TIME", "value": 3100628 },
+                "bestCleanLap": 1,
+                "cleanLapCount": 13,
+                "rankingChange": { "delta": 0.045109, "newRank": 0.241383 },
+                "averageLapTime": 150270,
+                "totalCleanTime": 1602897,
+                "bestCleanLapTime": 122292,
+                "averageCleanLapTime": 123300,
+                "participant": {
+                  "id": "VUmvrxL3SvyOu5BlsDvQ5",
+                  "name": "Mark Felton ",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3c64713dc4917e05cd983db5da9e9baa4acdea2f_medium.jpg",
+                  "badgeId": "DRIVE",
+                  "rankingChange": { "delta": 0.045109, "newRank": 0.241383 },
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1001",
+                "bestLap": 15,
+                "driverId": "kKCTE2CumjvGo9d8jJTIP",
+                "lapCount": 25,
+                "position": 2,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 16,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 3100919,
+                "carModelId": "7",
+                "bestLapTime": 117590,
+                "teamDrivers": null,
+                "timeRetired": { "type": "TIMEDIFF", "value": 291 },
+                "bestCleanLap": 15,
+                "cleanLapCount": 16,
+                "rankingChange": { "delta": 0.0110129, "newRank": 0.436592 },
+                "averageLapTime": 148094,
+                "totalCleanTime": 2538720,
+                "bestCleanLapTime": 117590,
+                "averageCleanLapTime": 158670,
+                "participant": {
+                  "id": "kKCTE2CumjvGo9d8jJTIP",
+                  "name": "Andrew Gallagher",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.akamai.steamstatic.com/d854992e5a2b0d5ccddfedefd422143146eb0b11_medium.jpg",
+                  "rankingChange": { "delta": 0.0110129, "newRank": 0.436592 },
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1003",
+                "bestLap": 3,
+                "driverId": "Z2NV-FfyIZaZ6XTlSKis_",
+                "lapCount": 25,
+                "position": 3,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 14,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 5
+                },
+                "totalTime": 3120272,
+                "carModelId": "3",
+                "bestLapTime": 120885,
+                "teamDrivers": null,
+                "timeRetired": { "type": "TIMEDIFF", "value": 19644 },
+                "bestCleanLap": 3,
+                "cleanLapCount": 18,
+                "rankingChange": { "delta": 0.0444683, "newRank": 0.375365 },
+                "averageLapTime": 152801,
+                "totalCleanTime": 2932740,
+                "bestCleanLapTime": 120885,
+                "averageCleanLapTime": 162930,
+                "participant": {
+                  "id": "Z2NV-FfyIZaZ6XTlSKis_",
+                  "name": "D Williams",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/28e57c246a97ccc4b9b3a7c7eb359c4ad2d3b7e4_medium.jpg",
+                  "rankingChange": { "delta": 0.0444683, "newRank": 0.375365 },
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "lt2uoPmTtTe4wYjP28q8A",
+                "lapCount": 0,
+                "position": 4,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "1",
+                "bestLapTime": null,
+                "timeRetired": { "type": "DNF", "value": 0 },
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "rankingChange": { "delta": -0.05, "newRank": 0.603823 },
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "lt2uoPmTtTe4wYjP28q8A",
+                  "name": "Tristen Digby",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c2a42f49aae757ccc22d7559b5b2e8423af46231_medium.jpg",
+                  "rankingChange": { "delta": -0.05, "newRank": 0.603823 },
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "K_Fk86dOXX2waJu_S5-ke",
+                "lapCount": 0,
+                "position": 5,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "timeRetired": { "type": "DNF", "value": 0 },
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "K_Fk86dOXX2waJu_S5-ke",
+                  "name": "pakorn panasoponkul",
+                  "country": "TH",
+                  "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "_75LXPmsTaRJitddRnVPv",
+                "lapCount": 0,
+                "position": 6,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "12",
+                "bestLapTime": null,
+                "timeRetired": { "type": "DNF", "value": 0 },
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "rankingChange": { "delta": -0.05, "newRank": 0.587659 },
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "_75LXPmsTaRJitddRnVPv",
+                  "name": "Kevan Torrance",
+                  "country": "NZ",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "rankingChange": { "delta": -0.05, "newRank": 0.587659 },
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "ods18Q19750_oyhja165S",
+                "lapCount": 0,
+                "position": 7,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "timeRetired": { "type": "DNF", "value": 0 },
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "rankingChange": { "delta": -0.05, "newRank": 0.351285 },
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "ods18Q19750_oyhja165S",
+                  "name": "Matthew Jayasuria",
+                  "country": "SG",
+                  "avatarUrl": "https://avatars.steamstatic.com/5e0ddabeec41e0934f64911277c527a1fc847fbe_medium.jpg",
+                  "rankingChange": { "delta": -0.05, "newRank": 0.351285 },
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "SC4ZUoc1WqfhinTCPcGB1",
+                "lapCount": 0,
+                "position": 8,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "2",
+                "bestLapTime": null,
+                "timeRetired": { "type": "DNF", "value": 0 },
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "SC4ZUoc1WqfhinTCPcGB1",
+                  "name": "Melissa Trenter",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.akamai.steamstatic.com/23638f32516858f9a7629f65d09a4c9833589466_medium.jpg",
+                  "type": "DRIVER"
+                }
+              }
+            ],
+            "duration": 3100628,
+            "raceLaps": 25,
+            "wetTrack": false,
+            "segmentIndex": 2,
+            "bestStats": {
+              "bestCleanLapTimeMs": 117590,
+              "bestUncleanLapTimeMs": 117637,
+              "consistencyPercentage": 99.18,
+              "averageLapMs": 148094,
+              "optimalLapTimeMs": 117474,
+              "bestSectorTimesMs": [56210, 43717, 17547]
+            }
+          }
+        ],
+        "manualSession": false
+      },
+      "points": {
+        "sessionId": "z4OuN1-AYwdmBxexvpXbG",
+        "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+        "racePoints": [
+          {
+            "K_Fk86dOXX2waJu_S5-ke": { "points": 0, "position": 5 },
+            "SC4ZUoc1WqfhinTCPcGB1": { "points": 0, "position": 8 },
+            "VUmvrxL3SvyOu5BlsDvQ5": { "points": 43, "position": 1 },
+            "Z2NV-FfyIZaZ6XTlSKis_": { "points": 41, "position": 3 },
+            "_75LXPmsTaRJitddRnVPv": { "points": 0, "position": 6 },
+            "kKCTE2CumjvGo9d8jJTIP": { "points": 42, "position": 2 },
+            "lt2uoPmTtTe4wYjP28q8A": { "points": 0, "position": 4 },
+            "ods18Q19750_oyhja165S": { "points": 0, "position": 7 }
+          }
+        ]
+      },
+      "pointsAdjustments": [],
+      "penalties": []
+    },
+    {
+      "_type": "SgpEventApiData",
+      "session": {
+        "session": {
+          "id": "MQhLZvqUNb1-k8dO9O0IV",
+          "startsAt": "2022-12-22T01:13:00.000Z",
+          "game": "acc",
+          "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+          "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+          "duration": 143,
+          "config": {
+            "parts": [
+              {
+                "hourOfDay": 12,
+                "sessionType": "P",
+                "dayOfWeekend": 1,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 50
+              },
+              {
+                "hourOfDay": 13,
+                "sessionType": "Q",
+                "dayOfWeekend": 2,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 20
+              },
+              {
+                "hourOfDay": 14,
+                "sessionType": "R",
+                "dayOfWeekend": 3,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 50
+              }
+            ],
+            "rules": {
+              "eventRules": {
+                "tyreSetCount": 50,
+                "superpoleMaxCar": -1,
+                "pitWindowLengthSec": 1500,
+                "qualifyStandingType": 1,
+                "isRefuellingTimeFixed": false,
+                "mandatoryPitstopCount": 1,
+                "isRefuellingAllowedInRace": true,
+                "isMandatoryPitstopRefuellingRequired": true,
+                "isMandatoryPitstopTyreChangeRequired": false
+              },
+              "eventConfig": {
+                "metaData": "",
+                "postRaceSeconds": 180,
+                "postQualySeconds": 180,
+                "sessionOverTimeSeconds": 180,
+                "preRaceWaitingTimeSeconds": 180
+              }
+            },
+            "isRanked": true,
+            "location": "AU-Sydney",
+            "settings": {
+              "allowAutoDQ": 0,
+              "formationLapType": 3,
+              "shortFormationLap": 0
+            },
+            "passwords": { "admin": null, "server": null, "spectator": null },
+            "difficulty": {
+              "assists": {
+                "disableAutoGear": 1,
+                "disableAutoWiper": 0,
+                "disableAutosteer": 1,
+                "disableIdealLine": 1,
+                "disableAutoClutch": 0,
+                "disableAutoLights": 0,
+                "disableAutoPitLimiter": 0,
+                "disableAutoEngineStart": 0,
+                "stabilityControlLevelMax": 25
+              }
+            },
+            "maxEntries": 50,
+            "closedEntry": false,
+            "driverCategory": 3,
+            "tournamentType": "CHAMPIONSHIP",
+            "trackCondition": {
+              "weather": {
+                "rain": 0,
+                "cloudLevel": 0.3,
+                "ambientTemp": 26,
+                "weatherRandomness": 3,
+                "simracerWeatherConditions": null,
+                "isFixedConditionQualification": null
+              }
+            },
+            "hasGridPositions": false,
+            "practicePassword": null,
+            "practiceServerName": null,
+            "enableServerProtection": false,
+            "entryPassword": null
+          },
+          "status": "ENDED",
+          "statusTime": "2022-12-22T04:36:43.594Z",
+          "sessionName": "Watkins Glen",
+          "gameVersion": "1.13.2",
+          "trackId": "watkins_glen",
+          "trackName": "Watkins Glen",
+          "cars": [
+            { "id": "12", "name": "AMR Vantage V12 GT3" },
+            { "id": "3", "name": "Audi R8 LMS" },
+            { "id": "7", "name": "BMW M6 GT3" },
+            { "id": "2", "name": "Ferrari 488 GT3" },
+            { "id": "5", "name": "Mclaren 650s GT3" },
+            { "id": "1", "name": "Mercedes AMG GT3" }
+          ],
+          "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+          "v": 12,
+          "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+          "tournamentName": "Indo-Pacific Endurance Simulation Challenge Rookies season 2 #48",
+          "serverName": "| simracing.gp | Indo-Pacific Endurance Simulation Challenge | Watkins Glen #AVR7B",
+          "aliveTime": null,
+          "carClasses": null,
+          "entryListId": "8uPv3wO1_cpTnus0wLtxw",
+          "driverSwap": false,
+          "serverStartTime": "2022-12-22T01:59:54.160Z",
+          "statusHistory": [
+            {
+              "status": "DRAFT",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2022-11-20T00:46:56.472Z"
+            },
+            {
+              "status": "WAITING",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2022-11-20T00:47:04.307Z"
+            },
+            {
+              "status": "SCHEDULING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-22T01:12:57.986Z"
+            },
+            {
+              "status": "SCHEDULING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-22T01:13:03.822Z"
+            },
+            {
+              "status": "STARTING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-22T01:16:13.492Z"
+            },
+            {
+              "status": "STARTED",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-22T01:16:25.062Z"
+            },
+            {
+              "status": "WAITING",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2022-12-22T01:58:54.160Z"
+            },
+            {
+              "status": "SCHEDULING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-22T01:59:58.098Z"
+            },
+            {
+              "status": "SCHEDULING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-22T02:00:02.522Z"
+            },
+            {
+              "status": "STARTING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-22T02:03:07.277Z"
+            },
+            {
+              "status": "STARTED",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-22T02:03:18.800Z"
+            },
+            {
+              "status": "ENDED",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-22T04:36:46.699Z"
+            }
+          ],
+          "instanceInfo": [
+            {
+              "host": "13.236.207.237",
+              "ports": {
+                "lobby": { "port": "9232", "protocol": "tcp" },
+                "gameUdp": { "port": "9231", "protocol": "udp" }
+              },
+              "instanceId": "i-028353b455d19703f",
+              "serverStartTime": "2022-12-22T01:13:00.000Z"
+            },
+            {
+              "host": "3.26.221.65",
+              "ports": {
+                "lobby": { "port": "9232", "protocol": "tcp" },
+                "gameUdp": { "port": "9231", "protocol": "udp" }
+              },
+              "instanceId": "i-01548f339c5a6f450",
+              "serverStartTime": "2022-12-22T01:59:54.160Z"
+            }
+          ],
+          "data": {},
+          "statusInfo": "DEFAULT_FLOW",
+          "manualSession": false
+        },
+        "joinConditions": null,
+        "missingLeaguePermissions": []
+      },
+      "results": {
+        "sessionId": "MQhLZvqUNb1-k8dO9O0IV",
+        "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+        "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+        "tournamentType": "CHAMPIONSHIP",
+        "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+        "sessionName": "Watkins Glen",
+        "date": "2022-12-22T01:13:00.000Z",
+        "game": "acc",
+        "gameVersion": "1.13.2",
+        "trackId": "watkins_glen",
+        "trackName": "Watkins Glen",
+        "driverSwap": false,
+        "averageFieldStrength": null,
+        "rankingStatus": "UNRANKED",
+        "v": 1,
+        "results": [],
+        "manualSession": false
+      },
+      "points": {
+        "sessionId": "MQhLZvqUNb1-k8dO9O0IV",
+        "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+        "racePoints": []
+      },
+      "pointsAdjustments": [],
+      "penalties": []
+    },
+    {
+      "_type": "SgpEventApiData",
+      "session": {
+        "session": {
+          "id": "ALXi19ddV88TWSLgumnfP",
+          "startsAt": "2022-12-22T08:30:00.000Z",
+          "game": "acc",
+          "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+          "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+          "duration": 147,
+          "config": {
+            "parts": [
+              {
+                "hourOfDay": 15,
+                "sessionType": "P",
+                "dayOfWeekend": 1,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 50
+              },
+              {
+                "hourOfDay": 12,
+                "sessionType": "Q",
+                "dayOfWeekend": 2,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 25
+              },
+              {
+                "hourOfDay": 14,
+                "sessionType": "R",
+                "dayOfWeekend": 3,
+                "timeMultiplier": 1,
+                "sessionDurationMinutes": 50
+              }
+            ],
+            "rules": {
+              "eventRules": {
+                "tyreSetCount": 50,
+                "superpoleMaxCar": -1,
+                "pitWindowLengthSec": 1500,
+                "qualifyStandingType": 1,
+                "isRefuellingTimeFixed": false,
+                "mandatoryPitstopCount": 1,
+                "isRefuellingAllowedInRace": true,
+                "isMandatoryPitstopRefuellingRequired": false,
+                "isMandatoryPitstopTyreChangeRequired": true
+              },
+              "eventConfig": {
+                "metaData": "",
+                "postRaceSeconds": 180,
+                "postQualySeconds": 120,
+                "sessionOverTimeSeconds": 180,
+                "preRaceWaitingTimeSeconds": 180
+              }
+            },
+            "isRanked": true,
+            "location": "AU-Sydney",
+            "settings": {
+              "allowAutoDQ": 0,
+              "formationLapType": 3,
+              "shortFormationLap": 0
+            },
+            "passwords": { "admin": null, "server": null, "spectator": null },
+            "difficulty": {
+              "assists": {
+                "disableAutoGear": 1,
+                "disableAutoWiper": 0,
+                "disableAutosteer": 1,
+                "disableIdealLine": 1,
+                "disableAutoClutch": 0,
+                "disableAutoLights": 0,
+                "disableAutoPitLimiter": 0,
+                "disableAutoEngineStart": 0,
+                "stabilityControlLevelMax": 25
+              }
+            },
+            "maxEntries": 50,
+            "closedEntry": false,
+            "driverCategory": 3,
+            "tournamentType": "CHAMPIONSHIP",
+            "trackCondition": {
+              "weather": {
+                "rain": 0,
+                "cloudLevel": 0.25,
+                "ambientTemp": 18,
+                "weatherRandomness": 3,
+                "simracerWeatherConditions": null,
+                "isFixedConditionQualification": null
+              }
+            },
+            "hasGridPositions": false,
+            "practicePassword": null,
+            "practiceServerName": null,
+            "enableServerProtection": false,
+            "entryPassword": null
+          },
+          "status": "ENDED",
+          "statusTime": "2022-12-22T11:10:13.428Z",
+          "sessionName": "Watkins Glen ",
+          "gameVersion": "1.13.2",
+          "trackId": "watkins_glen",
+          "trackName": "Watkins Glen",
+          "cars": [
+            { "id": "12", "name": "AMR Vantage V12 GT3" },
+            { "id": "3", "name": "Audi R8 LMS" },
+            { "id": "7", "name": "BMW M6 GT3" },
+            { "id": "2", "name": "Ferrari 488 GT3" },
+            { "id": "5", "name": "Mclaren 650s GT3" },
+            { "id": "1", "name": "Mercedes AMG GT3" }
+          ],
+          "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+          "v": 6,
+          "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+          "tournamentName": "Indo-Pacific Endurance Simulation Challenge Rookies season 2 #48",
+          "serverName": "| simracing.gp | Indo-Pacific Endurance Simulation Challenge | Watkins Glen  #MIU2B",
+          "aliveTime": null,
+          "carClasses": null,
+          "entryListId": "8uPv3wO1_cpTnus0wLtxw",
+          "driverSwap": false,
+          "serverStartTime": "2022-12-22T08:30:00.000Z",
+          "statusHistory": [
+            {
+              "status": "WAITING",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2022-12-22T02:48:57.136Z"
+            },
+            {
+              "status": "SCHEDULING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-22T08:29:57.786Z"
+            },
+            {
+              "status": "SCHEDULING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-22T08:30:04.040Z"
+            },
+            {
+              "status": "STARTING",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-22T08:32:31.329Z"
+            },
+            {
+              "status": "STARTED",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-22T08:32:42.593Z"
+            },
+            {
+              "status": "ENDED",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2022-12-22T11:10:16.351Z"
+            }
+          ],
+          "instanceInfo": [
+            {
+              "host": "3.26.5.33",
+              "ports": {
+                "lobby": { "port": "9232", "protocol": "tcp" },
+                "gameUdp": { "port": "9231", "protocol": "udp" }
+              },
+              "instanceId": "i-0ef93ba240dbd27d2",
+              "serverStartTime": "2022-12-22T08:30:00.000Z"
+            }
+          ],
+          "data": {},
+          "statusInfo": "DEFAULT_FLOW",
+          "manualSession": false
+        },
+        "joinConditions": null,
+        "missingLeaguePermissions": []
+      },
+      "results": {
+        "sessionId": "ALXi19ddV88TWSLgumnfP",
+        "createdBy": "VUmvrxL3SvyOu5BlsDvQ5",
+        "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+        "tournamentType": "CHAMPIONSHIP",
+        "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+        "sessionName": "Watkins Glen ",
+        "date": "2022-12-22T08:30:00.000Z",
+        "game": "acc",
+        "gameVersion": "1.13.2",
+        "trackId": "watkins_glen",
+        "trackName": "Watkins Glen",
+        "driverSwap": false,
+        "averageFieldStrength": 0.278158,
+        "rankingStatus": "COMPLETED",
+        "v": 2,
+        "results": [
+          {
+            "type": "PRACTICE",
+            "results": [
+              {
+                "carId": "1003",
+                "bestLap": 11,
+                "driverId": "PEV53emXeBEuUQOxcrzFa",
+                "lapCount": 15,
+                "position": 1,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 19,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 2
+                },
+                "totalTime": 2639708,
+                "carModelId": "5",
+                "bestLapTime": 106610,
+                "teamDrivers": null,
+                "bestCleanLap": 11,
+                "cleanLapCount": 5,
+                "averageLapTime": 171468,
+                "totalCleanTime": 534834,
+                "bestCleanLapTime": 106610,
+                "averageCleanLapTime": 106967,
+                "participant": {
+                  "id": "PEV53emXeBEuUQOxcrzFa",
+                  "name": "Nico Cappa",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c7c051daec1b48bfe55b531f6dba3a456de32c96_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1002",
+                "bestLap": 7,
+                "driverId": "YAVPW-sq823qB98bxSgFA",
+                "lapCount": 14,
+                "position": 2,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 13,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 11
+                },
+                "totalTime": 2963829,
+                "carModelId": "2",
+                "bestLapTime": 108072,
+                "teamDrivers": null,
+                "bestCleanLap": 7,
+                "cleanLapCount": 7,
+                "averageLapTime": 206884,
+                "totalCleanTime": 777091,
+                "bestCleanLapTime": 108072,
+                "averageCleanLapTime": 111013,
+                "participant": {
+                  "id": "YAVPW-sq823qB98bxSgFA",
+                  "name": "Jed Tootell",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.akamai.steamstatic.com/8dfe278c7493b6984540e57ecd57b791df13841e_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1005",
+                "bestLap": 3,
+                "driverId": "Z2NV-FfyIZaZ6XTlSKis_",
+                "lapCount": 10,
+                "position": 3,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 6,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 5
+                },
+                "totalTime": 3005822,
+                "carModelId": "3",
+                "bestLapTime": 109732,
+                "teamDrivers": null,
+                "bestCleanLap": 3,
+                "cleanLapCount": 7,
+                "averageLapTime": 124416,
+                "totalCleanTime": 773046,
+                "bestCleanLapTime": 109732,
+                "averageCleanLapTime": 110435,
+                "participant": {
+                  "id": "Z2NV-FfyIZaZ6XTlSKis_",
+                  "name": "D Williams",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/28e57c246a97ccc4b9b3a7c7eb359c4ad2d3b7e4_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1001",
+                "bestLap": 7,
+                "driverId": "SC4ZUoc1WqfhinTCPcGB1",
+                "lapCount": 21,
+                "position": 4,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 23,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 8
+                },
+                "totalTime": 3064771,
+                "carModelId": "2",
+                "bestLapTime": 110517,
+                "teamDrivers": null,
+                "bestCleanLap": 6,
+                "cleanLapCount": 9,
+                "averageLapTime": 145911,
+                "totalCleanTime": 1019293,
+                "bestCleanLapTime": 110695,
+                "averageCleanLapTime": 113255,
+                "participant": {
+                  "id": "SC4ZUoc1WqfhinTCPcGB1",
+                  "name": "Melissa Trenter",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.akamai.steamstatic.com/23638f32516858f9a7629f65d09a4c9833589466_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1004",
+                "bestLap": 2,
+                "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+                "lapCount": 6,
+                "position": 5,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 10,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 36
+                },
+                "totalTime": 3002792,
+                "carModelId": "2",
+                "bestLapTime": 112600,
+                "teamDrivers": null,
+                "bestCleanLap": 1,
+                "cleanLapCount": 1,
+                "averageLapTime": 241895,
+                "totalCleanTime": 113912,
+                "bestCleanLapTime": 113912,
+                "averageCleanLapTime": 113912,
+                "participant": {
+                  "id": "VUmvrxL3SvyOu5BlsDvQ5",
+                  "name": "Mark Felton ",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3c64713dc4917e05cd983db5da9e9baa4acdea2f_medium.jpg",
+                  "badgeId": "DRIVE",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "lt2uoPmTtTe4wYjP28q8A",
+                "lapCount": 0,
+                "position": 6,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "1",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "lt2uoPmTtTe4wYjP28q8A",
+                  "name": "Tristen Digby",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c2a42f49aae757ccc22d7559b5b2e8423af46231_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "K_Fk86dOXX2waJu_S5-ke",
+                "lapCount": 0,
+                "position": 7,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "K_Fk86dOXX2waJu_S5-ke",
+                  "name": "pakorn panasoponkul",
+                  "country": "TH",
+                  "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "_75LXPmsTaRJitddRnVPv",
+                "lapCount": 0,
+                "position": 8,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "12",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "_75LXPmsTaRJitddRnVPv",
+                  "name": "Kevan Torrance",
+                  "country": "NZ",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "ods18Q19750_oyhja165S",
+                "lapCount": 0,
+                "position": 9,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "ods18Q19750_oyhja165S",
+                  "name": "Matthew Jayasuria",
+                  "country": "SG",
+                  "avatarUrl": "https://avatars.steamstatic.com/5e0ddabeec41e0934f64911277c527a1fc847fbe_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "kKCTE2CumjvGo9d8jJTIP",
+                "lapCount": 0,
+                "position": 10,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "7",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "kKCTE2CumjvGo9d8jJTIP",
+                  "name": "Andrew Gallagher",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.akamai.steamstatic.com/d854992e5a2b0d5ccddfedefd422143146eb0b11_medium.jpg",
+                  "type": "DRIVER"
+                }
+              }
+            ],
+            "wetTrack": false,
+            "segmentIndex": 0,
+            "bestStats": {
+              "bestCleanLapTimeMs": 106610,
+              "bestUncleanLapTimeMs": 107425,
+              "consistencyPercentage": 99.67,
+              "averageLapMs": 124416,
+              "optimalLapTimeMs": 106401,
+              "bestSectorTimesMs": [29767, 35117, 41517]
+            }
+          },
+          {
+            "type": "QUALIFY",
+            "results": [
+              {
+                "carId": "1003",
+                "bestLap": 9,
+                "driverId": "PEV53emXeBEuUQOxcrzFa",
+                "lapCount": 10,
+                "position": 1,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 7,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 2
+                },
+                "qualified": true,
+                "totalTime": 1364527,
+                "carModelId": "5",
+                "bestLapTime": 106135,
+                "teamDrivers": null,
+                "bestCleanLap": 9,
+                "cleanLapCount": 5,
+                "averageLapTime": 182263,
+                "totalCleanTime": 534684,
+                "bestCleanLapTime": 106135,
+                "averageCleanLapTime": 106937,
+                "participant": {
+                  "id": "PEV53emXeBEuUQOxcrzFa",
+                  "name": "Nico Cappa",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c7c051daec1b48bfe55b531f6dba3a456de32c96_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1002",
+                "bestLap": 1,
+                "driverId": "YAVPW-sq823qB98bxSgFA",
+                "lapCount": 2,
+                "position": 2,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 1,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 283008,
+                "carModelId": "2",
+                "bestLapTime": 107460,
+                "teamDrivers": null,
+                "bestCleanLap": 1,
+                "cleanLapCount": 1,
+                "averageLapTime": 226684,
+                "totalCleanTime": 107460,
+                "bestCleanLapTime": 107460,
+                "averageCleanLapTime": 107460,
+                "participant": {
+                  "id": "YAVPW-sq823qB98bxSgFA",
+                  "name": "Jed Tootell",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.akamai.steamstatic.com/8dfe278c7493b6984540e57ecd57b791df13841e_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1005",
+                "bestLap": 6,
+                "driverId": "Z2NV-FfyIZaZ6XTlSKis_",
+                "lapCount": 11,
+                "position": 3,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 6,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 8
+                },
+                "qualified": true,
+                "totalTime": 1245163,
+                "carModelId": "3",
+                "bestLapTime": 108865,
+                "teamDrivers": null,
+                "bestCleanLap": 6,
+                "cleanLapCount": 8,
+                "averageLapTime": 118836,
+                "totalCleanTime": 879565,
+                "bestCleanLapTime": 108865,
+                "averageCleanLapTime": 109946,
+                "participant": {
+                  "id": "Z2NV-FfyIZaZ6XTlSKis_",
+                  "name": "D Williams",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/28e57c246a97ccc4b9b3a7c7eb359c4ad2d3b7e4_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1004",
+                "bestLap": 6,
+                "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+                "lapCount": 7,
+                "position": 4,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 11,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 23
+                },
+                "qualified": true,
+                "totalTime": 1609100,
+                "carModelId": "2",
+                "bestLapTime": 111157,
+                "teamDrivers": null,
+                "bestCleanLap": 6,
+                "cleanLapCount": 1,
+                "averageLapTime": 184123,
+                "totalCleanTime": 111157,
+                "bestCleanLapTime": 111157,
+                "averageCleanLapTime": 111157,
+                "participant": {
+                  "id": "VUmvrxL3SvyOu5BlsDvQ5",
+                  "name": "Mark Felton ",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3c64713dc4917e05cd983db5da9e9baa4acdea2f_medium.jpg",
+                  "badgeId": "DRIVE",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1001",
+                "bestLap": 4,
+                "driverId": "SC4ZUoc1WqfhinTCPcGB1",
+                "lapCount": 5,
+                "position": 5,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 5,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 8
+                },
+                "qualified": true,
+                "totalTime": 754175,
+                "carModelId": "2",
+                "bestLapTime": 111405,
+                "teamDrivers": null,
+                "bestCleanLap": 4,
+                "cleanLapCount": 2,
+                "averageLapTime": 145297,
+                "totalCleanTime": 226075,
+                "bestCleanLapTime": 111405,
+                "averageCleanLapTime": 113038,
+                "participant": {
+                  "id": "SC4ZUoc1WqfhinTCPcGB1",
+                  "name": "Melissa Trenter",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.akamai.steamstatic.com/23638f32516858f9a7629f65d09a4c9833589466_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "lt2uoPmTtTe4wYjP28q8A",
+                "lapCount": 0,
+                "position": 6,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "1",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "lt2uoPmTtTe4wYjP28q8A",
+                  "name": "Tristen Digby",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c2a42f49aae757ccc22d7559b5b2e8423af46231_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "K_Fk86dOXX2waJu_S5-ke",
+                "lapCount": 0,
+                "position": 7,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "K_Fk86dOXX2waJu_S5-ke",
+                  "name": "pakorn panasoponkul",
+                  "country": "TH",
+                  "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "_75LXPmsTaRJitddRnVPv",
+                "lapCount": 0,
+                "position": 8,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "12",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "_75LXPmsTaRJitddRnVPv",
+                  "name": "Kevan Torrance",
+                  "country": "NZ",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "ods18Q19750_oyhja165S",
+                "lapCount": 0,
+                "position": 9,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "ods18Q19750_oyhja165S",
+                  "name": "Matthew Jayasuria",
+                  "country": "SG",
+                  "avatarUrl": "https://avatars.steamstatic.com/5e0ddabeec41e0934f64911277c527a1fc847fbe_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "kKCTE2CumjvGo9d8jJTIP",
+                "lapCount": 0,
+                "position": 10,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "7",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "kKCTE2CumjvGo9d8jJTIP",
+                  "name": "Andrew Gallagher",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.akamai.steamstatic.com/d854992e5a2b0d5ccddfedefd422143146eb0b11_medium.jpg",
+                  "type": "DRIVER"
+                }
+              }
+            ],
+            "wetTrack": false,
+            "segmentIndex": 1,
+            "bestStats": {
+              "bestCleanLapTimeMs": 106135,
+              "bestUncleanLapTimeMs": 106597,
+              "consistencyPercentage": 99.25,
+              "averageLapMs": 118836,
+              "optimalLapTimeMs": 106117,
+              "bestSectorTimesMs": [29722, 34865, 41530]
+            }
+          },
+          {
+            "type": "RACE",
+            "results": [
+              {
+                "carId": "1003",
+                "bestLap": 16,
+                "driverId": "PEV53emXeBEuUQOxcrzFa",
+                "lapCount": 28,
+                "position": 1,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 10,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 3
+                },
+                "totalTime": 3075084,
+                "carModelId": "5",
+                "bestLapTime": 106437,
+                "teamDrivers": null,
+                "timeRetired": { "type": "TIME", "value": 3075084 },
+                "bestCleanLap": 16,
+                "cleanLapCount": 22,
+                "rankingChange": { "delta": 0.0756174, "newRank": 0.571501 },
+                "averageLapTime": 118169,
+                "totalCleanTime": 2596730,
+                "bestCleanLapTime": 106437,
+                "averageCleanLapTime": 118033,
+                "participant": {
+                  "id": "PEV53emXeBEuUQOxcrzFa",
+                  "name": "Nico Cappa",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c7c051daec1b48bfe55b531f6dba3a456de32c96_medium.jpg",
+                  "rankingChange": { "delta": 0.0756174, "newRank": 0.571501 },
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1005",
+                "bestLap": 11,
+                "driverId": "Z2NV-FfyIZaZ6XTlSKis_",
+                "lapCount": 27,
+                "position": 2,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 25,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 17
+                },
+                "totalTime": 3095047,
+                "carModelId": "3",
+                "bestLapTime": 109315,
+                "teamDrivers": null,
+                "timeRetired": { "type": "LAPS", "value": 1 },
+                "bestCleanLap": 11,
+                "cleanLapCount": 14,
+                "rankingChange": { "delta": 0.0796352, "newRank": 0.455 },
+                "averageLapTime": 123115,
+                "totalCleanTime": 1541393,
+                "bestCleanLapTime": 109315,
+                "averageCleanLapTime": 110100,
+                "participant": {
+                  "id": "Z2NV-FfyIZaZ6XTlSKis_",
+                  "name": "D Williams",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/28e57c246a97ccc4b9b3a7c7eb359c4ad2d3b7e4_medium.jpg",
+                  "rankingChange": { "delta": 0.0796352, "newRank": 0.455 },
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1004",
+                "bestLap": 4,
+                "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+                "lapCount": 27,
+                "position": 3,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 14,
+                  "pitSpeeding": 1,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 7
+                },
+                "totalTime": 3183053,
+                "carModelId": "2",
+                "bestLapTime": 109667,
+                "teamDrivers": null,
+                "timeRetired": { "type": "LAPS", "value": 1 },
+                "bestCleanLap": 4,
+                "cleanLapCount": 18,
+                "rankingChange": { "delta": 0.0375632, "newRank": 0.278946 },
+                "averageLapTime": 137965,
+                "totalCleanTime": 2014353,
+                "bestCleanLapTime": 109667,
+                "averageCleanLapTime": 111909,
+                "participant": {
+                  "id": "VUmvrxL3SvyOu5BlsDvQ5",
+                  "name": "Mark Felton ",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3c64713dc4917e05cd983db5da9e9baa4acdea2f_medium.jpg",
+                  "badgeId": "DRIVE",
+                  "rankingChange": { "delta": 0.0375632, "newRank": 0.278946 },
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1001",
+                "bestLap": 8,
+                "driverId": "SC4ZUoc1WqfhinTCPcGB1",
+                "lapCount": 26,
+                "position": 4,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 20,
+                  "pitSpeeding": 1,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 5
+                },
+                "totalTime": 3174361,
+                "carModelId": "2",
+                "bestLapTime": 109945,
+                "teamDrivers": null,
+                "timeRetired": { "type": "LAPS", "value": 2 },
+                "bestCleanLap": 8,
+                "cleanLapCount": 14,
+                "rankingChange": { "delta": 0.35845, "newRank": 0.35845 },
+                "averageLapTime": 130763,
+                "totalCleanTime": 1792899,
+                "bestCleanLapTime": 109945,
+                "averageCleanLapTime": 128064,
+                "participant": {
+                  "id": "SC4ZUoc1WqfhinTCPcGB1",
+                  "name": "Melissa Trenter",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.akamai.steamstatic.com/23638f32516858f9a7629f65d09a4c9833589466_medium.jpg",
+                  "rankingChange": { "delta": 0.35845, "newRank": 0.35845 },
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1002",
+                "bestLap": 5,
+                "driverId": "YAVPW-sq823qB98bxSgFA",
+                "lapCount": 10,
+                "position": 5,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 6,
+                  "pitSpeeding": 1,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 6
+                },
+                "totalTime": 1131808,
+                "carModelId": "2",
+                "bestLapTime": 108415,
+                "teamDrivers": null,
+                "timeRetired": { "type": "LAPS", "value": 18 },
+                "bestCleanLap": 5,
+                "cleanLapCount": 7,
+                "averageLapTime": 136276,
+                "totalCleanTime": 766353,
+                "bestCleanLapTime": 108415,
+                "averageCleanLapTime": 109479,
+                "participant": {
+                  "id": "YAVPW-sq823qB98bxSgFA",
+                  "name": "Jed Tootell",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.akamai.steamstatic.com/8dfe278c7493b6984540e57ecd57b791df13841e_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "lt2uoPmTtTe4wYjP28q8A",
+                "lapCount": 0,
+                "position": 6,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "1",
+                "bestLapTime": null,
+                "timeRetired": { "type": "DNF", "value": 0 },
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "rankingChange": { "delta": -0.05, "newRank": 0.480081 },
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "lt2uoPmTtTe4wYjP28q8A",
+                  "name": "Tristen Digby",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c2a42f49aae757ccc22d7559b5b2e8423af46231_medium.jpg",
+                  "rankingChange": { "delta": -0.05, "newRank": 0.480081 },
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "K_Fk86dOXX2waJu_S5-ke",
+                "lapCount": 0,
+                "position": 7,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "timeRetired": { "type": "DNF", "value": 0 },
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "K_Fk86dOXX2waJu_S5-ke",
+                  "name": "pakorn panasoponkul",
+                  "country": "TH",
+                  "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "_75LXPmsTaRJitddRnVPv",
+                "lapCount": 0,
+                "position": 8,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "12",
+                "bestLapTime": null,
+                "timeRetired": { "type": "DNF", "value": 0 },
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "rankingChange": { "delta": -0.05, "newRank": 0.533439 },
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "_75LXPmsTaRJitddRnVPv",
+                  "name": "Kevan Torrance",
+                  "country": "NZ",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "rankingChange": { "delta": -0.05, "newRank": 0.533439 },
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "ods18Q19750_oyhja165S",
+                "lapCount": 0,
+                "position": 9,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "3",
+                "bestLapTime": null,
+                "timeRetired": { "type": "DNF", "value": 0 },
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "rankingChange": { "delta": -0.05, "newRank": 0.291723 },
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "ods18Q19750_oyhja165S",
+                  "name": "Matthew Jayasuria",
+                  "country": "SG",
+                  "avatarUrl": "https://avatars.steamstatic.com/5e0ddabeec41e0934f64911277c527a1fc847fbe_medium.jpg",
+                  "rankingChange": { "delta": -0.05, "newRank": 0.291723 },
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "-1",
+                "kicked": false,
+                "bestLap": -1,
+                "driverId": "kKCTE2CumjvGo9d8jJTIP",
+                "lapCount": 0,
+                "position": 10,
+                "carSkinId": "default",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "7",
+                "bestLapTime": null,
+                "timeRetired": { "type": "DNF", "value": 0 },
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "rankingChange": { "delta": -0.05, "newRank": 0.386592 },
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "kKCTE2CumjvGo9d8jJTIP",
+                  "name": "Andrew Gallagher",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.akamai.steamstatic.com/d854992e5a2b0d5ccddfedefd422143146eb0b11_medium.jpg",
+                  "rankingChange": { "delta": -0.05, "newRank": 0.386592 },
+                  "type": "DRIVER"
+                }
+              }
+            ],
+            "duration": 3075084,
+            "raceLaps": 28,
+            "wetTrack": false,
+            "segmentIndex": 2,
+            "bestStats": {
+              "bestCleanLapTimeMs": 106437,
+              "bestUncleanLapTimeMs": 106822,
+              "consistencyPercentage": 99.37,
+              "averageLapMs": 118169,
+              "optimalLapTimeMs": 106112,
+              "bestSectorTimesMs": [29755, 35060, 41297]
+            }
+          }
+        ],
+        "manualSession": false
+      },
+      "points": {
+        "sessionId": "ALXi19ddV88TWSLgumnfP",
+        "tournamentId": "8uPv3wO1_cpTnus0wLtxw",
+        "racePoints": [
+          {
+            "K_Fk86dOXX2waJu_S5-ke": { "points": 0, "position": 7 },
+            "PEV53emXeBEuUQOxcrzFa": { "points": 43, "position": 1 },
+            "SC4ZUoc1WqfhinTCPcGB1": { "points": 40, "position": 4 },
+            "VUmvrxL3SvyOu5BlsDvQ5": { "points": 41, "position": 3 },
+            "YAVPW-sq823qB98bxSgFA": { "points": 39, "position": 5 },
+            "Z2NV-FfyIZaZ6XTlSKis_": { "points": 42, "position": 2 },
+            "_75LXPmsTaRJitddRnVPv": { "points": 0, "position": 8 },
+            "kKCTE2CumjvGo9d8jJTIP": { "points": 0, "position": 10 },
+            "lt2uoPmTtTe4wYjP28q8A": { "points": 0, "position": 6 },
+            "ods18Q19750_oyhja165S": { "points": 0, "position": 9 }
+          }
+        ]
+      },
+      "pointsAdjustments": [],
+      "penalties": []
+    }
+  ]
+}
