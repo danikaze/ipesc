@@ -14,5 +14,11 @@
     "baseUrl": "./src",
     "plugins": []
   },
-  "include": ["assets.d.ts", "src/**/*.ts", "src/**/*.tsx"]
+  "include": [
+    "assets.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "test/**/*.ts",
+    "test/**/*.tsx"
+  ]
 }

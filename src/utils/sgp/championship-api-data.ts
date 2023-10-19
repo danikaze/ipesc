@@ -63,4 +63,9 @@ export class SgpChampionshipApiData {
     }
     return JSON.stringify(data);
   }
+
+  public getDriverNumber(driverId: string): number | undefined {
+    return this.entryList.entries.find((entry) => driverId === entry.driverId)
+      ?.raceNumber;
+  }
 }
