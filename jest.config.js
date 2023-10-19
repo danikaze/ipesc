@@ -9,8 +9,14 @@ module.exports = {
   collectCoverage: true,
   coverageDirectory: '<rootDir>/coverage',
   coverageReporters: ['json', 'lcov', 'text', 'text-summary'],
-  collectCoverageFrom: ['<rootDir>/**/*.{ts,tsx}', '!**/*.d.ts', '!<rootDir>/webpack/**/*'],
+  collectCoverageFrom: [
+    '<rootDir>/**/*.{ts,tsx}',
+    '!**/*.d.ts',
+    '!<rootDir>/webpack/**/*',
+  ],
   coveragePathIgnorePatterns: ['/node_modules/', '<rootDir>/webpack.config.ts'],
+  roots: ['<rootDir>'],
+  modulePaths: [compilerOptions.baseUrl],
   moduleNameMapper: {
     ...pathsToModuleNameMapper(compilerOptions.paths || {}, { prefix: '<rootDir>/' }),
   },
