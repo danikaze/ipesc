@@ -45,11 +45,16 @@ export const pagesConfig = webpackConfig((config, isProduction) => {
     new MiniCssExtractPlugin({
       filename: `styles-[contenthash:${HASH_SIZE}].css`,
     }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: isProduction ? 'static' : 'disabled',
-      reportFilename: '../webpack/report.html',
-    }),
   ];
+
+  if (process.env.ANALYZER) {
+    config.plugins.push(
+      new BundleAnalyzerPlugin({
+        analyzerMode: isProduction ? 'static' : 'disabled',
+        reportFilename: '../webpack/report.html',
+      })
+    );
+  }
 
   return config as Configuration;
 });
