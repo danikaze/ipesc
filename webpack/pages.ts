@@ -19,12 +19,16 @@ export const pagesConfig = webpackConfig((config, isProduction) => {
     path: absPath('dist'),
     filename: `[name]-[contenthash:${HASH_SIZE}].js`,
   };
-  config.optimization!.splitChunks = {
-    cacheGroups: {
-      vendors: {
-        name: 'vendor',
-        test: /[\\/]node_modules[\\/]/,
-        chunks: 'all',
+  config.optimization = {
+    ...config.optimization,
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendors: {
+          name: 'vendor',
+          test: /[\\/]node_modules[\\/](react|chakra-ui|@emotion|framer-motion)/,
+          chunks: 'all',
+        },
       },
     },
   };
@@ -34,19 +38,19 @@ export const pagesConfig = webpackConfig((config, isProduction) => {
     watchFiles: [absPath('src/**/*')],
     hot: true,
   };
-  config.plugins!.push(...entries.plugins);
-  config.plugins!.push(
+
+  config.plugins = [
+    ...(config.plugins || []),
+    ...entries.plugins,
+    getFnsDefine(absPath('dist-fns')),
     new MiniCssExtractPlugin({
       filename: `styles-[contenthash:${HASH_SIZE}].css`,
-    })
-  );
-  config.plugins!.push(getFnsDefine(absPath('dist-fns')));
-  config.plugins!.push(
+    }),
     new BundleAnalyzerPlugin({
       analyzerMode: isProduction ? 'static' : 'disabled',
       reportFilename: '../webpack/report.html',
-    })
-  );
+    }),
+  ];
 
   return config as Configuration;
 });

@@ -67,7 +67,7 @@ function getHtmlPlugin(chunk: string, folderPath: string, isProduction: boolean)
   return new HtmlWebpackPlugin({
     templateContent: getTemplateContents(files[0], isProduction),
     filename: basename(files[0]),
-    chunks: ['vendor', chunk],
+    chunks: [chunk],
   });
 }
 

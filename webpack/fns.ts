@@ -12,7 +12,7 @@ export const fnsConfig = webpackConfig((config, isProduction) => {
     filename: `[name].js`,
   };
 
-  config.plugins!.push(new WebpackUserScriptPlugin());
+  config.plugins = [...(config.plugins || []), new WebpackUserScriptPlugin()];
 
   return config as Configuration;
 });
