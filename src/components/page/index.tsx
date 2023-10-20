@@ -1,32 +1,22 @@
 import { FC, ReactNode } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { clsx } from 'clsx';
+import { Container, Grid } from '@chakra-ui/react';
+import { NavBar } from 'components/nav-bar';
+import { Footer } from 'components/footer';
 
 export interface Props {
   children: ReactNode;
 }
 
 export const Page: FC<Props> = ({ children }) => (
-  <div>
-    <Nav />
-    <div>{children}</div>
-  </div>
+  <Grid
+    h='100%'
+    maxH='100%'
+    templateAreas='"header" "main" "footer"'
+    gridTemplateColumns='100%'
+    gridTemplateRows='max-content auto max-content'
+  >
+    <NavBar />
+    <Container py={6}>{children}</Container>
+    <Footer />
+  </Grid>
 );
-
-const Nav: FC = () => {
-  const location = useLocation();
-
-  return (
-    <div>
-      <Link className={clsx(location.pathname === '/' && 'active')} to='/'>
-        Index
-      </Link>
-      <Link className={clsx(location.pathname === '/driver' && 'active')} to='/driver'>
-        Driver
-      </Link>
-      <Link className={clsx(location.pathname === '/season' && 'active')} to='/season'>
-        Season
-      </Link>
-    </div>
-  );
-};
