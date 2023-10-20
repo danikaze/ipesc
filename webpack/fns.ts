@@ -7,6 +7,7 @@ import { WebpackUserScriptPlugin } from './utils/webpack-user-script-plugin';
 export const fnsConfig = webpackConfig((config, isProduction) => {
   config.entry = getFnsEntries(absPath('src/fns'), isProduction);
   config.output = {
+    ...config.output,
     clean: true,
     path: absPath('dist-fns'),
     filename: `[name].js`,
