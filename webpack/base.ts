@@ -14,6 +14,8 @@ export type WebpackConfigCreator = (
   isProduction: boolean
 ) => Configuration;
 
+export const HASH_SIZE = 8;
+
 export const webpackConfig: (fn: WebpackConfigCreator) => () => Configuration = (fn) => {
   const isProduction = process.env.NODE_ENV == 'production';
   const base: Partial<Configuration> = {
@@ -98,7 +100,10 @@ export const webpackConfig: (fn: WebpackConfigCreator) => () => Configuration = 
         // assets
         {
           test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-          type: 'asset',
+          use: {
+            loader: 'file-loader',
+            options: { name: `[assets]/[hash:${HASH_SIZE}].[ext]` },
+          },
         },
       ],
     },

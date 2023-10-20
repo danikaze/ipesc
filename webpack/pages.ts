@@ -6,15 +6,14 @@ import 'webpack-dev-server';
 import { absPath } from './utils/abs-path';
 import { getPagesEntries } from './utils/get-pages-entries';
 import { getFnsDefine } from './utils/get-fns-define';
-import { webpackConfig } from './base';
-
-const HASH_SIZE = 8;
+import { HASH_SIZE, webpackConfig } from './base';
 
 export const pagesConfig = webpackConfig((config, isProduction) => {
   const entries = getPagesEntries(absPath('src/entries'), isProduction);
 
   config.entry = entries.entry;
   config.output = {
+    ...config.output,
     clean: true,
     path: absPath('dist'),
     filename: `[name]-[contenthash:${HASH_SIZE}].js`,
