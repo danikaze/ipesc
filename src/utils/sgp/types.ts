@@ -14,10 +14,10 @@ export enum SgpCategory {
 
 export enum SgpGame {
   ACC = 'acc',
-  AC = 'ac',
+  AC = 'assetto_corsa',
   RACE_ROOM = 'r3e',
   AUTOMOBILISTA_2 = 'ams2',
-  F1_34 = 'f1-23',
+  F1_23 = 'f1-23',
 }
 
 export enum SgpTournamentType {
@@ -441,12 +441,12 @@ interface SgpChampionshipEntryBase {
   car: {
     skin: string;
     model: NumberAsString;
-    carClassId: SgpCategory;
+    carClassId?: SgpCategory;
   };
   type: 'REGULAR';
   driverId: string;
   joinDate: IsoDate;
-  raceNumber: number;
+  raceNumber?: number;
   participant: {
     id: string;
     rank: number;

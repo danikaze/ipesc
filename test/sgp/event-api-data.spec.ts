@@ -55,7 +55,7 @@ describe('SgpEventApiData', () => {
   it('should get the list of drivers that joined the event', () => {
     let drivers: DriverInfo[];
 
-    drivers = btccRace.getDrivers();
+    drivers = btccRace.getDrivers('active');
     expect(drivers.length).toBe(6);
     expect(drivers).toContainEqual({
       id: 'QQMAMmgupkQFwRFx0wAPD',
@@ -67,7 +67,7 @@ describe('SgpEventApiData', () => {
       // category: undefined,
     });
 
-    drivers = s4singleRace.getDrivers();
+    drivers = s4singleRace.getDrivers('active');
     expect(drivers.length).toBe(27);
     expect(drivers).toContainEqual({
       id: 'lhx1cWMLlA5rwp--60xP5',
@@ -79,7 +79,7 @@ describe('SgpEventApiData', () => {
       // category: undefined,
     });
 
-    drivers = s7fullSingleRace.getDrivers();
+    drivers = s7fullSingleRace.getDrivers('active');
     expect(drivers.length).toBe(34);
     expect(drivers).toContainEqual({
       id: 'kGuyp0gCE7ynLuDvqjhxZ',
@@ -90,6 +90,22 @@ describe('SgpEventApiData', () => {
       carModelId: '30',
       category: 'PRO',
     });
+  });
+
+  it(`should get the list of drivers that didn't join the event`, () => {
+    let drivers: DriverInfo[];
+
+    drivers = btccRace.getDrivers('inactive');
+    expect(drivers.length).toBe(10);
+    expect(drivers.find((d) => d.name === 'Isaac Becker')).toBeUndefined();
+
+    drivers = s4singleRace.getDrivers('inactive');
+    expect(drivers.length).toBe(12);
+    expect(drivers.find((d) => d.name === 'O-Ring Boland')).toBeUndefined();
+
+    drivers = s7fullSingleRace.getDrivers('inactive');
+    expect(drivers.length).toBe(8);
+    expect(drivers.find((d) => d.name === 'Damario Haznam')).toBeUndefined();
   });
 
   it('should get race results', () => {
