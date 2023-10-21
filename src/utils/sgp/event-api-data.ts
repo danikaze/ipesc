@@ -9,6 +9,7 @@ import {
   SgpEventSession,
   SgpSessionResults,
 } from './types';
+import { IsoDate } from 'utils/types';
 
 interface RawData {
   session: SgpEventSession;
@@ -61,12 +62,16 @@ export class SgpEventApiData {
     });
   }
 
-  public getChampionshipName() {
+  public getChampionshipName(): string {
     return this.session.session.tournamentName;
   }
 
-  public getEventName() {
+  public getEventName(): string {
     return this.session.session.sessionName;
+  }
+
+  public getStartDate(): IsoDate {
+    return this.session.session.startsAt;
   }
 
   public getNumberOfRaces(): number {
@@ -119,17 +124,21 @@ export class SgpEventApiData {
 
   /**
    * Calculate the entry list based on the drivers that have joined any session
-   * of this event (not including those inscribed on the championship but not
-   * participating in this event)
+   * of this event.
+   * 'active' will return only the ones that joined any of the sessions
+   * 'inactive' will return those who didn't join any
+   * 'all' will return both
    */
-  public getDrivers(): DriverInfo[] {
+  public getDrivers(type: 'active' | 'inactive' | 'all'): DriverInfo[] {
     const map = new Map<string, DriverInfo>();
     this.results.results.forEach((session) =>
       session.results.forEach((result) => {
         // no need to add drivers already added
         if (map.has(result.driverId)) return;
         // no totalTime means it didn't join
-        if (!result.totalTime) return;
+        const isActive = result.lapCount > 0;
+        if (type === 'active' && !isActive) return;
+        if (type === 'inactive' && isActive) return;
 
         const info: DriverInfo = {
           id: result.participant.id,

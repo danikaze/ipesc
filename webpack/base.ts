@@ -102,7 +102,7 @@ export const webpackConfig: (fn: WebpackConfigCreator) => () => Configuration = 
           test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
           use: {
             loader: 'file-loader',
-            options: { name: `[assets]/[hash:${HASH_SIZE}].[ext]` },
+            options: { name: `assets/[hash:${HASH_SIZE}].[ext]` },
           },
         },
       ],

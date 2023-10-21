@@ -4,8 +4,10 @@ import {
   SgpChampionshipPoints,
   SgpChampionshipSession,
   SgpEventPointsAdjustments,
+  SgpGame,
 } from './types';
 import { SgpEventApiData } from './event-api-data';
+import { IsoDate } from 'utils/types';
 
 interface RawData {
   championship: SgpChampionship;
@@ -52,7 +54,7 @@ export class SgpChampionshipApiData {
   public toJson(): string {
     const data = {
       _type: SgpChampionshipApiData.TYPE,
-      championshipData: this.championship,
+      championship: this.championship,
       points: this.points,
       sessions: this.sessions,
       penalties: this.penalties,
@@ -64,8 +66,51 @@ export class SgpChampionshipApiData {
     return JSON.stringify(data);
   }
 
+  public getId(): string {
+    return this.championship.id;
+  }
+
+  public getGame(): SgpGame {
+    return this.championship.state.gameSettings.game;
+  }
+
+  public getName(): string {
+    return this.championship.state.name;
+  }
+
+  public getStartDate(): IsoDate {
+    return this.championship.state.startDate;
+  }
+
+  public getDrivers() {
+    return this.entryList.entries.map((entry) => ({
+      id: entry.driverId,
+      name: entry.participant.driverName,
+      country: entry.participant.country,
+      carId: entry.car.model,
+      category: entry.car.carClassId,
+      raceNumber: entry.raceNumber,
+    }));
+  }
+
+  public getCars() {
+    return this.entryList.entries.map((entry) => ({
+      id: entry.car.model,
+      name: this.getCarName(entry.car.model),
+    }));
+  }
+
   public getDriverNumber(driverId: string): number | undefined {
     return this.entryList.entries.find((entry) => driverId === entry.driverId)
       ?.raceNumber;
+  }
+
+  public getCarName(carId: string): string | undefined {
+    return this.championship.state.gameSettings.cars.find((car) => car.id === carId)
+      ?.name;
+  }
+
+  public getEvents(): SgpEventApiData[] {
+    return this.events || [];
   }
 }

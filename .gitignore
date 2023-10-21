@@ -3,6 +3,7 @@ node_modules
 coverage
 dist
 dist-fns
+processed-data
 webpack/report.html
 *.tgz
 
