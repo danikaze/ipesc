@@ -6,7 +6,7 @@ import { SiDiscord } from '@react-icons/all-files/si/SiDiscord';
 import { Box, Container, Flex, Icon, Link } from '@chakra-ui/react';
 
 export const Footer: FC = () => (
-  <Box background='#222' color='white' borderBottom='1px solid grey'>
+  <Box background='#222' color='white' borderTop='1px solid grey'>
     <Container py={3}>
       <Flex alignItems='center' justifyContent='space-evenly'>
         <Item label='Github' icon={SiGithub} href='https://github.com/danikaze/ipesc' />

@@ -6,6 +6,7 @@ import { DynamicGraphDriverProgressPage } from 'components/pages/graph-driver-pr
 import { DynamicGraphSeasonRacesPctg } from 'components/pages/graph-session-races-pctg/dynamic';
 import { DynamicEntriesPage } from 'components/pages/entries/dynamic';
 import { IndexPage } from 'components/pages/index';
+import { DataProvider } from 'components/data-provider';
 import { hideLoadingLogo } from 'utils/hide-loading-logo';
 
 export const App: FC = () => {
@@ -14,14 +15,16 @@ export const App: FC = () => {
   }, []);
 
   return (
-    <HashRouter>
-      <Routes>
-        <Route path='/' element={<IndexPage />} />
-        <Route path='/entries' element={<EntriesPage />} />
-        <Route path='/driver' element={<DriverPage />} />
-        <Route path='/season' element={<SeasonPage />} />
-      </Routes>
-    </HashRouter>
+    <DataProvider>
+      <HashRouter>
+        <Routes>
+          <Route path='/' element={<IndexPage />} />
+          <Route path='/entries' element={<EntriesPage />} />
+          <Route path='/driver' element={<DriverPage />} />
+          <Route path='/season' element={<SeasonPage />} />
+        </Routes>
+      </HashRouter>
+    </DataProvider>
   );
 };
 
