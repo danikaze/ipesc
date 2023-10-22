@@ -16,7 +16,9 @@ export const Page: FC<Props> = ({ children }) => (
     gridTemplateRows='max-content auto max-content'
   >
     <NavBar />
-    <Container py={6}>{children}</Container>
+    <Container py={6} maxWidth='1000px'>
+      {children}
+    </Container>
     <Footer />
   </Grid>
 );

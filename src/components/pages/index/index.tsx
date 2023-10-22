@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Flex, Image } from '@chakra-ui/react';
+import { Container, Flex, Image } from '@chakra-ui/react';
 
 import ipescLogo from 'assets/ipesc-logo.png';
 
@@ -11,9 +11,11 @@ export const IndexPage: FC = () => {
 
   return (
     <Page>
-      <Flex h='100%' justifyContent='center' alignItems='center'>
-        <Image ref={logoRef} src={ipescLogo} />
-      </Flex>
+      <Container maxWidth='350px' h='100%'>
+        <Flex h='100%' justifyContent='center' alignItems='center'>
+          <Image ref={logoRef} src={ipescLogo} />
+        </Flex>
+      </Container>
     </Page>
   );
 };
