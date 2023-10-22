@@ -80,11 +80,13 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@react-icons/all-files": "^4.1.0",
+    "chart.js": "^4.4.0",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",
     "mkdirp": "^3.0.1",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0"
   }
