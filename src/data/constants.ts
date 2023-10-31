@@ -16,6 +16,7 @@ export const CUSTOM_NAMES: Record<string, string> = {
   HmJXSR2OksoGBlT10eR_q: 'BTCC',
   hxjmRD7aBYGUsyiNlCVo3: 'S6',
   u1Alc5D09NQjUNC4xPSVm: 'S7',
+  V2Dk0HTCw4sMCFvTyW0r8: 'Post S7 MX5 micro-season',
 };
 
 export const TRACK_MAX_BEST_TIMES = 100;
