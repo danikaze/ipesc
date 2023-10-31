@@ -3,6 +3,11 @@ import { SgpCategory, SgpEventType } from './sgp/types';
 import { msToTime } from './time';
 
 export function formatResultsMessageForDiscord(data: SgpEventApiData): string {
+  if (!data.getNumberOfRaces()) {
+    console.warn(`Can't get the number of races or they didn't happen yet.`);
+    return '';
+  }
+
   const title = `⭐ ${data.getChampionshipName()} ⭐`;
   const titleLength = Math.max(title.length, data.getEventName()?.length || 0);
   const categories = data.getCategoryList();
@@ -33,7 +38,7 @@ export function formatResultsMessageForDiscord(data: SgpEventApiData): string {
 }
 
 function getGlobalResults(data: SgpEventApiData): string {
-  const nRaces = data.getNumberOfRaces();
+  const nRaces = data.getNumberOfRaces()!;
 
   if (nRaces === 1) {
     return [getNames(data, 0), ''].join('\n');
@@ -51,7 +56,7 @@ function getCategoryResults(
   data: SgpEventApiData,
   category: SgpCategory
 ): string {
-  const nRaces = data.getNumberOfRaces();
+  const nRaces = data.getNumberOfRaces()!;
 
   if (nRaces === 1) {
     return [`**${title}**`, '', getNames(data, 0, category), ''].join('\n');

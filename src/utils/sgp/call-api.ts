@@ -69,10 +69,17 @@ export async function callApi(type: keyof typeof API_PATH, data: WithId) {
   }
 
   const headers = { Authorization: token };
-  const res = (await fetch(url, { headers })).json();
 
-  apiCache.set(url, res);
-  return res;
+  try {
+    const res = await fetch(url, { headers });
+    const json = await res.json();
+
+    apiCache.set(url, json);
+    return json;
+  } catch (e) {
+    console.warn(`Warning when calling ${url}`, e);
+    return;
+  }
 }
 
 export function clearApiCache() {

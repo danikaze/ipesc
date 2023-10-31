@@ -10,7 +10,10 @@ export function useTracksPage() {
 
   const tracks = useMemo(() => {
     if (!rawData) return;
-    const tracks = rawData.tracks.filter(({ id, game }) => {
+    const tracks = rawData.tracks.filter(({ id, game, best }) => {
+      // remove tracks without time data
+      if (!best.quali.length && !best.race.length) return false;
+      // apply the filter
       if (!filter || !filter.game) return true;
       if (game !== filter.game) return false;
       if (game === Game.ACC && filter.accVersion) {
