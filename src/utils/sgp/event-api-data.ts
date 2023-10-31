@@ -14,10 +14,10 @@ import { IsoDate } from 'utils/types';
 
 interface RawData {
   session: SgpEventSession;
-  results: SgpSessionResults;
-  points: SgpEventPoints;
-  pointsAdjustments: SgpEventPointsAdjustments;
-  penalties: SgpEventPointsAdjustments;
+  results?: SgpSessionResults;
+  points?: SgpEventPoints;
+  pointsAdjustments?: SgpEventPointsAdjustments;
+  penalties?: SgpEventPointsAdjustments;
 }
 
 export type DriverInfo = Pick<
@@ -31,10 +31,10 @@ export type DriverInfo = Pick<
 export class SgpEventApiData {
   private static readonly TYPE = 'SgpEventApiData';
   private session: SgpEventSession;
-  private results: SgpSessionResults;
-  private points: SgpEventPoints;
-  private pointsAdjustments: SgpEventPointsAdjustments;
-  private penalties: SgpEventPointsAdjustments;
+  private results?: SgpSessionResults;
+  private points?: SgpEventPoints;
+  private pointsAdjustments?: SgpEventPointsAdjustments;
+  private penalties?: SgpEventPointsAdjustments;
 
   constructor(data: RawData) {
     this.session = data.session;
@@ -87,8 +87,8 @@ export class SgpEventApiData {
     return this.session.session.startsAt;
   }
 
-  public getNumberOfRaces(): number {
-    return this.results.results.filter((obj) => obj.type === SgpEventType.RACE).length;
+  public getNumberOfRaces(): number | undefined {
+    return this.results?.results.filter((obj) => obj.type === SgpEventType.RACE).length;
   }
 
   public getCategoryList(): undefined | SgpCategory[] {
@@ -102,7 +102,7 @@ export class SgpEventApiData {
    * Ordered by their position by default
    */
   public getResults(type: SgpEventType, raceIndex: number = 0) {
-    const session = this.results.results.filter((obj) => obj.type === type)[raceIndex];
+    const session = this.results?.results.filter((obj) => obj.type === type)[raceIndex];
     if (!session) return;
 
     const res = {
@@ -146,7 +146,7 @@ export class SgpEventApiData {
    */
   public getDrivers(type: 'active' | 'inactive' | 'all'): DriverInfo[] {
     const map = new Map<string, DriverInfo>();
-    this.results.results.forEach((session) =>
+    this.results?.results.forEach((session) =>
       session.results.forEach((result) => {
         // no need to add drivers already added
         if (map.has(result.driverId)) return;
@@ -172,18 +172,18 @@ export class SgpEventApiData {
 
   private getRacePoints(driverId: string, raceIndex: number): number | undefined {
     try {
-      return this.points.racePoints[raceIndex][driverId].points;
+      return this.points?.racePoints[raceIndex][driverId].points;
     } catch {}
   }
 
   private getPointsAdjustmentsTotal(driverId: string, index: number): number {
-    const adjustments = this.pointsAdjustments[index]?.[driverId];
+    const adjustments = this.pointsAdjustments?.[index]?.[driverId];
     if (!adjustments) return 0;
     return adjustments.reduce((total, item) => total + item.points, 0);
   }
 
   private getPenaltiesTotal(driverId: string, raceIndex: number): number {
-    return this.penalties[raceIndex]?.[driverId]?.length ?? 0;
+    return this.penalties?.[raceIndex]?.[driverId]?.length ?? 0;
   }
 
   private static toCategory(data: string | undefined): SgpCategory | undefined {
