@@ -13,8 +13,7 @@ export const NavBar: FC = () => (
       >
         <NavLink path='/' label='Index' />
         <NavLink path='/entries' label='Entries' />
-        {/* <NavLink path='/driver' label='Driver' /> */}
-        {/* <NavLink path='/season' label='Season' /> */}
+        <NavLink path='/tracks' label='Tracks' />
       </UnorderedList>
     </Container>
   </Box>

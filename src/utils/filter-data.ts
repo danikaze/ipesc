@@ -1,7 +1,9 @@
-import { Championship, ProcessedData } from 'data/types';
+import { AccVersion, Championship, Event, Game, ProcessedData } from 'data/types';
 
 export interface Filter {
-  championships: 'all' | 'seasons';
+  championships?: 'all' | 'seasons';
+  game?: Game;
+  accVersion?: AccVersion;
 }
 
 export function filterData(
@@ -12,16 +14,31 @@ export function filterData(
   if (!filter) return data;
 
   const res = { ...data };
-  if (filter.championships === 'seasons') {
-    res.championships = data.championships.filter(isSeasonChampionship).map((c) => ({
-      ...c,
-      events: c.events.filter((e) => !/practice/.test(e.name)),
-    }));
-  }
+  const cFilter = getChampionshipFilter(filter);
+  const eFilter = getEventFilter(filter);
+  res.championships = res.championships.filter(cFilter).map((c) => ({
+    ...c,
+    events: c.events.filter(eFilter),
+  }));
 
   return res;
 }
 
-function isSeasonChampionship(championship: Championship): boolean {
-  return /^S\d+$/.test(championship.customName!);
+function getChampionshipFilter(filter: Filter): (championship: Championship) => boolean {
+  return (c) => {
+    if (filter.championships === 'seasons') {
+      if (!/^S\d+$/.test(c.customName!)) return false;
+    }
+    if (filter.game && c.game !== filter.game) {
+      return false;
+    }
+    return true;
+  };
+}
+
+function getEventFilter(filter: Filter): (event: Event) => boolean {
+  return (e) => {
+    if (/practice/i.test(e.name)) return false;
+    return true;
+  };
 }

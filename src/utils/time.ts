@@ -19,7 +19,7 @@ export function timeToMs(time: string | undefined): number | undefined {
 export function msToTime(time: number | undefined): string | undefined {
   if (time === undefined || isNaN(time) || time < 0) return;
 
-  const ms = time % SEC_TO_MS;
+  const ms = Math.round(time % SEC_TO_MS);
   const s = Math.floor(time / SEC_TO_MS) % MOD;
   const m = Math.floor(time / MIN_TO_MS) % MOD;
   const h = Math.floor(time / HOUR_TO_MS);
