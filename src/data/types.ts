@@ -22,6 +22,12 @@ export const enum Game {
   F1_23 = 'F1-23',
 }
 
+export const enum AccVersion {
+  V_2019 = '2019',
+  V_2020 = '2020',
+  V_2023 = '2023',
+}
+
 export interface Driver {
   id: string;
   name: string;

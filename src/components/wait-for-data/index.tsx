@@ -1,11 +1,14 @@
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { Flex, Spinner } from '@chakra-ui/react';
+
 import { ProcessedData } from 'data/types';
 
-export const WaitForData: FC<{
-  data: ProcessedData | undefined;
+export interface Props<T> {
+  data: T | undefined;
   children: ReactNode;
-}> = ({ data, children }) => {
+}
+
+export function WaitForData<T = ProcessedData>({ data, children }: Props<T>) {
   if (data) return children;
 
   return (
@@ -13,4 +16,4 @@ export const WaitForData: FC<{
       <Spinner size='xl' thickness='5px' color='orange' label='Loading...' />
     </Flex>
   );
-};
+}

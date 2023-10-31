@@ -2,11 +2,10 @@ import { FC, Suspense, useEffect } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { Flex, Spinner } from '@chakra-ui/react';
 
-import { DynamicGraphDriverProgressPage } from 'components/pages/graph-driver-progress/dynamic';
-import { DynamicGraphSeasonRacesPctg } from 'components/pages/graph-session-races-pctg/dynamic';
 import { DynamicEntriesPage } from 'components/pages/entries/dynamic';
 import { IndexPage } from 'components/pages/index';
 import { DataProvider } from 'components/data-provider';
+import { DynamicTracksPage } from 'components/pages/tracks/dynamic';
 import { hideLoadingLogo } from 'utils/hide-loading-logo';
 
 export const App: FC = () => {
@@ -20,8 +19,7 @@ export const App: FC = () => {
         <Routes>
           <Route path='/' element={<IndexPage />} />
           <Route path='/entries' element={<EntriesPage />} />
-          <Route path='/driver' element={<DriverPage />} />
-          <Route path='/season' element={<SeasonPage />} />
+          <Route path='/tracks' element={<TracksPage />} />
         </Routes>
       </HashRouter>
     </DataProvider>
@@ -40,14 +38,8 @@ const EntriesPage = () => (
   </Suspense>
 );
 
-const DriverPage = () => (
+const TracksPage = () => (
   <Suspense fallback={<CenteredSpinner />}>
-    <DynamicGraphDriverProgressPage />
-  </Suspense>
-);
-
-const SeasonPage = () => (
-  <Suspense fallback={<CenteredSpinner />}>
-    <DynamicGraphSeasonRacesPctg />
+    <DynamicTracksPage />
   </Suspense>
 );

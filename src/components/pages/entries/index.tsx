@@ -16,7 +16,11 @@ export const EntriesPage: FC = () => {
     <Page>
       <Heading size='md'>Participation per season</Heading>
       <WaitForData data={seasonData}>
-        <DataFilter onChange={setSeasonFilter} defaultValue={{ championships: 'all' }} />
+        <DataFilter
+          showChampionships
+          onChange={setSeasonFilter}
+          defaultValue={{ championships: 'all' }}
+        />
         <ParticipationPerSeasonChart data={seasonData!} />
       </WaitForData>
 
@@ -24,7 +28,7 @@ export const EntriesPage: FC = () => {
         Participation per race
       </Heading>
       <WaitForData data={raceData}>
-        <DataFilter onChange={setRaceFilter} />
+        <DataFilter showChampionships onChange={setRaceFilter} />
         <ParticipationPerRaceChart data={raceData!} />
       </WaitForData>
     </Page>
