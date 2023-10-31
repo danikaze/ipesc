@@ -1,0 +1,3236 @@
+{
+  "_type": "SgpChampionshipApiData",
+  "championship": {
+    "id": "V2Dk0HTCw4sMCFvTyW0r8",
+    "version": 3,
+    "state": {
+      "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+      "name": "Indo-Pacific Endurance Simulation Challenge | MX5 micro-season",
+      "type": "CHAMPIONSHIP",
+      "status": "STARTED",
+      "startDate": "2023-10-31T08:29:54.395Z",
+      "description": "",
+      "participationRules": { "allowTeams": false },
+      "pointSystem": {
+        "name": "Grand Prix",
+        "entries": {
+          "1": 25,
+          "2": 18,
+          "3": 15,
+          "4": 12,
+          "5": 10,
+          "6": 8,
+          "7": 6,
+          "8": 4,
+          "9": 2,
+          "10": 1,
+          "11": 0
+        },
+        "bestRaceCount": "all"
+      },
+      "deleted": false,
+      "createdBy": "3NVZwsLHyrwnM8r0Bv644",
+      "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+      "rulesDescription": "",
+      "entryRules": { "maxEntries": 24, "closedEntry": false, "joinAfterStart": true },
+      "generalData": {
+        "bgImage": "01e03t58r0egq7g78kdc6js11m",
+        "defaultLanguageCode": "en",
+        "aboutTranslations": []
+      },
+      "gameSettings": {
+        "cars": [
+          {
+            "id": "abarth500",
+            "name": "Abarth 500 EsseEsse",
+            "config": {
+              "ballast": 0,
+              "restrictor": 0,
+              "allowedTyres": { "E": true, "V": true, "HR": true, "ST": true }
+            }
+          },
+          { "id": "ks_mazda_mx5_cup", "name": "Mazda MX5 Cup" }
+        ],
+        "game": "assetto_corsa",
+        "driverSwap": false,
+        "gameVersion": "1.16",
+        "platform": "PC"
+      },
+      "endDate": null,
+      "firstRaceTime": "2023-10-31T08:30:00.000Z",
+      "nextRaceTime": "2023-11-14T08:30:00.000Z",
+      "lastRaceTime": "2023-12-05T08:30:00.000Z",
+      "eventsLeft": 2,
+      "totalEvents": 3
+    },
+    "joinConditions": null
+  },
+  "points": {
+    "tournamentId": "V2Dk0HTCw4sMCFvTyW0r8",
+    "lines": [
+      {
+        "participantId": "PEV53emXeBEuUQOxcrzFa",
+        "averageFinish": 1,
+        "points": 25,
+        "wins": 1,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 25,
+            "position": 1,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "PEV53emXeBEuUQOxcrzFa",
+          "name": "Nico Cappa",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "3NVZwsLHyrwnM8r0Bv644",
+        "averageFinish": 2,
+        "points": 18,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 18,
+            "position": 2,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "3NVZwsLHyrwnM8r0Bv644",
+          "name": "Ryan Whitmore",
+          "country": "AU",
+          "badgeId": "SPORT"
+        }
+      },
+      {
+        "participantId": "oE88zMt_cbvY1o_lBQ72P",
+        "averageFinish": 3,
+        "points": 15,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 15,
+            "position": 3,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "oE88zMt_cbvY1o_lBQ72P",
+          "name": "Jaryd King",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "krMnfb4Dj5VsbbELJP5R1",
+        "averageFinish": 4,
+        "points": 12,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 12,
+            "position": 4,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "krMnfb4Dj5VsbbELJP5R1",
+          "name": "Aulia Wafiq Prianata",
+          "country": "ID"
+        }
+      },
+      {
+        "participantId": "lnLbWIqriGvN_KhkL6Quv",
+        "averageFinish": 5,
+        "points": 10,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 10,
+            "position": 5,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "lnLbWIqriGvN_KhkL6Quv",
+          "name": "Dani Kaze",
+          "country": "JP"
+        }
+      },
+      {
+        "participantId": "kxF3Ph1pWHKs3E4Ch3ZsS",
+        "averageFinish": 6,
+        "points": 8,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 8,
+            "position": 6,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "kxF3Ph1pWHKs3E4Ch3ZsS",
+          "name": "Dylan King",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "Wx4qSn_PuB8r5q3HLi8bW",
+        "averageFinish": 7,
+        "points": 6,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 6,
+            "position": 7,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "Wx4qSn_PuB8r5q3HLi8bW",
+          "name": "Will Hammond",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "at7olhz3cbEF_ibZhV1WH",
+        "averageFinish": 8,
+        "points": 4,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 4,
+            "position": 8,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "at7olhz3cbEF_ibZhV1WH",
+          "name": "Mark Stott",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "lntg3-c5D0hgW-dHFKYUe",
+        "averageFinish": 9,
+        "points": 2,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 2,
+            "position": 9,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "lntg3-c5D0hgW-dHFKYUe",
+          "name": "Simon Berry",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "S6WGJ8U00l7w_m0XH0Yu9",
+        "averageFinish": 10,
+        "points": 1,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 1,
+            "position": 10,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "S6WGJ8U00l7w_m0XH0Yu9",
+          "name": "Kenneth A Worcester",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "oPXc7nA9WBYLPySMWnihS",
+        "averageFinish": 11,
+        "points": 0,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 11,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "oPXc7nA9WBYLPySMWnihS",
+          "name": "Josh Thomas",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "VUmvrxL3SvyOu5BlsDvQ5",
+        "averageFinish": 12,
+        "points": 0,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 12,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+          "name": "Mark Felton ",
+          "country": "AU",
+          "badgeId": "DRIVE"
+        }
+      },
+      {
+        "participantId": "aV2yTVQK8SLtOfRzxqw3J",
+        "averageFinish": 13,
+        "points": 0,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 13,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "aV2yTVQK8SLtOfRzxqw3J",
+          "name": "Armandt Fourie",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "RIL0mwMWPDFHu0LNbQCg9",
+        "averageFinish": 14,
+        "points": 0,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 14,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "RIL0mwMWPDFHu0LNbQCg9",
+          "name": "Tinted Stud",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "RzsOMU7XCku1ny3KCXXWz",
+        "averageFinish": 15,
+        "points": 0,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 15,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "RzsOMU7XCku1ny3KCXXWz",
+          "name": "Michael Lauder",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "C4cK4PShr09AWZz-jMy-L",
+        "averageFinish": 16,
+        "points": 0,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 16,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "C4cK4PShr09AWZz-jMy-L",
+          "name": "Duncan Williams",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "QQMAMmgupkQFwRFx0wAPD",
+        "averageFinish": 17,
+        "points": 0,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 17,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "QQMAMmgupkQFwRFx0wAPD",
+          "name": "Isaac Becker",
+          "country": "AU"
+        }
+      },
+      {
+        "participantId": "K_Fk86dOXX2waJu_S5-ke",
+        "averageFinish": 18,
+        "points": 0,
+        "wins": 0,
+        "racePoints": [
+          {
+            "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+            "raceIndex": 0,
+            "points": 0,
+            "position": 18,
+            "included": true
+          }
+        ],
+        "participantDetails": {
+          "driverId": "K_Fk86dOXX2waJu_S5-ke",
+          "name": "pakorn panasoponkul",
+          "country": "TH"
+        }
+      }
+    ],
+    "raceOrder": null
+  },
+  "sessions": [
+    {
+      "id": "-Jo3RwrzHXhbwpBkzuDta",
+      "v": 6,
+      "createdBy": "3NVZwsLHyrwnM8r0Bv644",
+      "sessionName": "MX5 Micro-season Race 1 - Laguna Seca",
+      "startsAt": "2023-10-31T08:30:00.000Z",
+      "game": "assetto_corsa",
+      "gameVersion": "1.16",
+      "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+      "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+      "tournamentId": "V2Dk0HTCw4sMCFvTyW0r8",
+      "tournamentName": "Indo-Pacific Endurance Simulation Challenge | MX5 micro-season",
+      "tournamentType": "CHAMPIONSHIP",
+      "duration": 93,
+      "maxEntries": 24,
+      "activeEntryCount": {
+        "ADMIN": 0,
+        "REGULAR": 18,
+        "WAITING": 0,
+        "RESERVED": 0,
+        "SPECTATOR": 0
+      },
+      "isParticipant": true,
+      "participationType": "DRIVER",
+      "status": "ENDED",
+      "trackId": "ks_laguna_seca::",
+      "trackName": "Laguna Seca",
+      "cars": [
+        {
+          "id": "abarth500",
+          "name": "Abarth 500 EsseEsse",
+          "config": {
+            "ballast": 0,
+            "restrictor": 0,
+            "allowedTyres": { "E": true, "V": true, "HR": true, "ST": true }
+          }
+        },
+        { "id": "ks_mazda_mx5_cup", "name": "Mazda MX5 Cup" }
+      ],
+      "isMultiClass": false,
+      "driverSwap": false,
+      "closedEntry": false,
+      "segmentCounts": { "practice": 1, "qualify": 1, "race": 1 },
+      "isRanked": true,
+      "joinConditions": null,
+      "isMultiSplit": false,
+      "fromRecurringSession": false,
+      "leaguePermissionsMatch": true,
+      "isManual": false
+    },
+    {
+      "id": "2jD8UybKQfoRgp80_RxWT",
+      "v": 4,
+      "createdBy": "3NVZwsLHyrwnM8r0Bv644",
+      "sessionName": "MX5 micro-season race 2 - Barbagallo",
+      "startsAt": "2023-11-14T08:30:00.000Z",
+      "game": "assetto_corsa",
+      "gameVersion": "1.16",
+      "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+      "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+      "tournamentId": "V2Dk0HTCw4sMCFvTyW0r8",
+      "tournamentName": "Indo-Pacific Endurance Simulation Challenge | MX5 micro-season",
+      "tournamentType": "CHAMPIONSHIP",
+      "duration": 93,
+      "maxEntries": 24,
+      "activeEntryCount": {
+        "ADMIN": 0,
+        "REGULAR": 18,
+        "WAITING": 0,
+        "RESERVED": 0,
+        "SPECTATOR": 0
+      },
+      "isParticipant": true,
+      "participationType": "DRIVER",
+      "status": "WAITING",
+      "trackId": "barbagallo::",
+      "trackName": "Barbagallo",
+      "cars": [
+        {
+          "id": "abarth500",
+          "name": "Abarth 500 EsseEsse",
+          "config": {
+            "ballast": 0,
+            "restrictor": 0,
+            "allowedTyres": { "E": true, "V": true, "HR": true, "ST": true }
+          }
+        },
+        { "id": "ks_mazda_mx5_cup", "name": "Mazda MX5 Cup" }
+      ],
+      "isMultiClass": false,
+      "driverSwap": false,
+      "closedEntry": false,
+      "segmentCounts": { "practice": 1, "qualify": 1, "race": 1 },
+      "isRanked": true,
+      "joinConditions": null,
+      "isMultiSplit": false,
+      "fromRecurringSession": false,
+      "leaguePermissionsMatch": true,
+      "isManual": false
+    },
+    {
+      "id": "OEy5BM6mXkqhde34kRsRj",
+      "v": 4,
+      "createdBy": "3NVZwsLHyrwnM8r0Bv644",
+      "sessionName": "MX5 micro-season race 3 - Horsma Raceway",
+      "startsAt": "2023-12-05T08:30:00.000Z",
+      "game": "assetto_corsa",
+      "gameVersion": "1.16",
+      "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+      "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+      "tournamentId": "V2Dk0HTCw4sMCFvTyW0r8",
+      "tournamentName": "Indo-Pacific Endurance Simulation Challenge | MX5 micro-season",
+      "tournamentType": "CHAMPIONSHIP",
+      "duration": 93,
+      "maxEntries": 24,
+      "activeEntryCount": {
+        "ADMIN": 0,
+        "REGULAR": 18,
+        "WAITING": 0,
+        "RESERVED": 0,
+        "SPECTATOR": 0
+      },
+      "isParticipant": true,
+      "participationType": "DRIVER",
+      "status": "WAITING",
+      "trackId": "ghoults_horsma::club",
+      "trackName": "Horsma Raceway - Club layout",
+      "cars": [
+        {
+          "id": "abarth500",
+          "name": "Abarth 500 EsseEsse",
+          "config": {
+            "ballast": 0,
+            "restrictor": 0,
+            "allowedTyres": { "E": true, "V": true, "HR": true, "ST": true }
+          }
+        },
+        { "id": "ks_mazda_mx5_cup", "name": "Mazda MX5 Cup" }
+      ],
+      "isMultiClass": false,
+      "driverSwap": false,
+      "closedEntry": false,
+      "segmentCounts": { "practice": 1, "qualify": 1, "race": 1 },
+      "isRanked": true,
+      "joinConditions": null,
+      "isMultiSplit": false,
+      "fromRecurringSession": false,
+      "leaguePermissionsMatch": true,
+      "isManual": false
+    }
+  ],
+  "penalties": [],
+  "entryList": {
+    "entries": [
+      {
+        "car": { "skin": "07_cup_56", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "QQMAMmgupkQFwRFx0wAPD",
+        "joinDate": "2023-10-15T11:48:03.839Z",
+        "participant": {
+          "id": "QQMAMmgupkQFwRFx0wAPD",
+          "rank": 0.92437,
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "Isaac Becker",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/cfaf6917f47ca6122396f46e485a79a090f29fa0_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "13_cup_70", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "PEV53emXeBEuUQOxcrzFa",
+        "joinDate": "2023-10-17T08:11:32.655Z",
+        "participant": {
+          "id": "PEV53emXeBEuUQOxcrzFa",
+          "rank": 0.9008,
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "Nico Cappa",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/c7c051daec1b48bfe55b531f6dba3a456de32c96_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "10_cup_60", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "3NVZwsLHyrwnM8r0Bv644",
+        "joinDate": "2023-10-08T04:10:11.538Z",
+        "participant": {
+          "id": "3NVZwsLHyrwnM8r0Bv644",
+          "rank": 0.870181,
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "Ryan Whitmore",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/bb0a3f11709d71a6e0982bf085b1ba4e472d6878_medium.jpg",
+          "badgeId": "SPORT"
+        }
+      },
+      {
+        "car": { "skin": "12_cup_62", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "kxF3Ph1pWHKs3E4Ch3ZsS",
+        "joinDate": "2023-10-14T00:09:00.160Z",
+        "participant": {
+          "id": "kxF3Ph1pWHKs3E4Ch3ZsS",
+          "rank": 0.815365,
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "Dylan King",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/7e460b80ae523d0ef4acdab3e703a03994fba292_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "03_cup_24", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "Wx4qSn_PuB8r5q3HLi8bW",
+        "joinDate": "2023-10-24T05:37:34.117Z",
+        "participant": {
+          "id": "Wx4qSn_PuB8r5q3HLi8bW",
+          "rank": 0.7795,
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "Will Hammond",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "17_arisoil_72", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "oE88zMt_cbvY1o_lBQ72P",
+        "joinDate": "2023-10-09T03:35:01.497Z",
+        "participant": {
+          "id": "oE88zMt_cbvY1o_lBQ72P",
+          "rank": 0.772593,
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "Jaryd King",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/cf9228ff63a0fad3469ff89aa38081b9c1091c71_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "13_cup_70", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "lnLbWIqriGvN_KhkL6Quv",
+        "joinDate": "2023-10-12T12:45:01.454Z",
+        "participant": {
+          "id": "lnLbWIqriGvN_KhkL6Quv",
+          "rank": 0.742693,
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "Dani Kaze",
+          "country": "JP",
+          "avatarUrl": "https://avatars.steamstatic.com/859900ead30754fff0cae3771fa10ec68b9b4188_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "15_speedsource_71", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "at7olhz3cbEF_ibZhV1WH",
+        "joinDate": "2023-10-14T10:10:56.228Z",
+        "participant": {
+          "id": "at7olhz3cbEF_ibZhV1WH",
+          "rank": 0.677694,
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "Mark Stott",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/06110b31a969dfb44ed5128f327058d990f128d8_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "14_cup_87", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "krMnfb4Dj5VsbbELJP5R1",
+        "joinDate": "2023-10-09T06:04:43.737Z",
+        "participant": {
+          "id": "krMnfb4Dj5VsbbELJP5R1",
+          "rank": 0.640713,
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "Aulia Wafiq Prianata",
+          "country": "ID",
+          "avatarUrl": "https://avatars.steamstatic.com/b11b0d105b9f339f6f7004b69e65c5e3a7ad8b1b_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "06_cup_55", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "C4cK4PShr09AWZz-jMy-L",
+        "joinDate": "2023-10-14T10:12:20.356Z",
+        "participant": {
+          "id": "C4cK4PShr09AWZz-jMy-L",
+          "rank": 0.581326,
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "Duncan Williams",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/5ea5add6337ba1e4f97a92f889edad83bf75191b_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "01_cup_07", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "S6WGJ8U00l7w_m0XH0Yu9",
+        "joinDate": "2023-10-10T22:15:51.789Z",
+        "participant": {
+          "id": "S6WGJ8U00l7w_m0XH0Yu9",
+          "rank": 0.570388,
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "Kenneth A Worcester",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/22c8228f4977e4492ee2b44e6bbc5213f596acb8_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "04_cup_29", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "RIL0mwMWPDFHu0LNbQCg9",
+        "joinDate": "2023-10-10T08:04:06.636Z",
+        "participant": {
+          "id": "RIL0mwMWPDFHu0LNbQCg9",
+          "rank": 0.569756,
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "Tinted Stud",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/698eb230a553d00bcb770566270fbb69ec692caa_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "10_cup_60", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "RzsOMU7XCku1ny3KCXXWz",
+        "joinDate": "2023-10-15T08:23:35.448Z",
+        "participant": {
+          "id": "RzsOMU7XCku1ny3KCXXWz",
+          "rank": 0.520904,
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "Michael Lauder",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/4986593567d6b1bd8420259a94d1457ec10e5555_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "08_cup_57", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "lntg3-c5D0hgW-dHFKYUe",
+        "joinDate": "2023-10-11T10:50:26.275Z",
+        "participant": {
+          "id": "lntg3-c5D0hgW-dHFKYUe",
+          "rank": 0.459997,
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "Simon Berry",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "05_cup_36", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "oPXc7nA9WBYLPySMWnihS",
+        "joinDate": "2023-10-08T04:11:11.398Z",
+        "participant": {
+          "id": "oPXc7nA9WBYLPySMWnihS",
+          "rank": 0.381802,
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "Josh Thomas",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/a02dfcc6a1b62651f90fb50d997c0a0474b43f39_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "17_arisoil_72", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "aV2yTVQK8SLtOfRzxqw3J",
+        "joinDate": "2023-10-31T08:03:16.223Z",
+        "participant": {
+          "id": "aV2yTVQK8SLtOfRzxqw3J",
+          "rank": 0.374,
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "Armandt Fourie",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/3a652bbb2041e21130c7d86bd2fe35924134481a_medium.jpg"
+        }
+      },
+      {
+        "car": { "skin": "02_cup_23", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+        "joinDate": "2023-10-10T11:27:53.838Z",
+        "participant": {
+          "id": "VUmvrxL3SvyOu5BlsDvQ5",
+          "rank": 0.26891,
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "Mark Felton ",
+          "country": "AU",
+          "avatarUrl": "https://avatars.steamstatic.com/3c64713dc4917e05cd983db5da9e9baa4acdea2f_medium.jpg",
+          "badgeId": "DRIVE"
+        }
+      },
+      {
+        "car": { "skin": "01_cup_07", "model": "ks_mazda_mx5_cup" },
+        "type": "REGULAR",
+        "status": "ACTIVE",
+        "driverId": "K_Fk86dOXX2waJu_S5-ke",
+        "joinDate": "2023-10-26T04:07:26.731Z",
+        "participant": {
+          "id": "K_Fk86dOXX2waJu_S5-ke",
+          "license": { "license": "R", "safetyLevel": 0 },
+          "driverName": "pakorn panasoponkul",
+          "country": "TH",
+          "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg"
+        }
+      }
+    ],
+    "splitCount": 1,
+    "splitNo": 1,
+    "joinedSplitNo": 1,
+    "v": 21,
+    "spectators": [],
+    "inactiveEntries": [],
+    "counts": {
+      "participants": { "total": 18, "byCar": { "ks_mazda_mx5_cup": 18 } },
+      "spectators": 0,
+      "inactive": 0
+    }
+  },
+  "events": [
+    {
+      "_type": "SgpEventApiData",
+      "session": {
+        "session": {
+          "id": "-Jo3RwrzHXhbwpBkzuDta",
+          "startsAt": "2023-10-31T08:30:00.000Z",
+          "game": "assetto_corsa",
+          "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+          "tournamentId": "V2Dk0HTCw4sMCFvTyW0r8",
+          "duration": 93,
+          "config": {
+            "realism": {
+              "fuel_rate": 100,
+              "start_rule": 2,
+              "max_ballast": 0,
+              "tyre_wear_rate": 100,
+              "damage_multiplier": 100
+            },
+            "weather": {
+              "graphics": "3_clear",
+              "variation_road": 4,
+              "time_of_the_day": 12,
+              "time_of_day_mult": 1,
+              "variation_ambient": 5,
+              "wind_base_direction": 30,
+              "wind_base_speed_max": 15,
+              "wind_base_speed_min": 3,
+              "base_temperature_road": 10,
+              "base_ambient_temperature": 20,
+              "wind_variation_direction": 15
+            },
+            "isRanked": true,
+            "location": "AU-Sydney",
+            "password": "Ipesc",
+            "raceTime": 40,
+            "difficulty": {
+              "tc_allowed": 1,
+              "abs_allowed": 1,
+              "allowed_tyres_out": 4,
+              "stability_allowed": false,
+              "autoclutch_allowed": true,
+              "force_virtual_mirror": false,
+              "tyre_blankets_allowed": false,
+              "race_gas_penalty_disabled": true
+            },
+            "maxEntries": 24,
+            "closedEntry": false,
+            "practiceTime": 30,
+            "dynamic_track": {
+              "enabled": true,
+              "lap_gain": 22,
+              "randomness": 2,
+              "session_start": 95,
+              "session_transfer": 100
+            },
+            "admin_password": null,
+            "race_over_time": 360,
+            "tournamentType": "CHAMPIONSHIP",
+            "hasGridPositions": false,
+            "practicePassword": null,
+            "qualificationTime": 15,
+            "practiceServerName": null,
+            "result_screen_time": 60,
+            "enableServerProtection": false,
+            "entryPassword": null
+          },
+          "status": "ENDED",
+          "statusTime": "2023-10-31T10:11:02.853Z",
+          "sessionName": "MX5 Micro-season Race 1 - Laguna Seca",
+          "gameVersion": "1.16",
+          "trackId": "ks_laguna_seca::",
+          "trackName": "Laguna Seca",
+          "cars": [
+            {
+              "id": "abarth500",
+              "name": "Abarth 500 EsseEsse",
+              "config": {
+                "ballast": 0,
+                "restrictor": 0,
+                "allowedTyres": { "E": true, "V": true, "HR": true, "ST": true }
+              }
+            },
+            { "id": "ks_mazda_mx5_cup", "name": "Mazda MX5 Cup" }
+          ],
+          "createdBy": "3NVZwsLHyrwnM8r0Bv644",
+          "v": 6,
+          "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+          "tournamentName": "Indo-Pacific Endurance Simulation Challenge | MX5 micro-season",
+          "serverName": "| simracing.gp | Indo-Pacific Endurance Simulation Challenge | MX5 Micro-season Race 1 - Laguna Seca",
+          "aliveTime": null,
+          "carClasses": null,
+          "entryListId": "V2Dk0HTCw4sMCFvTyW0r8",
+          "driverSwap": false,
+          "serverStartTime": "2023-10-31T08:30:00.000Z",
+          "statusHistory": [
+            {
+              "status": "DRAFT",
+              "invokedBy": "3NVZwsLHyrwnM8r0Bv644",
+              "timestamp": "2023-10-08T01:56:21.972Z"
+            },
+            {
+              "status": "WAITING",
+              "invokedBy": "3NVZwsLHyrwnM8r0Bv644",
+              "timestamp": "2023-10-08T03:08:36.442Z"
+            },
+            {
+              "status": "WAITING",
+              "invokedBy": "3NVZwsLHyrwnM8r0Bv644",
+              "timestamp": "2023-10-08T03:28:33.302Z"
+            },
+            {
+              "status": "WAITING",
+              "invokedBy": "3NVZwsLHyrwnM8r0Bv644",
+              "timestamp": "2023-10-31T07:29:10.756Z"
+            },
+            {
+              "status": "IN_PROGRESS",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2023-10-31T08:29:52.523Z"
+            },
+            {
+              "status": "ENDED",
+              "invokedBy": "SYSTEM",
+              "timestamp": "2023-10-31T10:11:02.854Z"
+            }
+          ],
+          "instanceInfo": [],
+          "data": {},
+          "statusInfo": "DEFAULT_FLOW",
+          "manualSession": false
+        },
+        "joinConditions": null,
+        "missingLeaguePermissions": []
+      },
+      "results": {
+        "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+        "createdBy": "3NVZwsLHyrwnM8r0Bv644",
+        "tournamentId": "V2Dk0HTCw4sMCFvTyW0r8",
+        "tournamentType": "CHAMPIONSHIP",
+        "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+        "sessionName": "MX5 Micro-season Race 1 - Laguna Seca",
+        "date": "2023-10-31T08:30:00.000Z",
+        "game": "assetto_corsa",
+        "gameVersion": "1.16",
+        "trackId": "ks_laguna_seca::",
+        "trackName": "Laguna Seca",
+        "driverSwap": false,
+        "averageFieldStrength": 0.637641,
+        "rankingStatus": "COMPLETED",
+        "v": 2,
+        "results": [
+          {
+            "type": "RACE",
+            "results": [
+              {
+                "carId": "1",
+                "bestLap": 23,
+                "driverId": "PEV53emXeBEuUQOxcrzFa",
+                "lapCount": 25,
+                "position": 1,
+                "carSkinId": "13_cup_70",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 2,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 2488501,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 98182,
+                "timeRetired": { "type": "TIME", "value": 2488501 },
+                "bestCleanLap": 23,
+                "cleanLapCount": 25,
+                "rankingChange": { "delta": 0.013639, "newRank": 0.9145 },
+                "averageLapTime": 99539,
+                "totalCleanTime": 2488483,
+                "bestCleanLapTime": 98182,
+                "averageCleanLapTime": 99539,
+                "participant": {
+                  "id": "PEV53emXeBEuUQOxcrzFa",
+                  "name": "Nico Cappa",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c7c051daec1b48bfe55b531f6dba3a456de32c96_medium.jpg",
+                  "rankingChange": { "delta": 0.013639, "newRank": 0.9145 },
+                  "type": "DRIVER",
+                  "licenseChange": {
+                    "from": { "license": "R", "safetyLevel": 0 },
+                    "to": { "license": "R", "safetyLevel": 5.144 },
+                    "delta": 5.144
+                  }
+                }
+              },
+              {
+                "carId": "2",
+                "bestLap": 23,
+                "driverId": "3NVZwsLHyrwnM8r0Bv644",
+                "lapCount": 25,
+                "position": 2,
+                "carSkinId": "10_cup_60",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 6,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 2494177,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 97624,
+                "timeRetired": { "type": "TIMEDIFF", "value": 5676 },
+                "bestCleanLap": 23,
+                "cleanLapCount": 25,
+                "rankingChange": { "delta": 0.0165519, "newRank": 0.9062 },
+                "averageLapTime": 99764,
+                "totalCleanTime": 2494110,
+                "bestCleanLapTime": 97624,
+                "averageCleanLapTime": 99764,
+                "participant": {
+                  "id": "3NVZwsLHyrwnM8r0Bv644",
+                  "name": "Ryan Whitmore",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/bb0a3f11709d71a6e0982bf085b1ba4e472d6878_medium.jpg",
+                  "badgeId": "SPORT",
+                  "rankingChange": { "delta": 0.0165519, "newRank": 0.9062 },
+                  "type": "DRIVER",
+                  "licenseChange": {
+                    "from": { "license": "R", "safetyLevel": 0 },
+                    "to": { "license": "R", "safetyLevel": 1.503 },
+                    "delta": 1.503
+                  }
+                }
+              },
+              {
+                "carId": "5",
+                "bestLap": 10,
+                "driverId": "oE88zMt_cbvY1o_lBQ72P",
+                "lapCount": 25,
+                "position": 3,
+                "carSkinId": "17_arisoil_72",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 4,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 2509213,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 98476,
+                "timeRetired": { "type": "TIMEDIFF", "value": 20712 },
+                "bestCleanLap": 10,
+                "cleanLapCount": 25,
+                "rankingChange": { "delta": 0.0170255, "newRank": 0.8237 },
+                "averageLapTime": 100369,
+                "totalCleanTime": 2509232,
+                "bestCleanLapTime": 98476,
+                "averageCleanLapTime": 100369,
+                "participant": {
+                  "id": "oE88zMt_cbvY1o_lBQ72P",
+                  "name": "Jaryd King",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/cf9228ff63a0fad3469ff89aa38081b9c1091c71_medium.jpg",
+                  "rankingChange": { "delta": 0.0170255, "newRank": 0.8237 },
+                  "type": "DRIVER",
+                  "licenseChange": {
+                    "from": { "license": "R", "safetyLevel": 0 },
+                    "to": { "license": "R", "safetyLevel": 2.413 },
+                    "delta": 2.413
+                  }
+                }
+              },
+              {
+                "carId": "8",
+                "bestLap": 16,
+                "driverId": "krMnfb4Dj5VsbbELJP5R1",
+                "lapCount": 25,
+                "position": 4,
+                "carSkinId": "14_cup_87",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 2520120,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 98634,
+                "timeRetired": { "type": "TIMEDIFF", "value": 31619 },
+                "bestCleanLap": 16,
+                "cleanLapCount": 25,
+                "rankingChange": { "delta": 0.0464093, "newRank": 0.6371 },
+                "averageLapTime": 100807,
+                "totalCleanTime": 2520166,
+                "bestCleanLapTime": 98634,
+                "averageCleanLapTime": 100807,
+                "participant": {
+                  "id": "krMnfb4Dj5VsbbELJP5R1",
+                  "name": "Aulia Wafiq Prianata",
+                  "country": "ID",
+                  "avatarUrl": "https://avatars.steamstatic.com/b11b0d105b9f339f6f7004b69e65c5e3a7ad8b1b_medium.jpg",
+                  "rankingChange": { "delta": 0.0464093, "newRank": 0.6371 },
+                  "type": "DRIVER",
+                  "licenseChange": {
+                    "from": { "license": "R", "safetyLevel": 0 },
+                    "to": { "license": "R", "safetyLevel": 1.589 },
+                    "delta": 1.589
+                  }
+                }
+              },
+              {
+                "carId": "6",
+                "bestLap": 16,
+                "driverId": "lnLbWIqriGvN_KhkL6Quv",
+                "lapCount": 25,
+                "position": 5,
+                "carSkinId": "13_cup_70",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 2549516,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 99154,
+                "timeRetired": { "type": "TIMEDIFF", "value": 61015 },
+                "bestCleanLap": 16,
+                "cleanLapCount": 25,
+                "rankingChange": { "delta": 0.00637174, "newRank": 0.7491 },
+                "averageLapTime": 101981,
+                "totalCleanTime": 2549535,
+                "bestCleanLapTime": 99154,
+                "averageCleanLapTime": 101981,
+                "participant": {
+                  "id": "lnLbWIqriGvN_KhkL6Quv",
+                  "name": "Dani Kaze",
+                  "country": "JP",
+                  "avatarUrl": "https://avatars.steamstatic.com/859900ead30754fff0cae3771fa10ec68b9b4188_medium.jpg",
+                  "rankingChange": { "delta": 0.00637174, "newRank": 0.7491 },
+                  "type": "DRIVER",
+                  "licenseChange": {
+                    "from": { "license": "R", "safetyLevel": 0 },
+                    "to": { "license": "R", "safetyLevel": 1.589 },
+                    "delta": 1.589
+                  }
+                }
+              },
+              {
+                "carId": "3",
+                "bestLap": 14,
+                "driverId": "kxF3Ph1pWHKs3E4Ch3ZsS",
+                "lapCount": 25,
+                "position": 6,
+                "carSkinId": "12_cup_62",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 6,
+                  "collisionsWithEnv": 1,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 2564354,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 99851,
+                "timeRetired": { "type": "TIMEDIFF", "value": 75853 },
+                "bestCleanLap": 14,
+                "cleanLapCount": 25,
+                "rankingChange": { "delta": -0.0102078, "newRank": 0.8052 },
+                "averageLapTime": 102575,
+                "totalCleanTime": 2564367,
+                "bestCleanLapTime": 99851,
+                "averageCleanLapTime": 102575,
+                "participant": {
+                  "id": "kxF3Ph1pWHKs3E4Ch3ZsS",
+                  "name": "Dylan King",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/7e460b80ae523d0ef4acdab3e703a03994fba292_medium.jpg",
+                  "rankingChange": { "delta": -0.0102078, "newRank": 0.8052 },
+                  "type": "DRIVER",
+                  "licenseChange": {
+                    "from": { "license": "R", "safetyLevel": 0 },
+                    "to": { "license": "R", "safetyLevel": 1.139 },
+                    "delta": 1.139
+                  }
+                }
+              },
+              {
+                "carId": "4",
+                "bestLap": 3,
+                "driverId": "Wx4qSn_PuB8r5q3HLi8bW",
+                "lapCount": 25,
+                "position": 7,
+                "carSkinId": "03_cup_24",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 6,
+                  "collisionsWithEnv": 2,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 2574719,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 98937,
+                "timeRetired": { "type": "TIMEDIFF", "value": 86218 },
+                "bestCleanLap": 3,
+                "cleanLapCount": 25,
+                "rankingChange": { "delta": -0.0118678, "newRank": 0.7677 },
+                "averageLapTime": 102989,
+                "totalCleanTime": 2574735,
+                "bestCleanLapTime": 98937,
+                "averageCleanLapTime": 102989,
+                "participant": {
+                  "id": "Wx4qSn_PuB8r5q3HLi8bW",
+                  "name": "Will Hammond",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "rankingChange": { "delta": -0.0118678, "newRank": 0.7677 },
+                  "type": "DRIVER",
+                  "licenseChange": {
+                    "from": { "license": "R", "safetyLevel": 0 },
+                    "to": { "license": "R", "safetyLevel": 0.896 },
+                    "delta": 0.896
+                  }
+                }
+              },
+              {
+                "carId": "7",
+                "bestLap": 20,
+                "driverId": "at7olhz3cbEF_ibZhV1WH",
+                "lapCount": 25,
+                "position": 8,
+                "carSkinId": "15_speedsource_71",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 2582307,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 99729,
+                "timeRetired": { "type": "TIMEDIFF", "value": 93806 },
+                "bestCleanLap": 20,
+                "cleanLapCount": 25,
+                "rankingChange": { "delta": 0.0223137, "newRank": 0.7 },
+                "averageLapTime": 103293,
+                "totalCleanTime": 2582314,
+                "bestCleanLapTime": 99729,
+                "averageCleanLapTime": 103293,
+                "participant": {
+                  "id": "at7olhz3cbEF_ibZhV1WH",
+                  "name": "Mark Stott",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/06110b31a969dfb44ed5128f327058d990f128d8_medium.jpg",
+                  "rankingChange": { "delta": 0.0223137, "newRank": 0.7 },
+                  "type": "DRIVER",
+                  "licenseChange": {
+                    "from": { "license": "R", "safetyLevel": 0 },
+                    "to": { "license": "R", "safetyLevel": 1.589 },
+                    "delta": 1.589
+                  }
+                }
+              },
+              {
+                "carId": "13",
+                "bestLap": 5,
+                "driverId": "lntg3-c5D0hgW-dHFKYUe",
+                "lapCount": 25,
+                "position": 9,
+                "carSkinId": "08_cup_57",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 2,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 2586201,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 100783,
+                "timeRetired": { "type": "TIMEDIFF", "value": 97700 },
+                "bestCleanLap": 5,
+                "cleanLapCount": 25,
+                "rankingChange": { "delta": 0.0288725, "newRank": 0.4889 },
+                "averageLapTime": 103448,
+                "totalCleanTime": 2586196,
+                "bestCleanLapTime": 100783,
+                "averageCleanLapTime": 103448,
+                "participant": {
+                  "id": "lntg3-c5D0hgW-dHFKYUe",
+                  "name": "Simon Berry",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "rankingChange": { "delta": 0.0288725, "newRank": 0.4889 },
+                  "type": "DRIVER",
+                  "licenseChange": {
+                    "from": { "license": "R", "safetyLevel": 0 },
+                    "to": { "license": "R", "safetyLevel": 3.323 },
+                    "delta": 3.323
+                  }
+                }
+              },
+              {
+                "carId": "10",
+                "bestLap": 4,
+                "driverId": "S6WGJ8U00l7w_m0XH0Yu9",
+                "lapCount": 24,
+                "position": 10,
+                "carSkinId": "01_cup_07",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 2,
+                  "collisionsWithEnv": 1,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 2535314,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 102603,
+                "timeRetired": { "type": "LAPS", "value": 1 },
+                "bestCleanLap": 4,
+                "cleanLapCount": 24,
+                "rankingChange": { "delta": -0.00249479, "newRank": 0.5125 },
+                "averageLapTime": 105637,
+                "totalCleanTime": 2535286,
+                "bestCleanLapTime": 102603,
+                "averageCleanLapTime": 105637,
+                "participant": {
+                  "id": "S6WGJ8U00l7w_m0XH0Yu9",
+                  "name": "Kenneth A Worcester",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/22c8228f4977e4492ee2b44e6bbc5213f596acb8_medium.jpg",
+                  "rankingChange": { "delta": -0.00249479, "newRank": 0.5125 },
+                  "type": "DRIVER",
+                  "licenseChange": {
+                    "from": { "license": "R", "safetyLevel": 0 },
+                    "to": { "license": "R", "safetyLevel": 2.571 },
+                    "delta": 2.571
+                  }
+                }
+              },
+              {
+                "carId": "14",
+                "bestLap": 19,
+                "driverId": "oPXc7nA9WBYLPySMWnihS",
+                "lapCount": 24,
+                "position": 11,
+                "carSkinId": "05_cup_36",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 6,
+                  "collisionsWithEnv": 1,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 2549573,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 102510,
+                "timeRetired": { "type": "LAPS", "value": 1 },
+                "bestCleanLap": 19,
+                "cleanLapCount": 24,
+                "rankingChange": { "delta": 0.0146637, "newRank": 0.4126 },
+                "averageLapTime": 106234,
+                "totalCleanTime": 2549618,
+                "bestCleanLapTime": 102510,
+                "averageCleanLapTime": 106234,
+                "participant": {
+                  "id": "oPXc7nA9WBYLPySMWnihS",
+                  "name": "Josh Thomas",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/a02dfcc6a1b62651f90fb50d997c0a0474b43f39_medium.jpg",
+                  "rankingChange": { "delta": 0.0146637, "newRank": 0.4126 },
+                  "type": "DRIVER",
+                  "licenseChange": {
+                    "from": { "license": "R", "safetyLevel": 0 },
+                    "to": { "license": "R", "safetyLevel": 1.037 },
+                    "delta": 1.037
+                  }
+                }
+              },
+              {
+                "carId": "16",
+                "bestLap": 12,
+                "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+                "lapCount": 24,
+                "position": 12,
+                "carSkinId": "02_cup_23",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 8,
+                  "collisionsWithEnv": 4,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 2555525,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 101810,
+                "timeRetired": { "type": "LAPS", "value": 1 },
+                "bestCleanLap": 12,
+                "cleanLapCount": 24,
+                "rankingChange": { "delta": 0.015718, "newRank": 0.4039 },
+                "averageLapTime": 106480,
+                "totalCleanTime": 2555528,
+                "bestCleanLapTime": 101810,
+                "averageCleanLapTime": 106480,
+                "participant": {
+                  "id": "VUmvrxL3SvyOu5BlsDvQ5",
+                  "name": "Mark Felton ",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3c64713dc4917e05cd983db5da9e9baa4acdea2f_medium.jpg",
+                  "badgeId": "DRIVE",
+                  "rankingChange": { "delta": 0.015718, "newRank": 0.4039 },
+                  "type": "DRIVER",
+                  "licenseChange": {
+                    "from": { "license": "R", "safetyLevel": 0 },
+                    "to": { "license": "R", "safetyLevel": 0.414 },
+                    "delta": 0.414
+                  }
+                }
+              },
+              {
+                "carId": "15",
+                "bestLap": 12,
+                "driverId": "aV2yTVQK8SLtOfRzxqw3J",
+                "lapCount": 22,
+                "position": 13,
+                "carSkinId": "17_arisoil_72",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 2,
+                  "collisionsWithEnv": 4,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 2513562,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 102512,
+                "timeRetired": { "type": "LAPS", "value": 3 },
+                "bestCleanLap": 12,
+                "cleanLapCount": 22,
+                "rankingChange": { "delta": 0.0148564, "newRank": 0.3888 },
+                "averageLapTime": 114253,
+                "totalCleanTime": 2513565,
+                "bestCleanLapTime": 102512,
+                "averageCleanLapTime": 114253,
+                "participant": {
+                  "id": "aV2yTVQK8SLtOfRzxqw3J",
+                  "name": "Armandt Fourie",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3a652bbb2041e21130c7d86bd2fe35924134481a_medium.jpg",
+                  "rankingChange": { "delta": 0.0148564, "newRank": 0.3888 },
+                  "type": "DRIVER",
+                  "licenseChange": {
+                    "from": { "license": "R", "safetyLevel": 0 },
+                    "to": { "license": "R", "safetyLevel": 0.778 },
+                    "delta": 0.778
+                  }
+                }
+              },
+              {
+                "carId": "11",
+                "bestLap": 7,
+                "driverId": "RIL0mwMWPDFHu0LNbQCg9",
+                "lapCount": 19,
+                "position": 14,
+                "carSkinId": "04_cup_29",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 2,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 2550759,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 100705,
+                "timeRetired": { "type": "LAPS", "value": 6 },
+                "bestCleanLap": 7,
+                "cleanLapCount": 19,
+                "rankingChange": { "delta": -0.0883093, "newRank": 0.5004 },
+                "averageLapTime": 134252,
+                "totalCleanTime": 2550782,
+                "bestCleanLapTime": 100705,
+                "averageCleanLapTime": 134252,
+                "participant": {
+                  "id": "RIL0mwMWPDFHu0LNbQCg9",
+                  "name": "Tinted Stud",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/698eb230a553d00bcb770566270fbb69ec692caa_medium.jpg",
+                  "rankingChange": { "delta": -0.0883093, "newRank": 0.5004 },
+                  "type": "DRIVER",
+                  "licenseChange": {
+                    "from": { "license": "R", "safetyLevel": 0 },
+                    "to": { "license": "R", "safetyLevel": 2.913 },
+                    "delta": 2.913
+                  }
+                }
+              },
+              {
+                "carId": "12",
+                "bestLap": -1,
+                "driverId": "RzsOMU7XCku1ny3KCXXWz",
+                "lapCount": 0,
+                "position": 15,
+                "carSkinId": "10_cup_60",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": null,
+                "timeRetired": { "type": "DNF", "value": 0 },
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "rankingChange": { "delta": -0.0781356, "newRank": 0.4428 },
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "RzsOMU7XCku1ny3KCXXWz",
+                  "name": "Michael Lauder",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/4986593567d6b1bd8420259a94d1457ec10e5555_medium.jpg",
+                  "rankingChange": { "delta": -0.0781356, "newRank": 0.4428 },
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "9",
+                "bestLap": -1,
+                "driverId": "C4cK4PShr09AWZz-jMy-L",
+                "lapCount": 0,
+                "position": 16,
+                "carSkinId": "06_cup_55",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": null,
+                "timeRetired": { "type": "DNF", "value": 0 },
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "rankingChange": { "delta": -0.0871989, "newRank": 0.4941 },
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "C4cK4PShr09AWZz-jMy-L",
+                  "name": "Duncan Williams",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/5ea5add6337ba1e4f97a92f889edad83bf75191b_medium.jpg",
+                  "rankingChange": { "delta": -0.0871989, "newRank": 0.4941 },
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "0",
+                "bestLap": -1,
+                "driverId": "QQMAMmgupkQFwRFx0wAPD",
+                "lapCount": 0,
+                "position": 17,
+                "carSkinId": "07_cup_56",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": null,
+                "timeRetired": { "type": "DNF", "value": 0 },
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "rankingChange": { "delta": -0.138655, "newRank": 0.7857 },
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "QQMAMmgupkQFwRFx0wAPD",
+                  "name": "Isaac Becker",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/cfaf6917f47ca6122396f46e485a79a090f29fa0_medium.jpg",
+                  "rankingChange": { "delta": -0.138655, "newRank": 0.7857 },
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "17",
+                "bestLap": -1,
+                "driverId": "K_Fk86dOXX2waJu_S5-ke",
+                "lapCount": 0,
+                "position": 18,
+                "carSkinId": "01_cup_07",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": null,
+                "timeRetired": { "type": "DNF", "value": 0 },
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "rankingChange": { "delta": -0.0930615, "newRank": 0.5273 },
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "K_Fk86dOXX2waJu_S5-ke",
+                  "name": "pakorn panasoponkul",
+                  "country": "TH",
+                  "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg",
+                  "rankingChange": { "delta": -0.0930615, "newRank": 0.5273 },
+                  "type": "DRIVER"
+                }
+              }
+            ],
+            "duration": 0,
+            "raceLaps": 0,
+            "segmentIndex": 0,
+            "bestStats": {
+              "bestCleanLapTimeMs": 97624,
+              "bestUncleanLapTimeMs": -1,
+              "consistencyPercentage": 99.26,
+              "averageLapMs": 99539,
+              "optimalLapTimeMs": 97575,
+              "bestSectorTimesMs": [37794, 31634, 28147]
+            }
+          },
+          {
+            "type": "QUALIFY",
+            "results": [
+              {
+                "carId": "1",
+                "bestLap": 7,
+                "driverId": "PEV53emXeBEuUQOxcrzFa",
+                "lapCount": 8,
+                "position": 1,
+                "carSkinId": "13_cup_70",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 854521,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 98357,
+                "bestCleanLap": 7,
+                "cleanLapCount": 8,
+                "averageLapTime": 106279,
+                "totalCleanTime": 850235,
+                "bestCleanLapTime": 98357,
+                "averageCleanLapTime": 106279,
+                "participant": {
+                  "id": "PEV53emXeBEuUQOxcrzFa",
+                  "name": "Nico Cappa",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c7c051daec1b48bfe55b531f6dba3a456de32c96_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "6",
+                "bestLap": 6,
+                "driverId": "lnLbWIqriGvN_KhkL6Quv",
+                "lapCount": 7,
+                "position": 2,
+                "carSkinId": "13_cup_70",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 1,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 809788,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 99033,
+                "bestCleanLap": 6,
+                "cleanLapCount": 7,
+                "averageLapTime": 115272,
+                "totalCleanTime": 806905,
+                "bestCleanLapTime": 99033,
+                "averageCleanLapTime": 115272,
+                "participant": {
+                  "id": "lnLbWIqriGvN_KhkL6Quv",
+                  "name": "Dani Kaze",
+                  "country": "JP",
+                  "avatarUrl": "https://avatars.steamstatic.com/859900ead30754fff0cae3771fa10ec68b9b4188_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "8",
+                "bestLap": 7,
+                "driverId": "krMnfb4Dj5VsbbELJP5R1",
+                "lapCount": 8,
+                "position": 3,
+                "carSkinId": "14_cup_87",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 926338,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 99055,
+                "bestCleanLap": 7,
+                "cleanLapCount": 8,
+                "averageLapTime": 115773,
+                "totalCleanTime": 926180,
+                "bestCleanLapTime": 99055,
+                "averageCleanLapTime": 115773,
+                "participant": {
+                  "id": "krMnfb4Dj5VsbbELJP5R1",
+                  "name": "Aulia Wafiq Prianata",
+                  "country": "ID",
+                  "avatarUrl": "https://avatars.steamstatic.com/b11b0d105b9f339f6f7004b69e65c5e3a7ad8b1b_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "2",
+                "bestLap": 5,
+                "driverId": "3NVZwsLHyrwnM8r0Bv644",
+                "lapCount": 6,
+                "position": 4,
+                "carSkinId": "10_cup_60",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 715101,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 99243,
+                "bestCleanLap": 5,
+                "cleanLapCount": 6,
+                "averageLapTime": 118206,
+                "totalCleanTime": 709237,
+                "bestCleanLapTime": 99243,
+                "averageCleanLapTime": 118206,
+                "participant": {
+                  "id": "3NVZwsLHyrwnM8r0Bv644",
+                  "name": "Ryan Whitmore",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/bb0a3f11709d71a6e0982bf085b1ba4e472d6878_medium.jpg",
+                  "badgeId": "SPORT",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "5",
+                "bestLap": 8,
+                "driverId": "oE88zMt_cbvY1o_lBQ72P",
+                "lapCount": 9,
+                "position": 5,
+                "carSkinId": "17_arisoil_72",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 966167,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 99509,
+                "bestCleanLap": 8,
+                "cleanLapCount": 9,
+                "averageLapTime": 107178,
+                "totalCleanTime": 964602,
+                "bestCleanLapTime": 99509,
+                "averageCleanLapTime": 107178,
+                "participant": {
+                  "id": "oE88zMt_cbvY1o_lBQ72P",
+                  "name": "Jaryd King",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/cf9228ff63a0fad3469ff89aa38081b9c1091c71_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "4",
+                "bestLap": 6,
+                "driverId": "Wx4qSn_PuB8r5q3HLi8bW",
+                "lapCount": 7,
+                "position": 6,
+                "carSkinId": "03_cup_24",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 885163,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 100233,
+                "bestCleanLap": 6,
+                "cleanLapCount": 7,
+                "averageLapTime": 126442,
+                "totalCleanTime": 885096,
+                "bestCleanLapTime": 100233,
+                "averageCleanLapTime": 126442,
+                "participant": {
+                  "id": "Wx4qSn_PuB8r5q3HLi8bW",
+                  "name": "Will Hammond",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "7",
+                "bestLap": 3,
+                "driverId": "at7olhz3cbEF_ibZhV1WH",
+                "lapCount": 6,
+                "position": 7,
+                "carSkinId": "15_speedsource_71",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 686826,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 100250,
+                "bestCleanLap": 3,
+                "cleanLapCount": 6,
+                "averageLapTime": 114220,
+                "totalCleanTime": 685320,
+                "bestCleanLapTime": 100250,
+                "averageCleanLapTime": 114220,
+                "participant": {
+                  "id": "at7olhz3cbEF_ibZhV1WH",
+                  "name": "Mark Stott",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/06110b31a969dfb44ed5128f327058d990f128d8_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "3",
+                "bestLap": 6,
+                "driverId": "kxF3Ph1pWHKs3E4Ch3ZsS",
+                "lapCount": 9,
+                "position": 8,
+                "carSkinId": "12_cup_62",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 980956,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 100289,
+                "bestCleanLap": 6,
+                "cleanLapCount": 9,
+                "averageLapTime": 108991,
+                "totalCleanTime": 980920,
+                "bestCleanLapTime": 100289,
+                "averageCleanLapTime": 108991,
+                "participant": {
+                  "id": "kxF3Ph1pWHKs3E4Ch3ZsS",
+                  "name": "Dylan King",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/7e460b80ae523d0ef4acdab3e703a03994fba292_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "11",
+                "bestLap": 2,
+                "driverId": "RIL0mwMWPDFHu0LNbQCg9",
+                "lapCount": 6,
+                "position": 9,
+                "carSkinId": "04_cup_29",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 967258,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 101421,
+                "bestCleanLap": 2,
+                "cleanLapCount": 6,
+                "averageLapTime": 116531,
+                "totalCleanTime": 699188,
+                "bestCleanLapTime": 101421,
+                "averageCleanLapTime": 116531,
+                "participant": {
+                  "id": "RIL0mwMWPDFHu0LNbQCg9",
+                  "name": "Tinted Stud",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/698eb230a553d00bcb770566270fbb69ec692caa_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "13",
+                "bestLap": 4,
+                "driverId": "lntg3-c5D0hgW-dHFKYUe",
+                "lapCount": 9,
+                "position": 10,
+                "carSkinId": "08_cup_57",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 976430,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 102312,
+                "bestCleanLap": 4,
+                "cleanLapCount": 9,
+                "averageLapTime": 108292,
+                "totalCleanTime": 974626,
+                "bestCleanLapTime": 102312,
+                "averageCleanLapTime": 108292,
+                "participant": {
+                  "id": "lntg3-c5D0hgW-dHFKYUe",
+                  "name": "Simon Berry",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "10",
+                "bestLap": 6,
+                "driverId": "S6WGJ8U00l7w_m0XH0Yu9",
+                "lapCount": 7,
+                "position": 11,
+                "carSkinId": "01_cup_07",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 3,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 948645,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 102504,
+                "bestCleanLap": 6,
+                "cleanLapCount": 7,
+                "averageLapTime": 135144,
+                "totalCleanTime": 946006,
+                "bestCleanLapTime": 102504,
+                "averageCleanLapTime": 135144,
+                "participant": {
+                  "id": "S6WGJ8U00l7w_m0XH0Yu9",
+                  "name": "Kenneth A Worcester",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/22c8228f4977e4492ee2b44e6bbc5213f596acb8_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "16",
+                "bestLap": 6,
+                "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+                "lapCount": 7,
+                "position": 12,
+                "carSkinId": "02_cup_23",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 1,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 987049,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 103158,
+                "bestCleanLap": 6,
+                "cleanLapCount": 7,
+                "averageLapTime": 140992,
+                "totalCleanTime": 986945,
+                "bestCleanLapTime": 103158,
+                "averageCleanLapTime": 140992,
+                "participant": {
+                  "id": "VUmvrxL3SvyOu5BlsDvQ5",
+                  "name": "Mark Felton ",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3c64713dc4917e05cd983db5da9e9baa4acdea2f_medium.jpg",
+                  "badgeId": "DRIVE",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "14",
+                "bestLap": 6,
+                "driverId": "oPXc7nA9WBYLPySMWnihS",
+                "lapCount": 7,
+                "position": 13,
+                "carSkinId": "05_cup_36",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 2,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 849674,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 103216,
+                "bestCleanLap": 6,
+                "cleanLapCount": 7,
+                "averageLapTime": 121371,
+                "totalCleanTime": 849598,
+                "bestCleanLapTime": 103216,
+                "averageCleanLapTime": 121371,
+                "participant": {
+                  "id": "oPXc7nA9WBYLPySMWnihS",
+                  "name": "Josh Thomas",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/a02dfcc6a1b62651f90fb50d997c0a0474b43f39_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "15",
+                "bestLap": 2,
+                "driverId": "aV2yTVQK8SLtOfRzxqw3J",
+                "lapCount": 5,
+                "position": 14,
+                "carSkinId": "17_arisoil_72",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 2,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": true,
+                "totalTime": 582062,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 105726,
+                "bestCleanLap": 2,
+                "cleanLapCount": 5,
+                "averageLapTime": 116391,
+                "totalCleanTime": 581953,
+                "bestCleanLapTime": 105726,
+                "averageCleanLapTime": 116391,
+                "participant": {
+                  "id": "aV2yTVQK8SLtOfRzxqw3J",
+                  "name": "Armandt Fourie",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3a652bbb2041e21130c7d86bd2fe35924134481a_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "12",
+                "bestLap": -1,
+                "driverId": "RzsOMU7XCku1ny3KCXXWz",
+                "lapCount": 0,
+                "position": 15,
+                "carSkinId": "10_cup_60",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "RzsOMU7XCku1ny3KCXXWz",
+                  "name": "Michael Lauder",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/4986593567d6b1bd8420259a94d1457ec10e5555_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "9",
+                "bestLap": -1,
+                "driverId": "C4cK4PShr09AWZz-jMy-L",
+                "lapCount": 0,
+                "position": 16,
+                "carSkinId": "06_cup_55",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "C4cK4PShr09AWZz-jMy-L",
+                  "name": "Duncan Williams",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/5ea5add6337ba1e4f97a92f889edad83bf75191b_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "0",
+                "bestLap": -1,
+                "driverId": "QQMAMmgupkQFwRFx0wAPD",
+                "lapCount": 0,
+                "position": 17,
+                "carSkinId": "07_cup_56",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "QQMAMmgupkQFwRFx0wAPD",
+                  "name": "Isaac Becker",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/cfaf6917f47ca6122396f46e485a79a090f29fa0_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "17",
+                "bestLap": -1,
+                "driverId": "K_Fk86dOXX2waJu_S5-ke",
+                "lapCount": 0,
+                "position": 18,
+                "carSkinId": "01_cup_07",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "qualified": false,
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "K_Fk86dOXX2waJu_S5-ke",
+                  "name": "pakorn panasoponkul",
+                  "country": "TH",
+                  "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg",
+                  "type": "DRIVER"
+                }
+              }
+            ],
+            "segmentIndex": 1,
+            "bestStats": {
+              "bestCleanLapTimeMs": 98357,
+              "bestUncleanLapTimeMs": -1,
+              "consistencyPercentage": 99.11,
+              "averageLapMs": 106279,
+              "optimalLapTimeMs": 98357,
+              "bestSectorTimesMs": [38044, 31937, 28376]
+            }
+          },
+          {
+            "type": "PRACTICE",
+            "results": [
+              {
+                "carId": "2",
+                "bestLap": 9,
+                "driverId": "3NVZwsLHyrwnM8r0Bv644",
+                "lapCount": 10,
+                "position": 1,
+                "carSkinId": "10_cup_60",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 1,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 98729,
+                "bestCleanLap": 9,
+                "cleanLapCount": 10,
+                "averageLapTime": 110295,
+                "totalCleanTime": 1102953,
+                "bestCleanLapTime": 98729,
+                "averageCleanLapTime": 110295,
+                "participant": {
+                  "id": "3NVZwsLHyrwnM8r0Bv644",
+                  "name": "Ryan Whitmore",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/bb0a3f11709d71a6e0982bf085b1ba4e472d6878_medium.jpg",
+                  "badgeId": "SPORT",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "7",
+                "bestLap": 10,
+                "driverId": "at7olhz3cbEF_ibZhV1WH",
+                "lapCount": 12,
+                "position": 2,
+                "carSkinId": "15_speedsource_71",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 99613,
+                "bestCleanLap": 10,
+                "cleanLapCount": 12,
+                "averageLapTime": 125206,
+                "totalCleanTime": 1502475,
+                "bestCleanLapTime": 99613,
+                "averageCleanLapTime": 125206,
+                "participant": {
+                  "id": "at7olhz3cbEF_ibZhV1WH",
+                  "name": "Mark Stott",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/06110b31a969dfb44ed5128f327058d990f128d8_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "6",
+                "bestLap": 6,
+                "driverId": "lnLbWIqriGvN_KhkL6Quv",
+                "lapCount": 10,
+                "position": 3,
+                "carSkinId": "13_cup_70",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 2,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 100035,
+                "bestCleanLap": 6,
+                "cleanLapCount": 10,
+                "averageLapTime": 148815,
+                "totalCleanTime": 1488147,
+                "bestCleanLapTime": 100035,
+                "averageCleanLapTime": 148815,
+                "participant": {
+                  "id": "lnLbWIqriGvN_KhkL6Quv",
+                  "name": "Dani Kaze",
+                  "country": "JP",
+                  "avatarUrl": "https://avatars.steamstatic.com/859900ead30754fff0cae3771fa10ec68b9b4188_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "1",
+                "bestLap": 7,
+                "driverId": "PEV53emXeBEuUQOxcrzFa",
+                "lapCount": 10,
+                "position": 4,
+                "carSkinId": "13_cup_70",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 100279,
+                "bestCleanLap": 7,
+                "cleanLapCount": 10,
+                "averageLapTime": 156013,
+                "totalCleanTime": 1560126,
+                "bestCleanLapTime": 100279,
+                "averageCleanLapTime": 156013,
+                "participant": {
+                  "id": "PEV53emXeBEuUQOxcrzFa",
+                  "name": "Nico Cappa",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/c7c051daec1b48bfe55b531f6dba3a456de32c96_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "5",
+                "bestLap": 10,
+                "driverId": "oE88zMt_cbvY1o_lBQ72P",
+                "lapCount": 11,
+                "position": 5,
+                "carSkinId": "17_arisoil_72",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 1,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 101341,
+                "bestCleanLap": 10,
+                "cleanLapCount": 11,
+                "averageLapTime": 117613,
+                "totalCleanTime": 1293746,
+                "bestCleanLapTime": 101341,
+                "averageCleanLapTime": 117613,
+                "participant": {
+                  "id": "oE88zMt_cbvY1o_lBQ72P",
+                  "name": "Jaryd King",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/cf9228ff63a0fad3469ff89aa38081b9c1091c71_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "3",
+                "bestLap": 11,
+                "driverId": "kxF3Ph1pWHKs3E4Ch3ZsS",
+                "lapCount": 13,
+                "position": 6,
+                "carSkinId": "12_cup_62",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 4,
+                  "collisionsWithEnv": 4,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 102100,
+                "bestCleanLap": 11,
+                "cleanLapCount": 13,
+                "averageLapTime": 126211,
+                "totalCleanTime": 1640737,
+                "bestCleanLapTime": 102100,
+                "averageCleanLapTime": 126211,
+                "participant": {
+                  "id": "kxF3Ph1pWHKs3E4Ch3ZsS",
+                  "name": "Dylan King",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/7e460b80ae523d0ef4acdab3e703a03994fba292_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "13",
+                "bestLap": 9,
+                "driverId": "lntg3-c5D0hgW-dHFKYUe",
+                "lapCount": 13,
+                "position": 7,
+                "carSkinId": "08_cup_57",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 2,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 102543,
+                "bestCleanLap": 9,
+                "cleanLapCount": 13,
+                "averageLapTime": 129350,
+                "totalCleanTime": 1681550,
+                "bestCleanLapTime": 102543,
+                "averageCleanLapTime": 129350,
+                "participant": {
+                  "id": "lntg3-c5D0hgW-dHFKYUe",
+                  "name": "Simon Berry",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "10",
+                "bestLap": 11,
+                "driverId": "S6WGJ8U00l7w_m0XH0Yu9",
+                "lapCount": 12,
+                "position": 8,
+                "carSkinId": "01_cup_07",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 3,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 102950,
+                "bestCleanLap": 11,
+                "cleanLapCount": 12,
+                "averageLapTime": 136416,
+                "totalCleanTime": 1636986,
+                "bestCleanLapTime": 102950,
+                "averageCleanLapTime": 136416,
+                "participant": {
+                  "id": "S6WGJ8U00l7w_m0XH0Yu9",
+                  "name": "Kenneth A Worcester",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/22c8228f4977e4492ee2b44e6bbc5213f596acb8_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "14",
+                "bestLap": 9,
+                "driverId": "oPXc7nA9WBYLPySMWnihS",
+                "lapCount": 12,
+                "position": 9,
+                "carSkinId": "05_cup_36",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 1,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 103632,
+                "bestCleanLap": 9,
+                "cleanLapCount": 12,
+                "averageLapTime": 134914,
+                "totalCleanTime": 1618965,
+                "bestCleanLapTime": 103632,
+                "averageCleanLapTime": 134914,
+                "participant": {
+                  "id": "oPXc7nA9WBYLPySMWnihS",
+                  "name": "Josh Thomas",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/a02dfcc6a1b62651f90fb50d997c0a0474b43f39_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "16",
+                "bestLap": 7,
+                "driverId": "VUmvrxL3SvyOu5BlsDvQ5",
+                "lapCount": 11,
+                "position": 10,
+                "carSkinId": "02_cup_23",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 2,
+                  "collisionsWithEnv": 1,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 104787,
+                "bestCleanLap": 7,
+                "cleanLapCount": 11,
+                "averageLapTime": 113443,
+                "totalCleanTime": 1247872,
+                "bestCleanLapTime": 104787,
+                "averageCleanLapTime": 113443,
+                "participant": {
+                  "id": "VUmvrxL3SvyOu5BlsDvQ5",
+                  "name": "Mark Felton ",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3c64713dc4917e05cd983db5da9e9baa4acdea2f_medium.jpg",
+                  "badgeId": "DRIVE",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "15",
+                "bestLap": 8,
+                "driverId": "aV2yTVQK8SLtOfRzxqw3J",
+                "lapCount": 10,
+                "position": 11,
+                "carSkinId": "17_arisoil_72",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 2,
+                  "collisionsWithEnv": 3,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": 105900,
+                "bestCleanLap": 8,
+                "cleanLapCount": 10,
+                "averageLapTime": 148923,
+                "totalCleanTime": 1489225,
+                "bestCleanLapTime": 105900,
+                "averageCleanLapTime": 148923,
+                "participant": {
+                  "id": "aV2yTVQK8SLtOfRzxqw3J",
+                  "name": "Armandt Fourie",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/3a652bbb2041e21130c7d86bd2fe35924134481a_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "8",
+                "bestLap": -1,
+                "driverId": "krMnfb4Dj5VsbbELJP5R1",
+                "lapCount": 0,
+                "position": 12,
+                "carSkinId": "14_cup_87",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "krMnfb4Dj5VsbbELJP5R1",
+                  "name": "Aulia Wafiq Prianata",
+                  "country": "ID",
+                  "avatarUrl": "https://avatars.steamstatic.com/b11b0d105b9f339f6f7004b69e65c5e3a7ad8b1b_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "4",
+                "bestLap": -1,
+                "driverId": "Wx4qSn_PuB8r5q3HLi8bW",
+                "lapCount": 0,
+                "position": 13,
+                "carSkinId": "03_cup_24",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "Wx4qSn_PuB8r5q3HLi8bW",
+                  "name": "Will Hammond",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "11",
+                "bestLap": -1,
+                "driverId": "RIL0mwMWPDFHu0LNbQCg9",
+                "lapCount": 0,
+                "position": 14,
+                "carSkinId": "04_cup_29",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "RIL0mwMWPDFHu0LNbQCg9",
+                  "name": "Tinted Stud",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/698eb230a553d00bcb770566270fbb69ec692caa_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "12",
+                "bestLap": -1,
+                "driverId": "RzsOMU7XCku1ny3KCXXWz",
+                "lapCount": 0,
+                "position": 15,
+                "carSkinId": "10_cup_60",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "RzsOMU7XCku1ny3KCXXWz",
+                  "name": "Michael Lauder",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/4986593567d6b1bd8420259a94d1457ec10e5555_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "9",
+                "bestLap": -1,
+                "driverId": "C4cK4PShr09AWZz-jMy-L",
+                "lapCount": 0,
+                "position": 16,
+                "carSkinId": "06_cup_55",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "C4cK4PShr09AWZz-jMy-L",
+                  "name": "Duncan Williams",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/5ea5add6337ba1e4f97a92f889edad83bf75191b_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "0",
+                "bestLap": -1,
+                "driverId": "QQMAMmgupkQFwRFx0wAPD",
+                "lapCount": 0,
+                "position": 17,
+                "carSkinId": "07_cup_56",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "QQMAMmgupkQFwRFx0wAPD",
+                  "name": "Isaac Becker",
+                  "country": "AU",
+                  "avatarUrl": "https://avatars.steamstatic.com/cfaf6917f47ca6122396f46e485a79a090f29fa0_medium.jpg",
+                  "type": "DRIVER"
+                }
+              },
+              {
+                "carId": "17",
+                "bestLap": -1,
+                "driverId": "K_Fk86dOXX2waJu_S5-ke",
+                "lapCount": 0,
+                "position": 18,
+                "carSkinId": "01_cup_07",
+                "incidents": {
+                  "spins": 0,
+                  "offTracks": 0,
+                  "pitSpeeding": 0,
+                  "collisionsWithCar": 0,
+                  "collisionsWithEnv": 0,
+                  "collisionsUnclassified": 0
+                },
+                "totalTime": 0,
+                "carModelId": "ks_mazda_mx5_cup",
+                "bestLapTime": null,
+                "bestCleanLap": -1,
+                "cleanLapCount": 0,
+                "averageLapTime": null,
+                "totalCleanTime": 0,
+                "bestCleanLapTime": null,
+                "averageCleanLapTime": null,
+                "participant": {
+                  "id": "K_Fk86dOXX2waJu_S5-ke",
+                  "name": "pakorn panasoponkul",
+                  "country": "TH",
+                  "avatarUrl": "https://avatars.steamstatic.com/a48cae029a55190b874ceb690698ec2ba427bdcd_medium.jpg",
+                  "type": "DRIVER"
+                }
+              }
+            ],
+            "segmentIndex": 2,
+            "bestStats": {
+              "bestCleanLapTimeMs": 98729,
+              "bestUncleanLapTimeMs": -1,
+              "consistencyPercentage": 98.85,
+              "averageLapMs": 110295,
+              "optimalLapTimeMs": 98672,
+              "bestSectorTimesMs": [38195, 32045, 28432]
+            }
+          }
+        ],
+        "manualSession": false
+      },
+      "points": {
+        "sessionId": "-Jo3RwrzHXhbwpBkzuDta",
+        "tournamentId": "V2Dk0HTCw4sMCFvTyW0r8",
+        "racePoints": [
+          {
+            "3NVZwsLHyrwnM8r0Bv644": { "points": 18, "position": 2 },
+            "C4cK4PShr09AWZz-jMy-L": { "points": 0, "position": 16 },
+            "K_Fk86dOXX2waJu_S5-ke": { "points": 0, "position": 18 },
+            "PEV53emXeBEuUQOxcrzFa": { "points": 25, "position": 1 },
+            "QQMAMmgupkQFwRFx0wAPD": { "points": 0, "position": 17 },
+            "RIL0mwMWPDFHu0LNbQCg9": { "points": 0, "position": 14 },
+            "RzsOMU7XCku1ny3KCXXWz": { "points": 0, "position": 15 },
+            "S6WGJ8U00l7w_m0XH0Yu9": { "points": 1, "position": 10 },
+            "VUmvrxL3SvyOu5BlsDvQ5": { "points": 0, "position": 12 },
+            "Wx4qSn_PuB8r5q3HLi8bW": { "points": 6, "position": 7 },
+            "aV2yTVQK8SLtOfRzxqw3J": { "points": 0, "position": 13 },
+            "at7olhz3cbEF_ibZhV1WH": { "points": 4, "position": 8 },
+            "krMnfb4Dj5VsbbELJP5R1": { "points": 12, "position": 4 },
+            "kxF3Ph1pWHKs3E4Ch3ZsS": { "points": 8, "position": 6 },
+            "lnLbWIqriGvN_KhkL6Quv": { "points": 10, "position": 5 },
+            "lntg3-c5D0hgW-dHFKYUe": { "points": 2, "position": 9 },
+            "oE88zMt_cbvY1o_lBQ72P": { "points": 15, "position": 3 },
+            "oPXc7nA9WBYLPySMWnihS": { "points": 0, "position": 11 }
+          }
+        ]
+      },
+      "pointsAdjustments": [],
+      "penalties": []
+    },
+    {
+      "_type": "SgpEventApiData",
+      "session": {
+        "session": {
+          "id": "2jD8UybKQfoRgp80_RxWT",
+          "startsAt": "2023-11-14T08:30:00.000Z",
+          "game": "assetto_corsa",
+          "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+          "tournamentId": "V2Dk0HTCw4sMCFvTyW0r8",
+          "duration": 93,
+          "config": {
+            "realism": {
+              "fuel_rate": 100,
+              "start_rule": 2,
+              "max_ballast": 0,
+              "tyre_wear_rate": 100,
+              "damage_multiplier": 100
+            },
+            "weather": {
+              "graphics": "3_clear",
+              "variation_road": 4,
+              "time_of_the_day": 12,
+              "time_of_day_mult": 1,
+              "variation_ambient": 5,
+              "wind_base_direction": 30,
+              "wind_base_speed_max": 15,
+              "wind_base_speed_min": 3,
+              "base_temperature_road": 10,
+              "base_ambient_temperature": 20,
+              "wind_variation_direction": 15
+            },
+            "isRanked": true,
+            "location": "AU-Sydney",
+            "password": "Ipesc",
+            "raceTime": 40,
+            "difficulty": {
+              "tc_allowed": 1,
+              "abs_allowed": 1,
+              "allowed_tyres_out": 4,
+              "stability_allowed": false,
+              "autoclutch_allowed": true,
+              "force_virtual_mirror": false,
+              "tyre_blankets_allowed": false,
+              "race_gas_penalty_disabled": true
+            },
+            "maxEntries": 24,
+            "closedEntry": false,
+            "practiceTime": 30,
+            "dynamic_track": {
+              "enabled": true,
+              "lap_gain": 22,
+              "randomness": 2,
+              "session_start": 95,
+              "session_transfer": 100
+            },
+            "admin_password": null,
+            "race_over_time": 360,
+            "tournamentType": "CHAMPIONSHIP",
+            "hasGridPositions": false,
+            "practicePassword": null,
+            "qualificationTime": 15,
+            "practiceServerName": null,
+            "result_screen_time": 60,
+            "enableServerProtection": false,
+            "entryPassword": null
+          },
+          "status": "WAITING",
+          "statusTime": "2023-10-08T02:15:57.369Z",
+          "sessionName": "MX5 micro-season race 2 - Barbagallo",
+          "gameVersion": "1.16",
+          "trackId": "barbagallo::",
+          "trackName": "Barbagallo",
+          "cars": [
+            {
+              "id": "abarth500",
+              "name": "Abarth 500 EsseEsse",
+              "config": {
+                "ballast": 0,
+                "restrictor": 0,
+                "allowedTyres": { "E": true, "V": true, "HR": true, "ST": true }
+              }
+            },
+            { "id": "ks_mazda_mx5_cup", "name": "Mazda MX5 Cup" }
+          ],
+          "createdBy": "3NVZwsLHyrwnM8r0Bv644",
+          "v": 4,
+          "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+          "tournamentName": "Indo-Pacific Endurance Simulation Challenge | MX5 micro-season",
+          "serverName": "| simracing.gp | Indo-Pacific Endurance Simulation Challenge | MX5 micro-season race 2 - Barbagallo",
+          "aliveTime": null,
+          "carClasses": null,
+          "entryListId": "V2Dk0HTCw4sMCFvTyW0r8",
+          "driverSwap": false,
+          "serverStartTime": "2023-11-14T08:30:00.000Z",
+          "statusHistory": [
+            {
+              "status": "DRAFT",
+              "invokedBy": "3NVZwsLHyrwnM8r0Bv644",
+              "timestamp": "2023-10-08T02:15:57.444Z"
+            },
+            {
+              "status": "WAITING",
+              "invokedBy": "3NVZwsLHyrwnM8r0Bv644",
+              "timestamp": "2023-10-08T03:08:36.588Z"
+            },
+            {
+              "status": "WAITING",
+              "invokedBy": "3NVZwsLHyrwnM8r0Bv644",
+              "timestamp": "2023-10-08T03:31:33.368Z"
+            },
+            {
+              "status": "WAITING",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2023-10-31T08:37:13.038Z"
+            }
+          ],
+          "instanceInfo": [],
+          "data": {},
+          "statusInfo": "DEFAULT_FLOW",
+          "manualSession": false
+        },
+        "joinConditions": null,
+        "missingLeaguePermissions": []
+      },
+      "points": null,
+      "pointsAdjustments": [],
+      "penalties": []
+    },
+    {
+      "_type": "SgpEventApiData",
+      "session": {
+        "session": {
+          "id": "OEy5BM6mXkqhde34kRsRj",
+          "startsAt": "2023-12-05T08:30:00.000Z",
+          "game": "assetto_corsa",
+          "leagueId": "2ENQb0RoVyuqp95VS7w1T",
+          "tournamentId": "V2Dk0HTCw4sMCFvTyW0r8",
+          "duration": 93,
+          "config": {
+            "realism": {
+              "fuel_rate": 100,
+              "start_rule": 2,
+              "max_ballast": 0,
+              "tyre_wear_rate": 100,
+              "damage_multiplier": 100
+            },
+            "weather": {
+              "graphics": "3_clear",
+              "variation_road": 4,
+              "time_of_the_day": 12,
+              "time_of_day_mult": 1,
+              "variation_ambient": 5,
+              "wind_base_direction": 30,
+              "wind_base_speed_max": 15,
+              "wind_base_speed_min": 3,
+              "base_temperature_road": 10,
+              "base_ambient_temperature": 20,
+              "wind_variation_direction": 15
+            },
+            "isRanked": true,
+            "location": "AU-Sydney",
+            "password": "Ipesc",
+            "raceTime": 40,
+            "difficulty": {
+              "tc_allowed": 1,
+              "abs_allowed": 1,
+              "allowed_tyres_out": 4,
+              "stability_allowed": false,
+              "autoclutch_allowed": true,
+              "force_virtual_mirror": false,
+              "tyre_blankets_allowed": false,
+              "race_gas_penalty_disabled": true
+            },
+            "maxEntries": 24,
+            "closedEntry": false,
+            "practiceTime": 30,
+            "dynamic_track": {
+              "enabled": true,
+              "lap_gain": 22,
+              "randomness": 2,
+              "session_start": 95,
+              "session_transfer": 100
+            },
+            "admin_password": null,
+            "race_over_time": 360,
+            "tournamentType": "CHAMPIONSHIP",
+            "hasGridPositions": false,
+            "practicePassword": null,
+            "qualificationTime": 15,
+            "practiceServerName": null,
+            "result_screen_time": 60,
+            "enableServerProtection": false,
+            "entryPassword": null
+          },
+          "status": "WAITING",
+          "statusTime": "2023-10-08T02:17:00.197Z",
+          "sessionName": "MX5 micro-season race 3 - Horsma Raceway",
+          "gameVersion": "1.16",
+          "trackId": "ghoults_horsma::club",
+          "trackName": "Horsma Raceway - Club layout",
+          "cars": [
+            {
+              "id": "abarth500",
+              "name": "Abarth 500 EsseEsse",
+              "config": {
+                "ballast": 0,
+                "restrictor": 0,
+                "allowedTyres": { "E": true, "V": true, "HR": true, "ST": true }
+              }
+            },
+            { "id": "ks_mazda_mx5_cup", "name": "Mazda MX5 Cup" }
+          ],
+          "createdBy": "3NVZwsLHyrwnM8r0Bv644",
+          "v": 4,
+          "leagueName": "Indo-Pacific Endurance Simulation Challenge",
+          "tournamentName": "Indo-Pacific Endurance Simulation Challenge | MX5 micro-season",
+          "serverName": "| simracing.gp | Indo-Pacific Endurance Simulation Challenge | MX5 micro-season race 3 - Horsma Raceway",
+          "aliveTime": null,
+          "carClasses": null,
+          "entryListId": "V2Dk0HTCw4sMCFvTyW0r8",
+          "driverSwap": false,
+          "serverStartTime": "2023-12-05T08:30:00.000Z",
+          "statusHistory": [
+            {
+              "status": "DRAFT",
+              "invokedBy": "3NVZwsLHyrwnM8r0Bv644",
+              "timestamp": "2023-10-08T02:17:00.271Z"
+            },
+            {
+              "status": "WAITING",
+              "invokedBy": "3NVZwsLHyrwnM8r0Bv644",
+              "timestamp": "2023-10-08T03:08:36.603Z"
+            },
+            {
+              "status": "WAITING",
+              "invokedBy": "3NVZwsLHyrwnM8r0Bv644",
+              "timestamp": "2023-10-08T03:35:42.425Z"
+            },
+            {
+              "status": "WAITING",
+              "invokedBy": "VUmvrxL3SvyOu5BlsDvQ5",
+              "timestamp": "2023-10-31T10:44:24.532Z"
+            }
+          ],
+          "instanceInfo": [],
+          "data": {},
+          "statusInfo": "DEFAULT_FLOW",
+          "manualSession": false
+        },
+        "joinConditions": null,
+        "missingLeaguePermissions": []
+      },
+      "points": null,
+      "pointsAdjustments": [],
+      "penalties": []
+    }
+  ]
+}
