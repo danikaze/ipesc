@@ -245,7 +245,7 @@ export interface SgpSessionRaceResult extends SgpSessionBaseResult {
 
 export interface SgpSessionPracticeDriverResult {
   carId: string;
-  bestLap: number;
+  bestLap: number; // -1 when not
   driverId: string;
   lapCount: number;
   position: number;
@@ -259,17 +259,17 @@ export interface SgpSessionPracticeDriverResult {
     collisionsUnclassified: number;
   };
   totalTime: LapTimeAsMs;
-  carClassId: string;
+  carClassId?: string;
   carModelId: string;
-  bestLapTime: LapTimeAsMs;
+  bestLapTime?: LapTimeAsMs; // null when not
   teamDrivers: null;
-  bestCleanLap: number;
-  classPosition: number;
-  cleanLapCount: number;
-  averageLapTime: LapTimeAsMs;
-  totalCleanTime: LapTimeAsMs;
-  bestCleanLapTime: LapTimeAsMs;
-  averageCleanLapTime: LapTimeAsMs;
+  bestCleanLap: number; // -1 when not
+  classPosition?: number;
+  cleanLapCount: number; // 0 when not
+  averageLapTime?: LapTimeAsMs; // null when not
+  totalCleanTime: LapTimeAsMs; // 0 when not
+  bestCleanLapTime?: LapTimeAsMs; // null when not
+  averageCleanLapTime?: LapTimeAsMs; // null when not
   participant: {
     id: string;
     name: string;

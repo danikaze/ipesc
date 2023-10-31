@@ -1,11 +1,11 @@
 import { DriverInfo, SgpEventApiData } from 'utils/sgp/event-api-data';
+import { SgpCategory, SgpEventType, SgpGame } from 'utils/sgp/types';
 import {
   btccRace,
   s4singleRace,
   s7fullSingleRace,
   s7fullDoubleSprint,
 } from './data/event-api';
-import { SgpCategory, SgpEventType } from 'utils/sgp/types';
 
 describe('SgpEventApiData', () => {
   it('should trigger an error when trying to create an instance with an invalid json', () => {
@@ -28,6 +28,27 @@ describe('SgpEventApiData', () => {
     expect(s4singleRace.getChampionshipName()).toBe('IPESC Season 4');
     expect(s7fullSingleRace.getChampionshipName()).toBe('IPESC Season 7');
     expect(s7fullDoubleSprint.getChampionshipName()).toBe('IPESC Season 7');
+  });
+
+  it('should get the event game', () => {
+    expect(btccRace.getGame()).toBe(SgpGame.AC);
+    expect(s4singleRace.getGame()).toBe(SgpGame.ACC);
+    expect(s7fullSingleRace.getGame()).toBe(SgpGame.ACC);
+    expect(s7fullDoubleSprint.getGame()).toBe(SgpGame.ACC);
+  });
+
+  it('should get the track id and name', () => {
+    expect(btccRace.getTrackId()).toBe('ks_silverstone::national');
+    expect(btccRace.getTrackName()).toBe('Silverstone - National');
+
+    expect(s4singleRace.getTrackId()).toBe('silverstone');
+    expect(s4singleRace.getTrackName()).toBe('Silverstone');
+
+    expect(s7fullSingleRace.getTrackId()).toBe('suzuka');
+    expect(s7fullSingleRace.getTrackName()).toBe('Suzuka');
+
+    expect(s7fullDoubleSprint.getTrackId()).toBe('brands_hatch');
+    expect(s7fullDoubleSprint.getTrackName()).toBe('Brands Hatch');
   });
 
   it('should get the event name', () => {
@@ -109,7 +130,7 @@ describe('SgpEventApiData', () => {
   });
 
   it('should get race results', () => {
-    expect(btccRace.getResults(SgpEventType.QUALI).results[0]).toEqual({
+    expect(btccRace.getResults(SgpEventType.QUALI)!.results[0]).toEqual({
       averageCleanLapTime: 77260,
       averageLapTime: 77260,
       bestCleanLap: 12,
@@ -156,7 +177,7 @@ describe('SgpEventApiData', () => {
       raceIndex?: number
     ) {
       return data
-        .getResults(type, raceIndex)
+        .getResults(type, raceIndex)!
         .results.slice(0, 3)
         .map((res) => res.participant.name);
     }

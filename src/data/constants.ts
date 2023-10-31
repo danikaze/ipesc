@@ -17,3 +17,5 @@ export const CUSTOM_NAMES: Record<string, string> = {
   hxjmRD7aBYGUsyiNlCVo3: 'S6',
   u1Alc5D09NQjUNC4xPSVm: 'S7',
 };
+
+export const TRACK_MAX_BEST_TIMES = 100;

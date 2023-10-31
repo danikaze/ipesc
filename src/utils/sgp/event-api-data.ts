@@ -1,6 +1,7 @@
 import {
   SgpCategory,
   SgpEventType,
+  SgpGame,
   SgpSessionPracticeDriverResult,
 } from 'utils/sgp/types';
 import {
@@ -22,10 +23,10 @@ interface RawData {
 export type DriverInfo = Pick<
   SgpSessionPracticeDriverResult['participant'],
   'id' | 'name' | 'country' | 'avatarUrl'
-> & {
-  carModelId: SgpSessionPracticeDriverResult['carModelId'];
-  category?: SgpSessionPracticeDriverResult['carClassId'];
-};
+> &
+  Pick<SgpSessionPracticeDriverResult, 'carModelId'> & {
+    category?: SgpSessionPracticeDriverResult['carClassId'];
+  };
 
 export class SgpEventApiData {
   private static readonly TYPE = 'SgpEventApiData';
@@ -70,6 +71,18 @@ export class SgpEventApiData {
     return this.session.session.sessionName;
   }
 
+  public getGame(): SgpGame {
+    return this.session.session.game;
+  }
+
+  public getTrackId() {
+    return this.session.session.trackId;
+  }
+
+  public getTrackName() {
+    return this.session.session.trackName;
+  }
+
   public getStartDate(): IsoDate {
     return this.session.session.startsAt;
   }
@@ -90,6 +103,8 @@ export class SgpEventApiData {
    */
   public getResults(type: SgpEventType, raceIndex: number = 0) {
     const session = this.results.results.filter((obj) => obj.type === type)[raceIndex];
+    if (!session) return;
+
     const res = {
       ...session,
       results: session.results.map((entry) => {
@@ -146,10 +161,9 @@ export class SgpEventApiData {
           country: result.participant.country,
           avatarUrl: result.participant.avatarUrl,
           carModelId: result.carModelId,
+          category: result.carClassId,
         };
-        if (result.carClassId) {
-          info.category = result.carClassId;
-        }
+
         map.set(result.driverId, info);
       })
     );
@@ -172,7 +186,7 @@ export class SgpEventApiData {
     return this.penalties[raceIndex]?.[driverId]?.length ?? 0;
   }
 
-  private static toCategory(data: string): SgpCategory | undefined {
+  private static toCategory(data: string | undefined): SgpCategory | undefined {
     const cat = data?.toUpperCase();
     return cat === 'PRO'
       ? SgpCategory.PRO
