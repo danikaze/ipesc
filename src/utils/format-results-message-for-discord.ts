@@ -66,7 +66,7 @@ function getCategoryResults(
 
 function getNames(data: SgpEventApiData, index: number, category?: SgpCategory): string {
   const categoryData = data
-    .getResults(SgpEventType.RACE, index)
+    .getResults(SgpEventType.RACE, index)!
     .results.filter((data) => !category || category === data.category);
 
   categoryData.sort((a, b) => (a.position || Infinity) - (b.position || Infinity));

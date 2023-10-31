@@ -3,10 +3,28 @@ import { dirname, join, relative } from 'path';
 import { sync as mkdirpSync } from 'mkdirp';
 
 import { SgpChampionshipApiData } from 'utils/sgp/championship-api-data';
-import { SgpCategory, SgpGame } from 'utils/sgp/types';
+import { SgpCategory, SgpEventType, SgpGame } from 'utils/sgp/types';
 
-import { CUSTOM_NAMES, OUTPUT_FILE, RAW_DATA_DIR, ROOT_PATH } from './constants';
-import { Car, Category, Championship, Driver, Event, Game, ProcessedData } from './types';
+import {
+  CUSTOM_NAMES,
+  OUTPUT_FILE,
+  RAW_DATA_DIR,
+  ROOT_PATH,
+  TRACK_MAX_BEST_TIMES,
+} from './constants';
+import {
+  Car,
+  Category,
+  Championship,
+  Driver,
+  Event,
+  Game,
+  ProcessedData,
+  TrackBestData,
+  TrackData,
+} from './types';
+import { SgpEventApiData } from 'utils/sgp/event-api-data';
+import { Timestamp } from 'utils/types';
 
 /**
  * Creates the needed & used data for the graphical representation from the big
@@ -72,6 +90,7 @@ function processRawData(rawData: SgpChampionshipApiData[]): ProcessedData {
     drivers: getAllDrivers(rawData),
     cars: getAllCars(rawData),
     championships: getChampionships(rawData),
+    tracks: getTrackData(rawData),
   };
 
   return processedData;
@@ -164,6 +183,71 @@ function getEvents(
     activeDrivers: event.getDrivers('active').map((driver) => driver.id),
     inactiveDrivers: event.getDrivers('inactive').map((driver) => driver.id),
   }));
+}
+
+function getTrackData(rawData: SgpChampionshipApiData[]): TrackData[] {
+  const res: Map<string, TrackData> = new Map();
+
+  rawData.forEach((championship) => {
+    championship.getEvents().forEach((ev) => {
+      const id = ev.getTrackId();
+      const eventDate = new Date(ev.getStartDate()).getTime();
+      const data: TrackData = res.get(id) || {
+        id,
+        name: ev.getTrackName(),
+        game: sgpGame2Game(ev.getGame()),
+        best: {
+          quali: [],
+          race: [],
+        },
+      };
+      res.set(id, data);
+
+      const quali = ev.getResults(SgpEventType.QUALI);
+      if (quali) {
+        data.best.quali = updateTrackResults(data.best.quali, quali, eventDate);
+      }
+
+      for (let i = 0; ; i++) {
+        try {
+          const race = ev.getResults(SgpEventType.RACE, i);
+          if (!race) return;
+          data.best.race = updateTrackResults(data.best.race, race, eventDate);
+        } catch (e) {
+          break;
+        }
+      }
+    });
+  });
+
+  return Array.from(res.values());
+}
+
+function updateTrackResults(
+  existing: TrackBestData[],
+  results: Exclude<ReturnType<SgpEventApiData['getResults']>, undefined>,
+  date: Timestamp
+): TrackBestData[] {
+  results.results.forEach((result) => {
+    const lapTime = result.bestCleanLapTime;
+    if (!lapTime) return;
+    const newData: TrackBestData = {
+      lapTime,
+      date,
+      driverId: result.driverId,
+      carId: result.carModelId,
+    };
+    const index = existing.findIndex((item) => item.driverId === newData.driverId);
+    if (index !== -1) {
+      if (newData.lapTime < existing[index].lapTime) {
+        existing[index] = newData;
+      }
+    } else {
+      existing.push(newData);
+    }
+  });
+  existing.sort((a, b) => a.lapTime - b.lapTime);
+  return existing.slice(0, TRACK_MAX_BEST_TIMES);
 }
 
 function sgpGame2Game(game: SgpGame | undefined): Game | undefined {

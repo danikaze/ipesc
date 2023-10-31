@@ -1,10 +1,11 @@
-import { Timestamp } from 'utils/types';
+import { LapTimeAsMs, Timestamp } from 'utils/types';
 
 export interface ProcessedData {
   processedOn: Timestamp;
   drivers: Driver[];
   cars: Car[];
   championships: Championship[];
+  tracks: TrackData[];
 }
 
 export const enum Category {
@@ -38,14 +39,16 @@ export interface Championship {
   name: string;
   customName?: string;
   startTime: Timestamp;
-  drivers: {
-    id: Driver['id'];
-    carId: Car['id'];
-    raced?: boolean;
-    raceNumber?: number;
-    category?: Category;
-  }[];
+  drivers: ChampionshipDriver[];
   events: Event[];
+}
+
+export interface ChampionshipDriver {
+  id: Driver['id'];
+  carId: Car['id'];
+  raced?: boolean;
+  raceNumber?: number;
+  category?: Category;
 }
 
 export interface Event {
@@ -53,4 +56,18 @@ export interface Event {
   startTime: Timestamp;
   activeDrivers: Driver['id'][];
   inactiveDrivers: Driver['id'][];
+}
+
+export interface TrackData {
+  id: string;
+  name: string;
+  game?: Game;
+  best: Record<'race' | 'quali', TrackBestData[]>;
+}
+
+export interface TrackBestData {
+  lapTime: LapTimeAsMs;
+  driverId: Driver['id'];
+  carId: Car['id'];
+  date: Timestamp;
 }
