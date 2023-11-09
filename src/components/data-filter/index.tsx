@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Flex, Radio, RadioGroup, Select } from '@chakra-ui/react';
+import { Flex, Select } from '@chakra-ui/react';
 
 import { Filter } from 'utils/filter-data';
 import { Game } from 'data/types';
@@ -21,23 +21,21 @@ export const DataFilter: FC<Props> = (props) => {
 
   return (
     <Flex>
-      {props.showChampionships && renderChampionships(hookData)}
       {props.showGame && renderGame(hookData)}
       {props.showAccVersion && renderAccVersion(hookData)}
+      {props.showChampionships && renderChampionships(hookData)}
     </Flex>
   );
 };
 
 function renderChampionships({ filter, updateChampionships }: HookData) {
+  if (filter.game !== Game.ACC) return null;
+
   return (
-    <RadioGroup onChange={updateChampionships} defaultValue={filter.championships} my={4}>
-      <Radio value='all' mx={4}>
-        Show all championships
-      </Radio>
-      <Radio value='seasons' mx={4}>
-        Show seasons only
-      </Radio>
-    </RadioGroup>
+    <Select onChange={updateChampionships} defaultValue={filter.championships}>
+      <option value='all'>Show all championships</option>
+      <option value='seasons'>Show seasons only</option>
+    </Select>
   );
 }
 

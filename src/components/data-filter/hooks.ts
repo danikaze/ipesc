@@ -1,7 +1,9 @@
 import { useState, useCallback, useEffect, ChangeEvent } from 'react';
+
 import { Filter } from 'utils/filter-data';
-import { Props } from '.';
 import { AccVersion } from 'data/types';
+
+import { Props } from '.';
 
 export function useDataFilter({ onChange, defaultValue }: Props) {
   const [filter, setFilter] = useState<Filter>({
@@ -13,10 +15,10 @@ export function useDataFilter({ onChange, defaultValue }: Props) {
   useEffect(() => onChange(filter), [filter]);
 
   const updateChampionships = useCallback(
-    (value: string) =>
+    (ev: ChangeEvent<HTMLSelectElement>) =>
       setFilter((filter) => ({
         ...filter,
-        championships: value as Filter['championships'],
+        championships: ev.target.value as Filter['championships'],
       })),
     []
   );
