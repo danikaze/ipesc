@@ -28,6 +28,7 @@ function register(ChartJS: ChartJS): void {
     ChartJS.BarController,
     ChartJS.BarElement,
     ChartJS.Title,
+    ChartJS.SubTitle,
     ChartJS.Legend,
     ChartJS.Tooltip
   );

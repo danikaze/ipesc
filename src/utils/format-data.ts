@@ -1,3 +1,3 @@
-export function formatRatioAsPctg(n: number): string {
-  return (n * 100).toFixed(2) + '%';
+export function formatRatioAsPctg(n: number, decimalPoints = 2): string {
+  return (n * 100).toFixed(decimalPoints) + '%';
 }

@@ -14,6 +14,7 @@ export const NavBar: FC = () => (
         <NavLink path='/' label='Index' />
         <NavLink path='/entries' label='Entries' />
         <NavLink path='/tracks' label='Tracks' />
+        <NavLink path='/drivers' label='Drivers' />
       </UnorderedList>
     </Container>
   </Box>
