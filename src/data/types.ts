@@ -60,6 +60,7 @@ export interface ChampionshipDriver {
 export interface Event {
   name: string;
   startTime: Timestamp;
+  trackId: TrackData['id'];
   activeDrivers: Driver['id'][];
   inactiveDrivers: Driver['id'][];
 }

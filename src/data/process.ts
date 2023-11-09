@@ -4,6 +4,8 @@ import { sync as mkdirpSync } from 'mkdirp';
 
 import { SgpChampionshipApiData } from 'utils/sgp/championship-api-data';
 import { SgpCategory, SgpEventType, SgpGame } from 'utils/sgp/types';
+import { SgpEventApiData } from 'utils/sgp/event-api-data';
+import { Timestamp } from 'utils/types';
 
 import {
   CUSTOM_NAMES,
@@ -23,8 +25,6 @@ import {
   TrackBestData,
   TrackData,
 } from './types';
-import { SgpEventApiData } from 'utils/sgp/event-api-data';
-import { Timestamp } from 'utils/types';
 
 /**
  * Creates the needed & used data for the graphical representation from the big
@@ -180,6 +180,7 @@ function getEvents(
   return championship.getEvents().map((event) => ({
     name: event.getEventName(),
     startTime: new Date(event.getStartDate()).getTime(),
+    trackId: event.getTrackId(),
     activeDrivers: event.getDrivers('active').map((driver) => driver.id),
     inactiveDrivers: event.getDrivers('inactive').map((driver) => driver.id),
   }));
