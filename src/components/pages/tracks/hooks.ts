@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { Filter } from 'utils/filter-data';
 import { useData } from 'components/data-provider';
-import { AccVersion, Driver, Game } from 'data/types';
+import { Driver, Game } from 'data/types';
 
 export function useTracksPage() {
   const rawData = useData();
@@ -10,16 +10,14 @@ export function useTracksPage() {
 
   const tracks = useMemo(() => {
     if (!rawData) return;
-    const tracks = rawData.tracks.filter(({ id, game, best }) => {
+    const tracks = rawData.tracks.filter(({ game, best, version }) => {
       // remove tracks without time data
       if (!best.quali.length && !best.race.length) return false;
       // apply the filter
       if (!filter || !filter.game) return true;
       if (game !== filter.game) return false;
-      if (game === Game.ACC && filter.accVersion) {
-        if (filter.accVersion === AccVersion.V_2019 && !/_2019$/.test(id)) return false;
-        if (filter.accVersion === AccVersion.V_2020 && !/_2020$/.test(id)) return false;
-        if (filter.accVersion === AccVersion.V_2023 && /_20\d\d$/.test(id)) return false;
+      if (game === Game.ACC && filter.accVersion && filter.accVersion !== version) {
+        return false;
       }
       return true;
     });

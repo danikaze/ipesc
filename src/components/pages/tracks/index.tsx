@@ -1,5 +1,6 @@
 import { FC, useMemo } from 'react';
-import { Accordion, Heading, Text } from '@chakra-ui/react';
+import { Accordion, Heading, Link, Text } from '@chakra-ui/react';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 import { Game } from 'data/types';
 import { Page } from 'components/page';
@@ -16,7 +17,7 @@ export const TracksPage: FC = () => {
     if (!tracks) return null;
     const list = tracks.map((track) => (
       <TrackDetails
-        key={track.id}
+        key={`${track.id}:${track.version}`}
         data={track}
         getDriverName={getDriverName}
         getCarName={getCarName}
@@ -38,7 +39,19 @@ export const TracksPage: FC = () => {
           defaultValue={{ game: Game.ACC }}
         />
         <Text fontStyle='italic' margin={4}>
-          Tracks may appear repeated due to the IDs received from SGP.
+          ※ Tracks may appear repeated due to the IDs received from SGP.
+        </Text>
+        <Text fontStyle='italic' margin={4}>
+          ※ ACC Versions are based on{' '}
+          <Link
+            isExternal
+            color='orange'
+            href='https://www.acc-wiki.info/wiki/Changelogs_Overview'
+          >
+            ACC Release dates
+            <ExternalLinkIcon mx='2px' />
+          </Link>{' '}
+          vs Event dates.
         </Text>
         {trackElems}
       </WaitForData>

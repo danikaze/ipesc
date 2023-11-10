@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Flex, Select } from '@chakra-ui/react';
 
 import { Filter } from 'utils/filter-data';
-import { Game } from 'data/types';
+import { AccVersion, Game } from 'data/types';
 
 import { useDataFilter } from './hooks';
 
@@ -10,6 +10,7 @@ export interface Props {
   onChange: (filter: Filter) => void;
   defaultValue?: Partial<Filter>;
   showChampionships?: boolean;
+  championshipList?: string[];
   showGame?: boolean;
   showAccVersion?: boolean;
 }
@@ -23,18 +24,43 @@ export const DataFilter: FC<Props> = (props) => {
     <Flex>
       {props.showGame && renderGame(hookData)}
       {props.showAccVersion && renderAccVersion(hookData)}
-      {props.showChampionships && renderChampionships(hookData)}
+      {props.showChampionships && renderChampionships(hookData, props.championshipList)}
     </Flex>
   );
 };
 
-function renderChampionships({ filter, updateChampionships }: HookData) {
-  if (filter.game !== Game.ACC) return null;
+function renderChampionships(
+  { filter, updateChampionships }: HookData,
+  championshipList: string[] | undefined
+) {
+  const defaultValue = filter.onlyChampionships ? 'anySeason' : 'all';
+  const optionList = [
+    <option key='all' value='all'>
+      Include every championships
+    </option>,
+  ];
+
+  if (!filter.game || filter.game === Game.ACC) {
+    optionList.push(
+      <option key='anySeason' value='anySeason'>
+        Include official seasons
+      </option>
+    );
+  }
+
+  (championshipList || [])?.forEach((seasonName, i) =>
+    optionList.push(
+      <option key={seasonName} value={seasonName}>
+        {seasonName}
+      </option>
+    )
+  );
+
+  if (optionList.length <= 1) return null;
 
   return (
-    <Select onChange={updateChampionships} defaultValue={filter.championships}>
-      <option value='all'>Show all championships</option>
-      <option value='seasons'>Show seasons only</option>
+    <Select onChange={updateChampionships} defaultValue={defaultValue}>
+      {optionList}
     </Select>
   );
 }
@@ -51,9 +77,10 @@ function renderGame({ filter, updateGame }: HookData) {
 function renderAccVersion({ filter, updateAccVersion }: HookData) {
   return (
     <Select onChange={updateAccVersion} defaultValue={filter.accVersion}>
-      <option value='2019'>v1.6 (2019)</option>
-      <option value='2020'>v1.8 (2020)</option>
-      <option value='2023'>v1.9 (2023)</option>
+      <option value={''}>Any version</option>
+      <option value={AccVersion.V_16}>v1.6 (2020)</option>
+      <option value={AccVersion.V_18}>v1.8 (2021)</option>
+      <option value={AccVersion.V_19}>v1.9 (2023)</option>
     </Select>
   );
 }

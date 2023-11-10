@@ -11,6 +11,8 @@ import {
   SgpSessionResults,
 } from './types';
 import { IsoDate } from 'utils/types';
+import { AccVersion } from 'data/types';
+import { getAccVersionFromTime } from 'utils/acc-version';
 
 interface RawData {
   session: SgpEventSession;
@@ -73,6 +75,12 @@ export class SgpEventApiData {
 
   public getGame(): SgpGame {
     return this.session.session.game;
+  }
+
+  public getAccVersion(): AccVersion | undefined {
+    if (this.session.session.game !== SgpGame.ACC) return;
+    const time = new Date(this.getStartDate()).getTime();
+    return getAccVersionFromTime(time);
   }
 
   public getTrackId() {

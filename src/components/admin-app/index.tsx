@@ -64,7 +64,7 @@ export const AdminApp: FC = () => {
           </Box>
         </GridItem>
         <GridItem area='footer' borderTop='1px solid #bdbdbd'>
-          <Text align='center' color='teal.500'>
+          <Text align='center' color='orange'>
             <Link href='index.html'>IPESC Data management</Link>
           </Text>
         </GridItem>

@@ -8,9 +8,11 @@ import {
   ProcessedData,
   TrackData,
 } from 'data/types';
+import { isEventFromAccVersion } from './acc-version';
 
 export interface Filter {
-  championships?: 'all' | 'seasons';
+  onlyChampionships?: boolean;
+  seasonCustomName?: string;
   game?: Game;
   accVersion?: AccVersion;
 }
@@ -22,12 +24,12 @@ export function filterData(
   if (!data) return;
   if (!filter) return data;
 
-  const eFilter = getEventFilter(filter);
+  const eventFilter = getEventFilter(filter);
 
   const championships = data.championships
     .filter(getChampionshipFilter(filter))
     .map((c) => {
-      const events = c.events.filter(eFilter);
+      const events = c.events.filter(eventFilter);
       return {
         ...c,
         events,
@@ -46,17 +48,20 @@ export function filterData(
 
 function getChampionshipFilter(filter: Filter): (championship: Championship) => boolean {
   return (c) => {
-    if (
-      (filter.championships === 'seasons' && !filter.game) ||
-      filter.game === Game.ACC
-    ) {
-      if (!/^S\d+$/.test(c.customName!)) return false;
-    }
     if (filter.game) {
       if (c.game !== filter.game) {
         return false;
       }
     }
+
+    if (filter.onlyChampionships && !/^S\d+$/.test(c.customName!)) {
+      return false;
+    }
+
+    if (filter.seasonCustomName && filter.seasonCustomName !== c.customName) {
+      return false;
+    }
+
     return true;
   };
 }
@@ -64,16 +69,12 @@ function getChampionshipFilter(filter: Filter): (championship: Championship) => 
 function getEventFilter(filter: Filter): (event: Event) => boolean {
   return (e) => {
     if (/practice/i.test(e.name)) return false;
-    if (filter.game === Game.ACC) {
-      if (filter.accVersion === AccVersion.V_2019 && !/_2019$/.test(e.trackId)) {
-        return false;
-      }
-      if (filter.accVersion === AccVersion.V_2020 && !/_2020$/.test(e.trackId)) {
-        return false;
-      }
-      if (filter.accVersion === AccVersion.V_2023 && /_20\d\d$/.test(e.trackId)) {
-        return false;
-      }
+    if (
+      filter.game === Game.ACC &&
+      filter.accVersion &&
+      !isEventFromAccVersion(e, filter.accVersion)
+    ) {
+      return false;
     }
     return true;
   };
