@@ -4,9 +4,13 @@ import { Filter } from 'utils/filter-data';
 import { useData } from 'components/data-provider';
 import { Driver, Game } from 'data/types';
 
+const DEFAULT_FILTER: Filter = {
+  game: Game.ACC,
+};
+
 export function useTracksPage() {
   const rawData = useData();
-  const [filter, setFilter] = useState<Filter>();
+  const [filter, setFilter] = useState<Filter>(DEFAULT_FILTER);
 
   const tracks = useMemo(() => {
     if (!rawData) return;
@@ -40,6 +44,7 @@ export function useTracksPage() {
   );
 
   return {
+    filter,
     tracks,
     isAccSelected: filter?.game === Game.ACC,
     setFilter,

@@ -1,47 +1,62 @@
-import { useState, useCallback, useEffect, ChangeEvent } from 'react';
+import { useCallback, useEffect, ChangeEvent, useState } from 'react';
 
 import { Filter } from 'utils/filter-data';
 
 import { Props } from '.';
 
-export function useDataFilter({ onChange, defaultValue }: Props) {
-  const [filter, setFilter] = useState<Filter>({
-    onlyChampionships: true,
-    ...defaultValue,
-  });
+export function useDataFilter({ onChange, value }: Props) {
+  const [filter, setFilter] = useState<Filter>(value || {});
+  const triggerChange = useCallback(
+    (changes: Partial<Filter>, fromValue?: boolean) => {
+      setFilter((previous) => {
+        if (fromValue) {
+          return changes;
+        }
+        const newFilter = {
+          ...previous,
+          ...changes,
+        };
+        onChange(newFilter);
+        return newFilter;
+      });
+    },
+    [onChange]
+  );
 
-  useEffect(() => onChange(filter), [filter]);
+  useEffect(() => value && triggerChange(value, true), [value]);
 
   const updateChampionships = useCallback(
     (ev: ChangeEvent<HTMLSelectElement>) =>
-      setFilter((filter) => ({
-        ...filter,
+      triggerChange({
         onlyChampionships: ev.target.value === 'anySeason',
         seasonCustomName:
           ev.target.value !== 'anySeason' && ev.target.value !== 'all'
             ? ev.target.value
             : undefined,
-      })),
+      }),
     []
   );
 
   const updateGame = useCallback(
     (ev: ChangeEvent<HTMLSelectElement>) =>
-      setFilter((filter) => ({
-        ...filter,
+      triggerChange({
         game: ev.target.value as Filter['game'],
-      })),
+      }),
     []
   );
 
   const updateAccVersion = useCallback(
     (ev: ChangeEvent<HTMLSelectElement>) =>
-      setFilter((filter) => ({
-        ...filter,
+      triggerChange({
         accVersion: ev.target.value as Filter['accVersion'],
-      })),
+      }),
     []
   );
 
-  return { filter, updateChampionships, updateGame, updateAccVersion };
+  return {
+    filter,
+    updateChampionships,
+    updateGame,
+    updateAccVersion,
+  };
 }

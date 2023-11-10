@@ -8,7 +8,7 @@ import { useDataFilter } from './hooks';
 
 export interface Props {
   onChange: (filter: Filter) => void;
-  defaultValue?: Partial<Filter>;
+  value: Partial<Filter>;
   showChampionships?: boolean;
   championshipList?: string[];
   showGame?: boolean;
@@ -36,7 +36,7 @@ function renderChampionships(
   const defaultValue = filter.onlyChampionships ? 'anySeason' : 'all';
   const optionList = [
     <option key='all' value='all'>
-      Include every championships
+      Include all championships
     </option>,
   ];
 
@@ -68,6 +68,7 @@ function renderChampionships(
 function renderGame({ filter, updateGame }: HookData) {
   return (
     <Select onChange={updateGame} defaultValue={filter.game}>
+      <option value=''>All games</option>
       <option value={Game.ACC}>Assetto Corsa Competizione</option>
       <option value={Game.AC}>Assetto Corsa</option>
     </Select>
@@ -77,7 +78,7 @@ function renderGame({ filter, updateGame }: HookData) {
 function renderAccVersion({ filter, updateAccVersion }: HookData) {
   return (
     <Select onChange={updateAccVersion} defaultValue={filter.accVersion}>
-      <option value={''}>Any version</option>
+      <option value={''}>All versions</option>
       <option value={AccVersion.V_16}>v1.6 (2020)</option>
       <option value={AccVersion.V_18}>v1.8 (2021)</option>
       <option value={AccVersion.V_19}>v1.9 (2023)</option>

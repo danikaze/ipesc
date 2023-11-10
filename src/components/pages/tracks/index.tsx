@@ -2,7 +2,6 @@ import { FC, useMemo } from 'react';
 import { Accordion, Heading, Link, Text } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 
-import { Game } from 'data/types';
 import { Page } from 'components/page';
 import { WaitForData } from 'components/wait-for-data';
 import { DataFilter } from 'components/data-filter';
@@ -11,7 +10,8 @@ import { TrackDetails } from 'components/track-details';
 import { useTracksPage } from './hooks';
 
 export const TracksPage: FC = () => {
-  const { tracks, isAccSelected, setFilter, getDriverName, getCarName } = useTracksPage();
+  const { filter, tracks, isAccSelected, setFilter, getDriverName, getCarName } =
+    useTracksPage();
 
   const trackElems = useMemo(() => {
     if (!tracks) return null;
@@ -36,7 +36,7 @@ export const TracksPage: FC = () => {
           showGame
           showAccVersion={isAccSelected}
           onChange={setFilter}
-          defaultValue={{ game: Game.ACC }}
+          value={filter}
         />
         <Text fontStyle='italic' margin={4}>
           ※ Tracks may appear repeated due to the IDs received from SGP.
