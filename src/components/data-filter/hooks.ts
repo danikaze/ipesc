@@ -1,14 +1,12 @@
 import { useState, useCallback, useEffect, ChangeEvent } from 'react';
 
 import { Filter } from 'utils/filter-data';
-import { AccVersion } from 'data/types';
 
 import { Props } from '.';
 
 export function useDataFilter({ onChange, defaultValue }: Props) {
   const [filter, setFilter] = useState<Filter>({
-    championships: 'seasons',
-    accVersion: AccVersion.V_2023,
+    onlyChampionships: true,
     ...defaultValue,
   });
 
@@ -18,7 +16,11 @@ export function useDataFilter({ onChange, defaultValue }: Props) {
     (ev: ChangeEvent<HTMLSelectElement>) =>
       setFilter((filter) => ({
         ...filter,
-        championships: ev.target.value as Filter['championships'],
+        onlyChampionships: ev.target.value === 'anySeason',
+        seasonCustomName:
+          ev.target.value !== 'anySeason' && ev.target.value !== 'all'
+            ? ev.target.value
+            : undefined,
       })),
     []
   );

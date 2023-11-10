@@ -191,10 +191,10 @@ function getTrackData(rawData: SgpChampionshipApiData[]): TrackData[] {
 
   rawData.forEach((championship) => {
     championship.getEvents().forEach((ev) => {
-      const id = ev.getTrackId();
       const eventDate = new Date(ev.getStartDate()).getTime();
-      const data: TrackData = res.get(id) || {
-        id,
+      const key = `${ev.getTrackId()}:${ev.getAccVersion()}`;
+      const data: TrackData = res.get(key) || {
+        id: ev.getTrackId(),
         name: ev.getTrackName(),
         game: sgpGame2Game(ev.getGame()),
         best: {
@@ -202,7 +202,11 @@ function getTrackData(rawData: SgpChampionshipApiData[]): TrackData[] {
           race: [],
         },
       };
-      res.set(id, data);
+      const version = ev.getAccVersion();
+      if (version) {
+        data.version = version;
+      }
+      res.set(key, data);
 
       const quali = ev.getResults(SgpEventType.QUALI);
       if (quali) {

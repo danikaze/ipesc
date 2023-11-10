@@ -23,9 +23,10 @@ export const enum Game {
 }
 
 export const enum AccVersion {
-  V_2019 = '2019',
-  V_2020 = '2020',
-  V_2023 = '2023',
+  PRE_V_16 = 'pre-1.6',
+  V_16 = '1.6',
+  V_18 = '1.8',
+  V_19 = '1.9',
 }
 
 export interface Driver {
@@ -69,6 +70,7 @@ export interface TrackData {
   id: string;
   name: string;
   game?: Game;
+  version?: AccVersion;
   best: Record<'race' | 'quali', TrackBestData[]>;
 }
 
