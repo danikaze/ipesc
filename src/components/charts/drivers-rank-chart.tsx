@@ -1,6 +1,6 @@
 import { FC, useMemo } from 'react';
 
-import { Driver, ProcessedData, TrackData } from 'data/types';
+import { AccVersion, Driver, Game, ProcessedData, TrackData } from 'data/types';
 import { formatRatioAsPctg } from 'utils/format-data';
 import { getPctgColor } from 'utils/get-pctg-color';
 import { msToTime } from 'utils/time';
@@ -85,10 +85,14 @@ export const DriversRankChart: FC<Props> = ({ data, ...filter }) => {
               },
               footer: ([{ dataIndex }]) => {
                 const data = chartData.driverData[dataIndex];
-                return data.eventList.map(
-                  ({ name, avgLapTime, pctg }) =>
-                    `${name}: ${msToTime(avgLapTime)} (${formatRatioAsPctg(pctg)})`
-                );
+                return data.eventList.map(({ game, version, name, avgLapTime, pctg }) => {
+                  const prefix = game
+                    ? `[${game}${version ? `/${version}` : ''}] `
+                    : undefined;
+                  return `${prefix ? `${prefix}` : ''}${name}: ${msToTime(
+                    avgLapTime
+                  )} (${formatRatioAsPctg(pctg)})`;
+                });
               },
             },
           },
@@ -145,15 +149,20 @@ function getDriverAveragePctg(data: ProcessedData, driver: Driver) {
   );
 
   // list of events considered for the driver
-  let eventList: { name: TrackData['name']; avgLapTime: LapTimeAsMs; pctg: number }[] =
-    [];
+  let eventList: {
+    game?: Game;
+    version?: AccVersion;
+    name: TrackData['name'];
+    avgLapTime: LapTimeAsMs;
+    pctg: number;
+  }[] = [];
   // sum of the best times for the tracks this driver raced
   let totalBest = 0;
   // sum of the driver best averages for the tracks
   let driverAverage = 0;
 
   tracks.forEach((event) => {
-    const trackBest = data.tracks.find(({ id }) => id === event.id)!.best.race[0].lapTime;
+    const trackBest = tracks.find(({ id }) => id === event.id)!.best.race[0].lapTime;
     const driverBest = event.best.race.find(
       (result) => result.driverId === driver.id
     )!.lapTime;
@@ -162,6 +171,8 @@ function getDriverAveragePctg(data: ProcessedData, driver: Driver) {
     driverAverage += driverBest;
 
     eventList.push({
+      game: event.game,
+      version: event.version,
       name: event.name,
       avgLapTime: driverBest,
       pctg: driverBest / trackBest,
