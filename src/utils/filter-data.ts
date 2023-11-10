@@ -69,11 +69,7 @@ function getChampionshipFilter(filter: Filter): (championship: Championship) => 
 function getEventFilter(filter: Filter): (event: Event) => boolean {
   return (e) => {
     if (/practice/i.test(e.name)) return false;
-    if (
-      filter.game === Game.ACC &&
-      filter.accVersion &&
-      !isEventFromAccVersion(e, filter.accVersion)
-    ) {
+    if (filter.game === Game.ACC && !isEventFromAccVersion(e, filter.accVersion)) {
       return false;
     }
     return true;
@@ -103,6 +99,10 @@ function getTracksFilter(
 ): (track: TrackData) => boolean {
   return (track) =>
     championships.some(({ events }) =>
-      events.some((event) => event.trackId === track.id)
+      events.some(
+        (event) =>
+          event.trackId === track.id &&
+          (track.game !== Game.ACC || isEventFromAccVersion(event, track.version))
+      )
     );
 }

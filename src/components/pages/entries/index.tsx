@@ -10,17 +10,20 @@ import { WaitForData } from 'components/wait-for-data';
 import { useEntriesPage } from './hooks';
 
 export const EntriesPage: FC = () => {
-  const { raceData, seasonData, setRaceFilter, setSeasonFilter } = useEntriesPage();
+  const {
+    seasonFilter,
+    raceFilter,
+    raceData,
+    seasonData,
+    setRaceFilter,
+    setSeasonFilter,
+  } = useEntriesPage();
 
   return (
     <Page>
       <Heading size='md'>Participation per season</Heading>
       <WaitForData data={seasonData}>
-        <DataFilter
-          showChampionships
-          onChange={setSeasonFilter}
-          defaultValue={{ championships: 'all' }}
-        />
+        <DataFilter showChampionships onChange={setSeasonFilter} value={seasonFilter} />
         <ParticipationPerSeasonChart data={seasonData!} />
       </WaitForData>
 
@@ -28,7 +31,7 @@ export const EntriesPage: FC = () => {
         Participation per race
       </Heading>
       <WaitForData data={raceData}>
-        <DataFilter showChampionships onChange={setRaceFilter} />
+        <DataFilter showChampionships onChange={setRaceFilter} value={raceFilter} />
         <ParticipationPerRaceChart data={raceData!} />
       </WaitForData>
     </Page>
