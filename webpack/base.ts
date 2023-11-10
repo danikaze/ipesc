@@ -25,7 +25,7 @@ export const webpackConfig: (fn: WebpackConfigCreator) => () => Configuration = 
       modules: false,
       children: false,
     },
-    devtool: false,
+    devtool: isProduction ? false : 'source-map',
     optimization: isProduction
       ? {
           minimizer: isProduction
