@@ -5,15 +5,10 @@ import { sync as mkdirpSync } from 'mkdirp';
 import { SgpChampionshipApiData } from 'utils/sgp/championship-api-data';
 import { SgpCategory, SgpEventType, SgpGame } from 'utils/sgp/types';
 import { SgpEventApiData } from 'utils/sgp/event-api-data';
+import { dropUndefinedFields } from 'utils/drop-undefined-fields';
 import { Timestamp } from 'utils/types';
 
-import {
-  CUSTOM_NAMES,
-  OUTPUT_FILE,
-  RAW_DATA_DIR,
-  ROOT_PATH,
-  TRACK_MAX_BEST_TIMES,
-} from './constants';
+import { CUSTOM_NAMES, OUTPUT_FILE, RAW_DATA_DIR, ROOT_PATH } from './constants';
 import {
   Car,
   Category,
@@ -22,8 +17,9 @@ import {
   Event,
   Game,
   ProcessedData,
-  TrackBestData,
+  TrackRecord,
   TrackData,
+  EventType,
 } from './types';
 
 /**
@@ -39,13 +35,21 @@ export function processData(): void {
 
   const rawData = readRawFiles();
   const processedData = processRawData(rawData);
-  writeProcessedData(processedData);
+  const dataToWrite = dropUndefinedFields(processedData);
+  writeProcessedData(dataToWrite);
 
   console.log('');
 }
 
 function relativePath(path: string): string {
   return relative(ROOT_PATH, path).replace(/\\/g, '/');
+}
+
+function formatSize(bytes: number): string {
+  const n = Math.round(bytes / 1024)
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return `${n} kb`;
 }
 
 function readRawFiles(): SgpChampionshipApiData[] {
@@ -56,7 +60,7 @@ function readRawFiles(): SgpChampionshipApiData[] {
         const json = readFileSync(path).toString();
         const raw = JSON.parse(json);
         const apiData = SgpChampionshipApiData.fromJson(raw);
-        console.log(`  - Read ${relativePath(path)} (${json.length} bytes)`);
+        console.log(`  - Read ${relativePath(path)} (${formatSize(json.length)})`);
         return apiData;
       } catch (e) {
         console.error(`  - Error processing ${relativePath(path)}:`, e);
@@ -78,7 +82,9 @@ function writeProcessedData(data: ProcessedData): void {
         : JSON.stringify(data, null, 2);
     mkdirpSync(dirname(OUTPUT_FILE));
     writeFileSync(OUTPUT_FILE, str);
-    console.log(`Processed data into ${relativePath(OUTPUT_FILE)} (${str.length} bytes)`);
+    console.log(
+      `Processed data into ${relativePath(OUTPUT_FILE)} (${formatSize(str.length)})`
+    );
   } catch (e) {
     console.error(`Error writing ${relativePath(OUTPUT_FILE)}:`, e);
   }
@@ -107,19 +113,9 @@ function getChampionships(rawData: SgpChampionshipApiData[]): Championship[] {
       const data: Championship['drivers'][number] = {
         id: driver.id,
         carId: driver.carId,
-        raced: championship
-          .getEvents()
-          .some((ev) =>
-            ev.getDrivers('active').find((eventDriver) => eventDriver.id === driver.id)
-          ),
+        raceNumber: driver.raceNumber,
+        category: sgpCategory2Category(driver.category),
       };
-
-      if (driver.raceNumber !== undefined) {
-        data.raceNumber = driver.raceNumber;
-      }
-      if (sgpCategory2Category(driver.category)) {
-        data.category = sgpCategory2Category(driver.category);
-      }
 
       return data;
     }),
@@ -181,9 +177,40 @@ function getEvents(
     name: event.getEventName(),
     startTime: new Date(event.getStartDate()).getTime(),
     trackId: event.getTrackId(),
-    activeDrivers: event.getDrivers('active').map((driver) => driver.id),
     inactiveDrivers: event.getDrivers('inactive').map((driver) => driver.id),
+    results: getEventResults(event),
   }));
+}
+
+function getEventResults(event: SgpEventApiData): Event['results'] {
+  const includedEventTypes: EventType[] = ['quali', 'race'];
+  return event
+    .getAllResults()
+    .filter(({ type }) => includedEventTypes.includes(sgpEventType2EventType(type)!))
+    .map((results) => {
+      const type = sgpEventType2EventType(results.type)!;
+      const p1time = results.results[0].totalTime;
+      return {
+        type,
+        wet: results.wetTrack ? true : undefined,
+        results: results.results.map((result) => {
+          const retired =
+            type === 'race' && result.totalTime > 0 && result.totalTime < p1time;
+          return {
+            driverId: result.driverId,
+            carId: result.carModelId,
+            position: result.position,
+            retired: retired ? true : undefined,
+            // do not include formation/start laps as the best lap
+            averageLapTime: result.bestCleanLap > 0 ? result.averageLapTime : undefined,
+            bestCleanLapTime:
+              result.bestCleanLap > 0 ? result.bestCleanLapTime : undefined,
+            avgCleanLapTime:
+              result.bestCleanLap > 0 ? result.averageCleanLapTime : undefined,
+          };
+        }),
+      };
+    });
 }
 
 function getTrackData(rawData: SgpChampionshipApiData[]): TrackData[] {
@@ -191,68 +218,67 @@ function getTrackData(rawData: SgpChampionshipApiData[]): TrackData[] {
 
   rawData.forEach((championship) => {
     championship.getEvents().forEach((ev) => {
-      const eventDate = new Date(ev.getStartDate()).getTime();
       const key = `${ev.getTrackId()}:${ev.getAccVersion()}`;
       const data: TrackData = res.get(key) || {
         id: ev.getTrackId(),
         name: ev.getTrackName(),
         game: sgpGame2Game(ev.getGame()),
-        best: {
-          quali: [],
-          race: [],
-        },
+        version: ev.getAccVersion(),
+        best: {},
       };
-      const version = ev.getAccVersion();
-      if (version) {
-        data.version = version;
-      }
+
+      data.best.quali = getBestEventResultOfType(ev, SgpEventType.QUALI, data.best.quali);
+      data.best.race = getBestEventResultOfType(ev, SgpEventType.RACE, data.best.race);
+
       res.set(key, data);
-
-      const quali = ev.getResults(SgpEventType.QUALI);
-      if (quali) {
-        data.best.quali = updateTrackResults(data.best.quali, quali, eventDate);
-      }
-
-      for (let i = 0; ; i++) {
-        try {
-          const race = ev.getResults(SgpEventType.RACE, i);
-          if (!race) return;
-          data.best.race = updateTrackResults(data.best.race, race, eventDate);
-        } catch (e) {
-          break;
-        }
-      }
     });
   });
 
   return Array.from(res.values());
 }
 
-function updateTrackResults(
-  existing: TrackBestData[],
+function getBestEventResultOfType(
+  ev: SgpEventApiData,
+  type: SgpEventType,
+  currentResult: TrackRecord | undefined
+): TrackRecord | undefined {
+  let trackRecord = currentResult;
+  const eventDate = new Date(ev.getStartDate()).getTime();
+
+  for (let i = 0; ; i++) {
+    try {
+      const eventResults = ev.getResults(type, i);
+      if (!eventResults) break;
+      const bestResult = eventResult2trackRecord(eventResults, eventDate);
+      if (bestResult && (!trackRecord || trackRecord.lapTime > bestResult.lapTime)) {
+        trackRecord = bestResult;
+      }
+    } catch (e) {
+      break;
+    }
+  }
+
+  return trackRecord;
+}
+
+function eventResult2trackRecord(
   results: Exclude<ReturnType<SgpEventApiData['getResults']>, undefined>,
-  date: Timestamp
-): TrackBestData[] {
+  eventDate: Timestamp
+): TrackRecord | undefined {
+  let record: TrackRecord | undefined;
+
   results.results.forEach((result) => {
     const lapTime = result.bestCleanLapTime;
-    if (!lapTime) return;
-    const newData: TrackBestData = {
+    if (!lapTime || (record?.lapTime && record.lapTime < lapTime)) return;
+    record = {
       lapTime,
-      date,
+      date: eventDate,
       driverId: result.driverId,
       carId: result.carModelId,
     };
-    const index = existing.findIndex((item) => item.driverId === newData.driverId);
-    if (index !== -1) {
-      if (newData.lapTime < existing[index].lapTime) {
-        existing[index] = newData;
-      }
-    } else {
-      existing.push(newData);
-    }
   });
-  existing.sort((a, b) => a.lapTime - b.lapTime);
-  return existing.slice(0, TRACK_MAX_BEST_TIMES);
+
+  return record;
 }
 
 function sgpGame2Game(game: SgpGame | undefined): Game | undefined {
@@ -266,4 +292,9 @@ function sgpGame2Game(game: SgpGame | undefined): Game | undefined {
 function sgpCategory2Category(cat: SgpCategory | undefined): Category | undefined {
   if (!cat) return;
   return cat[0].toUpperCase() as Category;
+}
+
+function sgpEventType2EventType(type: SgpEventType): EventType | undefined {
+  if (type === SgpEventType.QUALI) return 'quali';
+  if (type === SgpEventType.RACE) return 'race';
 }

@@ -2,11 +2,11 @@ import { FC } from 'react';
 import { Heading } from '@chakra-ui/react';
 
 import { Page } from 'components/page';
-import { WaitForData } from 'components/wait-for-data';
 import { DataFilter } from 'components/data-filter';
 import { DriversRankChart } from 'components/charts/drivers-rank-chart';
 
 import { useDriversPage } from './hooks';
+import { DataFilteredProvider } from 'components/data-provider';
 
 export const DriversPage: FC = () => {
   const {
@@ -23,17 +23,17 @@ export const DriversPage: FC = () => {
       <Heading size='md' marginBottom={4}>
         Drivers Ranking
       </Heading>
-      <WaitForData data={filteredData}>
-        <DataFilter
-          showChampionships
-          showGame
-          showAccVersion={isAccSelected}
-          championshipList={namedSeasons}
-          onChange={updateFilter}
-          value={filter}
-        />
-        <DriversRankChart key={filterChangeTime} data={filteredData!} />
-      </WaitForData>
+      <DataFilter
+        showChampionships
+        showGame
+        showAccVersion={isAccSelected}
+        championshipList={namedSeasons}
+        onChange={updateFilter}
+        value={filter}
+      />
+      <DataFilteredProvider filter={filter}>
+        <DriversRankChart key={filterChangeTime} />
+      </DataFilteredProvider>
     </Page>
   );
 };

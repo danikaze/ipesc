@@ -1,6 +1,6 @@
 import { useCallback, useEffect, ChangeEvent, useState } from 'react';
 
-import { Filter } from 'utils/filter-data';
+import { Filter } from 'components/data-provider/filter-data';
 
 import { Props } from '.';
 
@@ -23,7 +23,10 @@ export function useDataFilter({ onChange, value }: Props) {
     [onChange]
   );
 
-  useEffect(() => value && triggerChange(value, true), [value]);
+  useEffect(() => {
+    if (!value) return;
+    triggerChange(value, true);
+  }, [value]);
 
   const updateChampionships = useCallback(
     (ev: ChangeEvent<HTMLSelectElement>) =>

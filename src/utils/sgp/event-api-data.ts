@@ -141,6 +141,19 @@ export class SgpEventApiData {
     return res;
   }
 
+  public getAllResults() {
+    const indexes: Record<SgpEventType, number> = {
+      [SgpEventType.PRACTICE]: 0,
+      [SgpEventType.QUALI]: 0,
+      [SgpEventType.RACE]: 0,
+    };
+
+    if (!this.results) return [];
+    return this.results.results.map(
+      ({ type }) => this.getResults(type, indexes[type]++)!
+    );
+  }
+
   public getCar(id: string) {
     return this.session.session.cars.find((car) => car.id === id);
   }

@@ -8,7 +8,8 @@ import {
   ProcessedData,
   TrackData,
 } from 'data/types';
-import { isEventFromAccVersion } from './acc-version';
+import { DataQuery } from 'data/data-query';
+import { isEventFromAccVersion } from '../../utils/acc-version';
 
 export interface Filter {
   onlyChampionships?: boolean;
@@ -17,16 +18,14 @@ export interface Filter {
   accVersion?: AccVersion;
 }
 
-export function filterData(
-  data: ProcessedData | undefined,
-  filter?: Filter
-): ProcessedData | undefined {
-  if (!data) return;
-  if (!filter) return data;
+export function filterData(query: DataQuery, filter?: Filter): DataQuery | undefined {
+  if (!query) return;
+  if (!filter) return query;
 
   const eventFilter = getEventFilter(filter);
 
-  const championships = data.championships
+  const { raw } = query;
+  const championships = raw.championships
     .filter(getChampionshipFilter(filter))
     .map((c) => {
       const events = c.events.filter(eventFilter);
@@ -36,14 +35,14 @@ export function filterData(
       };
     });
 
-  const res: ProcessedData = {
-    processedOn: data.processedOn,
+  const filteredData: ProcessedData = {
+    processedOn: raw.processedOn,
     championships,
-    drivers: data.drivers.filter(getDriversFilter(filter, championships)),
-    cars: data.cars.filter(getCarsFilter(filter, championships)),
-    tracks: data.tracks.filter(getTracksFilter(filter, championships)),
+    drivers: raw.drivers.filter(getDriversFilter(query, filter, championships)),
+    cars: raw.cars.filter(getCarsFilter(filter, championships)),
+    tracks: raw.tracks.filter(getTracksFilter(filter, championships)),
   };
-  return res;
+  return new DataQuery(filteredData);
 }
 
 function getChampionshipFilter(filter: Filter): (championship: Championship) => boolean {
@@ -77,12 +76,13 @@ function getEventFilter(filter: Filter): (event: Event) => boolean {
 }
 
 function getDriversFilter(
+  query: DataQuery,
   filter: Filter,
   championships: Championship[]
 ): (driver: Driver) => boolean {
   return (driver) =>
     championships.some(({ events }) =>
-      events.some((event) => event.activeDrivers.includes(driver.id))
+      events.some((event) => query.getDriverList(event).active.includes(driver.id))
     );
 }
 
