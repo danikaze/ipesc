@@ -193,7 +193,7 @@ function getDriverAveragePctg(
     championship.events.flatMap((event) => ({
       name: event.name,
       game: championship.game,
-      version: getAccVersionFromTime(event.startTime),
+      version: getAccVersionFromTime(championship.game, event.startTime),
       startTime: event.startTime,
       id: event.trackId,
       results: event.results.filter(

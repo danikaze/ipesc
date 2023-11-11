@@ -1,4 +1,4 @@
-import { AccVersion, Event } from 'data/types';
+import { AccVersion, Event, Game } from 'data/types';
 import { Timestamp } from './types';
 
 const RELEASE_16 = new Date('2020-11-18').getTime();
@@ -9,7 +9,12 @@ export function isEventFromAccVersion(event: Event, accVersion?: AccVersion): bo
   return isTimeFromVersion(event.startTime, accVersion);
 }
 
-export function getAccVersionFromTime(time: Timestamp): AccVersion {
+export function getAccVersionFromTime(
+  game: Game | undefined,
+  time: Timestamp
+): AccVersion | undefined {
+  if (game !== Game.ACC) return;
+
   if (time < RELEASE_16) return AccVersion.PRE_V_16;
   if (time < RELEASE_18) return AccVersion.V_16;
   if (time < RELEASE_19) return AccVersion.V_18;

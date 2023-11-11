@@ -4,15 +4,16 @@ import {
   SgpGame,
   SgpSessionPracticeDriverResult,
 } from 'utils/sgp/types';
+import { IsoDate } from 'utils/types';
+import { getAccVersionFromTime } from 'utils/acc-version';
+import { AccVersion } from 'data/types';
+import { sgpGame2Game } from 'data/sgp';
 import {
   SgpEventPoints,
   SgpEventPointsAdjustments,
   SgpEventSession,
   SgpSessionResults,
 } from './types';
-import { IsoDate } from 'utils/types';
-import { AccVersion } from 'data/types';
-import { getAccVersionFromTime } from 'utils/acc-version';
 
 interface RawData {
   session: SgpEventSession;
@@ -78,9 +79,10 @@ export class SgpEventApiData {
   }
 
   public getAccVersion(): AccVersion | undefined {
-    if (this.session.session.game !== SgpGame.ACC) return;
-    const time = new Date(this.getStartDate()).getTime();
-    return getAccVersionFromTime(time);
+    return getAccVersionFromTime(
+      sgpGame2Game(this.session.session.game),
+      new Date(this.getStartDate()).getTime()
+    );
   }
 
   public getTrackId() {

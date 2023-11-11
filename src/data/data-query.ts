@@ -134,7 +134,7 @@ export class DataQuery {
           (event) =>
             event.trackId === track.id &&
             game === track.game &&
-            getAccVersionFromTime(event.startTime) === track.version
+            getAccVersionFromTime(game, event.startTime) === track.version
         )
         .forEach((event) => {
           event.results.forEach(({ type, results }) =>
