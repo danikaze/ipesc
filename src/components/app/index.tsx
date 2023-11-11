@@ -1,21 +1,17 @@
-import { FC, Suspense, useEffect } from 'react';
+import { FC, Suspense } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { Flex, Spinner } from '@chakra-ui/react';
 
 import { hideLoadingLogo } from 'utils/hide-loading-logo';
-import { DataProvider } from 'components/data-provider';
 import { IndexPage } from 'components/pages/index';
 import { DynamicEntriesPage } from 'components/pages/entries/dynamic';
 import { DynamicTracksPage } from 'components/pages/tracks/dynamic';
 import { DynamicDriversPage } from 'components/pages/drivers/dynamic';
+import { RawDataProvider } from 'components/data-provider';
 
 export const App: FC = () => {
-  useEffect(() => {
-    hideLoadingLogo();
-  }, []);
-
   return (
-    <DataProvider>
+    <RawDataProvider onLoad={hideLoadingLogo}>
       <HashRouter>
         <Routes>
           <Route path='/' element={<IndexPage />} />
@@ -24,7 +20,7 @@ export const App: FC = () => {
           <Route path='/drivers' element={<DriversPage />} />
         </Routes>
       </HashRouter>
-    </DataProvider>
+    </RawDataProvider>
   );
 };
 

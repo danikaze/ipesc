@@ -1,14 +1,18 @@
 import { FC, useMemo } from 'react';
-import { ProcessedData, Event, Championship } from 'data/types';
+
+import { DataQuery } from 'data/data-query';
+import { Event, Championship } from 'data/types';
+import { useFilteredData } from 'components/data-provider';
+
 import { useCharts } from './use-charts';
 
-export interface Props {
-  data: ProcessedData;
-}
+export interface Props {}
 
-export const ParticipationPerRaceChart: FC<Props> = ({ data }) => {
+export const ParticipationPerRaceChart: FC<Props> = () => {
   const ReactChart = useCharts();
-  const chartData = useMemo(() => prepareData(data), [data]);
+
+  const query = useFilteredData();
+  const chartData = useMemo(() => prepareData(query), [query]);
 
   if (!ReactChart || !chartData) return;
 
@@ -42,8 +46,8 @@ export const ParticipationPerRaceChart: FC<Props> = ({ data }) => {
   );
 };
 
-function prepareData(data: ProcessedData) {
-  const events = data.championships.reduce(
+function prepareData(query: DataQuery) {
+  const events = query.raw.championships.reduce(
     (labels, c, ci) => {
       c.events.forEach((e) => labels.push([e, c, ci]));
       return labels;
@@ -52,25 +56,30 @@ function prepareData(data: ProcessedData) {
   );
 
   const labels = events.map(([e]) => e.name);
+  const eventDrivers = events.map(([e]) => query.getDriverList(e));
 
   const datasets = [
     {
       label: 'Active drivers',
-      data: events.map(([e]) => e.activeDrivers.length),
+      data: eventDrivers.map(({ active }) => active.length),
       borderWidth: 1,
       borderColor: events.map(
         ([e, c, ci]) =>
-          `hsl(${Math.round((360 * ci) / data.championships.length)}deg 100% 30% / 95%)`
+          `hsl(${Math.round(
+            (360 * ci) / query.raw.championships.length
+          )}deg 100% 30% / 95%)`
       ),
       backgroundColor: events.map(
         ([e, c, ci]) =>
-          `hsl(${Math.round((360 * ci) / data.championships.length)}deg 80% 50% / 70%)`
+          `hsl(${Math.round(
+            (360 * ci) / query.raw.championships.length
+          )}deg 80% 50% / 70%)`
       ),
     },
     {
       label: 'Inactive drivers',
       // hidden: true,
-      data: events.map(([e, c]) => e.inactiveDrivers.length),
+      data: eventDrivers.map(({ inactive }) => inactive.length),
       borderWidth: 1,
       borderRadius: 3,
     },

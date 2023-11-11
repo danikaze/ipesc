@@ -15,29 +15,29 @@ import {
   Tr,
 } from '@chakra-ui/react';
 
-import { Car, Driver, TrackBestData, TrackData } from 'data/types';
+import { TrackRecord, TrackData } from 'data/types';
 import { msToTime } from 'utils/time';
 import { getPctgColor } from 'utils/get-pctg-color';
 import { formatRatioAsPctg } from 'utils/format-data';
+import { useRawData } from 'components/data-provider';
 
 export interface Props {
-  data: TrackData;
-  getDriverName?: (driverId: Driver['id']) => string | undefined;
-  getCarName?: (carId: Car['id']) => string | undefined;
+  track: TrackData;
 }
 
 export const MAX_PCTG = 108;
 
-export const TrackDetails: FC<Props> = ({ data, getDriverName, getCarName }) => {
-  const bestQuali = data.best.quali[0]?.lapTime;
-  const bestRace = data.best.race[0]?.lapTime;
+export const TrackDetails: FC<Props> = ({ track }) => {
+  const bestQuali = track.best.quali?.lapTime;
+  const bestRace = track.best.race?.lapTime;
   const best = Math.min(bestQuali ?? Infinity, bestRace || Infinity);
+
   return (
-    <AccordionItem data-track-name={data.name} data-track-id={data.id}>
+    <AccordionItem data-track-name={track.name} data-track-id={track.id}>
       <AccordionButton>
         <Flex flexGrow='1' justifyContent='space-between'>
           <Text fontWeight='bold' noOfLines={1}>
-            {data.name}
+            {track.name}
           </Text>{' '}
           <Text mr={2} fontSize='sm' color='GrayText'>
             {msToTime(best)}
@@ -48,12 +48,7 @@ export const TrackDetails: FC<Props> = ({ data, getDriverName, getCarName }) => 
       <AccordionPanel>
         <Flex>
           <Percentages quali={bestQuali} race={bestRace} />
-          <Times
-            quali={data.best.quali}
-            race={data.best.race}
-            getDriverName={getDriverName}
-            getCarName={getCarName}
-          />
+          <Times track={track} />
         </Flex>
       </AccordionPanel>
     </AccordionItem>
@@ -86,8 +81,8 @@ const Percentages: FC<{ quali?: number; race?: number }> = ({ quali, race }) => 
       <Thead>
         <Tr>
           <Th></Th>
-          <Th>Quali</Th>
-          <Th>Race</Th>
+          {quali && <Th>Quali</Th>}
+          {race && <Th>Race</Th>}
         </Tr>
       </Thead>
       <Tbody>{rows}</Tbody>
@@ -96,31 +91,20 @@ const Percentages: FC<{ quali?: number; race?: number }> = ({ quali, race }) => 
 };
 
 const Times: FC<{
-  quali: TrackBestData[];
-  race: TrackBestData[];
-  getDriverName: Props['getDriverName'];
-  getCarName: Props['getCarName'];
-}> = ({ quali, race, getDriverName, getCarName }) => {
-  const rows: ReactNode[] = [];
-  for (let i = 0; i < Math.max(quali.length, race.length); i++) {
-    const bestQuali = quali[0]?.lapTime;
-    const bestRace = race[0]?.lapTime;
+  track: TrackData;
+}> = ({ track }) => {
+  const query = useRawData();
+  const { quali, race } = query.getTrackRecords(track);
+  const bestQuali = quali?.[0]?.lapTime;
+  const bestRace = race?.[0]?.lapTime;
 
+  const rows: ReactNode[] = [];
+  for (let i = 0; i < Math.max(quali?.length || 0, race?.length || 0); i++) {
     rows.push(
       <Tr key={i}>
         <Th textAlign='right'>{`#${i + 1}`}</Th>
-        <TimeRow
-          data={quali[i]}
-          best={bestQuali}
-          getDriverName={getDriverName}
-          getCarName={getCarName}
-        />
-        <TimeRow
-          data={race[i]}
-          best={bestRace}
-          getDriverName={getDriverName}
-          getCarName={getCarName}
-        />
+        {bestQuali && <TimeRow data={quali?.[i]} best={bestQuali} />}
+        {bestRace && <TimeRow data={race?.[i]} best={bestRace} />}
       </Tr>
     );
   }
@@ -130,8 +114,8 @@ const Times: FC<{
       <Thead>
         <Tr>
           <Th></Th>
-          <Th>Quali</Th>
-          <Th>Race</Th>
+          {bestQuali && <Th>Quali</Th>}
+          {bestRace && <Th>Race</Th>}
         </Tr>
       </Thead>
       <Tbody>{rows}</Tbody>
@@ -140,19 +124,18 @@ const Times: FC<{
 };
 
 const TimeRow: FC<{
-  data: TrackBestData | undefined;
+  data: TrackRecord | undefined;
   best: number | undefined;
-  getDriverName: Props['getDriverName'];
-  getCarName: Props['getCarName'];
-}> = ({ data, best, getDriverName, getCarName }) => {
+}> = ({ data, best }) => {
   if (!data || !best) return null;
 
+  const query = useRawData();
   const ratio = data.lapTime / best;
   const border = ratio && `3px solid ${getPctgColor(ratio * 100)}`;
 
   const time = msToTime(data.lapTime);
-  const driver = getDriverName?.(data.driverId);
-  const car = getCarName?.(data.carId);
+  const driver = query.getDriverName(data.driverId);
+  const car = query.getCarName(data.carId);
   const date = new Date(data.date).toDateString();
 
   return (

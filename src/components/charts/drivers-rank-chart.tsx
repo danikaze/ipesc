@@ -1,30 +1,67 @@
 import { FC, useMemo } from 'react';
 
-import { AccVersion, Driver, Game, ProcessedData, TrackData } from 'data/types';
+import { AccVersion, Driver, Game, TrackData } from 'data/types';
+import { DataQuery } from 'data/data-query';
+import { getAccVersionFromTime } from 'utils/acc-version';
 import { formatRatioAsPctg } from 'utils/format-data';
 import { getPctgColor } from 'utils/get-pctg-color';
 import { msToTime } from 'utils/time';
 import { LapTimeAsMs } from 'utils/types';
+import { useFilteredData } from 'components/data-provider';
 
 import { useCharts } from './use-charts';
 import { backgroundColorPlugin } from './plugins/background-color';
 
 export interface Props {
-  data: ProcessedData;
+  lapField?: 'bestCleanLapTime' | 'avgCleanLapTime' | 'averageLapTime';
   minEvents?: number;
   maxPctg?: number;
 }
 
+type EventItem = {
+  game?: Game;
+  startTime: number;
+  version?: AccVersion;
+  name: TrackData['name'];
+  avgLapTime: LapTimeAsMs;
+  pctg: number;
+  retired: boolean;
+  wet: boolean;
+};
+
 const HEIGHT_PER_BAR_PX = 15;
-const DEFAULT_FILTER: Required<Omit<Props, 'data'>> = {
+const DEFAULT_FILTER: Required<Omit<Props, 'lapField'>> = {
   minEvents: 1,
   maxPctg: 2,
 };
+const FIELDS: Record<
+  Required<Props>['lapField'],
+  Record<'title' | 'subtitle', string>
+> = {
+  bestCleanLapTime: {
+    title: 'Drivers rank based on fastest clean race lap averages',
+    subtitle:
+      'Results shown based on percentages from the fastest clean race lap registered for the each track',
+  },
+  avgCleanLapTime: {
+    title: 'Drivers rank based on average clean race lap averages',
+    subtitle: 'This might include starting laps, etc.',
+  },
+  averageLapTime: {
+    title: 'Drivers rank based on average race lap averages',
+    subtitle: 'This might include starting laps, etc.',
+  },
+};
 
-export const DriversRankChart: FC<Props> = ({ data, ...filter }) => {
-  const fullFilter = { ...DEFAULT_FILTER, ...filter };
+export const DriversRankChart: FC<Props> = ({ lapField, ...filter }) => {
+  const chartDataOptions = {
+    lapField: 'bestCleanLapTime',
+    ...DEFAULT_FILTER,
+    ...filter,
+  } as const;
   const ReactChart = useCharts();
-  const chartData = useMemo(() => prepareData(data, fullFilter), [data]);
+  const query = useFilteredData();
+  const chartData = useMemo(() => prepareData(query, chartDataOptions), [query]);
 
   if (!ReactChart || !chartData) return null;
 
@@ -64,12 +101,12 @@ export const DriversRankChart: FC<Props> = ({ data, ...filter }) => {
           },
           title: {
             display: true,
-            text: 'Drivers rank based on clean lap averages',
+            text: FIELDS[chartDataOptions.lapField].title,
           },
           subtitle: {
             display: true,
             position: 'top',
-            text: 'Results shown based on percentages from the best clean race lap',
+            text: FIELDS[chartDataOptions.lapField].subtitle,
             padding: {
               bottom: 10,
             },
@@ -79,20 +116,23 @@ export const DriversRankChart: FC<Props> = ({ data, ...filter }) => {
               title: ([{ dataIndex, label }]) => {
                 return `P${dataIndex + 1}. ${label}`;
               },
-              label: ({ dataIndex, raw }) => {
+              label: ({ dataIndex }) => {
                 const data = chartData.driverData[dataIndex];
                 return formatRatioAsPctg(data.pctg);
               },
               footer: ([{ dataIndex }]) => {
                 const data = chartData.driverData[dataIndex];
-                return data.eventList.map(({ game, version, name, avgLapTime, pctg }) => {
-                  const prefix = game
-                    ? `[${game}${version ? `/${version}` : ''}] `
-                    : undefined;
-                  return `${prefix ? `${prefix}` : ''}${name}: ${msToTime(
-                    avgLapTime
-                  )} (${formatRatioAsPctg(pctg)})`;
-                });
+                return data.eventList.map(
+                  ({ game, version, name, avgLapTime, pctg, retired, wet }) => {
+                    const prefix = game
+                      ? `[${game}${version ? `/${version}` : ''}] `
+                      : undefined;
+                    const flags = [retired && 'R', wet && 'W'].filter(Boolean).join('');
+                    return `${prefix ? `${prefix}` : ''}${name}: ${msToTime(
+                      avgLapTime
+                    )} (${formatRatioAsPctg(pctg)}) ${flags}`;
+                  }
+                );
               },
             },
           },
@@ -104,9 +144,9 @@ export const DriversRankChart: FC<Props> = ({ data, ...filter }) => {
   );
 };
 
-function prepareData(data: ProcessedData, { maxPctg, minEvents }: typeof DEFAULT_FILTER) {
-  const driverData = data.drivers
-    .map((driver) => getDriverAveragePctg(data, driver))
+function prepareData(data: DataQuery, { lapField, maxPctg, minEvents }: Required<Props>) {
+  const driverData = data.raw.drivers
+    .map((driver) => getDriverAveragePctg(data, driver, lapField))
     .filter(({ pctg, eventList }) => {
       return !isNaN(pctg) && pctg < maxPctg && eventList.length >= minEvents;
     });
@@ -143,43 +183,62 @@ function prepareData(data: ProcessedData, { maxPctg, minEvents }: typeof DEFAULT
  * the percentage relative to the track best time
  * Driver time is based on his best average clean race lap time for that track
  */
-function getDriverAveragePctg(data: ProcessedData, driver: Driver) {
-  const tracks = data.tracks.filter((track) =>
-    track.best.race.find((result) => result.driverId === driver.id)
+function getDriverAveragePctg(
+  query: DataQuery,
+  driver: Driver,
+  lapField: Required<Props>['lapField']
+) {
+  // list of events where the driver has participated
+  const events = query.raw.championships.flatMap((championship) =>
+    championship.events.flatMap((event) => ({
+      name: event.name,
+      game: championship.game,
+      version: getAccVersionFromTime(event.startTime),
+      startTime: event.startTime,
+      id: event.trackId,
+      results: event.results.filter(
+        ({ type, results }) =>
+          type === 'race' &&
+          results.find((result) => result.driverId === driver.id)?.[lapField]
+      ),
+    }))
   );
 
-  // list of events considered for the driver
-  let eventList: {
-    game?: Game;
-    version?: AccVersion;
-    name: TrackData['name'];
-    avgLapTime: LapTimeAsMs;
-    pctg: number;
-  }[] = [];
   // sum of the best times for the tracks this driver raced
   let totalBest = 0;
   // sum of the driver best averages for the tracks
   let driverAverage = 0;
 
-  tracks.forEach((event) => {
-    const trackBest = tracks.find(({ id }) => id === event.id)!.best.race[0].lapTime;
-    const driverBest = event.best.race.find(
-      (result) => result.driverId === driver.id
-    )!.lapTime;
+  const eventList = events
+    .flatMap((event) =>
+      event.results.map(({ wet, results }) => {
+        const driverResult = results.find((result) => result.driverId === driver.id);
+        const driverLapTime = driverResult?.[lapField];
+        if (!driverLapTime) return;
+        const trackBest = query.getTrackData(event)?.best.race;
+        const pctg = query.getTrackPctg(event, 'race', driverLapTime);
+        if (!trackBest || !pctg) return;
 
-    totalBest += trackBest;
-    driverAverage += driverBest;
+        driverAverage += driverLapTime;
+        totalBest += trackBest.lapTime;
 
-    eventList.push({
-      game: event.game,
-      version: event.version,
-      name: event.name,
-      avgLapTime: driverBest,
-      pctg: driverBest / trackBest,
-    });
-  });
+        const item: EventItem = {
+          game: event.game,
+          startTime: event.startTime,
+          version: event.version,
+          name: event.name,
+          avgLapTime: driverLapTime,
+          pctg,
+          retired: !!driverResult.retired,
+          wet: !!wet,
+        };
 
-  eventList.sort((a, b) => a.name.localeCompare(b.name));
+        return item;
+      })
+    )
+    .filter(Boolean) as EventItem[];
+
+  eventList.sort((a, b) => a.startTime - b.startTime);
 
   return {
     driver,

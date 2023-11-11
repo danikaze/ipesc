@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Flex, Select } from '@chakra-ui/react';
 
-import { Filter } from 'utils/filter-data';
+import { Filter } from 'components/data-provider/filter-data';
 import { AccVersion, Game } from 'data/types';
 
 import { useDataFilter } from './hooks';

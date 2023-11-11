@@ -1,9 +1,9 @@
 import { useCallback, useMemo, useState } from 'react';
 
 import { Game } from 'data/types';
-import { Filter, filterData } from 'utils/filter-data';
+import { Filter, filterData } from 'components/data-provider/filter-data';
 import { isEventFromAccVersion } from 'utils/acc-version';
-import { useData } from 'components/data-provider';
+import { useRawData } from 'components/data-provider';
 
 const DEFAULT_FILTER: Filter = {
   onlyChampionships: false,
@@ -11,11 +11,11 @@ const DEFAULT_FILTER: Filter = {
 };
 
 export function useDriversPage() {
-  const rawData = useData();
+  const rawData = useRawData();
   const [filter, setFilter] = useState<Filter>(DEFAULT_FILTER);
   const namedSeasons = useMemo(
     () =>
-      rawData?.championships
+      rawData?.raw.championships
         // only championships with custom names
         .filter((c) => c.customName)
         // if game is selected, only championships from that game

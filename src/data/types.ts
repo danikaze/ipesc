@@ -53,17 +53,32 @@ export interface Championship {
 export interface ChampionshipDriver {
   id: Driver['id'];
   carId: Car['id'];
-  raced?: boolean;
   raceNumber?: number;
   category?: Category;
 }
+
+export type EventType = 'quali' | 'race';
 
 export interface Event {
   name: string;
   startTime: Timestamp;
   trackId: TrackData['id'];
-  activeDrivers: Driver['id'][];
   inactiveDrivers: Driver['id'][];
+  results: {
+    type: EventType;
+    wet?: boolean;
+    results: EventResult[];
+  }[];
+}
+
+export interface EventResult {
+  driverId: Driver['id'];
+  carId: Car['id'];
+  bestCleanLapTime?: LapTimeAsMs;
+  avgCleanLapTime?: LapTimeAsMs;
+  averageLapTime?: LapTimeAsMs;
+  position?: number;
+  retired?: boolean;
 }
 
 export interface TrackData {
@@ -71,10 +86,10 @@ export interface TrackData {
   name: string;
   game?: Game;
   version?: AccVersion;
-  best: Record<'race' | 'quali', TrackBestData[]>;
+  best: Partial<Record<EventType | 'raceAvg', TrackRecord>>;
 }
 
-export interface TrackBestData {
+export interface TrackRecord {
   lapTime: LapTimeAsMs;
   driverId: Driver['id'];
   carId: Car['id'];
