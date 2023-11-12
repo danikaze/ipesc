@@ -1,9 +1,10 @@
-import { useCallback, useMemo, useState } from 'react';
+import { ChangeEvent, useCallback, useMemo, useState } from 'react';
 
 import { Game } from 'data/types';
 import { Filter, filterData } from 'components/data-provider/filter-data';
 import { isEventFromAccVersion } from 'utils/acc-version';
 import { useRawData } from 'components/data-provider';
+import { Props as ChartProps } from 'components/charts/drivers-rank-chart';
 
 const DEFAULT_FILTER: Filter = {
   onlyChampionships: false,
@@ -13,6 +14,11 @@ const DEFAULT_FILTER: Filter = {
 export function useDriversPage() {
   const rawData = useRawData();
   const [filter, setFilter] = useState<Filter>(DEFAULT_FILTER);
+  const [chartOptions, setChartOptions] = useState<ChartProps>({
+    lapField: 'bestCleanLapTime',
+    minEvents: undefined,
+    maxPctg: undefined,
+  });
   const namedSeasons = useMemo(
     () =>
       rawData?.raw.championships
@@ -47,9 +53,40 @@ export function useDriversPage() {
     []
   );
 
+  const updateLapFields = useCallback(
+    (ev: ChangeEvent<HTMLSelectElement>) =>
+      setChartOptions((state) => ({
+        ...state,
+        lapField: (ev.target.value || undefined) as ChartProps['lapField'],
+      })),
+    []
+  );
+
+  const updateMinEvents = useCallback(
+    (ev: ChangeEvent<HTMLSelectElement>) =>
+      setChartOptions((state) => ({
+        ...state,
+        minEvents: Number(ev.target.value) || undefined,
+      })),
+    []
+  );
+
+  const updateMaxPctg = useCallback(
+    (ev: ChangeEvent<HTMLSelectElement>) =>
+      setChartOptions((state) => ({
+        ...state,
+        maxPctg: Number(ev.target.value) || undefined,
+      })),
+    []
+  );
+
   return {
     filter,
     updateFilter,
+    chartOptions,
+    updateLapFields,
+    updateMinEvents,
+    updateMaxPctg,
     filteredData: useMemo(() => filterData(rawData, filter), [rawData, filter]),
     isAccSelected: filter?.game === Game.ACC,
     filterChangeTime: useMemo(() => Date.now(), [filter]),

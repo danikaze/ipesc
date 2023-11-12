@@ -23,14 +23,15 @@ type EventItem = {
   startTime: number;
   version?: AccVersion;
   name: TrackData['name'];
-  avgLapTime: LapTimeAsMs;
+  lapTime: LapTimeAsMs;
   pctg: number;
   retired: boolean;
   wet: boolean;
 };
 
 const HEIGHT_PER_BAR_PX = 15;
-const DEFAULT_FILTER: Required<Omit<Props, 'lapField'>> = {
+const DEFAULT_CHART_OPTIONS: Required<Props> = {
+  lapField: 'bestCleanLapTime',
   minEvents: 1,
   maxPctg: 2,
 };
@@ -53,15 +54,22 @@ const FIELDS: Record<
   },
 };
 
-export const DriversRankChart: FC<Props> = ({ lapField, ...filter }) => {
-  const chartDataOptions = {
-    lapField: 'bestCleanLapTime',
-    ...DEFAULT_FILTER,
-    ...filter,
-  } as const;
+export const DriversRankChart: FC<Props> = (props) => {
   const ReactChart = useCharts();
   const query = useFilteredData();
-  const chartData = useMemo(() => prepareData(query, chartDataOptions), [query]);
+
+  const chartDataOptions = useMemo<Required<Props>>(
+    () =>
+      ({
+        ...DEFAULT_CHART_OPTIONS,
+        ...props,
+      }) as Required<Props>,
+    [props]
+  );
+  const chartData = useMemo(
+    () => prepareData(query, chartDataOptions),
+    [query, chartDataOptions]
+  );
 
   if (!ReactChart || !chartData) return null;
 
@@ -123,7 +131,7 @@ export const DriversRankChart: FC<Props> = ({ lapField, ...filter }) => {
               footer: ([{ dataIndex }]) => {
                 const data = chartData.driverData[dataIndex];
                 return data.eventList.map(
-                  ({ game, version, name, avgLapTime, pctg, retired, wet }) => {
+                  ({ game, version, name, lapTime: avgLapTime, pctg, retired, wet }) => {
                     const prefix = game
                       ? `[${game}${version ? `/${version}` : ''}] `
                       : undefined;
@@ -147,8 +155,23 @@ export const DriversRankChart: FC<Props> = ({ lapField, ...filter }) => {
 function prepareData(data: DataQuery, { lapField, maxPctg, minEvents }: Required<Props>) {
   const driverData = data.raw.drivers
     .map((driver) => getDriverAveragePctg(data, driver, lapField))
-    .filter(({ pctg, eventList }) => {
-      return !isNaN(pctg) && pctg < maxPctg && eventList.length >= minEvents;
+    .filter((entry) => {
+      if (isNaN(entry.pctg)) {
+        console.log(`Filtered out: No pctg`, entry);
+        return false;
+      }
+      if (entry.pctg > maxPctg) {
+        console.log(`Filtered out: Slow (${entry.pctg} > ${maxPctg})`, entry);
+        return false;
+      }
+      if (entry.eventList.length < minEvents) {
+        console.log(
+          `Filtered out: Not enough events: ${entry.eventList.length} < ${minEvents}`,
+          entry
+        );
+        return false;
+      }
+      return true;
     });
   driverData.sort((a, b) => a.pctg - b.pctg);
 
@@ -227,7 +250,7 @@ function getDriverAveragePctg(
           startTime: event.startTime,
           version: event.version,
           name: event.name,
-          avgLapTime: driverLapTime,
+          lapTime: driverLapTime,
           pctg,
           retired: !!driverResult.retired,
           wet: !!wet,
