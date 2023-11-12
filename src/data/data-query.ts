@@ -93,11 +93,11 @@ export class DataQuery {
    * Get the list of active and inactive drivers for one event
    */
   public getDriverList(event: Event): Record<'active' | 'inactive', string[]> {
-    const allDriverIds = event.results.flatMap(({ results }) =>
-      results.map(({ driverId }) => driverId)
+    const allDriverIds = new Set(
+      event.results.flatMap(({ results }) => results.map(({ driverId }) => driverId))
     );
     return {
-      active: allDriverIds.filter(
+      active: Array.from(allDriverIds).filter(
         (driverId) => !event.inactiveDrivers.includes(driverId)
       ),
       inactive: event.inactiveDrivers,
