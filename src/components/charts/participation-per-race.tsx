@@ -9,7 +9,7 @@ import { useCharts } from './use-charts';
 export interface Props {}
 
 export const ParticipationPerRaceChart: FC<Props> = () => {
-  const ReactChart = useCharts();
+  const { ReactChart } = useCharts();
 
   const query = useFilteredData();
   const chartData = useMemo(() => prepareData(query), [query]);

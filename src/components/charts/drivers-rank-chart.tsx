@@ -55,7 +55,7 @@ const FIELDS: Record<
 };
 
 export const DriversRankChart: FC<Props> = (props) => {
-  const ReactChart = useCharts();
+  const { ReactChart } = useCharts();
   const query = useFilteredData();
 
   const chartDataOptions = useMemo<Required<Props>>(

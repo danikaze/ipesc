@@ -5,20 +5,25 @@ type ReactChart = typeof import('react-chartjs-2');
 // @ts-ignore
 type ChartJS = typeof import('chart.js');
 
+interface Modules {
+  ReactChart?: ReactChart;
+  ChartJS?: ChartJS;
+}
+
 export function useCharts() {
-  const [ReactChart, setReactChart] = useState<undefined | ReactChart>(undefined);
+  const [modules, setModules] = useState<Modules>({});
   useEffect(() => {
     // dynamic imports don't allow tree-shaking :(
     // and webpack magic comment `webpackExports` doesn't seem to work here...
     Promise.all([import('chart.js'), import('react-chartjs-2')]).then(
       ([ChartJS, ReactChart]) => {
         register(ChartJS);
-        setReactChart(ReactChart);
+        setModules({ ReactChart, ChartJS });
       }
     );
-  });
+  }, []);
 
-  return ReactChart;
+  return modules;
 }
 
 function register(ChartJS: ChartJS): void {
