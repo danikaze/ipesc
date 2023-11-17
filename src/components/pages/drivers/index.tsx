@@ -6,11 +6,8 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
-  Flex,
   Heading,
-  Input,
   Select,
-  Switch,
   Text,
 } from '@chakra-ui/react';
 
@@ -26,7 +23,6 @@ export const DriversPage: FC = () => {
     filter,
     updateFilter,
     isAccSelected,
-    filterChangeTime,
     namedSeasons,
     chartOptions,
     updateLapFields,
@@ -72,7 +68,7 @@ export const DriversPage: FC = () => {
         </AccordionItem>
       </Accordion>
       <DataFilteredProvider filter={filter}>
-        <DriversRankChart key={filterChangeTime} {...chartOptions} />
+        <DriversRankChart {...chartOptions} />
       </DataFilteredProvider>
     </Page>
   );

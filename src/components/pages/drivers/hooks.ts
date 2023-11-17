@@ -89,7 +89,6 @@ export function useDriversPage() {
     updateMaxPctg,
     filteredData: useMemo(() => filterData(rawData, filter), [rawData, filter]),
     isAccSelected: filter?.game === Game.ACC,
-    filterChangeTime: useMemo(() => Date.now(), [filter]),
     namedSeasons,
   };
 }
