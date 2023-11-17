@@ -12,6 +12,7 @@ export const CUSTOM_NAMES: Record<string, string> = {
   F3m9W00txELGkFJuUslLM: 'S4',
   'Fd36z3HxrgY6I5-lxmOuh': 'Rookies S1',
   '8uPv3wO1_cpTnus0wLtxw': 'Rookies S2',
+  jehvtl2elJlJ8tmU01QY3: 'Rookies S3',
   '7E7SPYC13UZhPlq-yUWYL': 'S5',
   HmJXSR2OksoGBlT10eR_q: 'BTCC',
   hxjmRD7aBYGUsyiNlCVo3: 'S6',
