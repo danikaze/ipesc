@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, KeyboardEventHandler, ReactNode, useCallback, useState } from 'react';
 import {
   AccordionButton,
   AccordionIcon,
@@ -6,6 +6,8 @@ import {
   AccordionPanel,
   Box,
   Flex,
+  Heading,
+  Input,
   Table,
   Tbody,
   Td,
@@ -16,7 +18,7 @@ import {
 } from '@chakra-ui/react';
 
 import { TrackRecord, TrackData } from 'data/types';
-import { msToTime } from 'utils/time';
+import { msToTime, timeToMs } from 'utils/time';
 import { getPctgColor } from 'utils/get-pctg-color';
 import { formatRatioAsPctg } from 'utils/format-data';
 import { useRawData } from 'components/data-provider';
@@ -47,7 +49,10 @@ export const TrackDetails: FC<Props> = ({ track }) => {
       </AccordionButton>
       <AccordionPanel>
         <Flex>
-          <Percentages quali={bestQuali} race={bestRace} />
+          <Box mr={4}>
+            <Percentages quali={bestQuali} race={bestRace} />
+            <PercentageCalculator quali={bestQuali} race={bestRace} />
+          </Box>
           <Times track={track} />
         </Flex>
       </AccordionPanel>
@@ -61,7 +66,7 @@ const Percentages: FC<{ quali?: number; race?: number }> = ({ quali, race }) => 
     const color = getPctgColor(p);
 
     rows.push(
-      <Tr key={p} borderLeft={`3px solid ${color}`} borderBottom={`1px solid ${color}`}>
+      <Tr key={p} borderLeft={`3px solid ${color}`}>
         <Th>{`${p}%`}</Th>
         <Td>{quali && msToTime((quali * p) / 100)}</Td>
         <Td>{race && msToTime((race * p) / 100)}</Td>
@@ -74,9 +79,9 @@ const Percentages: FC<{ quali?: number; race?: number }> = ({ quali, race }) => 
       size='sm'
       width='min-content'
       height='min-content'
-      mr={4}
       backgroundColor='#f1f1f1'
       borderRadius={5}
+      mb={4}
     >
       <Thead>
         <Tr>
@@ -87,6 +92,60 @@ const Percentages: FC<{ quali?: number; race?: number }> = ({ quali, race }) => 
       </Thead>
       <Tbody>{rows}</Tbody>
     </Table>
+  );
+};
+
+const PercentageCalculator: FC<{ quali?: number; race?: number }> = ({ quali, race }) => {
+  const [[qualiPctg, racePctg], setPctgs] = useState<
+    [qualiPctg: number | undefined, racePctg: number | undefined]
+  >([undefined, undefined]);
+
+  const handler = useCallback<KeyboardEventHandler<HTMLInputElement>>(
+    (ev) => {
+      const target = ev.target as HTMLInputElement;
+      target.value = target.value.replace(/[^\d:.]/g, '');
+      const time = timeToMs(target.value);
+      if (time) {
+        setPctgs([quali && time / quali, race && time / race]);
+      } else {
+        setPctgs([undefined, undefined]);
+      }
+    },
+    [quali, race]
+  );
+
+  return (
+    <Box>
+      <Heading size='xs' mb={1}>
+        What's my percentage?
+      </Heading>
+      <Input
+        size='sm'
+        borderBottomRadius={0}
+        onKeyUp={handler}
+        placeholder='Laptime as 1:23.456'
+      />
+      <Table size='sm' backgroundColor='#f1f1f1' borderRadius={5} borderTopRadius={0}>
+        <Tbody>
+          <Tr
+            borderLeft={`3px solid ${
+              qualiPctg ? getPctgColor(100 * qualiPctg) : 'transparent'
+            }`}
+          >
+            <Th>QUALI</Th>
+            <Td>{qualiPctg && formatRatioAsPctg(qualiPctg)}&nbsp;</Td>
+          </Tr>
+          <Tr
+            borderLeft={`3px solid ${
+              racePctg ? getPctgColor(100 * racePctg) : 'transparent'
+            }`}
+          >
+            <Th>RACE</Th>
+            <Td>{racePctg && formatRatioAsPctg(racePctg)}&nbsp;</Td>
+          </Tr>
+        </Tbody>
+      </Table>
+    </Box>
   );
 };
 

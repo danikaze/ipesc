@@ -9,7 +9,7 @@ export function timeToMs(time: string | undefined): number | undefined {
   if (!match) return;
   const [m1, m2, hours, min, sec, m3, ms] = match;
   return (
-    (Number(ms) || 0) +
+    (Number(ms?.padEnd(3, '0').substring(0, 3)) || 0) +
     (Number(sec) || 0) * SEC_TO_MS +
     (Number(min) || 0) * MIN_TO_MS +
     (Number(hours) || 0) * HOUR_TO_MS
