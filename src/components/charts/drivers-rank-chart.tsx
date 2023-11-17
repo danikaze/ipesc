@@ -11,6 +11,7 @@ import { useFilteredData } from 'components/data-provider';
 
 import { useCharts } from './use-charts';
 import { backgroundColorPlugin } from './plugins/background-color';
+import { resizeChartPlugin } from './plugins/resize-chart';
 
 export interface Props {
   lapField?: 'bestCleanLapTime' | 'avgCleanLapTime' | 'averageLapTime';
@@ -29,7 +30,7 @@ type EventItem = {
   wet: boolean;
 };
 
-const HEIGHT_PER_BAR_PX = 15;
+const HEIGHT_PER_BAR_PX = 20;
 const DEFAULT_CHART_OPTIONS: Required<Props> = {
   lapField: 'bestCleanLapTime',
   minEvents: 1,
@@ -75,12 +76,14 @@ export const DriversRankChart: FC<Props> = (props) => {
 
   return (
     <ReactChart.Bar
-      width='600px'
-      height={chartData.height}
-      datasetIdKey='entries'
+      datasetIdKey='drivers-rank'
       options={{
+        responsive: false,
+        maintainAspectRatio: false,
         indexAxis: 'y',
-        responsive: true,
+        layout: {
+          padding: { right: 20 },
+        },
         scales: {
           x: {
             max: 1,
@@ -144,10 +147,16 @@ export const DriversRankChart: FC<Props> = (props) => {
               },
             },
           },
+          ...{
+            resizeChart: {
+              width: '100%',
+              chartAreaHeight: chartData.height,
+            },
+          },
         },
       }}
       data={chartData}
-      plugins={[backgroundColorPlugin]}
+      plugins={[backgroundColorPlugin, resizeChartPlugin]}
     />
   );
 };
