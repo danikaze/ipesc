@@ -121,7 +121,7 @@ describe('SgpEventApiData', () => {
     expect(drivers.find((d) => d.name === 'Isaac Becker')).toBeUndefined();
 
     drivers = s4singleRace.getDrivers('inactive');
-    expect(drivers.length).toBe(12);
+    expect(drivers.length).toBe(10);
     expect(drivers.find((d) => d.name === 'O-Ring Boland')).toBeUndefined();
 
     drivers = s7fullSingleRace.getDrivers('inactive');
