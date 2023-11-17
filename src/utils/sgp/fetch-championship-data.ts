@@ -57,6 +57,7 @@ export function fetchChampionshipData(championshipId?: string) {
         entryList,
       });
       console.log(res);
+      console.log(res.toJson());
       resolve(res);
     }),
   };
