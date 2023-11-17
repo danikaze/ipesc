@@ -168,29 +168,33 @@ export class SgpEventApiData {
    * 'all' will return both
    */
   public getDrivers(type: 'active' | 'inactive' | 'all'): DriverInfo[] {
-    const map = new Map<string, DriverInfo>();
+    const allDrivers = new Map<DriverInfo['id'], DriverInfo>();
+    const activeDrivers = new Set<DriverInfo['id']>();
     this.results?.results.forEach((session) =>
       session.results.forEach((result) => {
-        // no need to add drivers already added
-        if (map.has(result.driverId)) return;
-        // no totalTime means it didn't join
-        const isActive = result.lapCount > 0;
-        if (type === 'active' && !isActive) return;
-        if (type === 'inactive' && isActive) return;
-
-        const info: DriverInfo = {
-          id: result.participant.id,
+        // add the information of the driver
+        const id = result.participant.id;
+        allDrivers.set(id, {
+          ...allDrivers.get(id),
+          id,
           name: result.participant.name,
           country: result.participant.country,
           avatarUrl: result.participant.avatarUrl,
           carModelId: result.carModelId,
           category: result.carClassId,
-        };
+        });
 
-        map.set(result.driverId, info);
+        // having a lapCount means he joined
+        if (result.lapCount) {
+          activeDrivers.add(id);
+        }
       })
     );
-    return Array.from(map.values());
+
+    const all = Array.from(allDrivers.values());
+    return type === 'all'
+      ? all
+      : all.filter(({ id }) => activeDrivers.has(id) === (type === 'active'));
   }
 
   private getRacePoints(driverId: string, raceIndex: number): number | undefined {
