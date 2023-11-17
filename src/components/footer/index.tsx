@@ -5,11 +5,13 @@ import { SiGithub } from '@react-icons/all-files/si/SiGithub';
 import { SiDiscord } from '@react-icons/all-files/si/SiDiscord';
 import { Box, Container, Flex, Icon, Link, Text } from '@chakra-ui/react';
 import { useRawData } from 'components/data-provider';
-import { formatDate } from 'utils/format-date';
 
-export const Footer: FC = () => (
+// defined in `webpack/pages`
+const appVersion = process.env.PACKAGE_VERSION as string;
+
+export const Footer: FC<{ width: number }> = ({ width }) => (
   <Box background='#222' color='white' borderTop='1px solid grey'>
-    <Container py={3}>
+    <Container py={3} maxWidth={width}>
       <DataInfo />
       <Flex alignItems='center' justifyContent='space-evenly'>
         <Item label='Github' icon={SiGithub} href='https://github.com/danikaze/ipesc' />
@@ -30,11 +32,11 @@ export const Footer: FC = () => (
 
 const DataInfo: FC = () => {
   const data = useRawData();
-  const date = data ? formatDate(new Date(data.raw.processedOn)) : null;
+  const date = data ? new Date(data.raw.updatedOn).toDateString() : null;
 
   return (
     <Text color='gray' align='center'>
-      Data updated on {date ?? '...'}
+      v{appVersion} | Data updated with the events ocurred up to {date ?? '...'}
     </Text>
   );
 };
