@@ -37,6 +37,7 @@ export function filterData(query: DataQuery, filter?: Filter): DataQuery | undef
 
   const filteredData: ProcessedData = {
     processedOn: raw.processedOn,
+    updatedOn: raw.updatedOn,
     championships,
     drivers: raw.drivers.filter(getDriversFilter(query, filter, championships)),
     cars: raw.cars.filter(getCarsFilter(filter, championships)),

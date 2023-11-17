@@ -2,6 +2,7 @@ import { LapTimeAsMs, Timestamp } from 'utils/types';
 
 export interface ProcessedData {
   processedOn: Timestamp;
+  updatedOn: Timestamp;
   drivers: Driver[];
   cars: Car[];
   championships: Championship[];

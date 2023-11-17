@@ -90,7 +90,7 @@ function writeProcessedData(data: ProcessedData): void {
 }
 
 function processRawData(rawData: SgpChampionshipApiData[]): ProcessedData {
-  const processedData: ProcessedData = {
+  const processedData: Omit<ProcessedData, 'updatedOn'> = {
     processedOn: Date.now(),
     drivers: getAllDrivers(rawData),
     cars: getAllCars(rawData),
@@ -98,7 +98,22 @@ function processRawData(rawData: SgpChampionshipApiData[]): ProcessedData {
     tracks: getTrackData(rawData),
   };
 
-  return processedData;
+  return {
+    updatedOn: getUpdatedTime(processedData.championships),
+    ...processedData,
+  };
+}
+
+function getUpdatedTime(
+  championships: ProcessedData['championships']
+): ProcessedData['updatedOn'] {
+  return Math.max(
+    ...championships.flatMap((championship) =>
+      championship.events
+        .filter((event) => event.results.length)
+        .flatMap((event) => event.startTime || 0)
+    )
+  );
 }
 
 function getChampionships(rawData: SgpChampionshipApiData[]): Championship[] {
