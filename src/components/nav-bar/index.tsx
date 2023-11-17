@@ -2,9 +2,9 @@ import { Container, UnorderedList, ListItem, Box } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
-export const NavBar: FC = () => (
+export const NavBar: FC<{ width: number }> = ({ width }) => (
   <Box background='#222' color='white' borderBottom='1px solid grey'>
-    <Container fontWeight='bold'>
+    <Container fontWeight='bold' maxWidth={width}>
       <UnorderedList
         display='flex'
         alignItems='center'
