@@ -1,19 +1,22 @@
 import { ChangeEvent, useCallback, useMemo, useState } from 'react';
 
 import { Game } from 'data/types';
-import { Filter, filterData } from 'components/data-provider/filter-data';
 import { isEventFromAccVersion } from 'utils/acc-version';
+import { Filter, filterData } from 'components/data-provider/filter-data';
 import { useRawData } from 'components/data-provider';
 import { Props as ChartProps } from 'components/charts/drivers-rank-chart';
 
-const DEFAULT_FILTER: Filter = {
-  onlyChampionships: false,
-  game: Game.ACC,
-};
-
 export function useDriversPage() {
   const rawData = useRawData();
-  const [filter, setFilter] = useState<Filter>(DEFAULT_FILTER);
+  const defaultFilter = useMemo<Filter>(() => {
+    const accVersions = rawData.getAccVersions();
+    return {
+      game: Game.ACC,
+      accVersion: accVersions[accVersions.length - 1],
+      onlyChampionships: true,
+    };
+  }, [rawData]);
+  const [filter, setFilter] = useState<Filter>(defaultFilter);
   const [chartOptions, setChartOptions] = useState<ChartProps>({
     lapField: 'bestCleanLapTime',
     minEvents: undefined,
@@ -42,10 +45,10 @@ export function useDriversPage() {
       setFilter((oldFilter) => {
         if (oldFilter) {
           if (oldFilter.game !== newFilter.game) {
-            newFilter = { ...DEFAULT_FILTER, game: newFilter.game };
+            newFilter = { ...defaultFilter, game: newFilter.game };
           }
           if (oldFilter.accVersion !== newFilter.accVersion) {
-            newFilter.onlyChampionships = DEFAULT_FILTER.onlyChampionships;
+            newFilter.onlyChampionships = defaultFilter.onlyChampionships;
           }
         }
         return newFilter;
