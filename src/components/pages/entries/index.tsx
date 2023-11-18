@@ -10,7 +10,7 @@ import { useEntriesPage } from './hooks';
 import { DataFilteredProvider } from 'components/data-provider';
 
 export const EntriesPage: FC = () => {
-  const { seasonFilter, raceFilter, setRaceFilter, setSeasonFilter } = useEntriesPage();
+  const { seasonFilter, raceFilter, setSeasonFilter, setRaceFilter } = useEntriesPage();
 
   return (
     <Page>

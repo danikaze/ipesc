@@ -4,13 +4,12 @@ import { Filter } from 'components/data-provider/filter-data';
 import { useRawData } from 'components/data-provider';
 import { Game } from 'data/types';
 
-const DEFAULT_FILTER: Filter = {
-  game: Game.ACC,
-};
-
 export function useTracksPage() {
   const rawData = useRawData();
-  const [filter, setFilter] = useState<Filter>(DEFAULT_FILTER);
+  const [filter, setFilter] = useState<Filter>(() => {
+    const accVersions = rawData.getAccVersions();
+    return { game: Game.ACC, accVersion: accVersions[accVersions.length - 1] };
+  });
 
   const tracks = useMemo(() => {
     const tracks = rawData.raw.tracks.filter(({ game, best, version }) => {

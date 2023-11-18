@@ -16,6 +16,7 @@ export interface Filter {
   seasonCustomName?: string;
   game?: Game;
   accVersion?: AccVersion;
+  onlyFinishedEvents?: boolean;
 }
 
 export function filterData(query: DataQuery, filter?: Filter): DataQuery | undefined {
@@ -67,9 +68,12 @@ function getChampionshipFilter(filter: Filter): (championship: Championship) => 
 }
 
 function getEventFilter(filter: Filter): (event: Event) => boolean {
-  return (e) => {
-    if (/practice/i.test(e.name)) return false;
-    if (filter.game === Game.ACC && !isEventFromAccVersion(e, filter.accVersion)) {
+  return (event) => {
+    if (/practice/i.test(event.name)) return false;
+    if (filter.game === Game.ACC && !isEventFromAccVersion(event, filter.accVersion)) {
+      return false;
+    }
+    if (filter.onlyFinishedEvents && !event.results?.length) {
       return false;
     }
     return true;

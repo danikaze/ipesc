@@ -1,4 +1,5 @@
 import {
+  AccVersion,
   Car,
   Championship,
   Driver,
@@ -189,6 +190,12 @@ export class DataQuery {
   ): number | undefined {
     const bestTime = this.getTrackData(track)?.best?.[type]?.lapTime;
     return bestTime ? time / bestTime : undefined;
+  }
+
+  public getAccVersions(): AccVersion[] {
+    return Array.from(new Set(this.raw.tracks.map((track) => track.version))).filter(
+      Boolean
+    ) as AccVersion[];
   }
 
   /**
