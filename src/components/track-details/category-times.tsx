@@ -13,7 +13,6 @@ export const CategoryTimes: FC<Props> = ({ quali, race }) => {
   return (
     <Table
       size='sm'
-      width='min-content'
       height='min-content'
       backgroundColor='#f1f1f1'
       borderRadius={5}
@@ -22,8 +21,12 @@ export const CategoryTimes: FC<Props> = ({ quali, race }) => {
       <Thead>
         <Tr>
           <Th width={50}></Th>
-          {quali && <Th>Quali</Th>}
-          {race && <Th>Race</Th>}
+          {quali && (
+            <Th textAlign='center' pr={race ? 0 : undefined}>
+              Quali
+            </Th>
+          )}
+          {race && <Th textAlign='center'>Race</Th>}
         </Tr>
       </Thead>
       <Tbody>
@@ -41,10 +44,10 @@ interface CategoryRowProps extends CategoryBests {
 
 const CategoryRow: FC<CategoryRowProps> = ({ category, quali, race }) => (
   <Tr>
-    <Th width={50}>
+    <Th width={50} pr={0}>
       <CategoryBadge category={category} />
     </Th>
-    {quali && <Td>{msToTime(quali[category])}</Td>}
+    {quali && <Td pr={race ? 0 : undefined}>{msToTime(quali[category])}</Td>}
     {race && <Td>{msToTime(race[category])}</Td>}
   </Tr>
 );
