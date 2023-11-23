@@ -10,8 +10,12 @@ import { LapTimeAsMs } from 'utils/types';
 import { useFilteredData } from 'components/data-provider';
 
 import { useCharts } from './use-charts';
-import { backgroundColorPlugin } from './plugins/background-color';
+import {
+  BackgroundColorPluginOptions,
+  backgroundColorPlugin,
+} from './plugins/background-color';
 import { resizeChartPlugin } from './plugins/resize-chart';
+import { cluster } from 'utils/cluster';
 
 export interface Props {
   lapField?: 'bestCleanLapTime' | 'avgCleanLapTime' | 'averageLapTime';
@@ -148,6 +152,9 @@ export const DriversRankChart: FC<Props> = (props) => {
             },
           },
           ...{
+            backgroundColor: getBackgroundOptions(chartData.datasets[0].data),
+          },
+          ...{
             resizeChart: {
               width: '100%',
               chartAreaHeight: chartData.height,
@@ -207,6 +214,38 @@ function prepareData(data: DataQuery, { lapField, maxPctg, minEvents }: Required
     driverData,
     height,
     minPctg,
+  };
+}
+
+function getBackgroundOptions(data: number[]): BackgroundColorPluginOptions {
+  const GRAD_RADIUS = 0.005;
+
+  const clusters = cluster<number>(3, data, (x) => x);
+  const p0 = clusters[0].length / data.length;
+  const p1 = (data.length - clusters[1].length) / data.length;
+
+  const pro = 'rgba(255,0,0,0.1)';
+  const silver = 'rgba(255,255,0,0.1)';
+  const am = 'rgba(0,255,0,0.1)';
+
+  return {
+    color: (ctx, chartArea) => {
+      const gradient = ctx.createLinearGradient(
+        chartArea.left,
+        chartArea.top,
+        chartArea.left,
+        chartArea.bottom
+      );
+
+      gradient.addColorStop(0, pro);
+      gradient.addColorStop(p0 - GRAD_RADIUS, pro);
+      gradient.addColorStop(p0 + GRAD_RADIUS, silver);
+      gradient.addColorStop(p1 - GRAD_RADIUS, silver);
+      gradient.addColorStop(p1 + GRAD_RADIUS, am);
+      gradient.addColorStop(1, am);
+
+      return gradient;
+    },
   };
 }
 
