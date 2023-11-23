@@ -33,7 +33,6 @@ export const Percentages: FC<Props> = ({ max, quali, race }) => {
   return (
     <Table
       size='sm'
-      width='min-content'
       height='min-content'
       backgroundColor='#f1f1f1'
       borderRadius={5}
@@ -42,7 +41,11 @@ export const Percentages: FC<Props> = ({ max, quali, race }) => {
       <Thead>
         <Tr>
           <Th></Th>
-          {quali && <Th textAlign='center'>Quali</Th>}
+          {quali && (
+            <Th textAlign='center' pr={race ? 0 : undefined}>
+              Quali
+            </Th>
+          )}
           {race && <Th textAlign='center'>Race</Th>}
         </Tr>
       </Thead>
@@ -68,9 +71,9 @@ function renderCategoryTimes(times: CategoryTimes, category: Category) {
   for (const { pctg, quali, race } of categoryTimes) {
     const pctgColor = getPctgColor(pctg);
     const cells = [
-      <Th key='p' borderLeft={`3px solid ${pctgColor}`}>{`${pctg}%`}</Th>,
+      <Th key='p' borderLeft={`3px solid ${pctgColor}`} pr={0}>{`${pctg}%`}</Th>,
       quali && (
-        <Td key='q' textAlign='center'>
+        <Td key='q' textAlign='center' pr={race ? 0 : undefined}>
           {quali}
         </Td>
       ),
