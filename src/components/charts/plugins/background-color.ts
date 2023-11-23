@@ -1,37 +1,38 @@
 // @ts-ignore
-import type { Plugin, ChartType } from 'chart.js';
+import type { Plugin, ChartType, ChartArea } from 'chart.js';
 
+export type FillStyle = CanvasRenderingContext2D['fillStyle'];
 export interface BackgroundColorPluginOptions {
-  color?: string;
+  color?:
+    | FillStyle
+    | ((
+        ctx: CanvasRenderingContext2D,
+        chartArea: ChartArea
+      ) => CanvasRenderingContext2D['fillStyle']);
 }
 
 export const backgroundColorPlugin: Plugin<ChartType, BackgroundColorPluginOptions> = {
   id: 'backgroundColor',
   beforeDraw: (chart, args, options) => {
+    if (!options.color) {
+      console.warn(`backgroundColor plugin enabled but options.color was not defined`);
+      return;
+    }
+
     const { ctx, chartArea } = chart;
     ctx.save();
     ctx.globalCompositeOperation = 'destination-over';
-    ctx.fillStyle =
-      options.color ||
-      (() => {
-        const gradient = ctx.createLinearGradient(
-          chartArea.left,
-          chartArea.top,
-          chartArea.left,
-          chartArea.bottom
-        );
-        const pro = 'rgba(255,0,0,0.1)';
-        const silver = 'rgba(255,255,0,0.1)';
-        const am = 'rgba(0,255,0,0.1)';
-        gradient.addColorStop(0, pro);
-        gradient.addColorStop(0.32, pro);
-        gradient.addColorStop(0.33, silver);
-        gradient.addColorStop(0.65, silver);
-        gradient.addColorStop(0.66, am);
-        gradient.addColorStop(1, am);
-        return gradient;
-      })();
+    ctx.fillStyle = getFillStyle(ctx, chartArea, options.color);
     ctx.fillRect(chartArea.left, chartArea.top, chartArea.width, chartArea.height);
     ctx.restore();
   },
 };
+
+function getFillStyle(
+  ctx: CanvasRenderingContext2D,
+  chartArea: ChartArea,
+  color: Required<BackgroundColorPluginOptions>['color']
+): FillStyle {
+  if (typeof color !== 'function') return color;
+  return color(ctx, chartArea);
+}
