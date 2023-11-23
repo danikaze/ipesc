@@ -1,4 +1,6 @@
-const COLORS = [
+import { Category } from 'data/types';
+
+const PCTG_COLORS = [
   // < 101%
   '#c200cf',
   // < 102%
@@ -17,18 +19,39 @@ const COLORS = [
   '#602f12',
 ];
 
-export function getPctgColor(pctg: number, fullGradient?: boolean): string {
-  const index = Math.min(COLORS.length - 1, Math.floor(pctg) - 100);
-  if (!fullGradient) {
-    return COLORS[index];
-  }
-  const nextIndex = Math.min(COLORS.length - 1, index + 1);
-  if (nextIndex === index) return COLORS[index];
+const CATEGORY_COLORS = {
+  [Category.PRO]: { default: '#ff0000', bg: 'rgba(255,0,0,0.1)' },
+  [Category.SILVER]: { default: '#ffca00', bg: 'rgba(255,255,0,0.1)' },
+  [Category.AM]: { default: '#22b922', bg: 'rgba(0,255,0,0.1)' },
+};
 
-  const c0 = hex2rgb(COLORS[index]);
-  const c1 = hex2rgb(COLORS[nextIndex]);
+export function getPctgColor(pctg: number, fullGradient?: boolean): string {
+  const index = Math.min(PCTG_COLORS.length - 1, Math.floor(pctg) - 100);
+  if (!fullGradient) {
+    return PCTG_COLORS[index];
+  }
+  const nextIndex = Math.min(PCTG_COLORS.length - 1, index + 1);
+  if (nextIndex === index) return PCTG_COLORS[index];
+
+  const c0 = hex2rgb(PCTG_COLORS[index]);
+  const c1 = hex2rgb(PCTG_COLORS[nextIndex]);
   const interpolatedColor = interpolateColor(c0, c1, pctg - 100 - index);
   return rgb2hex(interpolatedColor);
+}
+
+export function getCatColor(
+  category: Category | undefined,
+  type: keyof (typeof CATEGORY_COLORS)[Category] = 'default'
+): string | undefined {
+  return category ? CATEGORY_COLORS[category][type] : undefined;
+}
+
+function hex2rgb(hexColor: ColorHex) {
+  const hex = hexColor.replace('#', '');
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4), 16);
+  return { r, g, b };
 }
 
 export interface ColorRgba {
@@ -39,14 +62,6 @@ export interface ColorRgba {
 }
 
 export type ColorHex = string;
-
-function hex2rgb(hexColor: ColorHex) {
-  const hex = hexColor.replace('#', '');
-  const r = parseInt(hex.substring(0, 2), 16);
-  const g = parseInt(hex.substring(2, 4), 16);
-  const b = parseInt(hex.substring(4), 16);
-  return { r, g, b };
-}
 
 function rgb2hex(rgbaColor: ColorRgba): ColorHex {
   const r = Math.round(rgbaColor.r).toString(16).padStart(2, '0');

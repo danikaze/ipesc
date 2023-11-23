@@ -1,30 +1,23 @@
 import { FC, useState, useCallback, KeyboardEventHandler } from 'react';
-import { Box, Heading, Input, Table, Tbody, Tr, Th, Td } from '@chakra-ui/react';
+import { Box, Heading, Input, Table, Tbody, Tr, Th, Td, Flex } from '@chakra-ui/react';
 
+import { Category } from 'data/types';
 import { formatRatioAsPctg } from 'utils/format-data';
-import { getPctgColor } from 'utils/get-pctg-color';
+import { getPctgColor } from 'utils/get-color';
 import { timeToMs } from 'utils/time';
+import { CategoryBests } from '.';
+import { CategoryBadge } from './category-badge';
 
-export interface Props {
-  quali?: number;
-  race?: number;
-}
+export type Props = CategoryBests;
 
 export const PercentageCalculator: FC<Props> = ({ quali, race }) => {
-  const [[qualiPctg, racePctg], setPctgs] = useState<
-    [qualiPctg: number | undefined, racePctg: number | undefined]
-  >([undefined, undefined]);
+  const [lapTime, setLapTime] = useState<number | undefined>(undefined);
 
   const handler = useCallback<KeyboardEventHandler<HTMLInputElement>>(
     (ev) => {
       const target = ev.target as HTMLInputElement;
       target.value = target.value.replace(/[^\d:.]/g, '');
-      const time = timeToMs(target.value);
-      if (time) {
-        setPctgs([quali && time / quali, race && time / race]);
-      } else {
-        setPctgs([undefined, undefined]);
-      }
+      setLapTime(timeToMs(target.value));
     },
     [quali, race]
   );
@@ -42,24 +35,54 @@ export const PercentageCalculator: FC<Props> = ({ quali, race }) => {
       />
       <Table size='sm' backgroundColor='#f1f1f1' borderRadius={5} borderTopRadius={0}>
         <Tbody>
-          <Tr
-            borderLeft={`3px solid ${
-              qualiPctg ? getPctgColor(100 * qualiPctg) : 'transparent'
-            }`}
-          >
-            <Th>QUALI</Th>
-            <Td>{qualiPctg && formatRatioAsPctg(qualiPctg)}&nbsp;</Td>
-          </Tr>
-          <Tr
-            borderLeft={`3px solid ${
-              racePctg ? getPctgColor(100 * racePctg) : 'transparent'
-            }`}
-          >
-            <Th>RACE</Th>
-            <Td>{racePctg && formatRatioAsPctg(racePctg)}&nbsp;</Td>
-          </Tr>
+          <ResultRow title='QUALI' categoryTimes={quali} lapTime={lapTime} />
+          <ResultRow title='RACE' categoryTimes={race} lapTime={lapTime} />
         </Tbody>
       </Table>
     </Box>
   );
 };
+
+interface ResultRowProps {
+  title: string;
+  categoryTimes: Record<Category, number> | undefined;
+  lapTime: number | undefined;
+}
+
+const ResultRow: FC<ResultRowProps> = ({ title, lapTime, categoryTimes }) => {
+  const pctg = categoryTimes && lapTime && lapTime / categoryTimes[Category.PRO];
+  const color = pctg ? getPctgColor(100 * pctg) : 'transparent';
+
+  return (
+    <Tr borderLeft={`3px solid ${color}`}>
+      <Th>{title}</Th>
+      <Td>{renderResult(lapTime, pctg, categoryTimes)}</Td>
+    </Tr>
+  );
+};
+
+function renderResult(
+  lapTime: number | undefined,
+  pctg: number | undefined,
+  categoryTimes: Record<Category, number> | undefined
+) {
+  const formattedPctg = pctg && formatRatioAsPctg(pctg);
+  let categoryBadge;
+
+  if (lapTime && categoryTimes) {
+    if (lapTime < categoryTimes[Category.SILVER]) {
+      categoryBadge = <CategoryBadge ml={4} category={Category.PRO} />;
+    } else if (lapTime < categoryTimes[Category.AM]) {
+      categoryBadge = <CategoryBadge ml={4} category={Category.SILVER} />;
+    } else {
+      categoryBadge = <CategoryBadge ml={4} category={Category.AM} />;
+    }
+  }
+
+  return (
+    <Flex alignItems='center'>
+      {formattedPctg}
+      {categoryBadge}
+    </Flex>
+  );
+}

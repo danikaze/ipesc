@@ -4,7 +4,7 @@ import { AccVersion, Driver, Game, TrackData } from 'data/types';
 import { DataQuery } from 'data/data-query';
 import { getAccVersionFromTime } from 'utils/acc-version';
 import { formatRatioAsPctg } from 'utils/format-data';
-import { getPctgColor } from 'utils/get-pctg-color';
+import { getPctgColor } from 'utils/get-color';
 import { msToTime } from 'utils/time';
 import { LapTimeAsMs } from 'utils/types';
 import { useFilteredData } from 'components/data-provider';
