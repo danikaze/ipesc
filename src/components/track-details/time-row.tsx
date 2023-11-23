@@ -11,7 +11,13 @@ export const TimeRow: FC<{
   data: TrackRecord | undefined;
   best: number | undefined;
 }> = ({ data, best }) => {
-  if (!data || !best) return null;
+  if (!best) return null;
+
+  if (!data) {
+    // this can happen where showing the Nth row for quali
+    // and race having less than N results (or viceversa)
+    return <Td />;
+  }
 
   const query = useRawData();
   const ratio = data.lapTime / best;
