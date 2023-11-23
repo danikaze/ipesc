@@ -4,7 +4,7 @@ import { Box, Flex, Td, Text } from '@chakra-ui/react';
 import { useRawData } from 'components/data-provider';
 import { TrackRecord } from 'data/types';
 import { formatRatioAsPctg } from 'utils/format-data';
-import { getPctgColor } from 'utils/get-pctg-color';
+import { getPctgColor } from 'utils/get-color';
 import { msToTime } from 'utils/time';
 
 export const TimeRow: FC<{
