@@ -77,6 +77,7 @@ export const DriversRankChart: FC<Props> = (props) => {
   );
 
   if (!ReactChart || !chartData) return null;
+  if (!chartData.labels.length) return null;
 
   return (
     <ReactChart.Bar
