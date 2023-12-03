@@ -18,6 +18,7 @@ interface NumericInputProps {
   onChange: (value: string) => void;
   label: string;
   value: string | number | undefined;
+  placeholder?: string;
   marginRight?: number | string;
   step?: number;
   width?: number | string;
@@ -36,6 +37,7 @@ export const FuelCalculator: FC = () => {
     lapTimeMins,
     lapTimeSecs,
     fuelPerLap,
+    extraLaps,
     totalLaps,
     totalFuel,
     raceTime,
@@ -44,6 +46,7 @@ export const FuelCalculator: FC = () => {
     updateLapTimeMins,
     updateLapTimeSecs,
     updateFuelPerLap,
+    updateExtraLaps,
   } = useFuelCalculator();
 
   return (
@@ -102,6 +105,18 @@ export const FuelCalculator: FC = () => {
             width='100%'
           />
         </Box>
+        <Box marginTop={4}>
+          <Heading marginBottom={1} size='xs'>
+            Extra Laps
+          </Heading>
+          <NumericInput
+            value={extraLaps}
+            onChange={updateExtraLaps}
+            label='Laps'
+            width='100%'
+            placeholder='0'
+          />
+        </Box>
       </Container>
       <Container marginTop={8}>
         <Heading size='md' marginTop={4} marginBottom={2}>
@@ -126,11 +141,12 @@ const NumericInput: FC<NumericInputProps> = ({
   step,
   marginRight,
   width,
+  placeholder,
 }) => (
   <Flex w={width} mr={marginRight}>
     <NumberInput value={value} step={step} min={0} flexGrow={1} onChange={onChange}>
       <NumberInputField
-        placeholder={step && step % 1 !== 0 ? '0.00' : '00'}
+        placeholder={placeholder ?? (step && step % 1 !== 0 ? '0.00' : '00')}
         borderRightRadius={0}
       />
       <NumberInputStepper>
