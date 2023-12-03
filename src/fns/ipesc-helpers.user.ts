@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Simracing GP for IPESC
 // @namespace    ipesc.danikaze
-// @version      0.1.2
+// @version      0.1.3
 // @description  Set of utilities available on DevTools for IPESC racing community
 // @author       danikaze
 // @source       https://github.com/danikaze/ipesc
@@ -14,8 +14,8 @@
 // @grant        unsafeWindow
 // ==/UserScript==
 
-import { fetchChampionshipData } from 'utils/sgp/fetch-championship-data';
 import { version } from '../../package.json';
+import { fetchChampionshipData } from 'utils/sgp/fetch-championship-data';
 import { formatResultsMessageForDiscord } from 'utils/format-results-message-for-discord';
 import { fetchEventData } from 'utils/sgp/fetch-event-data';
 import { clearApiCache } from 'utils/sgp/call-api';
