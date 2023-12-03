@@ -8,6 +8,7 @@ import { DynamicEntriesPage } from 'components/pages/entries/dynamic';
 import { DynamicTracksPage } from 'components/pages/tracks/dynamic';
 import { DynamicDriversPage } from 'components/pages/drivers/dynamic';
 import { RawDataProvider } from 'components/data-provider';
+import { DynamicCalculatorPage } from 'components/pages/calculator/dynamic';
 
 export const App: FC = () => {
   return (
@@ -18,6 +19,7 @@ export const App: FC = () => {
           <Route path='/entries' element={<EntriesPage />} />
           <Route path='/tracks' element={<TracksPage />} />
           <Route path='/drivers' element={<DriversPage />} />
+          <Route path='/calculator' element={<CalculatorPage />} />
         </Routes>
       </HashRouter>
     </RawDataProvider>
@@ -45,5 +47,11 @@ const TracksPage = () => (
 const DriversPage = () => (
   <Suspense fallback={<CenteredSpinner />}>
     <DynamicDriversPage />
+  </Suspense>
+);
+
+const CalculatorPage = () => (
+  <Suspense fallback={<CenteredSpinner />}>
+    <DynamicCalculatorPage />
   </Suspense>
 );

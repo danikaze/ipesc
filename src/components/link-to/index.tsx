@@ -11,7 +11,7 @@ type BaseProps = {
 };
 
 interface LinkToPageProps extends BaseProps {
-  page: 'index' | 'entries' | 'tracks' | 'drivers';
+  page: 'index' | 'entries' | 'tracks' | 'drivers' | 'calculator';
 }
 
 interface LinkToUrlProps extends BaseProps {
