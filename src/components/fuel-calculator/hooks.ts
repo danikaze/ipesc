@@ -14,6 +14,7 @@ export function useFuelCalculator() {
   const [lapTimeMins, setLapTimeMins] = useState<string>('');
   const [lapTimeSecs, setLapTimeSecs] = useState<string>('');
   const [fuelPerLap, setFuelPerLap] = useState<string>('');
+  const [extraLaps, setExtraLaps] = useState<string>('');
   // calculated fields
   const [summary, setSummary] = useState<State | undefined>();
 
@@ -30,6 +31,7 @@ export function useFuelCalculator() {
   const updateLapTimeMins = useMemo(() => updateInput(setLapTimeMins), []);
   const updateLapTimeSecs = useMemo(() => updateInput(setLapTimeSecs), []);
   const updateFuelPerLap = useMemo(() => updateInput(setFuelPerLap), []);
+  const updateExtraLaps = useMemo(() => updateInput(setExtraLaps), []);
 
   /*
    * Calculations updates
@@ -48,7 +50,8 @@ export function useFuelCalculator() {
         const usedFuel = Number(fuelPerLap) || 0;
         if (!usedFuel) return;
 
-        const totalLaps = Math.ceil(raceMs / lapMs);
+        const lapsToAdd = Number(extraLaps) || 0;
+        const totalLaps = Math.ceil(raceMs / lapMs + lapsToAdd);
         const totalFuel = Math.ceil(totalLaps * usedFuel);
         const raceTime = totalLaps * lapMs;
 
@@ -58,7 +61,7 @@ export function useFuelCalculator() {
           raceTime: msToTime(raceTime, { ms: false })!,
         };
       }),
-    [raceTimeHours, raceTimeMins, lapTimeMins, lapTimeSecs, fuelPerLap]
+    [raceTimeHours, raceTimeMins, lapTimeMins, lapTimeSecs, fuelPerLap, extraLaps]
   );
 
   return {
@@ -67,11 +70,13 @@ export function useFuelCalculator() {
     lapTimeMins,
     lapTimeSecs,
     fuelPerLap,
+    extraLaps,
     ...summary,
     updateRaceTimeHours,
     updateRaceTimeMins,
     updateLapTimeMins,
     updateLapTimeSecs,
     updateFuelPerLap,
+    updateExtraLaps,
   };
 }
