@@ -20,7 +20,7 @@ export function formatResultsMessageForDiscord(data: SgpEventApiData): string {
       results.push(getCategoryResults(':red_square: PRO', data, SgpCategory.PRO));
     }
     if (categories.includes(SgpCategory.SILVER)) {
-      results.push(getCategoryResults(':red_square: PRO', data, SgpCategory.SILVER));
+      results.push(getCategoryResults(':yellow_square: SIL', data, SgpCategory.SILVER));
     }
     if (categories.includes(SgpCategory.AM)) {
       results.push(getCategoryResults(':green_square: AM', data, SgpCategory.AM));
