@@ -37,6 +37,11 @@ export const Changelog: FC = () => {
 const ChangeList: FC = () => {
   return (
     <>
+      <Version v='0.5.0'>
+        <Change>
+          Added the <LinkTo page='calculator'>Fuel Calculator</LinkTo> page.
+        </Change>
+      </Version>
       <Version v='0.4.0'>
         <Change>
           Automatic clustering of drivers into PRO/SILVER/AM categories (applicable on{' '}
