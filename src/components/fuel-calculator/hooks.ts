@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { ChangeEventHandler, useCallback, useEffect, useMemo, useState } from 'react';
 import { msToTime } from 'utils/time';
 
 interface State {
@@ -9,6 +9,7 @@ interface State {
 
 export function useFuelCalculator() {
   // input fields
+  const [mode, setMode] = useState<string>('acc');
   const [raceTimeHours, setRaceTimeHours] = useState<string>('');
   const [raceTimeMins, setRaceTimeMins] = useState<string>('');
   const [lapTimeMins, setLapTimeMins] = useState<string>('');
@@ -26,6 +27,10 @@ export function useFuelCalculator() {
     []
   );
 
+  const updateMode: ChangeEventHandler<HTMLSelectElement> = useCallback(
+    (ev) => setMode(ev.target.value),
+    []
+  );
   const updateRaceTimeHours = useMemo(() => updateInput(setRaceTimeHours), []);
   const updateRaceTimeMins = useMemo(() => updateInput(setRaceTimeMins), []);
   const updateLapTimeMins = useMemo(() => updateInput(setLapTimeMins), []);
@@ -48,8 +53,6 @@ export function useFuelCalculator() {
         if (!lapMs) return;
 
         const usedFuel = Number(fuelPerLap) || 0;
-        if (!usedFuel) return;
-
         const lapsToAdd = Number(extraLaps) || 0;
         const totalLaps = Math.ceil(raceMs / lapMs + lapsToAdd);
         const totalFuel = Math.ceil(totalLaps * usedFuel);
@@ -65,6 +68,7 @@ export function useFuelCalculator() {
   );
 
   return {
+    mode,
     raceTimeHours,
     raceTimeMins,
     lapTimeMins,
@@ -72,6 +76,7 @@ export function useFuelCalculator() {
     fuelPerLap,
     extraLaps,
     ...summary,
+    updateMode,
     updateRaceTimeHours,
     updateRaceTimeMins,
     updateLapTimeMins,

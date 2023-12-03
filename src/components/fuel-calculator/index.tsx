@@ -9,6 +9,7 @@ import {
   NumberInput,
   NumberInputField,
   NumberInputStepper,
+  Select,
   Text,
 } from '@chakra-ui/react';
 
@@ -32,6 +33,7 @@ interface SummaryDataProps {
 
 export const FuelCalculator: FC = () => {
   const {
+    mode,
     raceTimeHours,
     raceTimeMins,
     lapTimeMins,
@@ -41,6 +43,7 @@ export const FuelCalculator: FC = () => {
     totalLaps,
     totalFuel,
     raceTime,
+    updateMode,
     updateRaceTimeHours,
     updateRaceTimeMins,
     updateLapTimeMins,
@@ -52,7 +55,15 @@ export const FuelCalculator: FC = () => {
   return (
     <>
       <Container marginTop={8}>
-        <Heading size='md'>Race Data</Heading>
+        <Box marginTop={4}>
+          <Heading marginBottom={1} size='xs'>
+            Mode
+          </Heading>
+          <Select value={mode} onChange={updateMode} fontWeight='bold'>
+            <option value='acc'>ACC Style</option>
+            <option value='ac'>AC Style</option>
+          </Select>
+        </Box>
         <Box marginTop={4}>
           <Heading marginBottom={1} size='xs'>
             Race time
@@ -93,18 +104,20 @@ export const FuelCalculator: FC = () => {
             />
           </Flex>
         </Box>
-        <Box marginTop={4}>
-          <Heading marginBottom={1} size='xs'>
-            Fuel per lap
-          </Heading>
-          <NumericInput
-            value={fuelPerLap}
-            onChange={updateFuelPerLap}
-            label='Litres'
-            step={0.1}
-            width='100%'
-          />
-        </Box>
+        {mode !== 'ac' && (
+          <Box marginTop={4}>
+            <Heading marginBottom={1} size='xs'>
+              Fuel per lap
+            </Heading>
+            <NumericInput
+              value={fuelPerLap}
+              onChange={updateFuelPerLap}
+              label='Litres'
+              step={0.1}
+              width='100%'
+            />
+          </Box>
+        )}
         <Box marginTop={4}>
           <Heading marginBottom={1} size='xs'>
             Extra Laps
@@ -122,11 +135,13 @@ export const FuelCalculator: FC = () => {
         <Heading size='md' marginTop={4} marginBottom={2}>
           Summary
         </Heading>
-        <SummaryData
-          label='Total Fuel Needed'
-          data={totalFuel ? `${totalFuel} L` : undefined}
-          main
-        />
+        {mode !== 'ac' && (
+          <SummaryData
+            label='Total Fuel Needed'
+            data={totalFuel ? `${totalFuel} L` : undefined}
+            main
+          />
+        )}
         <SummaryData label='Total Laps' data={totalLaps} />
         <SummaryData label='Expected Race Time' data={raceTime} />
       </Container>
