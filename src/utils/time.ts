@@ -4,9 +4,20 @@ const HOUR_TO_MS = 60 * MIN_TO_MS;
 const MOD = 60;
 
 interface MsToTimeOptions {
-  // undefined = show only if there are hours
-  // boolean = force show or hide
+  /**
+   * undefined = show only if there are hours (default)
+   * boolean = force show or hide
+   */
   hours?: boolean;
+  /**
+   * `true` - show the minutes (default)
+   * `false` - hide the minutes  (it will hide the hours too)
+   */
+  min?: boolean;
+  /**
+   * `true` - show the milliseconds (default)
+   * `false` - hide the milliseconds
+   */
   ms?: boolean;
 }
 
@@ -31,6 +42,7 @@ export function msToTime(
   const opt = {
     hours: undefined,
     ms: true,
+    min: true,
     ...options,
   };
 
@@ -40,9 +52,9 @@ export function msToTime(
   const h = Math.floor(time / HOUR_TO_MS);
 
   const fms = opt.ms ? `.${ms.toString().padStart(3, '0')}` : '';
-  const fs = s.toString().padStart(2, '0');
-  const fm = m.toString().padStart(h ? 2 : 1, '0');
-  const fh = opt.hours || (opt.hours === undefined && h) ? `${h}:` : '';
+  const fs = s.toString().padStart(opt.min ? 2 : 1, '0');
+  const fm = opt.min ? m.toString().padStart(h ? 2 : 1, '0') + ':' : '';
+  const fh = opt.min && (opt.hours || (opt.hours === undefined && h)) ? `${h}:` : '';
 
-  return `${fh}${fm}:${fs}${fms}`;
+  return `${fh}${fm}${fs}${fms}`;
 }
