@@ -1,10 +1,14 @@
 import { ChangeEventHandler, useCallback, useEffect, useMemo, useState } from 'react';
-import { msToTime } from 'utils/time';
 
 interface State {
+  /** Average lap time in ms  */
+  lapMs: number;
   totalLaps: number;
   totalFuel: number;
-  raceTime: string;
+  /** Race duration in ms */
+  raceMs: number;
+  /** Actual race time (to the last lap) in ms */
+  raceTime: number;
 }
 
 export function useFuelCalculator() {
@@ -15,6 +19,7 @@ export function useFuelCalculator() {
   const [lapTimeMins, setLapTimeMins] = useState<string>('');
   const [lapTimeSecs, setLapTimeSecs] = useState<string>('');
   const [fuelPerLap, setFuelPerLap] = useState<string>('');
+  const [fuelTank, setFuelTank] = useState<string>('');
   const [extraLaps, setExtraLaps] = useState<string>('');
   // calculated fields
   const [summary, setSummary] = useState<State | undefined>();
@@ -36,6 +41,7 @@ export function useFuelCalculator() {
   const updateLapTimeMins = useMemo(() => updateInput(setLapTimeMins), []);
   const updateLapTimeSecs = useMemo(() => updateInput(setLapTimeSecs), []);
   const updateFuelPerLap = useMemo(() => updateInput(setFuelPerLap), []);
+  const updateFuelTank = useMemo(() => updateInput(setFuelTank), []);
   const updateExtraLaps = useMemo(() => updateInput(setExtraLaps), []);
 
   /*
@@ -61,7 +67,9 @@ export function useFuelCalculator() {
         return {
           totalLaps,
           totalFuel,
-          raceTime: msToTime(raceTime, { ms: false })!,
+          lapMs,
+          raceMs,
+          raceTime,
         };
       }),
     [raceTimeHours, raceTimeMins, lapTimeMins, lapTimeSecs, fuelPerLap, extraLaps]
@@ -74,6 +82,7 @@ export function useFuelCalculator() {
     lapTimeMins,
     lapTimeSecs,
     fuelPerLap,
+    fuelTank,
     extraLaps,
     ...summary,
     updateMode,
@@ -82,6 +91,7 @@ export function useFuelCalculator() {
     updateLapTimeMins,
     updateLapTimeSecs,
     updateFuelPerLap,
+    updateFuelTank,
     updateExtraLaps,
   };
 }
