@@ -3,6 +3,17 @@ import * as debounce from 'debounce';
 
 import { SimulationParameters, simulate } from './simulate';
 import { Props } from '.';
+import { readStintSimulatorSettings, storeStintSimulatorSettings } from 'utils/storage';
+
+export interface StintSimulatorInput {
+  pitWindowHours?: number;
+  pitWindowMins?: number;
+  minPitstops?: number;
+  maxPitstops?: number;
+  pitstopSecs?: number;
+  lapDegradationSecs?: string;
+  selectedSimulationIndex: number;
+}
 
 export interface SimulationData {
   raceTime: number;
@@ -52,36 +63,41 @@ export function useStintSimulator({
   extraLaps,
 }: Props) {
   // input fields
-  const [pitWindowHours, setPitWindowHours] = useState<number | undefined>();
-  const [pitWindowMins, setPitWindowMins] = useState<number | undefined>();
-  const [minPitstops, setMinPitstops] = useState<number | undefined>();
-  const [maxPitstops, setMaxPitstops] = useState<number | undefined>();
-  const [pitstopSecs, setPitstopSecs] = useState<number | undefined>();
-  const [lapDegradationSecs, setLapDegradationSecs] = useState<string | undefined>();
-  const [selectedSimulationIndex, setSelectedSimulationIndex] = useState<number>(-1);
+  const [inputs, setInputs] = useState<StintSimulatorInput>(() =>
+    readStintSimulatorSettings({
+      selectedSimulationIndex: -1,
+    })
+  );
   const [simulations, setSimulations] = useState<SimulationData[]>([]);
 
   /*
    * User input update functions
    */
   const updateInput = useCallback(
-    (set: (value: number | undefined) => void) => (value: string) => {
+    (field: keyof StintSimulatorInput) => (value: string | number) => {
       const n = Number(value);
-      set(isNaN(n) ? undefined : n);
+      setInputs((current) => {
+        const newInputs = {
+          ...current,
+          [field]: isNaN(n) ? undefined : n,
+        };
+        storeStintSimulatorSettings(newInputs);
+        return newInputs;
+      });
     },
     []
   );
 
-  const updatePitWindowHours = useMemo(() => updateInput(setPitWindowHours), []);
-  const updatePitWindowMins = useMemo(() => updateInput(setPitWindowMins), []);
-  const updateMinPitstops = useMemo(() => updateInput(setMinPitstops), []);
-  const updateMaxPitstops = useMemo(() => updateInput(setMaxPitstops), []);
-  const updatePitstopSecs = useMemo(() => updateInput(setPitstopSecs), []);
-  const updateLapDegradationSecs = setLapDegradationSecs;
-  const updateSelectedSimulation: ChangeEventHandler<HTMLSelectElement> = useCallback(
-    (ev) => setSelectedSimulationIndex(() => ev.target.selectedIndex),
-    []
-  );
+  const updatePitWindowHours = useMemo(() => updateInput('pitWindowHours'), []);
+  const updatePitWindowMins = useMemo(() => updateInput('pitWindowMins'), []);
+  const updateMinPitstops = useMemo(() => updateInput('minPitstops'), []);
+  const updateMaxPitstops = useMemo(() => updateInput('maxPitstops'), []);
+  const updatePitstopSecs = useMemo(() => updateInput('pitstopSecs'), []);
+  const updateLapDegradationSecs = useMemo(() => updateInput('lapDegradationSecs'), []);
+  const updateSelectedSimulation: ChangeEventHandler<HTMLSelectElement> = useMemo(() => {
+    const update = updateInput('selectedSimulationIndex');
+    return (ev) => update(ev.target.selectedIndex);
+  }, []);
 
   /*
    * Calculations updates
@@ -100,7 +116,9 @@ export function useStintSimulator({
       });
 
       setSimulations(list);
-      setSelectedSimulationIndex(list.length > 0 ? 0 : -1);
+      updateSelectedSimulation({
+        target: { selectedIndex: list.length > 0 ? 0 : -1 },
+      } as React.ChangeEvent<HTMLSelectElement>);
     }, SIMULATION_DEBOUNCE_MS),
     []
   );
@@ -110,6 +128,15 @@ export function useStintSimulator({
       setSimulations([]);
       return;
     }
+
+    const {
+      pitWindowHours,
+      pitWindowMins,
+      pitstopSecs,
+      lapDegradationSecs,
+      minPitstops,
+      maxPitstops,
+    } = inputs;
 
     const windowDuration = (() => {
       const t = (pitWindowHours || 0) * 3_600_000 + (pitWindowMins || 0) * 60_000;
@@ -128,30 +155,11 @@ export function useStintSimulator({
     };
 
     doSimulation(minPitstops || 0, maxPitstops || 0, data)!;
-  }, [
-    raceDuration,
-    lapTime,
-    totalLaps,
-    fuelPerLap,
-    fuelTank,
-    extraLaps,
-    pitWindowHours,
-    pitWindowMins,
-    minPitstops,
-    maxPitstops,
-    pitstopSecs,
-    lapDegradationSecs,
-  ]);
+  }, [raceDuration, lapTime, totalLaps, fuelPerLap, fuelTank, extraLaps, inputs]);
 
   return {
+    ...inputs,
     simulations,
-    pitWindowHours,
-    pitWindowMins,
-    minPitstops,
-    maxPitstops,
-    pitstopSecs,
-    lapDegradationSecs,
-    selectedSimulationIndex,
     updatePitWindowHours,
     updatePitWindowMins,
     updateMinPitstops,

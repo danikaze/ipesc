@@ -42,6 +42,13 @@ const ChangeList: FC = () => {
           Added the <Code>Endurance Mode</Code> to the{' '}
           <LinkTo page='calculator'>Fuel Calculator</LinkTo> page.
         </Change>
+        <Change>
+          Parameters on the <LinkTo page='calculator'>Fuel Calculator</LinkTo> page are
+          now remembered on page load.
+        </Change>
+        <Change type='data'>
+          Event data updated with the last MX-5 S7.5 race (3/3).
+        </Change>
         <Change type='minor'>
           Fixed the discord message generation where <Code>PRO</Code> appeared twice in
           the category titles instead of <Code>SIL</Code>.
