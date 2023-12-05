@@ -37,6 +37,23 @@ export const Changelog: FC = () => {
 const ChangeList: FC = () => {
   return (
     <>
+      <Version v='0.6.0'>
+        <Change>
+          Added the <Code>Endurance Mode</Code> to the{' '}
+          <LinkTo page='calculator'>Fuel Calculator</LinkTo> page.
+        </Change>
+        <Change>
+          Parameters on the <LinkTo page='calculator'>Fuel Calculator</LinkTo> page are
+          now remembered on page load.
+        </Change>
+        <Change type='data'>
+          Event data updated with the last MX-5 S7.5 race (3/3).
+        </Change>
+        <Change type='minor'>
+          Fixed the discord message generation where <Code>PRO</Code> appeared twice in
+          the category titles instead of <Code>SIL</Code>.
+        </Change>
+      </Version>
       <Version v='0.5.0'>
         <Change>
           Added the <LinkTo page='calculator'>Fuel Calculator</LinkTo> page.
@@ -44,9 +61,9 @@ const ChangeList: FC = () => {
       </Version>
       <Version v='0.4.0'>
         <Change>
-          Automatic clustering of drivers into PRO/SILVER/AM categories (applicable on{' '}
-          <LinkTo page='tracks'>Tracks</LinkTo> and{' '}
-          <LinkTo page='drivers'>Drivers</LinkTo> pages).
+          Automatic clustering of drivers into <Code>PRO</Code>/<Code>SILVER</Code>/
+          <Code>AM</Code> categories (applicable on <LinkTo page='tracks'>Tracks</LinkTo>{' '}
+          and <LinkTo page='drivers'>Drivers</LinkTo> pages).
         </Change>
         <Change>Change Log visible here ^^.</Change>
         <Change type='data'>
