@@ -1,6 +1,5 @@
 import { ChangeEventHandler, FC, ReactNode } from 'react';
 import {
-  AbsoluteCenter,
   Box,
   Flex,
   HStack,
@@ -10,7 +9,6 @@ import {
   Text,
   Tooltip,
   UnorderedList,
-  VStack,
 } from '@chakra-ui/react';
 import { InfoIcon } from '@chakra-ui/icons';
 
@@ -74,8 +72,8 @@ export const StintSimulator: FC<Props> = (props) => {
 };
 
 const PitWindow: FC<{
-  hours: number | undefined;
-  mins: number | undefined;
+  hours: string | undefined;
+  mins: string | undefined;
   updateHours: (value: string) => void;
   updateMins: (value: string) => void;
 }> = ({ hours, mins, updateHours, updateMins }) => {
@@ -141,7 +139,7 @@ const PitStops: FC<{
 };
 
 const PitstopTime: FC<{
-  value: number | undefined;
+  value: string | undefined;
   update: (value: string) => void;
 }> = ({ value, update }) => {
   const info = (
