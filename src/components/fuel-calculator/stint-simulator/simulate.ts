@@ -108,7 +108,6 @@ export function simulate(
     const extraFuel = (extraLaps || 0) * fuelPerLap;
     let fullTank = Math.ceil(extraFuel + Math.max(...stintFuel)) + 1;
     // if the fuel tank is not big enough, this simulation is not valid
-    console.log(`${fullTank} / ${fuelTank}`);
     if (fuelTank && fullTank > fuelTank) return;
 
     initialFuel = Math.ceil(extraFuel + stintFuel[0]);

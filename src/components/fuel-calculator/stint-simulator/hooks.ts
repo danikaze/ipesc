@@ -75,8 +75,11 @@ export function useStintSimulator({
    */
   const updateInput = useCallback(
     (field: keyof StintSimulatorInput) => (value: string | number) => {
-      const n = Number(value);
       setInputs((current) => {
+        const n = Number(value);
+        if (current[field] === n) {
+          return current;
+        }
         const newInputs = {
           ...current,
           [field]: isNaN(n) ? undefined : n,
