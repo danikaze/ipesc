@@ -53,6 +53,7 @@ export interface LapData {
 }
 
 const SIMULATION_DEBOUNCE_MS = 50;
+const MAX_SIMULATIONS = 5;
 
 export function useStintSimulator({
   raceDuration,
@@ -119,7 +120,15 @@ export function useStintSimulator({
         return lapDiff !== 0 ? lapDiff : a.raceTime - b.raceTime;
       });
 
-      setSimulations(list);
+      setSimulations(
+        list
+          // remove simulations with the same number of stops (repeated)
+          .filter(
+            (sim, i) =>
+              list.findIndex(({ stops }) => stops.length === sim.stops.length) === i
+          )
+          .splice(0, MAX_SIMULATIONS)
+      );
       updateSelectedSimulation({
         target: { selectedIndex: list.length > 0 ? 0 : -1 },
       } as React.ChangeEvent<HTMLSelectElement>);
@@ -159,7 +168,9 @@ export function useStintSimulator({
       lapDegradationSecs: Number(lapDegradationSecs) || undefined,
     };
 
-    doSimulation(minPitstops || 0, maxPitstops || 0, data)!;
+    const min = Number(minPitstops) || 0;
+    const max = Number(maxPitstops) || min + MAX_SIMULATIONS;
+    doSimulation(min, max, data)!;
   }, [raceDuration, lapTime, totalLaps, fuelPerLap, fuelTank, extraLaps, inputs]);
 
   return {
