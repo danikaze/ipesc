@@ -395,7 +395,7 @@ const LapDetails: FC<LapData & { index: number; fuelPerLap?: number }> = ({
   );
   const pittingFuel = typeof pits === 'number' && (
     <Text as='span' color='green.400' ml={2}>
-      +{pits.toFixed(2)} L
+      +{Math.round(pits)} L
     </Text>
   );
   const pitting = pits && <Text>Box{pittingFuel}</Text>;
@@ -427,7 +427,7 @@ const StintSummary: FC<{
     },
     ...(simulation?.stops || []).map(({ lap, fuel }, i) => ({
       label: `Pit stop #${i} at lap ${lap}`,
-      data: fuel ? `${fuel} L` : undefined,
+      data: fuel ? `${Math.round(fuel)} L` : undefined,
     })),
   ];
 
