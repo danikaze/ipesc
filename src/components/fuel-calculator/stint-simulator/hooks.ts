@@ -6,11 +6,11 @@ import { Props } from '.';
 import { readStintSimulatorSettings, storeStintSimulatorSettings } from 'utils/storage';
 
 export interface StintSimulatorInput {
-  pitWindowHours?: number;
-  pitWindowMins?: number;
+  pitWindowHours?: string;
+  pitWindowMins?: string;
   minPitstops?: number;
   maxPitstops?: number;
-  pitstopSecs?: number;
+  pitstopSecs?: string;
   lapDegradationSecs?: string;
   selectedSimulationIndex: number;
 }
@@ -53,6 +53,7 @@ export interface LapData {
 }
 
 const SIMULATION_DEBOUNCE_MS = 50;
+const MAX_SIMULATIONS = 5;
 
 export function useStintSimulator({
   raceDuration,
@@ -74,28 +75,32 @@ export function useStintSimulator({
    * User input update functions
    */
   const updateInput = useCallback(
-    (field: keyof StintSimulatorInput) => (value: string | number) => {
-      const n = Number(value);
-      setInputs((current) => {
-        const newInputs = {
-          ...current,
-          [field]: isNaN(n) ? undefined : n,
-        };
-        storeStintSimulatorSettings(newInputs);
-        return newInputs;
-      });
-    },
+    (field: keyof StintSimulatorInput, asNumber?: boolean) =>
+      (value: string | number) => {
+        setInputs((current) => {
+          const n = asNumber ? Number(value) : value;
+          if (current[field] === n) {
+            return current;
+          }
+          const newInputs = {
+            ...current,
+            [field]: asNumber && isNaN(n as number) ? undefined : n,
+          };
+          storeStintSimulatorSettings(newInputs);
+          return newInputs;
+        });
+      },
     []
   );
 
   const updatePitWindowHours = useMemo(() => updateInput('pitWindowHours'), []);
   const updatePitWindowMins = useMemo(() => updateInput('pitWindowMins'), []);
-  const updateMinPitstops = useMemo(() => updateInput('minPitstops'), []);
-  const updateMaxPitstops = useMemo(() => updateInput('maxPitstops'), []);
+  const updateMinPitstops = useMemo(() => updateInput('minPitstops', true), []);
+  const updateMaxPitstops = useMemo(() => updateInput('maxPitstops', true), []);
   const updatePitstopSecs = useMemo(() => updateInput('pitstopSecs'), []);
   const updateLapDegradationSecs = useMemo(() => updateInput('lapDegradationSecs'), []);
   const updateSelectedSimulation: ChangeEventHandler<HTMLSelectElement> = useMemo(() => {
-    const update = updateInput('selectedSimulationIndex');
+    const update = updateInput('selectedSimulationIndex', true);
     return (ev) => update(ev.target.selectedIndex);
   }, []);
 
@@ -115,7 +120,15 @@ export function useStintSimulator({
         return lapDiff !== 0 ? lapDiff : a.raceTime - b.raceTime;
       });
 
-      setSimulations(list);
+      setSimulations(
+        list
+          // remove simulations with the same number of stops (repeated)
+          .filter(
+            (sim, i) =>
+              list.findIndex(({ stops }) => stops.length === sim.stops.length) === i
+          )
+          .splice(0, MAX_SIMULATIONS)
+      );
       updateSelectedSimulation({
         target: { selectedIndex: list.length > 0 ? 0 : -1 },
       } as React.ChangeEvent<HTMLSelectElement>);
@@ -139,7 +152,8 @@ export function useStintSimulator({
     } = inputs;
 
     const windowDuration = (() => {
-      const t = (pitWindowHours || 0) * 3_600_000 + (pitWindowMins || 0) * 60_000;
+      const t =
+        (Number(pitWindowHours) || 0) * 3_600_000 + (Number(pitWindowMins) || 0) * 60_000;
       return t ? t : raceDuration;
     })();
     const data = {
@@ -147,14 +161,16 @@ export function useStintSimulator({
       lapTime,
       totalLaps,
       windowDuration,
-      pitstopSecs,
+      pitstopSecs: Number(pitstopSecs),
       fuelPerLap,
       fuelTank,
       extraLaps,
       lapDegradationSecs: Number(lapDegradationSecs) || undefined,
     };
 
-    doSimulation(minPitstops || 0, maxPitstops || 0, data)!;
+    const min = Number(minPitstops) || 0;
+    const max = Number(maxPitstops) || min + MAX_SIMULATIONS;
+    doSimulation(min, max, data)!;
   }, [raceDuration, lapTime, totalLaps, fuelPerLap, fuelTank, extraLaps, inputs]);
 
   return {

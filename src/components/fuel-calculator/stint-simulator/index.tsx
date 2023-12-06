@@ -1,6 +1,5 @@
 import { ChangeEventHandler, FC, ReactNode } from 'react';
 import {
-  AbsoluteCenter,
   Box,
   Flex,
   HStack,
@@ -10,7 +9,6 @@ import {
   Text,
   Tooltip,
   UnorderedList,
-  VStack,
 } from '@chakra-ui/react';
 import { InfoIcon } from '@chakra-ui/icons';
 
@@ -74,8 +72,8 @@ export const StintSimulator: FC<Props> = (props) => {
 };
 
 const PitWindow: FC<{
-  hours: number | undefined;
-  mins: number | undefined;
+  hours: string | undefined;
+  mins: string | undefined;
   updateHours: (value: string) => void;
   updateMins: (value: string) => void;
 }> = ({ hours, mins, updateHours, updateMins }) => {
@@ -141,7 +139,7 @@ const PitStops: FC<{
 };
 
 const PitstopTime: FC<{
-  value: number | undefined;
+  value: string | undefined;
   update: (value: string) => void;
 }> = ({ value, update }) => {
   const info = (
@@ -397,7 +395,7 @@ const LapDetails: FC<LapData & { index: number; fuelPerLap?: number }> = ({
   );
   const pittingFuel = typeof pits === 'number' && (
     <Text as='span' color='green.400' ml={2}>
-      +{pits.toFixed(2)} L
+      +{Math.round(pits)} L
     </Text>
   );
   const pitting = pits && <Text>Box{pittingFuel}</Text>;
@@ -429,7 +427,7 @@ const StintSummary: FC<{
     },
     ...(simulation?.stops || []).map(({ lap, fuel }, i) => ({
       label: `Pit stop #${i} at lap ${lap}`,
-      data: fuel ? `${fuel} L` : undefined,
+      data: fuel ? `${Math.round(fuel)} L` : undefined,
     })),
   ];
 

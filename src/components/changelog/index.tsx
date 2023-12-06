@@ -37,6 +37,12 @@ export const Changelog: FC = () => {
 const ChangeList: FC = () => {
   return (
     <>
+      <Version v='0.6.1'>
+        <Change type='minor'>
+          Fixed minor bugs and added display improvements in the{' '}
+          <LinkTo page='calculator'>Fuel Calculator</LinkTo> page.
+        </Change>
+      </Version>
       <Version v='0.6.0'>
         <Change>
           Added the <Code>Endurance Mode</Code> to the{' '}
