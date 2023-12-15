@@ -10,6 +10,8 @@ export interface StintSimulatorInput {
   pitWindowMins?: string;
   minPitstops?: number;
   maxPitstops?: number;
+  stintDurationHours?: string;
+  stintDurationMins?: string;
   pitstopSecs?: string;
   lapDegradationSecs?: string;
   selectedSimulationIndex: number;
@@ -98,6 +100,8 @@ export function useStintSimulator({
   const updateMinPitstops = useMemo(() => updateInput('minPitstops', true), []);
   const updateMaxPitstops = useMemo(() => updateInput('maxPitstops', true), []);
   const updatePitstopSecs = useMemo(() => updateInput('pitstopSecs'), []);
+  const updateStintDurationHours = useMemo(() => updateInput('stintDurationHours'), []);
+  const updateStintDurationMins = useMemo(() => updateInput('stintDurationMins'), []);
   const updateLapDegradationSecs = useMemo(() => updateInput('lapDegradationSecs'), []);
   const updateSelectedSimulation: ChangeEventHandler<HTMLSelectElement> = useMemo(() => {
     const update = updateInput('selectedSimulationIndex', true);
@@ -149,6 +153,8 @@ export function useStintSimulator({
       lapDegradationSecs,
       minPitstops,
       maxPitstops,
+      stintDurationHours,
+      stintDurationMins,
     } = inputs;
 
     const windowDuration = (() => {
@@ -156,15 +162,20 @@ export function useStintSimulator({
         (Number(pitWindowHours) || 0) * 3_600_000 + (Number(pitWindowMins) || 0) * 60_000;
       return t ? t : raceDuration;
     })();
-    const data = {
+
+    const stintDurationSecs =
+      (Number(stintDurationHours) || 0) * 3_600_000 +
+      (Number(stintDurationMins) || 0) * 60_000;
+
+    const data: SimulationParameters = {
       raceDuration,
       lapTime,
-      totalLaps,
       windowDuration,
       pitstopSecs: Number(pitstopSecs),
       fuelPerLap,
       fuelTank,
       extraLaps,
+      stintDurationSecs,
       lapDegradationSecs: Number(lapDegradationSecs) || undefined,
     };
 
@@ -181,6 +192,8 @@ export function useStintSimulator({
     updateMinPitstops,
     updateMaxPitstops,
     updatePitstopSecs,
+    updateStintDurationHours,
+    updateStintDurationMins,
     updateLapDegradationSecs,
     updateSelectedSimulation,
   };

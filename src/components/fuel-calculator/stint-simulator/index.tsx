@@ -32,6 +32,8 @@ export const StintSimulator: FC<Props> = (props) => {
     simulations,
     pitWindowHours,
     pitWindowMins,
+    stintDurationHours,
+    stintDurationMins,
     minPitstops,
     maxPitstops,
     pitstopSecs,
@@ -42,6 +44,8 @@ export const StintSimulator: FC<Props> = (props) => {
     updateMinPitstops,
     updateMaxPitstops,
     updatePitstopSecs,
+    updateStintDurationHours,
+    updateStintDurationMins,
     updateLapDegradationSecs,
     updateSelectedSimulation,
   } = useStintSimulator(props);
@@ -59,6 +63,12 @@ export const StintSimulator: FC<Props> = (props) => {
         mins={pitWindowMins}
         updateHours={updatePitWindowHours}
         updateMins={updatePitWindowMins}
+      />
+      <StintDuration
+        hours={stintDurationHours}
+        mins={stintDurationMins}
+        updateHours={updateStintDurationHours}
+        updateMins={updateStintDurationMins}
       />
       <PitstopTime value={pitstopSecs} update={updatePitstopSecs} />
       <LapDegradation value={lapDegradationSecs} update={updateLapDegradationSecs} />
@@ -97,6 +107,40 @@ const PitWindow: FC<{
           min={0}
           label='Mins'
           onChange={updateMins}
+        />
+      </Flex>
+    </Box>
+  );
+};
+
+const StintDuration: FC<{
+  hours: string | undefined;
+  mins: string | undefined;
+  updateHours: (value: string) => void;
+  updateMins: (value: string) => void;
+}> = ({ hours, mins, updateHours, updateMins }) => {
+  return (
+    <Box marginTop={4}>
+      <Heading marginBottom={1} size='xs'>
+        Stint Duration
+      </Heading>
+      <Flex justifyContent='space-between'>
+        <NumericInput
+          placeholder='00'
+          value={hours}
+          min={0}
+          onChange={updateHours}
+          marginRight={2}
+          label='Hrs'
+          width='50%'
+        />
+        <NumericInput
+          placeholder='00'
+          value={mins}
+          min={0}
+          onChange={updateMins}
+          label='Mins'
+          width='50%'
         />
       </Flex>
     </Box>
