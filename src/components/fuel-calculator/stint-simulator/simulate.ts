@@ -6,6 +6,7 @@ export interface SimulationParameters {
   windowDuration?: number;
   lapDegradationSecs?: number;
   pitstopSecs?: number;
+  stintDurationSecs?: number;
   fuelPerLap?: number;
   fuelTank?: number;
   extraLaps?: number;
@@ -21,6 +22,7 @@ export function simulate(
     pitstopSecs,
     fuelPerLap,
     fuelTank,
+    stintDurationSecs,
     extraLaps,
   }: SimulationParameters
 ): SimulationData | undefined {
@@ -52,6 +54,7 @@ export function simulate(
   let raceTime = 0;
   let lap = 0;
   let stintLap = 0;
+  let stintTime = 0;
   while (raceTime < raceDuration) {
     const lapDelta = deltaPerLap * stintLap;
     let currentLapTime = lapTime + lapDelta;
@@ -78,8 +81,10 @@ export function simulate(
     if (pits) {
       stops.push({ lap });
       stintLap = 0;
+      stintTime = 0;
     } else {
       stintLap++;
+      stintTime += currentLapTime;
     }
 
     lap++;
@@ -88,6 +93,11 @@ export function simulate(
 
   let initialFuel: number | undefined;
   let totalFuel: number | undefined;
+
+  // if the stint is more than the permitted, this simulation is not valid
+  if (stintDurationSecs && stintTime > stintDurationSecs) {
+    return;
+  }
 
   if (fuelPerLap) {
     // 1st calculate the used fuel per stint
