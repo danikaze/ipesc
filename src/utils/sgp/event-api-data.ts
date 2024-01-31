@@ -102,7 +102,9 @@ export class SgpEventApiData {
   }
 
   public getCategoryList(): undefined | SgpCategory[] {
-    const cats = this.session.session.carClasses?.map(({ id }) => id);
+    const cats = this.session.session.carClasses?.map(
+      ({ id }) => SgpEventApiData.toCategory(id)!
+    );
     return cats?.length > 0 ? cats : undefined;
   }
 
@@ -217,7 +219,7 @@ export class SgpEventApiData {
     const cat = data?.toUpperCase();
     return cat === 'PRO'
       ? SgpCategory.PRO
-      : cat === 'SIL'
+      : cat === 'SILV' || cat === 'SIL'
       ? SgpCategory.SILVER
       : cat === 'AM'
       ? SgpCategory.AM
