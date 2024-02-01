@@ -37,6 +37,13 @@ export const Changelog: FC = () => {
 const ChangeList: FC = () => {
   return (
     <>
+      <Version v='0.7.0'>
+        <Change type='data'>Event data updated with the 2 first races of S8.</Change>
+        <Change type='minor'>
+          Fixed srgp category values to include <Code>SILVER</Code> when generating
+          results for discord.
+        </Change>
+      </Version>
       <Version v='0.6.1'>
         <Change type='minor'>
           Fixed minor bugs and added display improvements in the{' '}
