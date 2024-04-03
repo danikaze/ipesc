@@ -37,6 +37,9 @@ export const Changelog: FC = () => {
 const ChangeList: FC = () => {
   return (
     <>
+      <Version v='0.7.4'>
+        <Change type='data'>Event data updated with the full S8 data.</Change>
+      </Version>
       <Version v='0.7.3'>
         <Change type='data'>Event data updated with the 6th race of S8.</Change>
       </Version>
