@@ -37,6 +37,12 @@ export const Changelog: FC = () => {
 const ChangeList: FC = () => {
   return (
     <>
+      <Version v='0.8.0'>
+        <Change type='minor'>
+          <LinkTo page='calculator'>Fuel calculator</LinkTo> accepts stint timer on
+          endurance mode.
+        </Change>
+      </Version>
       <Version v='0.7.4'>
         <Change type='data'>Event data updated with the full S8 data.</Change>
       </Version>
