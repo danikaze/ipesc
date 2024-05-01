@@ -50,8 +50,10 @@ export interface LapData {
   windowOpen?: boolean;
   /** This lap needs to pit. Number of litres to add when available */
   pits?: boolean | number;
-  /** Expected remaining fuel */
-  fuel?: number;
+  /** Expected remaining fuel at the beginning of the lap */
+  fuelOnStart?: number;
+  /** Expected remaining fuel at the beginning of the lap */
+  fuelOnEnd?: number;
 }
 
 const SIMULATION_DEBOUNCE_MS = 50;
@@ -140,22 +142,22 @@ export function useStintSimulator({
     []
   );
 
+  const {
+    pitWindowHours,
+    pitWindowMins,
+    pitstopSecs,
+    lapDegradationSecs,
+    minPitstops,
+    maxPitstops,
+    stintDurationHours,
+    stintDurationMins,
+  } = inputs;
+
   useEffect(() => {
     if (!raceDuration || !lapTime) {
       setSimulations([]);
       return;
     }
-
-    const {
-      pitWindowHours,
-      pitWindowMins,
-      pitstopSecs,
-      lapDegradationSecs,
-      minPitstops,
-      maxPitstops,
-      stintDurationHours,
-      stintDurationMins,
-    } = inputs;
 
     const windowDuration = (() => {
       const t =
@@ -182,7 +184,22 @@ export function useStintSimulator({
     const min = Number(minPitstops) || 0;
     const max = Number(maxPitstops) || min + MAX_SIMULATIONS;
     doSimulation(min, max, data)!;
-  }, [raceDuration, lapTime, totalLaps, fuelPerLap, fuelTank, extraLaps, inputs]);
+  }, [
+    raceDuration,
+    lapTime,
+    totalLaps,
+    fuelPerLap,
+    fuelTank,
+    extraLaps,
+    pitWindowHours,
+    pitWindowMins,
+    pitstopSecs,
+    lapDegradationSecs,
+    minPitstops,
+    maxPitstops,
+    stintDurationHours,
+    stintDurationMins,
+  ]);
 
   return {
     ...inputs,
