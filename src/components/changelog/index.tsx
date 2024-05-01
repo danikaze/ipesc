@@ -42,6 +42,7 @@ const ChangeList: FC = () => {
           <LinkTo page='calculator'>Fuel calculator</LinkTo> accepts stint timer on
           endurance mode.
         </Change>
+        <Change type='minor'>Added favicon icon ー at last :)</Change>
       </Version>
       <Version v='0.7.4'>
         <Change type='data'>Event data updated with the full S8 data.</Change>
