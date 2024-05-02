@@ -96,3 +96,5 @@ export interface TrackRecord {
   carId: Car['id'];
   date: Timestamp;
 }
+
+export type LapField = 'bestCleanLapTime' | 'avgCleanLapTime' | 'averageLapTime';
