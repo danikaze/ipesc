@@ -139,7 +139,7 @@ export class DataQuery {
             getAccVersionFromTime(game, event.startTime) === track.version
         )
         .forEach((event) => {
-          event.results.forEach(({ type, results }) =>
+          event.results.forEach(({ type, results, wet }) =>
             results.forEach((result) => {
               if (!result.bestCleanLapTime) return;
               const map = type === 'quali' ? quali : race;
@@ -150,6 +150,7 @@ export class DataQuery {
                   driverId: result.driverId,
                   carId: result.carId,
                   date: event.startTime,
+                  wet,
                 });
               }
             })
