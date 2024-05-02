@@ -48,6 +48,10 @@ const ChangeList: FC = () => {
           base event times for 100% to be the best of the event, not the track (as weather
           conditions might affect it)
         </Change>
+        <Change type='minor'>
+          Display when a race track was wet on the{' '}
+          <LinkTo page='tracks'>Tracks page</LinkTo>
+        </Change>
       </Version>
       <Version v='0.7.4'>
         <Change type='data'>Event data updated with the full S8 data.</Change>

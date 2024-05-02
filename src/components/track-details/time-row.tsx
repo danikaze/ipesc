@@ -28,11 +28,17 @@ export const TimeRow: FC<{
   const car = query.getCarName(data.carId);
   const date = new Date(data.date).toDateString();
 
+  const wetIcon = data.wet && (
+    <Box ml={1} as='span' opacity={0.5} title='Wet track'>
+      ☔
+    </Box>
+  );
   return (
     <Td borderLeft={border} title={formatRatioAsPctg(data.lapTime / best)}>
       <Box>
         <Text as='span' fontWeight='bold' mr={4}>
           {time}
+          {wetIcon}
         </Text>
         <Text as='span'>{driver}</Text>
       </Box>
