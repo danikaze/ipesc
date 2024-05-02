@@ -43,6 +43,11 @@ const ChangeList: FC = () => {
           endurance mode.
         </Change>
         <Change type='minor'>Added favicon icon ー at last :)</Change>
+        <Change type='minor'>
+          Changed the way <LinkTo page='drivers'>driver rank</LinkTo> is calculated to
+          base event times for 100% to be the best of the event, not the track (as weather
+          conditions might affect it)
+        </Change>
       </Version>
       <Version v='0.7.4'>
         <Change type='data'>Event data updated with the full S8 data.</Change>

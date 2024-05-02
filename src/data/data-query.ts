@@ -5,6 +5,7 @@ import {
   Driver,
   Event,
   EventType,
+  LapField,
   ProcessedData,
   TrackData,
   TrackRecord,
@@ -163,6 +164,34 @@ export class DataQuery {
 
     res.quali.sort(DataQuery.trackRecordSorter);
     res.race.sort(DataQuery.trackRecordSorter);
+
+    return res;
+  }
+  /**
+   * Get the records for an event (as opposite for every event on this track as
+   * `getTrackRecords` does)
+   */
+  public getEventRecords<E extends Pick<Event, 'results' | 'startTime'>>(
+    event: E,
+    lapField: LapField
+  ): Partial<Record<EventType, TrackRecord>> {
+    const res: Partial<Record<EventType, TrackRecord>> = {};
+
+    event.results.forEach(({ type, results }) =>
+      results.forEach((result) => {
+        if (!result.bestCleanLapTime) return;
+        const best = res[type];
+        const time = result[lapField];
+        if (time !== undefined && (!best || best.lapTime > time)) {
+          res[type] = {
+            lapTime: time,
+            driverId: result.driverId,
+            carId: result.carId,
+            date: event.startTime,
+          };
+        }
+      })
+    );
 
     return res;
   }
