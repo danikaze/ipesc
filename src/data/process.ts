@@ -266,9 +266,6 @@ function getBestEventResultOfType(
       const bestResult = eventResult2trackRecord(eventResults, eventDate);
       if (bestResult && (!trackRecord || trackRecord.lapTime > bestResult.lapTime)) {
         trackRecord = bestResult;
-        if (eventResults.wetTrack) {
-          trackRecord.wet = true;
-        }
       }
     } catch (e) {
       break;
@@ -293,9 +290,6 @@ function eventResult2trackRecord(
       driverId: result.driverId,
       carId: result.carModelId,
     };
-    if (results.wetTrack) {
-      record.wet = true;
-    }
   });
 
   return record;

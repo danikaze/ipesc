@@ -1,7 +1,7 @@
 {
   "name": "ipesc",
   "description": "Utilities and data for the IPESC racing community.",
-  "version": "0.8.0",
+  "version": "0.7.4",
   "scripts": {
     "dev": "webpack serve",
     "dev:fns": "cross-env WEBPACK_ONLY=fns webpack --watch",
@@ -44,7 +44,6 @@
     "@typescript-eslint/parser": "^6.7.5",
     "@webpack-cli/generators": "^3.0.7",
     "autoprefixer": "^10.4.16",
-    "copy-webpack-plugin": "^12.0.2",
     "cross-env": "^7.0.3",
     "css-loader": "^6.8.1",
     "eslint": "^8.51.0",

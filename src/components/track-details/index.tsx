@@ -76,13 +76,7 @@ function renderTrackDetailsContents(
   const bestRace = track.best.race?.lapTime;
   const best = Math.min(bestQuali ?? Infinity, bestRace || Infinity);
   const { quali, race } = getCategoryTimes(query, track);
-  const wet = best === bestQuali ? track.best.quali!.wet : track.best.race!.wet;
 
-  const wetIcon = wet && (
-    <Box mr={1} as='span' opacity={0.5} title='Wet track'>
-      ☔
-    </Box>
-  );
   const accordionButton = useMemo(
     () => (
       <AccordionButton ref={ref} onClick={toggleContents}>
@@ -91,7 +85,6 @@ function renderTrackDetailsContents(
             {track.name}
           </Text>{' '}
           <Text mr={2} fontSize='sm' color='GrayText'>
-            {wetIcon}
             {msToTime(best)}
           </Text>
         </Flex>

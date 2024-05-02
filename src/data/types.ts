@@ -80,7 +80,6 @@ export interface EventResult {
   averageLapTime?: LapTimeAsMs;
   position?: number;
   retired?: boolean;
-  wet?: boolean;
 }
 
 export interface TrackData {
@@ -96,7 +95,4 @@ export interface TrackRecord {
   driverId: Driver['id'];
   carId: Car['id'];
   date: Timestamp;
-  wet?: boolean;
 }
-
-export type LapField = 'bestCleanLapTime' | 'avgCleanLapTime' | 'averageLapTime';

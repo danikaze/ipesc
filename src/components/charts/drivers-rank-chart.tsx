@@ -1,24 +1,24 @@
 import { FC, useMemo } from 'react';
 
-import { useFilteredData } from 'components/data-provider';
+import { AccVersion, Driver, Game, TrackData } from 'data/types';
 import { DataQuery } from 'data/data-query';
-import { AccVersion, Driver, Game, LapField, TrackData } from 'data/types';
 import { getAccVersionFromTime } from 'utils/acc-version';
-import { cluster } from 'utils/cluster';
 import { formatRatioAsPctg } from 'utils/format-data';
 import { getPctgColor } from 'utils/get-color';
 import { msToTime } from 'utils/time';
 import { LapTimeAsMs } from 'utils/types';
+import { useFilteredData } from 'components/data-provider';
 
+import { useCharts } from './use-charts';
 import {
   BackgroundColorPluginOptions,
   backgroundColorPlugin,
 } from './plugins/background-color';
 import { resizeChartPlugin } from './plugins/resize-chart';
-import { useCharts } from './use-charts';
+import { cluster } from 'utils/cluster';
 
 export interface Props {
-  lapField?: LapField;
+  lapField?: 'bestCleanLapTime' | 'avgCleanLapTime' | 'averageLapTime';
   minEvents?: number;
   maxPctg?: number;
 }
@@ -47,7 +47,7 @@ const FIELDS: Record<
   bestCleanLapTime: {
     title: 'Drivers rank based on fastest clean race lap averages',
     subtitle:
-      'Results shown based on percentages from the fastest clean race lap registered for the event',
+      'Results shown based on percentages from the fastest clean race lap registered for the each track',
   },
   avgCleanLapTime: {
     title: 'Drivers rank based on average clean race lap averages',
@@ -252,7 +252,8 @@ function getBackgroundOptions(data: number[]): BackgroundColorPluginOptions {
 
 /**
  * From every event of the passed data, search events with the driver and get
- * the percentage relative to the track best time on that race
+ * the percentage relative to the track best time
+ * Driver time is based on his best average clean race lap time for that track
  */
 function getDriverAveragePctg(
   query: DataQuery,
@@ -286,10 +287,10 @@ function getDriverAveragePctg(
         const driverResult = results.find((result) => result.driverId === driver.id);
         const driverLapTime = driverResult?.[lapField];
         if (!driverLapTime) return;
-        const trackBest = query.getEventRecords(event, lapField).race;
-        if (!trackBest) return;
+        const trackBest = query.getTrackData(event)?.best.race;
+        const pctg = query.getTrackPctg(event, 'race', driverLapTime);
+        if (!trackBest || !pctg) return;
 
-        const pctg = driverLapTime / trackBest.lapTime;
         driverAverage += driverLapTime;
         totalBest += trackBest.lapTime;
 

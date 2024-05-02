@@ -1,1 +1,0 @@
-Files in this folder (except .md files) will be copied to the [build folder](/dist) (via [CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/)) with the same file structure as defined in [webpack/pages.ts](/webpack/pages.ts).

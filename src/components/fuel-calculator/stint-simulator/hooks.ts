@@ -10,8 +10,6 @@ export interface StintSimulatorInput {
   pitWindowMins?: string;
   minPitstops?: number;
   maxPitstops?: number;
-  stintDurationHours?: string;
-  stintDurationMins?: string;
   pitstopSecs?: string;
   lapDegradationSecs?: string;
   selectedSimulationIndex: number;
@@ -50,10 +48,8 @@ export interface LapData {
   windowOpen?: boolean;
   /** This lap needs to pit. Number of litres to add when available */
   pits?: boolean | number;
-  /** Expected remaining fuel at the beginning of the lap */
-  fuelOnStart?: number;
-  /** Expected remaining fuel at the beginning of the lap */
-  fuelOnEnd?: number;
+  /** Expected remaining fuel */
+  fuel?: number;
 }
 
 const SIMULATION_DEBOUNCE_MS = 50;
@@ -102,8 +98,6 @@ export function useStintSimulator({
   const updateMinPitstops = useMemo(() => updateInput('minPitstops', true), []);
   const updateMaxPitstops = useMemo(() => updateInput('maxPitstops', true), []);
   const updatePitstopSecs = useMemo(() => updateInput('pitstopSecs'), []);
-  const updateStintDurationHours = useMemo(() => updateInput('stintDurationHours'), []);
-  const updateStintDurationMins = useMemo(() => updateInput('stintDurationMins'), []);
   const updateLapDegradationSecs = useMemo(() => updateInput('lapDegradationSecs'), []);
   const updateSelectedSimulation: ChangeEventHandler<HTMLSelectElement> = useMemo(() => {
     const update = updateInput('selectedSimulationIndex', true);
@@ -142,64 +136,42 @@ export function useStintSimulator({
     []
   );
 
-  const {
-    pitWindowHours,
-    pitWindowMins,
-    pitstopSecs,
-    lapDegradationSecs,
-    minPitstops,
-    maxPitstops,
-    stintDurationHours,
-    stintDurationMins,
-  } = inputs;
-
   useEffect(() => {
     if (!raceDuration || !lapTime) {
       setSimulations([]);
       return;
     }
 
+    const {
+      pitWindowHours,
+      pitWindowMins,
+      pitstopSecs,
+      lapDegradationSecs,
+      minPitstops,
+      maxPitstops,
+    } = inputs;
+
     const windowDuration = (() => {
       const t =
         (Number(pitWindowHours) || 0) * 3_600_000 + (Number(pitWindowMins) || 0) * 60_000;
       return t ? t : raceDuration;
     })();
-
-    const stintDurationSecs =
-      (Number(stintDurationHours) || 0) * 3_600_000 +
-      (Number(stintDurationMins) || 0) * 60_000;
-
-    const data: SimulationParameters = {
+    const data = {
       raceDuration,
       lapTime,
+      totalLaps,
       windowDuration,
       pitstopSecs: Number(pitstopSecs),
       fuelPerLap,
       fuelTank,
       extraLaps,
-      stintDurationSecs,
       lapDegradationSecs: Number(lapDegradationSecs) || undefined,
     };
 
     const min = Number(minPitstops) || 0;
     const max = Number(maxPitstops) || min + MAX_SIMULATIONS;
     doSimulation(min, max, data)!;
-  }, [
-    raceDuration,
-    lapTime,
-    totalLaps,
-    fuelPerLap,
-    fuelTank,
-    extraLaps,
-    pitWindowHours,
-    pitWindowMins,
-    pitstopSecs,
-    lapDegradationSecs,
-    minPitstops,
-    maxPitstops,
-    stintDurationHours,
-    stintDurationMins,
-  ]);
+  }, [raceDuration, lapTime, totalLaps, fuelPerLap, fuelTank, extraLaps, inputs]);
 
   return {
     ...inputs,
@@ -209,8 +181,6 @@ export function useStintSimulator({
     updateMinPitstops,
     updateMaxPitstops,
     updatePitstopSecs,
-    updateStintDurationHours,
-    updateStintDurationMins,
     updateLapDegradationSecs,
     updateSelectedSimulation,
   };

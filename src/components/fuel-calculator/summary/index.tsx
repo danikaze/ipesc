@@ -7,7 +7,7 @@ export interface Props {
 }
 
 export interface SummaryItemProps {
-  label: ReactNode;
+  label: string;
   data: number | string | undefined;
   main?: boolean;
 }
