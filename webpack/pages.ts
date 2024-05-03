@@ -60,7 +60,7 @@ export const pagesConfig = webpackConfig((config, isProduction) => {
       patterns: [
         {
           context: absPath('copy-static'),
-          from: absPath('copy-static/**/*'),
+          from: '**',
           to: distPath,
           toType: 'dir',
           filter: (filepath) => extname(filepath) !== '.md',
