@@ -1,5 +1,7 @@
+import { extname } from 'path';
 import { Configuration, DefinePlugin } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import * as CopyPlugin from 'copy-webpack-plugin';
 import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import 'webpack-dev-server';
 
@@ -13,12 +15,13 @@ import { jsonify } from './utils/jsonify';
 
 export const pagesConfig = webpackConfig((config, isProduction) => {
   const entries = getPagesEntries(absPath('src/entries'), isProduction);
+  const distPath = absPath('dist/');
 
   config.entry = entries.entry;
   config.output = {
     ...config.output,
     clean: true,
-    path: absPath('dist'),
+    path: distPath,
     filename: `[name]-[contenthash:${HASH_SIZE}].js`,
   };
   config.optimization = {
@@ -52,6 +55,17 @@ export const pagesConfig = webpackConfig((config, isProduction) => {
     ),
     new MiniCssExtractPlugin({
       filename: `styles-[contenthash:${HASH_SIZE}].css`,
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          context: absPath('copy-static'),
+          from: '**',
+          to: distPath,
+          toType: 'dir',
+          filter: (filepath) => extname(filepath) !== '.md',
+        },
+      ],
     }),
   ];
 
