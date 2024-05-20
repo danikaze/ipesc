@@ -57,18 +57,20 @@ export const resizeChartPlugin: Plugin<ChartType, ResponsivePluginOptions> = {
     chart.options.maintainAspectRatio = false;
     chart.options.responsive = false;
     chartOptions.set(chart, options);
+    // only register the resize listener on the 1st created chart
     if (chartOptions.size === 1) {
       resizeHandler = debounce(() => {
         const args: Readonly<{ cancelable: true }> = { cancelable: true };
         Array.from(chartOptions.entries()).forEach(([chart, options]) => {
           resizeChartPlugin.beforeRender!(chart, args, options);
         });
-      }, chart.options.resizeDelay || 0);
+      }, chart.options.resizeDelay || 100);
       window.addEventListener('resize', resizeHandler);
     }
   },
   stop: (chart) => {
     chartOptions.delete(chart);
+    // deregister the resize listener when there are no more charts
     if (chartOptions.size === 0) {
       window.removeEventListener('resize', resizeHandler);
     }
@@ -83,10 +85,12 @@ export const resizeChartPlugin: Plugin<ChartType, ResponsivePluginOptions> = {
     const w = getSize(canvas, 'width', options.chartAreaWidth ?? options.width);
     const h = getSize(canvas, 'height', options.chartAreaHeight ?? options.height);
 
-    const targetW = options.chartAreaWidth ? canvas.width - chartArea.width + w : w;
-    const targetH = options.chartAreaHeight ? canvas.height - chartArea.height + h : h;
+    const canvasW = parseInt(canvas.style.width);
+    const canvasH = parseInt(canvas.style.height);
+    const targetW = options.chartAreaWidth ? canvasW - chartArea.width + w : w;
+    const targetH = options.chartAreaHeight ? canvasH - chartArea.height + h : h;
 
-    if (needsChange(targetW - canvas.width, targetH - canvas.height)) {
+    if (needsChange(targetW - canvasW, targetH - canvasH)) {
       chart.resize(targetW, targetH);
     }
   },
