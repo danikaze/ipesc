@@ -37,6 +37,12 @@ export const Changelog: FC = () => {
 const ChangeList: FC = () => {
   return (
     <>
+      <Version v='0.8.1'>
+        <Change type='minor'>
+          Fixed the <LinkTo page='drivers'>Driver comparison chart</LinkTo> on Mac
+          systems.
+        </Change>
+      </Version>
       <Version v='0.8.0'>
         <Change type='minor'>
           <LinkTo page='calculator'>Fuel calculator</LinkTo> accepts stint timer on
