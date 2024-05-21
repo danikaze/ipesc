@@ -37,6 +37,11 @@ export const Changelog: FC = () => {
 const ChangeList: FC = () => {
   return (
     <>
+      <Version v='0.8.2'>
+        <Change type='minor'>
+          Fixed SimRacing GP category IDs -again- when generating results for discord.
+        </Change>
+      </Version>
       <Version v='0.8.1'>
         <Change type='minor'>
           Fixed the <LinkTo page='drivers'>Driver comparison chart</LinkTo> on Mac
