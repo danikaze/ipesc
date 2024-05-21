@@ -38,6 +38,7 @@ const ChangeList: FC = () => {
   return (
     <>
       <Version v='0.8.2'>
+        <Change type='data'>Event data updated with S9R1 race data.</Change>
         <Change type='minor'>
           Fixed SimRacing GP category IDs -again- when generating results for discord.
         </Change>
