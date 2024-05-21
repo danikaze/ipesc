@@ -217,11 +217,13 @@ export class SgpEventApiData {
 
   private static toCategory(data: string | undefined): SgpCategory | undefined {
     const cat = data?.toUpperCase();
-    return cat === 'PRO'
+    if (!cat) return;
+
+    return cat.startsWith('PRO')
       ? SgpCategory.PRO
-      : cat === 'SILV' || cat === 'SIL'
+      : cat.startsWith('SIL')
       ? SgpCategory.SILVER
-      : cat === 'AM'
+      : cat.startsWith('AM')
       ? SgpCategory.AM
       : undefined;
   }
