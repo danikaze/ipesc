@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Simracing GP for IPESC
 // @namespace    ipesc.danikaze
-// @version      0.1.4
+// @version      0.1.5
 // @description  Set of utilities available on DevTools for IPESC racing community
 // @author       danikaze
 // @source       https://github.com/danikaze/ipesc

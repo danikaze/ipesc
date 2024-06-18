@@ -37,6 +37,12 @@ export const Changelog: FC = () => {
 const ChangeList: FC = () => {
   return (
     <>
+      <Version v='0.8.3'>
+        <Change type='data'>Event data updated with S9R5 race data.</Change>
+        <Change type='minor'>
+          Add checkered flags to the race result message for Discord.
+        </Change>
+      </Version>
       <Version v='0.8.2'>
         <Change type='data'>Event data updated with S9R1 race data.</Change>
         <Change type='minor'>
