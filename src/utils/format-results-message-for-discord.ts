@@ -28,6 +28,7 @@ export function formatResultsMessageForDiscord(data: SgpEventApiData): string {
   }
 
   return [
+    ':checkered_flag: :checkered_flag: :checkered_flag: :checkered_flag: :checkered_flag: ',
     '',
     center(title, titleLength),
     center(data.getEventName(), titleLength),
