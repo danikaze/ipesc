@@ -1,7 +1,7 @@
 {
   "name": "ipesc",
   "description": "Utilities and data for the IPESC racing community.",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "scripts": {
     "dev": "webpack serve",
     "dev:fns": "cross-env WEBPACK_ONLY=fns webpack --watch",
