@@ -1,3 +1,4 @@
+import { DataQuery } from 'data/data-query';
 import {
   AccVersion,
   Car,
@@ -8,8 +9,8 @@ import {
   ProcessedData,
   TrackData,
 } from 'data/types';
-import { DataQuery } from 'data/data-query';
 import { isEventFromAccVersion } from '../../utils/acc-version';
+import { isChampionship } from '../../utils/is-championship';
 
 export interface Filter {
   onlyChampionships?: boolean;
@@ -55,7 +56,7 @@ function getChampionshipFilter(filter: Filter): (championship: Championship) => 
       }
     }
 
-    if (filter.onlyChampionships && !/^S\d+$/.test(c.customName!)) {
+    if (filter.onlyChampionships && !isChampionship(c.customName!)) {
       return false;
     }
 

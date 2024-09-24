@@ -1,8 +1,9 @@
-import { FC } from 'react';
 import { Flex, Select } from '@chakra-ui/react';
+import { FC } from 'react';
 
 import { Filter } from 'components/data-provider/filter-data';
 import { AccVersion, Game } from 'data/types';
+import { isChampionship } from 'utils/is-championship';
 
 import { useDataFilter } from './hooks';
 
@@ -33,7 +34,11 @@ function renderChampionships(
   { filter, updateChampionships }: HookData,
   championshipList: string[] | undefined
 ) {
-  const defaultValue = filter.onlyChampionships ? 'anySeason' : 'all';
+  const defaultValue =
+    championshipList
+      ?.filter(isChampionship)
+      .sort((a, b) => Number(a.substring(1)) - Number(b.substring(1)))
+      .pop() || (filter.onlyChampionships ? 'anySeason' : 'all');
   const optionList = [
     <option key='all' value='all'>
       Include all championships

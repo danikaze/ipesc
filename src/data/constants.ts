@@ -20,6 +20,7 @@ export const CUSTOM_NAMES: Record<string, string> = {
   rkhFTtdoVJk0lPqegFMND: 'S8',
   V2Dk0HTCw4sMCFvTyW0r8: 'Post S7 MX5 micro-season',
   NSal24t9t6C7hmDArqgQt: 'S9',
+  'cQqj-iuWpjpP0A1cCK-Sr': 'S10',
 };
 
 export const TRACK_MAX_BEST_TIMES = 100;
