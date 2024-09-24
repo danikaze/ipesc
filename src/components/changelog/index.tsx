@@ -37,6 +37,11 @@ export const Changelog: FC = () => {
 const ChangeList: FC = () => {
   return (
     <>
+      <Version v='0.8.5'>
+        <Change type='data'>
+          Event data updated with the data from the first round of S10.
+        </Change>
+      </Version>
       <Version v='0.8.4'>
         <Change type='data'>Event data updated with the full S9 data.</Change>
       </Version>
