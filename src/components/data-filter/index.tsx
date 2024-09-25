@@ -85,6 +85,7 @@ function renderAccVersion({ filter, updateAccVersion }: HookData) {
       <option value={AccVersion.V_16}>v1.6 (2020)</option>
       <option value={AccVersion.V_18}>v1.8 (2021)</option>
       <option value={AccVersion.V_19}>v1.9 (2023)</option>
+      <option value={AccVersion.V_196}>v1.9.6 (2024)</option>
     </Select>
   );
 }

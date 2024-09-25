@@ -28,6 +28,7 @@ export const enum AccVersion {
   V_16 = '1.6',
   V_18 = '1.8',
   V_19 = '1.9',
+  V_196 = '1.9.6',
 }
 
 export interface Driver {
