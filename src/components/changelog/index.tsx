@@ -44,6 +44,7 @@ const ChangeList: FC = () => {
         <Change type='minor'>
           Default championship for the DataFilter is now the latest official one.
         </Change>
+        <Change type='minor'>Added ACC v1.9.6</Change>
       </Version>
       <Version v='0.8.4'>
         <Change type='data'>Event data updated with the full S9 data.</Change>
