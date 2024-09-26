@@ -6,6 +6,7 @@ import { AccVersion, Game } from 'data/types';
 import { isChampionship } from 'utils/is-championship';
 
 import { useDataFilter } from './hooks';
+import { getDefaultChampionship } from 'utils/get-default-championship';
 
 export interface Props {
   onChange: (filter: Filter) => void;
@@ -35,10 +36,7 @@ function renderChampionships(
   championshipList: string[] | undefined
 ) {
   const defaultValue =
-    championshipList
-      ?.filter(isChampionship)
-      .sort((a, b) => Number(a.substring(1)) - Number(b.substring(1)))
-      .pop() || (filter.onlyChampionships ? 'anySeason' : 'all');
+    filter.seasonCustomName || getDefaultChampionship(championshipList);
   const optionList = [
     <option key='all' value='all'>
       Include all championships
