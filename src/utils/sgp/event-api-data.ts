@@ -66,6 +66,14 @@ export class SgpEventApiData {
     });
   }
 
+  public isFinished(): boolean {
+    return this.results !== undefined;
+  }
+
+  public getChampionshipId(): string {
+    return this.session.session.tournamentId;
+  }
+
   public getChampionshipName(): string {
     return this.session.session.tournamentName;
   }

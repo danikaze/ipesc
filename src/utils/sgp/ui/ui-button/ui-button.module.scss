@@ -1,0 +1,24 @@
+@use '../constants.scss' as constants;
+
+.root {
+  cursor: pointer;
+  background: constants.$textColor;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin: 8px;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  color: constants.$backgroundColor;
+  font-family: constants.$fontFamily;
+  font-weight: bolder;
+
+  &.disabled {
+    cursor: default;
+    opacity: constants.$disabledOpacity;
+  }
+}

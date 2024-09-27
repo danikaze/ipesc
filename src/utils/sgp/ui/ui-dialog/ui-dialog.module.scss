@@ -1,0 +1,64 @@
+@use '../constants.scss' as constants;
+
+.root {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: constants.$zIndexDialog;
+
+  background-color: constants.$backDropColor;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 80%;
+  max-height: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: constants.$backgroundColor;
+  box-shadow: 0 0 2px 5px constants.$shadowColor;
+  border: 1px solid constants.$redAccentColor;
+  border-radius: 4px;
+  color: constants.$textColor;
+}
+
+.header {
+  flex: 0 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid constants.$redAccentColor;
+  padding: 16px;
+  font-family: constants.$fontFamily;
+}
+
+.closeButton {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  margin: 0;
+  border: 1px solid constants.$redAccentColor;
+
+  svg {
+    stroke: constants.$backgroundColor;
+    stroke-width: 3;
+  }
+}
+
+.content {
+  font-family: constants.$fontFamily;
+  flex-grow: 1;
+  padding: 16px;
+  overflow: hidden auto;
+
+  pre {
+    font-size: small;
+    white-space: pre-wrap;
+  }
+}

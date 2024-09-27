@@ -1,0 +1,15 @@
+@use '../constants.scss' as constants;
+
+.root {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 24px;
+  z-index: constants.$zIndexMenu;
+
+  background: constants.$backgroundColor;
+  border: 1px solid constants.$redAccentColor;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top: none;
+}

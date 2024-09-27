@@ -1,0 +1,15 @@
+$baseZindex: 100000000;
+
+$fontFamily: 'Bai Jamjuree', 'Roboto';
+
+$textColor: #fcfcfc;
+$backgroundColor: #1d1d1d;
+$redAccentColor: #c74342;
+
+$shadowColor: rgb(0 0 0 / 20%);
+$backDropColor: rgb(0 0 0 / 50%);
+$disabledOpacity: 0.5;
+
+$zIndexMenu: $baseZindex + 1;
+$zIndexDialog: $baseZindex + 2;
+$zIndexLoading: $baseZindex + 3;
