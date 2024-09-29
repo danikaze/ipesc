@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Simracing GP for IPESC
 // @namespace    ipesc.danikaze
-// @version      0.1.5
+// @version      0.3.0
 // @description  Set of utilities available on DevTools for IPESC racing community
 // @author       danikaze
 // @source       https://github.com/danikaze/ipesc
@@ -19,6 +19,7 @@ import { fetchChampionshipData } from 'utils/sgp/fetch-championship-data';
 import { formatResultsMessageForDiscord } from 'utils/format-results-message-for-discord';
 import { fetchEventData } from 'utils/sgp/fetch-event-data';
 import { clearApiCache } from 'utils/sgp/call-api';
+import { injectUi } from '../utils/sgp/ui';
 
 const helpers = {
   version,
@@ -26,6 +27,7 @@ const helpers = {
   fetchEventData,
   fetchChampionshipData,
   getResultsForDiscord,
+  injectUi,
 };
 
 // register the `ipesc` helpers as a global namespace in `window`
@@ -44,15 +46,17 @@ if (typeof unsafeWindow !== 'undefined') {
 }
 
 printEnabledMsg();
+injectUi();
 
-async function getResultsForDiscord(eventId?: string) {
+async function getResultsForDiscord(eventId?: string): Promise<string> {
   const eventData = await fetchEventData(eventId);
   if (!eventData) {
     console.warn(`Couldn't retrieve the results for the event`);
-    return;
+    throw new Error(`Couldn't retrieve the results for the event`);
   }
   const msg = formatResultsMessageForDiscord(eventData);
   console.log(msg);
+  return msg;
 }
 
 function printEnabledMsg() {

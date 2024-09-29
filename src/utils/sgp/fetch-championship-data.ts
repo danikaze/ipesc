@@ -6,7 +6,7 @@ import { SgpChampionshipApiData } from './championship-api-data';
 export function fetchChampionshipData(championshipId?: string) {
   const id = championshipId ?? getPathId('championships');
   if (!id) {
-    return console.warn(
+    throw new Error(
       [
         'Usage:',
         ' * fetchChampionshipData(ID) or',
@@ -21,7 +21,7 @@ export function fetchChampionshipData(championshipId?: string) {
       console.log('Cancelling...');
       cancelled = true;
     },
-    data: new Promise(async (resolve) => {
+    data: new Promise<SgpChampionshipApiData>(async (resolve) => {
       const requestData = { id };
 
       console.log(`Fetching data for championship ${id}`);

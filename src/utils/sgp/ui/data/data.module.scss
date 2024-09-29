@@ -1,0 +1,21 @@
+@use '../constants.scss' as constants;
+
+.copyIcon {
+  cursor: pointer;
+  margin-left: 8px;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.copiedMsg {
+  opacity: 0;
+  font-size: small;
+  color: constants.$redAccentColor;
+  margin-left: 8px;
+  transition: opacity 0.5s;
+
+  &.show {
+    opacity: 1;
+    transition: none;
+  }
+}

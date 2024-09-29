@@ -5,6 +5,7 @@ import { isEventFromAccVersion } from 'utils/acc-version';
 import { Filter, filterData } from 'components/data-provider/filter-data';
 import { useRawData } from 'components/data-provider';
 import { Props as ChartProps } from 'components/charts/drivers-rank-chart';
+import { getDefaultChampionship } from 'utils/get-default-championship';
 
 export function useDriversPage() {
   const rawData = useRawData();
@@ -14,6 +15,7 @@ export function useDriversPage() {
       game: Game.ACC,
       accVersion: accVersions[accVersions.length - 1],
       onlyChampionships: true,
+      seasonCustomName: getDefaultChampionship(rawData?.raw.championships)?.customName,
     };
   }, [rawData]);
   const [filter, setFilter] = useState<Filter>(defaultFilter);

@@ -3,7 +3,7 @@ import { version } from '../../package.json';
 import { getDateString } from './get-date-string';
 
 interface BannerOptions {
-  hash: string;
+  hash?: string;
   chunk: Chunk;
   filename: string;
 }

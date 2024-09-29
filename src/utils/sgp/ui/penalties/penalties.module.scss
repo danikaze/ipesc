@@ -1,0 +1,159 @@
+@use '../constants.scss' as constants;
+
+.root {
+  select {
+    background: white;
+    border-radius: 2px;
+    padding: 1px 8px;
+    outline: none;
+    appearance: auto;
+    margin: 8px 0;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid constants.$redAccentColor;
+    margin: 16px 0;
+  }
+
+  table {
+    position: relative;
+    margin-top: 16px;
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 300px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+  }
+
+  caption {
+    color: constants.$yellowAccentColor;
+    padding-bottom: 4px;
+    font-weight: bold;
+    font-size: larger;
+    border-bottom: 1px solid constants.$yellowAccentColor;
+  }
+
+  thead {
+    position: sticky;
+    top: -16px; /* table margin-top */
+  }
+
+  th {
+    background-color: constants.$darkBackgroundColor;
+    font-weight: 500;
+  }
+
+  tbody {
+    overflow: auto;
+  }
+
+  th,
+  td {
+    padding: 12px;
+  }
+
+  tr.odd {
+    background-color: constants.$lightBackgroundColor;
+  }
+}
+
+.tierAndButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  select {
+    margin-right: 8px;
+  }
+}
+
+.remove {
+  cursor: pointer;
+}
+
+.input {
+  margin-bottom: 8px;
+}
+
+.points {
+  color: constants.$yellowAccentColor;
+}
+
+.zero {
+  opacity: 0.5;
+}
+
+.copyIcon {
+  cursor: pointer;
+  margin-left: 8px;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.copiedMsg {
+  opacity: 0;
+  font-size: small;
+  color: constants.$redAccentColor;
+  margin-left: 8px;
+  transition: opacity 0.5s;
+
+  &.show {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+.bottomButtons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.changesApplied {
+  cursor: pointer;
+  background: constants.$redAccentColor;
+  color: constants.$textColor;
+  margin-right: 8px;
+  opacity: 0;
+  padding: 2px 16px;
+  border-radius: 2px;
+  height: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.show {
+    opacity: 1;
+
+    &:hover {
+      color: constants.$redAccentColor;
+      background: constants.$textColor;
+    }
+  }
+}
+
+.stateIcon {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+
+  &.waiting {
+    background: #7b7bc1;
+  }
+  &.already {
+    background: #3c664b;
+  }
+  &.processing {
+    background: #3fe5eb;
+  }
+  &.ok {
+    background: #00b741;
+  }
+  &.ng {
+    background: #ff0000;
+  }
+  &.zero {
+    background: #393939;
+  }
+}

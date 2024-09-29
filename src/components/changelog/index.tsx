@@ -37,6 +37,15 @@ export const Changelog: FC = () => {
 const ChangeList: FC = () => {
   return (
     <>
+      <Version v='0.9.0'>
+        <Change type='minor'>
+          Added ACC v1.9.6 to the list of versions for track data
+        </Change>
+        <Change type='minor'>Added UI to the admin tools</Change>
+        <Change type='minor'>
+          New admin tool to easily apply penalties and point adjustments on SRGP
+        </Change>
+      </Version>
       <Version v='0.8.5'>
         <Change type='data'>
           Event data updated with the data from the first round of S10.
