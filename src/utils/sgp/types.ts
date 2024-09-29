@@ -180,9 +180,10 @@ export interface SgpEventPoints {
   tournamentId: string;
 }
 
+export type SgpEventPenalties = Record<string, SgpPenalty[]>[];
 export type SgpEventPointsAdjustments = Record<string, SgpPointsAdjustment[]>[];
 
-export interface SgpPointsAdjustment {
+export interface SgpPenalty {
   adjustedBy: {
     id: string;
     name: string;
@@ -191,6 +192,10 @@ export interface SgpPointsAdjustment {
   id: string;
   points: number;
   reason: string;
+}
+
+export interface SgpPointsAdjustment extends SgpPenalty {
+  scope: 'CLASS';
 }
 
 export interface SgpSessionResults {

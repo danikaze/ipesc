@@ -1,3 +1,4 @@
+import { clsx } from 'clsx';
 import {
   FC,
   ReactNode,
@@ -18,11 +19,16 @@ import {
   PenaltyQuerier,
   PenaltyTier,
 } from './definition';
-import { clsx } from 'clsx';
+
+import { callApi, clearApiCache } from 'utils/sgp/call-api';
+import { msToTime } from 'utils/time';
+import { ActionsTable } from './actions-table';
+import { calculateActions } from './calculate-actions';
+import { getDriverCategory } from './get-driver-category';
 
 import styles from './penalties.module.scss';
-import { calculateActions } from './calculate-actions';
-import { msToTime } from 'utils/time';
+import { count } from './plural';
+import { getSrgpActionText } from './get-srgp-action-text';
 
 export interface PenaltyData {
   raceIndex: number;
@@ -36,14 +42,17 @@ export type ActionData =
   | AddPenaltyAdjustment
   | AddFastestLapAdjustment;
 
-export interface AddPenaltyPoints {
+interface BaseActionData {
+  state: ActionState;
+}
+export interface AddPenaltyPoints extends BaseActionData {
   type: 'PP';
   raceIndex: number;
   driver: DriverInfo;
   points: number;
 }
 
-export interface AddPenaltyAdjustment {
+export interface AddPenaltyAdjustment extends BaseActionData {
   type: 'PENALTY';
   raceIndex: number;
   driver: DriverInfo;
@@ -54,11 +63,19 @@ export interface AddPenaltyAdjustment {
   newPos: number;
 }
 
-export interface AddFastestLapAdjustment {
+export interface AddFastestLapAdjustment extends BaseActionData {
   type: 'FASTEST_LAP';
   raceIndex: number;
   driver: DriverInfo;
   points: number;
+}
+
+export const enum ActionState {
+  WAITING = 'WAITING',
+  ALREADY = 'ALREADY',
+  PROCESSING = 'PROCESSING',
+  OK = 'OK',
+  NG = 'NG',
 }
 
 const SHOW_COPY_MSG_MS = 1500;
@@ -77,10 +94,15 @@ export const PenaltyDialog: FC = () => {
 
   const [penalties, setPenalties] = useState<PenaltyData[]>([]);
   const [actions, setActions] = useState<ActionData[]>([]);
+  const [changesApplied, setChangesApplied] = useState(0);
   const raceRef = useRef<HTMLSelectElement>(null);
   const driverRef = useRef<HTMLSelectElement>(null);
   const tierRef = useRef<HTMLSelectElement>(null);
   const multRef = useRef<HTMLSelectElement>(null);
+  const actionsToApply = useMemo(
+    () => actions.filter((action) => action.state === ActionState.WAITING),
+    [actions]
+  );
 
   useEffect(() => {
     setActions(calculateActions(eventData, penalties, getPenalty));
@@ -131,6 +153,57 @@ export const PenaltyDialog: FC = () => {
     []
   );
 
+  const updateAction = useCallback((action: ActionData, state: ActionData['state']) => {
+    setActions((actions) => {
+      const index = actions.findIndex(
+        (item) =>
+          item.driver.id === action.driver.id &&
+          item.points === action.points &&
+          item.raceIndex === action.raceIndex &&
+          item.type === action.type
+      );
+      if (index === -1) return actions;
+      const updatedActions = [...actions];
+      updatedActions.splice(index, 1, { ...action, state });
+      return updatedActions;
+    });
+  }, []);
+
+  const applyActions = useCallback(async () => {
+    for (const action of actionsToApply) {
+      const data = {
+        leagueId: eventData.getLeagueId(),
+        sessionId: eventData.getSessionId(),
+        tournamentId: eventData.getChampionshipId(),
+        participantId: action.driver.id,
+        points: action.points,
+        raceIndex: action.raceIndex,
+        reason: getSrgpActionText({ action }),
+      };
+
+      try {
+        updateAction(action, ActionState.PROCESSING);
+        let res;
+        if (action.type === 'PP') {
+          res = await callApi('addPenaltyPoints', data);
+        } else {
+          res = await callApi('addPointsAdjustment', {
+            ...data,
+            scope: 'CLASS',
+          });
+        }
+        updateAction(action, res.error ? ActionState.NG : ActionState.OK);
+        setChangesApplied((changes) => changes + 1);
+      } catch (e) {
+        updateAction(action, ActionState.NG);
+      }
+    }
+
+    clearApiCache();
+  }, [actions]);
+
+  const reloadPage = useCallback(() => location.reload(), []);
+
   return (
     <UiDialog title={DIALOG_TITLE} onClose={closePenaltyDialog}>
       <div className={styles.root}>
@@ -142,6 +215,25 @@ export const PenaltyDialog: FC = () => {
 
         {renderPenalties(penalties, nRaces > 1, getPenalty, removePenalty)}
         {renderActions(actions, nRaces > 1)}
+        <div className={styles.bottomButtons}>
+          <span
+            onClick={reloadPage}
+            className={clsx(styles.changesApplied, changesApplied && styles.show)}
+          >
+            Changes applied. Click to reload the page.
+          </span>
+          <UiButton
+            title={
+              actionsToApply.length
+                ? 'Apply ALL the listed NEW actions'
+                : 'There are no new actions to apply'
+            }
+            onClick={applyActions}
+            disabled={!actionsToApply.length}
+          >
+            ✔
+          </UiButton>
+        </div>
       </div>
     </UiDialog>
   );
@@ -304,92 +396,10 @@ function renderActions(actions: ActionData[], showRaces: boolean): ReactNode {
         </span>
         <span className={clsx(styles.copiedMsg, copied && styles.show)}>Copied!</span>
       </div>
-      {actionsPerRace.map((actions, i) => renderActionsTable(actions, showRaces, i))}
+      {actionsPerRace.map((actions, i) => (
+        <ActionsTable key={i} actions={actions} showRaces={showRaces} raceIndex={i} />
+      ))}
     </>
-  );
-}
-
-function renderActionsTable(
-  actions: ActionData[],
-  showRaces: boolean,
-  i: number
-): ReactNode {
-  return (
-    <table key={i}>
-      {showRaces && <caption>Race {i + 1}</caption>}
-      <thead>
-        <tr>
-          <th>Driver</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {actions.map((action, i) => {
-          return action.type === 'FASTEST_LAP' ? (
-            renderFastestLapAction(action, i)
-          ) : action.type === 'PP' ? (
-            renderPpAction(action, i)
-          ) : action.type === 'PENALTY' ? (
-            renderPenaltyAction(action, i)
-          ) : (
-            <tr>
-              <td colSpan={2}>Unknown action</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
-  );
-}
-
-function renderFastestLapAction(action: AddFastestLapAdjustment, i: number): ReactNode {
-  const catName = driverCategory(action.driver);
-  return (
-    <tr key={i} className={clsx(i % 2 && styles.odd)}>
-      <td>{action.driver.name}</td>
-      <td>
-        <span className={styles.points}>+{action.points}</span>{' '}
-        {plural('point', action.points)} for the Fastest Lap{catName}
-      </td>
-    </tr>
-  );
-}
-
-function renderPpAction(action: AddPenaltyPoints, i: number): ReactNode {
-  return (
-    <tr key={i} className={clsx(i % 2 && styles.odd)}>
-      <td>{action.driver.name}</td>
-      <td>
-        <span className={styles.points}>+{action.points}</span> Penalty{' '}
-        {plural('Point', action.points)}
-      </td>
-    </tr>
-  );
-}
-
-function renderPenaltyAction(action: AddPenaltyAdjustment, i: number): ReactNode {
-  const posDiff = Math.abs(action.newPos - action.oldPos);
-  if (action.points < 0) {
-    return (
-      <tr key={i} className={clsx(i % 2 && styles.odd, !action.points && styles.zero)}>
-        <td>{action.driver.name}</td>
-        <td>
-          Pts. Adj. to <span className={styles.points}>{action.points}</span> due to
-          dropping {count('position', posDiff)} (P{action.oldPos} → P{action.newPos} /{' '}
-          {msToTime(action.oldTime)} → {msToTime(action.newTime)})
-        </td>
-      </tr>
-    );
-  }
-  return (
-    <tr key={i} className={clsx(i % 2 && styles.odd, !action.points && styles.zero)}>
-      <td>{action.driver.name}</td>
-      <td>
-        Pts. Adj. to <span className={styles.points}>+{action.points}</span> due to
-        gaining {count('position', posDiff)} (P{action.oldPos} → P{action.newPos}) after
-        resolving penalties
-      </td>
-    </tr>
   );
 }
 
@@ -421,62 +431,43 @@ function getRaceActionsText(actions: ActionData[]): string {
 
   return actions
     .reduce((lines, action) => {
-      if (action.type === 'FASTEST_LAP') {
-        lines.push(
-          `- :fastestlap: +${count('point', action.points)} to **${
-            action.driver.name
-          }** for the fastest lap${driverCategory(action.driver)}`
-        );
-      } else if (action.type === 'PP') {
-        lines.push(
-          `- :penalty: +${action.points} Penalty ${count('Point', action.points)} to **${
-            action.driver.name
-          }**`
-        );
-      } else if (action.type === 'PENALTY') {
-        const posDiff = Math.abs(action.newPos - action.oldPos);
-        if (action.points > 0) {
-          lines.push(
-            `- :positionup: +${count('point', action.points)} to **${
-              action.driver.name
-            }** due to gaining ${count('position', posDiff)} (*P${action.oldPos} → P${
-              action.newPos
-            }*)`
-          );
-        } else if (action.points < 0) {
-          lines.push(
-            `- :positiondown: ${count('point', action.points)} to **${
-              action.driver.name
-            }** after resolving penalties ${count('position', posDiff)} (*P${
-              action.oldPos
-            } → P${action.newPos} / ${msToTime(action.oldTime)} → ${msToTime(
-              action.newTime
-            )}*)`
-          );
-        }
+      const text = getActionText(action);
+      if (text) {
+        lines.push(text);
       }
       return lines;
     }, [] as string[])
     .join('\n');
 }
 
-function driverCategory(driver: DriverInfo): string {
-  if (!driver.category) return '';
+function getActionText(action: ActionData): string | undefined {
+  if (action.type === 'FASTEST_LAP') {
+    return `- :fastestlap: +${count('point', action.points)} to **${
+      action.driver.name
+    }** for the fastest lap${getDriverCategory(action.driver)}`;
+  } else if (action.type === 'PP') {
+    return `- :penalty: +${action.points} Penalty ${count('Point', action.points)} to **${
+      action.driver.name
+    }**`;
+  } else if (action.type === 'PENALTY') {
+    const posDiff = Math.abs(action.newPos - action.oldPos);
 
-  const category = driver.category.toUpperCase();
-  return category.startsWith('P')
-    ? ' (PRO)'
-    : category.startsWith('S')
-    ? ' (SILVER)'
-    : ' (AM)';
-}
-
-function plural(singular: string, n: number): string {
-  return `${singular}${n === 1 ? '' : 's'}`;
-}
-
-function count(singular: string, n: number): string {
-  return `${n} ${plural(singular, n)}`;
+    if (action.points > 0) {
+      return `- :positionup: +${count('point', action.points)} to **${
+        action.driver.name
+      }** due to gaining ${count('position', posDiff)} (*P${action.oldPos} → P${
+        action.newPos
+      }*)`;
+    } else if (action.points < 0) {
+      return `- :positiondown: ${count('point', action.points)} to **${
+        action.driver.name
+      }** after resolving penalties ${count('position', posDiff)} (*P${
+        action.oldPos
+      } → P${action.newPos} / ${msToTime(action.oldTime)} → ${msToTime(
+        action.newTime
+      )}*)`;
+    }
+  }
 }
 
 function getActionsPerRace(actions: ActionData[]): ActionData[][] {

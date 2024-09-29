@@ -18,7 +18,10 @@ export const UiButton: FC<Props> = ({
   className,
   onClick,
 }) => {
-  const click = useMemo(() => (disabled ? undefined : () => onClick()), [disabled]);
+  const click = useMemo(
+    () => (disabled ? undefined : () => onClick()),
+    [onClick, disabled]
+  );
 
   return (
     <div

@@ -1,7 +1,18 @@
-import { DriverInfo, SgpEventApiData } from 'utils/sgp/event-api-data';
+import {
+  DriverInfo,
+  SgpPointAdjustmentData,
+  SgpEventApiData,
+  SgpPenaltyData,
+} from 'utils/sgp/event-api-data';
 import { SgpCategory, SgpEventType, SgpSessionRaceDriverResult } from 'utils/sgp/types';
 import { FASTEST_LAP_POINTS, PenaltyQuerier } from './definition';
-import type { ActionData, PenaltyData } from './penalty-dialog';
+import { getSrgpActionText } from './get-srgp-action-text';
+import {
+  ActionState,
+  AddPenaltyAdjustment,
+  type ActionData,
+  type PenaltyData,
+} from './penalty-dialog';
 
 interface PenaltyResults {
   // results sorted after penalties applied
@@ -15,7 +26,7 @@ export function calculateActions(
   penalties: PenaltyData[],
   getPenalty: PenaltyQuerier | undefined
 ): ActionData[] {
-  if (!eventData || !penalties.length || !getPenalty) return [];
+  if (!eventData || !getPenalty) return [];
 
   const penaltyResults = applyPenalties(eventData, penalties, getPenalty);
   const actions = getActions(eventData, penaltyResults);
@@ -71,12 +82,14 @@ function getActions(eventData: SgpEventApiData, penalty: PenaltyResults): Action
       // skip the empty categories
       if (!results.length) return;
       const driverId = getFastestLapDriverId(results);
-      actions.push({
+      const driver = drivers.find((driver) => driver.id === driverId)!;
+      const action = addActionState(eventData, {
         type: 'FASTEST_LAP',
         raceIndex,
-        driver: drivers.find((driver) => driver.id === driverId)!,
+        driver,
         points: FASTEST_LAP_POINTS,
       });
+      actions.push(action);
     });
   }
 
@@ -84,12 +97,15 @@ function getActions(eventData: SgpEventApiData, penalty: PenaltyResults): Action
   for (let raceIndex = 0; raceIndex < penalty.pp.length; raceIndex++) {
     const pp = penalty.pp[raceIndex];
     Object.entries(pp).forEach(([driverId, points]) => {
-      actions.push({
-        type: 'PP',
-        raceIndex,
-        points,
-        driver: drivers.find((driver) => driver.id === driverId)!,
-      });
+      const driver = drivers.find((driver) => driver.id === driverId)!;
+      actions.push(
+        addActionState(eventData, {
+          type: 'PP',
+          raceIndex,
+          points,
+          driver,
+        })
+      );
     });
   }
 
@@ -119,17 +135,21 @@ function getActions(eventData: SgpEventApiData, penalty: PenaltyResults): Action
         const after = resultsAfter[iAfter];
         const pointsBefore = pointsPerPosition[i];
         const pointsAfter = pointsPerPosition[iAfter];
+        const oldPos = i + 1;
+        const newPos = iAfter + 1;
 
-        actions.push({
-          type: 'PENALTY',
-          raceIndex,
-          driver,
-          points: pointsAfter - pointsBefore,
-          oldTime: before.totalTime,
-          newTime: after.totalTime,
-          oldPos: i + 1,
-          newPos: iAfter + 1,
-        });
+        actions.push(
+          addActionState(eventData, {
+            type: 'PENALTY',
+            raceIndex,
+            driver,
+            points: pointsAfter - pointsBefore,
+            oldTime: before.totalTime,
+            newTime: after.totalTime,
+            oldPos,
+            newPos,
+          } as AddPenaltyAdjustment)
+        );
       }
     }
   }
@@ -161,4 +181,38 @@ function getFastestLapDriverId(results: SgpSessionRaceDriverResult[]): DriverInf
   }
 
   return fastestDriver;
+}
+
+export function addActionState(
+  eventData: SgpEventApiData,
+  action: Omit<ActionData, 'reason' | 'state'>
+): ActionData {
+  const state = actionExists(eventData, { ...action })
+    ? ActionState.ALREADY
+    : ActionState.WAITING;
+  return Object.assign(action, { state }) as ActionData;
+}
+
+function actionExists(
+  eventData: SgpEventApiData,
+  action: Pick<ActionData, 'type' | 'raceIndex' | 'driver' | 'points'>
+): boolean {
+  const list =
+    action.type === 'PP'
+      ? eventData.getAllPenalties()
+      : eventData.getAllPointsAdjustments();
+  if (!list) return false;
+
+  const getFilter =
+    (reason: string) =>
+    (data: SgpPenaltyData | SgpPointAdjustmentData): boolean =>
+      data.raceIndex === action.raceIndex &&
+      data.driverId === action.driver.id &&
+      data.points === action.points &&
+      data.reason === reason;
+
+  const doneActions = list.filter(getFilter(getSrgpActionText({ action })));
+  const undoneActions = list.filter(getFilter(getSrgpActionText({ action, undo: true })));
+
+  return doneActions.length > undoneActions.length;
 }

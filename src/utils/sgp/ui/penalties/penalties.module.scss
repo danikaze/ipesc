@@ -103,3 +103,57 @@
     transition: none;
   }
 }
+
+.bottomButtons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.changesApplied {
+  cursor: pointer;
+  background: constants.$redAccentColor;
+  color: constants.$textColor;
+  margin-right: 8px;
+  opacity: 0;
+  padding: 2px 16px;
+  border-radius: 2px;
+  height: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.show {
+    opacity: 1;
+
+    &:hover {
+      color: constants.$redAccentColor;
+      background: constants.$textColor;
+    }
+  }
+}
+
+.stateIcon {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+
+  &.waiting {
+    background: #7b7bc1;
+  }
+  &.already {
+    background: #3c664b;
+  }
+  &.processing {
+    background: #3fe5eb;
+  }
+  &.ok {
+    background: #00b741;
+  }
+  &.ng {
+    background: #ff0000;
+  }
+  &.zero {
+    background: #393939;
+  }
+}

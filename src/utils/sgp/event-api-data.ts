@@ -3,8 +3,11 @@ import { AccVersion } from 'data/types';
 import { getAccVersionFromTime } from 'utils/acc-version';
 import {
   SgpCategory,
+  SgpEventPenalties,
   SgpEventType,
   SgpGame,
+  SgpPenalty,
+  SgpPointsAdjustment,
   SgpSessionPracticeDriverResult,
   SgpSessionQualifyDriverResult,
   SgpSessionRaceDriverResult,
@@ -22,7 +25,7 @@ interface RawData {
   results?: SgpSessionResults;
   points?: SgpEventPoints;
   pointsAdjustments?: SgpEventPointsAdjustments;
-  penalties?: SgpEventPointsAdjustments;
+  penalties?: SgpEventPenalties;
 }
 
 export type DriverInfo = Pick<
@@ -33,13 +36,24 @@ export type DriverInfo = Pick<
     category?: SgpSessionPracticeDriverResult['carClassId'];
   };
 
+export interface SgpPenaltyData extends SgpPenalty {
+  raceIndex: number;
+  driverId: DriverInfo['id'];
+}
+
+export interface SgpPointAdjustmentData extends SgpPointsAdjustment {
+  raceIndex: number;
+  driverId: DriverInfo['id'];
+  scope: 'CLASS';
+}
+
 export class SgpEventApiData {
   private static readonly TYPE = 'SgpEventApiData';
   private session: SgpEventSession;
   private results?: SgpSessionResults;
   private points?: SgpEventPoints;
   private pointsAdjustments?: SgpEventPointsAdjustments;
-  private penalties?: SgpEventPointsAdjustments;
+  private penalties?: SgpEventPenalties;
 
   constructor(data: RawData) {
     this.session = data.session;
@@ -72,12 +86,20 @@ export class SgpEventApiData {
     return this.results !== undefined;
   }
 
+  public getSessionId(): string {
+    return this.session.session.id;
+  }
+
   public getChampionshipId(): string {
     return this.session.session.tournamentId;
   }
 
   public getChampionshipName(): string {
     return this.session.session.tournamentName;
+  }
+
+  public getLeagueId(): string {
+    return this.session.session.leagueId;
   }
 
   public getEventName(): string {
@@ -116,6 +138,44 @@ export class SgpEventApiData {
       ({ id }) => SgpEventApiData.toCategory(id)!
     );
     return cats?.length > 0 ? cats : undefined;
+  }
+
+  public getAllPenalties(): SgpPenaltyData[] {
+    const res: SgpPenaltyData[] = [];
+    if (!this.penalties) return res;
+
+    this.penalties.forEach((race, raceIndex) => {
+      Object.entries(race).forEach(([driverId, penalties]) => {
+        penalties.forEach((penalty) => {
+          res.push({
+            raceIndex,
+            driverId,
+            ...penalty,
+          });
+        });
+      });
+    });
+
+    return res;
+  }
+
+  public getAllPointsAdjustments(): SgpPointAdjustmentData[] {
+    const res: SgpPointAdjustmentData[] = [];
+    if (!this.pointsAdjustments) return res;
+
+    this.pointsAdjustments.forEach((race, raceIndex) => {
+      Object.entries(race).forEach(([driverId, adjustments]) => {
+        adjustments.forEach((data) => {
+          res.push({
+            raceIndex,
+            driverId,
+            ...data,
+          });
+        });
+      });
+    });
+
+    return res;
   }
 
   /**
@@ -237,8 +297,8 @@ export class SgpEventApiData {
           category: result.carClassId,
         });
 
-        // having a valid carId means he joined
-        if (result.carId !== '-1') {
+        // having a lap done means he joined the event
+        if (result.lapCount > 0) {
           activeDrivers.add(id);
         }
       })
