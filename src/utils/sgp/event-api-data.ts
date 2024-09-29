@@ -1,13 +1,15 @@
+import { sgpGame2Game } from 'data/sgp';
+import { AccVersion } from 'data/types';
+import { getAccVersionFromTime } from 'utils/acc-version';
 import {
   SgpCategory,
   SgpEventType,
   SgpGame,
   SgpSessionPracticeDriverResult,
+  SgpSessionQualifyDriverResult,
+  SgpSessionRaceDriverResult,
 } from 'utils/sgp/types';
 import { IsoDate } from 'utils/types';
-import { getAccVersionFromTime } from 'utils/acc-version';
-import { AccVersion } from 'data/types';
-import { sgpGame2Game } from 'data/sgp';
 import {
   SgpEventPoints,
   SgpEventPointsAdjustments,
@@ -153,7 +155,48 @@ export class SgpEventApiData {
     return res;
   }
 
-  public getAllResults() {
+  public getResultsByCategory(): Record<
+    SgpCategory,
+    | SgpSessionPracticeDriverResult[]
+    | SgpSessionQualifyDriverResult[]
+    | SgpSessionRaceDriverResult[]
+  >[];
+  public getResultsByCategory(
+    type: SgpEventType.PRACTICE
+  ): Record<SgpCategory, SgpSessionPracticeDriverResult[]>[];
+  public getResultsByCategory(
+    type?: SgpEventType.QUALI
+  ): Record<SgpCategory, SgpSessionQualifyDriverResult[]>[];
+  public getResultsByCategory(
+    type?: SgpEventType.RACE
+  ): Record<SgpCategory, SgpSessionRaceDriverResult[]>[];
+  public getResultsByCategory(type?: SgpEventType) {
+    const results = this.getAllResults(type);
+    return results.map((race) => {
+      const res: Record<
+        SgpCategory,
+        | SgpSessionPracticeDriverResult[]
+        | SgpSessionQualifyDriverResult[]
+        | SgpSessionRaceDriverResult[]
+      > = {
+        [SgpCategory.NONE]: [],
+        [SgpCategory.PRO]: [],
+        [SgpCategory.SILVER]: [],
+        [SgpCategory.AM]: [],
+      };
+
+      for (const r of race.results) {
+        // only active drivers are included
+        if (r.carId === '-1') continue;
+        const cat = SgpEventApiData.toCategory(r.carClassId) || SgpCategory.NONE;
+        res[cat].push(r as any);
+      }
+
+      return res;
+    });
+  }
+
+  public getAllResults(type?: SgpEventType) {
     const indexes: Record<SgpEventType, number> = {
       [SgpEventType.PRACTICE]: 0,
       [SgpEventType.QUALI]: 0,
@@ -161,9 +204,9 @@ export class SgpEventApiData {
     };
 
     if (!this.results) return [];
-    return this.results.results.map(
-      ({ type }) => this.getResults(type, indexes[type]++)!
-    );
+    return this.results.results
+      .map(({ type }) => this.getResults(type, indexes[type]++)!)
+      .filter((result) => !type || result.type === type);
   }
 
   public getCar(id: string) {
@@ -194,8 +237,8 @@ export class SgpEventApiData {
           category: result.carClassId,
         });
 
-        // having a lapCount means he joined
-        if (result.lapCount) {
+        // having a valid carId means he joined
+        if (result.carId !== '-1') {
           activeDrivers.add(id);
         }
       })
@@ -205,6 +248,31 @@ export class SgpEventApiData {
     return type === 'all'
       ? all
       : all.filter(({ id }) => activeDrivers.has(id) === (type === 'active'));
+  }
+
+  /**
+   * Get the points assigned per position, without calling any other API, from the data
+   * of the races
+   */
+  public getPointSystem(): number[] {
+    if (!this.points) return [];
+
+    const races = this.getResultsByCategory(SgpEventType.RACE);
+    const points: number[] = [];
+
+    for (let r = 0; r < races.length; r++) {
+      const race = races[r];
+      const racePoints = this.points.racePoints[r];
+      Object.values(race).forEach((results) => {
+        for (let i = 0; i < results.length; i++) {
+          const res = results[i];
+          if (res.carId === '-1') continue;
+          points[i] = racePoints[res.driverId].points;
+        }
+      });
+    }
+
+    return points;
   }
 
   private getRacePoints(driverId: string, raceIndex: number): number | undefined {

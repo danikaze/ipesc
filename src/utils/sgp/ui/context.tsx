@@ -1,9 +1,13 @@
 import { createContext, useContext } from 'react';
 import { SgpPage } from '../get-sgp-page';
 import { DialogData } from '.';
+import { SgpEventApiData } from '../event-api-data';
 
 export interface UiContextData {
   page: SgpPage | undefined;
+  openPenaltyDialog: (data: SgpEventApiData | undefined) => void;
+  closePenaltyDialog: () => void;
+  eventData: SgpEventApiData | undefined;
   dialogMessageData: DialogData | undefined;
   setDialogData(nil: undefined): void;
   setDialogData(title: string, msg: string): void;

@@ -5,7 +5,9 @@ import { getSgpPage, SgpPage } from '../get-sgp-page';
 import { UiContext } from './context';
 import { DiscordDialog } from './data/data-dialog';
 import { LoadingSpinner } from './loading-spinner';
+import { PenaltyDialog } from './penalties/penalty-dialog';
 import { UiMenu } from './ui-menu';
+import { SgpEventApiData } from '../event-api-data';
 
 export function injectUi(): void {
   const root = createRoot(getContainer());
@@ -28,6 +30,8 @@ export type DialogData = { title: string; content: string };
 
 const Ui: FC = () => {
   const [page, setPage] = useState<SgpPage | undefined>(getSgpPage(location.href));
+  const [isPenaltyDialogOpen, setPenaltyDialogOpen] = useState(false);
+  const [eventData, setEventData] = useState<SgpEventApiData | undefined>();
   const [dialogMessageData, setDialogMessageData] = useState<DialogData | undefined>();
   const [isLoading, setLoading] = useState<string | boolean>(false);
 
@@ -35,6 +39,11 @@ const Ui: FC = () => {
     return onUrlChange((newUrl) => setPage(getSgpPage(newUrl)));
   }, []);
 
+  const openPenaltyDialog = useCallback((data: SgpEventApiData | undefined) => {
+    setEventData(data);
+    setPenaltyDialogOpen(true);
+  }, []);
+  const closePenaltyDialog = useCallback(() => setPenaltyDialogOpen(false), []);
   const setDialogData = useCallback(
     (title?: string, content?: string) =>
       setDialogMessageData(title ? ({ title, content } as DialogData) : undefined),
@@ -46,12 +55,16 @@ const Ui: FC = () => {
       value={{
         page,
         setLoading,
+        eventData,
+        openPenaltyDialog,
+        closePenaltyDialog,
         dialogMessageData,
         setDialogData,
       }}
     >
       <UiMenu />
       {isLoading && <LoadingSpinner />}
+      {isPenaltyDialogOpen && <PenaltyDialog />}
       {dialogMessageData && <DiscordDialog />}
     </UiContext>
   );

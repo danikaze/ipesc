@@ -7,6 +7,7 @@ export enum SgpEventType {
 }
 
 export enum SgpCategory {
+  NONE = 'NONE',
   PRO = 'PRO',
   SILVER = 'SILV',
   AM = 'AM',
