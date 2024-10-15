@@ -66,11 +66,14 @@ export interface Event {
   startTime: Timestamp;
   trackId: TrackData['id'];
   inactiveDrivers: Driver['id'][];
-  results: {
-    type: EventType;
-    wet?: boolean;
-    results: EventResult[];
-  }[];
+  results: (
+    | undefined
+    | {
+        type: EventType;
+        wet?: boolean;
+        results: (EventResult | undefined)[];
+      }
+  )[];
 }
 
 export interface EventResult {

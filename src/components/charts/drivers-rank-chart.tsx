@@ -267,11 +267,13 @@ function getDriverAveragePctg(
       version: getAccVersionFromTime(championship.game, event.startTime),
       startTime: event.startTime,
       id: event.trackId,
-      results: event.results.filter(
-        ({ type, results }) =>
-          type === 'race' &&
-          results.find((result) => result.driverId === driver.id)?.[lapField]
-      ),
+      results: event.results
+        ?.filter((res) => res !== undefined)
+        .filter(
+          ({ type, results }) =>
+            type === 'race' &&
+            results.find((result) => result?.driverId === driver.id)?.[lapField]
+        ),
     }))
   );
 
@@ -281,31 +283,34 @@ function getDriverAveragePctg(
   let driverAverage = 0;
 
   const eventList = events
-    .flatMap((event) =>
-      event.results.map(({ wet, results }) => {
-        const driverResult = results.find((result) => result.driverId === driver.id);
-        const driverLapTime = driverResult?.[lapField];
-        if (!driverLapTime) return;
-        const trackBest = query.getEventRecords(event, lapField).race;
-        if (!trackBest) return;
+    .flatMap(
+      (event) =>
+        event.results
+          ?.filter((res) => res !== undefined)
+          .map(({ wet, results }) => {
+            const driverResult = results.find((result) => result?.driverId === driver.id);
+            const driverLapTime = driverResult?.[lapField];
+            if (!driverLapTime) return;
+            const trackBest = query.getEventRecords(event, lapField).race;
+            if (!trackBest) return;
 
-        const pctg = driverLapTime / trackBest.lapTime;
-        driverAverage += driverLapTime;
-        totalBest += trackBest.lapTime;
+            const pctg = driverLapTime / trackBest.lapTime;
+            driverAverage += driverLapTime;
+            totalBest += trackBest.lapTime;
 
-        const item: EventItem = {
-          game: event.game,
-          startTime: event.startTime,
-          version: event.version,
-          name: event.name,
-          lapTime: driverLapTime,
-          pctg,
-          retired: !!driverResult.retired,
-          wet: !!wet,
-        };
+            const item: EventItem = {
+              game: event.game,
+              startTime: event.startTime,
+              version: event.version,
+              name: event.name,
+              lapTime: driverLapTime,
+              pctg,
+              retired: !!driverResult.retired,
+              wet: !!wet,
+            };
 
-        return item;
-      })
+            return item;
+          })
     )
     .filter(Boolean) as EventItem[];
 

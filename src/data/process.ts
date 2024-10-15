@@ -20,6 +20,7 @@ import {
   TrackData,
   EventType,
 } from './types';
+import { isSgpError } from 'utils/sgp/is-sgp-error';
 
 /**
  * Creates the needed & used data for the graphical representation from the big
@@ -110,7 +111,7 @@ function getUpdatedTime(
   return Math.max(
     ...championships.flatMap((championship) =>
       championship.events
-        .filter((event) => event.results.length)
+        .filter((event) => !isSgpError(event.results) && event.results?.length)
         .flatMap((event) => event.startTime || 0)
     )
   );
@@ -200,7 +201,7 @@ function getEventResults(event: SgpEventApiData): Event['results'] {
   const includedEventTypes: EventType[] = ['quali', 'race'];
   return event
     .getAllResults()
-    .filter(({ type }) => includedEventTypes.includes(sgpEventType2EventType(type)!))
+    ?.filter(({ type }) => includedEventTypes.includes(sgpEventType2EventType(type)!))
     .map((results) => {
       const type = sgpEventType2EventType(results.type)!;
       const p1time = results.results[0].totalTime;

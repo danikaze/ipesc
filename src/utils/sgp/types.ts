@@ -214,9 +214,14 @@ export interface SgpSessionResults {
   averageFieldStrength: number;
   rankingStatus: SgpFlowStatus;
   v: number;
-  results: SgpSessionResult[];
+  results: SgpSessionResult[] | SgpError;
   manualSession: boolean;
 }
+
+export type SgpError = {
+  error: true;
+  e: unknown;
+};
 
 interface SgpSessionBaseResult {
   wetTrack: boolean;
