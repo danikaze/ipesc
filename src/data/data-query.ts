@@ -70,21 +70,23 @@ export class DataQuery {
     this.raw.championships.forEach((championship) =>
       championship.events.forEach((event) => {
         if (event.trackId !== trackId) return;
-        event.results.forEach(({ type, results }) => {
-          const driverResult = results.find((result) => result.driverId === driverId);
-          if (!driverResult) return;
-          const typeRecord = record[type];
-          if (
-            driverResult.bestCleanLapTime &&
-            (!typeRecord || typeRecord.lapTime > driverResult.bestCleanLapTime)
-          ) {
-            record[type] = {
-              ...driverResult,
-              lapTime: driverResult.bestCleanLapTime,
-              date: event.startTime,
-            };
-          }
-        });
+        event.results
+          .filter((res) => res !== undefined)
+          .forEach(({ type, results }) => {
+            const driverResult = results.find((result) => result?.driverId === driverId);
+            if (!driverResult) return;
+            const typeRecord = record[type];
+            if (
+              driverResult.bestCleanLapTime &&
+              (!typeRecord || typeRecord.lapTime > driverResult.bestCleanLapTime)
+            ) {
+              record[type] = {
+                ...driverResult,
+                lapTime: driverResult.bestCleanLapTime,
+                date: event.startTime,
+              };
+            }
+          });
       })
     );
 
@@ -96,7 +98,12 @@ export class DataQuery {
    */
   public getDriverList(event: Event): Record<'active' | 'inactive', string[]> {
     const allDriverIds = new Set(
-      event.results.flatMap(({ results }) => results.map(({ driverId }) => driverId))
+      event.results
+        ?.filter((res) => res !== undefined)
+        .flatMap(
+          ({ results }) =>
+            results?.filter((res) => res !== undefined).map(({ driverId }) => driverId)
+        )
     );
     return {
       active: Array.from(allDriverIds).filter(
@@ -139,22 +146,25 @@ export class DataQuery {
             getAccVersionFromTime(game, event.startTime) === track.version
         )
         .forEach((event) => {
-          event.results.forEach(({ type, results, wet }) =>
-            results.forEach((result) => {
-              if (!result.bestCleanLapTime) return;
-              const map = type === 'quali' ? quali : race;
-              const driverBest = map.get(result.driverId);
-              if (!driverBest || driverBest.lapTime > result.bestCleanLapTime) {
-                map.set(result.driverId, {
-                  lapTime: result.bestCleanLapTime,
-                  driverId: result.driverId,
-                  carId: result.carId,
-                  date: event.startTime,
-                  wet,
-                });
-              }
-            })
-          );
+          event.results
+            ?.filter((res) => res !== undefined)
+            .forEach(
+              ({ type, results, wet }) =>
+                results?.forEach((result) => {
+                  if (!result || !result.bestCleanLapTime) return;
+                  const map = type === 'quali' ? quali : race;
+                  const driverBest = map.get(result.driverId);
+                  if (!driverBest || driverBest.lapTime > result.bestCleanLapTime) {
+                    map.set(result.driverId, {
+                      lapTime: result.bestCleanLapTime,
+                      driverId: result.driverId,
+                      carId: result.carId,
+                      date: event.startTime,
+                      wet,
+                    });
+                  }
+                })
+            );
         })
     );
 
@@ -178,21 +188,25 @@ export class DataQuery {
   ): Partial<Record<EventType, TrackRecord>> {
     const res: Partial<Record<EventType, TrackRecord>> = {};
 
-    event.results.forEach(({ type, results }) =>
-      results.forEach((result) => {
-        if (!result.bestCleanLapTime) return;
-        const best = res[type];
-        const time = result[lapField];
-        if (time !== undefined && (!best || best.lapTime > time)) {
-          res[type] = {
-            lapTime: time,
-            driverId: result.driverId,
-            carId: result.carId,
-            date: event.startTime,
-          };
-        }
-      })
-    );
+    event.results
+      .filter((res) => res !== undefined)
+      .forEach(({ type, results }) =>
+        results
+          .filter((res) => res !== undefined)
+          .forEach((result) => {
+            if (!result || !result.bestCleanLapTime) return;
+            const best = res[type];
+            const time = result[lapField];
+            if (time !== undefined && (!best || best.lapTime > time)) {
+              res[type] = {
+                lapTime: time,
+                driverId: result.driverId,
+                carId: result.carId,
+                date: event.startTime,
+              };
+            }
+          })
+      );
 
     return res;
   }

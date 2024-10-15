@@ -19,6 +19,7 @@ import {
   SgpEventSession,
   SgpSessionResults,
 } from './types';
+import { isSgpError } from './is-sgp-error';
 
 interface RawData {
   session: SgpEventSession;
@@ -130,6 +131,7 @@ export class SgpEventApiData {
   }
 
   public getNumberOfRaces(): number | undefined {
+    if (isSgpError(this.results?.results)) return;
     return this.results?.results.filter((obj) => obj.type === SgpEventType.RACE).length;
   }
 
@@ -184,6 +186,8 @@ export class SgpEventApiData {
    * Ordered by their position by default
    */
   public getResults(type: SgpEventType, raceIndex: number = 0) {
+    if (isSgpError(this.results?.results)) return;
+
     const session = this.results?.results.filter((obj) => obj.type === type)[raceIndex];
     if (!session) return;
 
@@ -263,9 +267,9 @@ export class SgpEventApiData {
       [SgpEventType.RACE]: 0,
     };
 
-    if (!this.results) return [];
+    if (!this.results || isSgpError(this.results.results)) return [];
     return this.results.results
-      .map(({ type }) => this.getResults(type, indexes[type]++)!)
+      ?.map(({ type }) => this.getResults(type, indexes[type]++)!)
       .filter((result) => !type || result.type === type);
   }
 
@@ -281,9 +285,11 @@ export class SgpEventApiData {
    * 'all' will return both
    */
   public getDrivers(type: 'active' | 'inactive' | 'all'): DriverInfo[] {
+    if (isSgpError(this.results?.results)) return [];
+
     const allDrivers = new Map<DriverInfo['id'], DriverInfo>();
     const activeDrivers = new Set<DriverInfo['id']>();
-    this.results?.results.forEach((session) =>
+    this.results?.results?.forEach((session) =>
       session.results.forEach((result) => {
         // add the information of the driver
         const id = result.participant.id;

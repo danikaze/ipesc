@@ -51,3 +51,10 @@ jobs:
           gist_id: 9154b3b79eb2c605687c78f4991841fd
           file_path: dist-fns/ipesc-helpers.user.js
           file_type: text
+      - name: Deploy ipesc-remove-anti-adblocker.user.js to gist
+        uses: exuanbo/actions-deploy-gist@v1
+        with:
+          token: ${{ secrets.TOKEN }}
+          gist_id: 1f803cac51248068ae4b42a62416a1b1
+          file_path: dist-fns/ipesc-remove-anti-adblocker.user.js
+          file_type: text
