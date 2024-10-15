@@ -37,6 +37,13 @@ export const Changelog: FC = () => {
 const ChangeList: FC = () => {
   return (
     <>
+      <Version v='0.10.0'>
+        <Change type='minor'>
+          Added user script to remove the anti ad-blocker in SRGP
+        </Change>
+        <Change type='minor'>Handle the new error fields in the SimRacing GP API.</Change>
+        <Change type='data'>Event data updated with the data up to S10R4.</Change>
+      </Version>
       <Version v='0.9.0'>
         <Change type='minor'>
           Added ACC v1.9.6 to the list of versions for track data
