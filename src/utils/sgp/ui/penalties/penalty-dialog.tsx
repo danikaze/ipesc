@@ -356,7 +356,7 @@ function renderPenalties(
                   ✖
                 </span>
               </td>
-              {showRaces && <td>#{race + 1}</td>}
+              {showRaces && <td>Race {race + 1}</td>}
               <td>{driver.name}</td>
               <td>
                 Tier {tier} ({getPenalty(tier)?.secs} s) {mult > 1 ? `x${mult}` : ''}
@@ -413,9 +413,9 @@ function getActionsText(actions: ActionData[][]): string {
 
   const raceTexts = actions.reduce(
     (text, raceActions, i) => {
-      text.push(` ~~ RACE ${i + 1} ~~`);
-      text.push(getRaceActionsText(raceActions));
       text.push('\n');
+      text.push(` **RACE ${i + 1}**`);
+      text.push(getRaceActionsText(raceActions));
       return text;
     },
     [title] as string[]
@@ -446,7 +446,7 @@ function getActionText(action: ActionData): string | undefined {
       action.driver.name
     }** for the fastest lap${getDriverCategory(action.driver)}`;
   } else if (action.type === 'PP') {
-    return `- :penalty: +${action.points} Penalty ${count('Point', action.points)} to **${
+    return `- :penalty: +${action.points} ${count('Penalty Point', action.points)} to **${
       action.driver.name
     }**`;
   } else if (action.type === 'PENALTY') {
@@ -461,11 +461,9 @@ function getActionText(action: ActionData): string | undefined {
     } else if (action.points < 0) {
       return `- :positiondown: ${count('point', action.points)} to **${
         action.driver.name
-      }** after resolving penalties ${count('position', posDiff)} (*P${
-        action.oldPos
-      } → P${action.newPos} / ${msToTime(action.oldTime)} → ${msToTime(
-        action.newTime
-      )}*)`;
+      }** due to dropping ${count('position', posDiff)} (*P${action.oldPos} → P${
+        action.newPos
+      } / ${msToTime(action.oldTime)} → ${msToTime(action.newTime)}*)`;
     }
   }
 }
