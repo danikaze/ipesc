@@ -96,6 +96,7 @@ function getActions(eventData: SgpEventApiData, penalty: PenaltyResults): Action
   // add actions for penalty points
   for (let raceIndex = 0; raceIndex < penalty.pp.length; raceIndex++) {
     const pp = penalty.pp[raceIndex];
+    if (!pp) continue;
     Object.entries(pp).forEach(([driverId, points]) => {
       const driver = drivers.find((driver) => driver.id === driverId)!;
       actions.push(
