@@ -37,6 +37,15 @@ export const Changelog: FC = () => {
 const ChangeList: FC = () => {
   return (
     <>
+      <Version v='0.11.0'>
+        <Change type='minor'>
+          Fixes on wordings for the post-race actions message for Discord.
+        </Change>
+        <Change type='minor'>
+          Fix bug on the post-race actions menu when there are multiple races.
+        </Change>
+        <Change type='data'>Event data updated with the data up to S10R5.</Change>
+      </Version>
       <Version v='0.10.0'>
         <Change type='minor'>
           Added user script to remove the anti ad-blocker in SRGP
